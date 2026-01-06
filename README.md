@@ -49,6 +49,7 @@ Coming Soon...
 ### Autoregressive Models (AR)
 | Research | Keywords |
 |----------|----------|
+| [RadAR - 從序列到空間，重排序自回歸實現高效視覺生成](AI_Daily_RadAR.md) | Autoregressive, Zero-Shot, Parallel Generation, Efficient |
 | [EditAR - 統一條件圖像生成的自回歸新篇章](AI%20Daily_%20EditAR%20-%20統一條件圖像生成的自回歸新篇章.md) | Autoregressive, Image Generation |
 | [Multimodal Autoregressive Pre-training of Large Vision Encoders](AI%20Daily_%20Multimodal%20Autoregressive%20Pre-training%20of%20Large%20Vision%20Encoders.md) | Vision Encoders, Multimodal |
 
