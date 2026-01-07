@@ -8,7 +8,7 @@
 
 ## 📌 今日文章
 
-Coming Soon...
+[FAM Diffusion - 頻率與注意力調製實現高效高解析度圖像生成](AI_Daily_FAM_Diffusion.md)
 
 ## 🎯 我們在做什麼？
 
@@ -38,7 +38,7 @@ Coming Soon...
 ### Diffusion Models
 | Research | Keywords |
 |----------|----------|
-| Coming Soon... | - |
+| [FAM Diffusion - 頻率與注意力調製實現高效高解析度圖像生成](AI_Daily_FAM_Diffusion.md) | Training-Free, Attention Modulation, High-Resolution, CVPR 2025 |
 
 ### Flow Matching
 | Research | Keywords |
@@ -73,4 +73,4 @@ Coming Soon...
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-06*
+*Last Updated: 2026-01-07*
