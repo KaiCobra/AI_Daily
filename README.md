@@ -8,7 +8,7 @@
 
 ## 📌 今日文章
 
-[LooseRoPE - 內容感知注意力操控，實現無縫語義融合](AI_Daily_LooseRoPE.md)
+[DiverseVAR - 解放視覺自回歸模型的多樣性潛能](AI%20Daily_%20DiverseVAR%20-%20解放視覺自回歸模型的多樣性潛能.md)
 
 ## 🎯 我們在做什麼？
 
@@ -57,6 +57,7 @@
 ### Visual Autoregressive Models (VAR)
 | Research | Keywords |
 |----------|----------|
+| [DiverseVAR - 解放視覺自回歸模型的多樣性潛能](AI%20Daily_%20DiverseVAR%20-%20解放視覺自回歸模型的多樣性潛能.md) | VAR, Training-Free, Diversity Collapse, MBZUAI |
 | [AREdit - 無需訓練的VAR圖像編輯新範式](AI_Daily_AREdit.md) | VAR, Training-Free, Image Editing, Zero-Shot |
 | [ToProVAR - 視覺自回歸模型高效優化新框架](AI%20Daily_%20ToProVAR%20-%20基於注意力熵的視覺自回歸模型高效優化新框架.md) | VAR, Optimization, Attention Entropy |
 | [Visual Autoregressive Modelling for Monocular Depth Estimation](AI%20Daily_%20Visual%20Autoregressive%20Modelling%20for%20Monocular%20Depth%20Estimation.md) | VAR, Depth Estimation |
