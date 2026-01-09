@@ -8,7 +8,7 @@
 
 ## 📌 今日文章
 
-[FAM Diffusion - 頻率與注意力調製實現高效高解析度圖像生成](AI_Daily_FAM_Diffusion.md)
+[AREdit - 無需訓練的VAR圖像編輯新範式](AI_Daily_AREdit.md)
 
 ## 🎯 我們在做什麼？
 
@@ -56,6 +56,7 @@
 ### Visual Autoregressive Models (VAR)
 | Research | Keywords |
 |----------|----------|
+| [AREdit - 無需訓練的VAR圖像編輯新範式](AI_Daily_AREdit.md) | VAR, Training-Free, Image Editing, Zero-Shot |
 | [ToProVAR - 視覺自回歸模型高效優化新框架](AI%20Daily_%20ToProVAR%20-%20基於注意力熵的視覺自回歸模型高效優化新框架.md) | VAR, Optimization, Attention Entropy |
 | [Visual Autoregressive Modelling for Monocular Depth Estimation](AI%20Daily_%20Visual%20Autoregressive%20Modelling%20for%20Monocular%20Depth%20Estimation.md) | VAR, Depth Estimation |
 | [VAR-LIDE](AI_Daily_VAR-LIDE.md) | Visual Autoregressive, Image Generation |
@@ -73,4 +74,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-07*
+*Last Updated: 2026-01-09*
