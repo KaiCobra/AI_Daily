@@ -2,13 +2,13 @@
 
 > 每天一篇論文，跟上 AI 最新潮流
 
-你是否也有這樣的困擾？AI 領域發展太快，每天都有新論文發表，卻沒時間一一追蹤？
+你是否也有這樣的困擾？AI 領域發展太快，每天都有新論文發表,卻沒時間一一追蹤？
 
 **AI Daily** 為你精選每天最值得關注的 AI 論文，用深入淺出的方式解析最前沿的研究成果。讓你在通勤、午休、睡前，輕鬆掌握 AI 最新動態！
 
 ## 📌 今日文章
 
-[AREdit - 無需訓練的VAR圖像編輯新範式](AI_Daily_AREdit.md)
+[LooseRoPE - 內容感知注意力操控，實現無縫語義融合](AI_Daily_LooseRoPE.md)
 
 ## 🎯 我們在做什麼？
 
@@ -38,6 +38,7 @@
 ### Diffusion Models
 | Research | Keywords |
 |----------|----------|
+| [LooseRoPE - 內容感知注意力操控，實現無縫語義融合](AI_Daily_LooseRoPE.md) | Training-Free, Attention Modulation, RoPE, Semantic Harmonization, Zero-Shot |
 | [FAM Diffusion - 頻率與注意力調製實現高效高解析度圖像生成](AI_Daily_FAM_Diffusion.md) | Training-Free, Attention Modulation, High-Resolution, CVPR 2025 |
 
 ### Flow Matching
@@ -74,4 +75,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-09*
+*Last Updated: 2026-01-10*
