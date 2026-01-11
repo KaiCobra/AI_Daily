@@ -8,7 +8,7 @@
 
 ## 📌 今日文章
 
-[DiverseVAR - 解放視覺自回歸模型的多樣性潛能](AI%20Daily_%20DiverseVAR%20-%20解放視覺自回歸模型的多樣性潛能.md)
+[ZestGuide - 零樣本空間佈局條件下的文本到圖像擴散模型](AI_Daily_ZestGuide.md)
 
 ## 🎯 我們在做什麼？
 
@@ -38,6 +38,7 @@
 ### Diffusion Models
 | Research | Keywords |
 |----------|----------|
+| [ZestGuide - 零樣本空間佈局條件下的文本到圖像擴散模型](AI_Daily_ZestGuide.md) | Zero-Shot, Training-Free, Spatial Layout Control, Cross-Attention, ICCV 2023, Meta FAIR |
 | [LooseRoPE - 內容感知注意力操控，實現無縫語義融合](AI_Daily_LooseRoPE.md) | Training-Free, Attention Modulation, RoPE, Semantic Harmonization, Zero-Shot |
 | [FAM Diffusion - 頻率與注意力調製實現高效高解析度圖像生成](AI_Daily_FAM_Diffusion.md) | Training-Free, Attention Modulation, High-Resolution, CVPR 2025 |
 
@@ -76,4 +77,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-10*
+*Last Updated: 2026-01-11*
