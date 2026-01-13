@@ -8,7 +8,7 @@
 
 ## 📌 今日文章
 
-[揭秘MMDiT Blocks：無需訓練即可分析與增強文本條件擴散模型](AI_Daily_Unraveling_MMDiT.md)
+[VideoAR - 結合Next-Frame與Next-Scale預測的自回歸影片生成新篇章](AI_Daily_VideoAR.md)
 
 ## 🎯 我們在做什麼？
 
@@ -59,6 +59,7 @@
 ### Visual Autoregressive Models (VAR)
 | Research | Keywords |
 |----------|----------|
+| [VideoAR - 結合Next-Frame與Next-Scale預測的自回歸影片生成新篇章](AI_Daily_VideoAR.md) | VAR, Video Generation, Next-Frame Prediction, Next-Scale Prediction, Baidu ERNIE, arXiv 2026 |
 | [DiverseVAR - 解放視覺自回歸模型的多樣性潛能](AI%20Daily_%20DiverseVAR%20-%20解放視覺自回歸模型的多樣性潛能.md) | VAR, Training-Free, Diversity Collapse, MBZUAI |
 | [AREdit - 無需訓練的VAR圖像編輯新範式](AI_Daily_AREdit.md) | VAR, Training-Free, Image Editing, Zero-Shot |
 | [ToProVAR - 視覺自回歸模型高效優化新框架](AI%20Daily_%20ToProVAR%20-%20基於注意力熵的視覺自回歸模型高效優化新框架.md) | VAR, Optimization, Attention Entropy |
@@ -78,4 +79,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-12*
+*Last Updated: 2026-01-13*
