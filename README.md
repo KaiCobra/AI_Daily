@@ -8,7 +8,7 @@
 
 ## 📌 今日文章
 
-[VideoAR - 結合Next-Frame與Next-Scale預測的自回歸影片生成新篇章](AI_Daily_VideoAR.md)
+[VAR-Scaling - 探索視覺自回歸模型的推理時縮放新策略](AI_Daily_VAR-Scaling.md)
 
 ## 🎯 我們在做什麼？
 
@@ -59,6 +59,7 @@
 ### Visual Autoregressive Models (VAR)
 | Research | Keywords |
 |----------|----------|
+| [VAR-Scaling - 探索視覺自回歸模型的推理時縮放新策略](AI_Daily_VAR-Scaling.md) | VAR, Inference-Time Scaling, KDE, Density-Adaptive Sampling, PRCV 2025, Xidian University, arXiv 2026 |
 | [VideoAR - 結合Next-Frame與Next-Scale預測的自回歸影片生成新篇章](AI_Daily_VideoAR.md) | VAR, Video Generation, Next-Frame Prediction, Next-Scale Prediction, Baidu ERNIE, arXiv 2026 |
 | [DiverseVAR - 解放視覺自回歸模型的多樣性潛能](AI%20Daily_%20DiverseVAR%20-%20解放視覺自回歸模型的多樣性潛能.md) | VAR, Training-Free, Diversity Collapse, MBZUAI |
 | [AREdit - 無需訓練的VAR圖像編輯新範式](AI_Daily_AREdit.md) | VAR, Training-Free, Image Editing, Zero-Shot |
@@ -79,4 +80,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-13*
+*Last Updated: 2026-01-14*
