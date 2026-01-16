@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[TP-Blend - 融合雙提示注意力配對，實現擴散模型中精確的物體風格融合](AI_Daily_TP-Blend.md)
+[FlowAR - 當尺度自回歸遇上流匹配，圖像生成的新篇章](AI_Daily_FlowAR.md)
 
 ## 🎯 我們在做什麼？
 
@@ -47,6 +47,7 @@
 ### Flow Matching
 | Research | Keywords |
 |----------|----------|
+| [FlowAR - 當尺度自回歸遇上流匹配，圖像生成的新篇章](AI_Daily_FlowAR.md) | VAR, Flow Matching, Scale-wise Autoregressive, Spatial-adaLN, Johns Hopkins, ByteDance, arXiv 2024 |
 | [SoFlow - 流模型論文深度解析](AI%20Daily%20SoFlow論文深度解析.md) | Flow Models, Image Generation |
 | [JanusFlow](AI_Daily_JanusFlow.md) | Flow Matching, Unified Generation |
 
@@ -81,4 +82,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-14*
+*Last Updated: 2026-01-16*
