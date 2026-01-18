@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[Alterbute - 編輯物體內在屬性的新篇章](AI_Daily_Alterbute.md)
+[PackCache - 無需訓練，加速統一自回歸影片生成的新方法](AI_Daily_PackCache.md)
 
 ## 🎯 我們在做什麼？
 
@@ -34,6 +34,11 @@
 
 
 ## 已發布文章
+
+### Unified Autoregressive Models
+| Research | Keywords |
+|----------|----------|
+| [PackCache - 無需訓練，加速統一自回歸影片生成的新方法](AI_Daily_PackCache.md) | Training-Free, KV-Cache, Autoregressive Video Generation, Inference Acceleration, University of Central Florida, arXiv 2026 |
 
 ### Diffusion Models
 | Research | Keywords |
@@ -83,4 +88,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-17*
+*Last Updated: 2026-01-18*
