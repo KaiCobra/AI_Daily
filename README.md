@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[PackCache - 無需訓練，加速統一自回歸影片生成的新方法](AI_Daily_PackCache.md)
+[Decentralized Autoregressive Generation - 當自回歸遇上流匹配與去中心化](AI_Daily_Decentralized_AR.md)
 
 ## 🎯 我們在做什麼？
 
@@ -53,6 +53,7 @@
 ### Flow Matching
 | Research | Keywords |
 |----------|----------|
+| [Decentralized Autoregressive Generation - 當自回歸遇上流匹配與去中心化](AI_Daily_Decentralized_AR.md) | Autoregressive, Flow Matching, Decentralized Training, Multimodal Models, Lancaster University, arXiv 2026 |
 | [FlowAR - 當尺度自回歸遇上流匹配，圖像生成的新篇章](AI_Daily_FlowAR.md) | VAR, Flow Matching, Scale-wise Autoregressive, Spatial-adaLN, Johns Hopkins, ByteDance, arXiv 2024 |
 | [SoFlow - 流模型論文深度解析](AI%20Daily%20SoFlow論文深度解析.md) | Flow Models, Image Generation |
 | [JanusFlow](AI_Daily_JanusFlow.md) | Flow Matching, Unified Generation |
@@ -88,4 +89,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-18*
+*Last Updated: 2026-01-19*
