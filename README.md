@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[Decentralized Autoregressive Generation - 當自回歸遇上流匹配與去中心化](AI_Daily_Decentralized_AR.md)
+[Sissi - 無需訓練，透過語義-風格整合實現零樣本風格引導的圖像生成](AI_Daily_Sissi.md)
 
 ## 🎯 我們在做什麼？
 
@@ -43,6 +43,7 @@
 ### Diffusion Models
 | Research | Keywords |
 |----------|----------|
+| [Sissi - 無需訓練，透過語義-風格整合實現零樣本風格引導的圖像生成](AI_Daily_Sissi.md) | Zero-Shot, Training-Free, Style Transfer, ReFlow, Attention Modulation, DSSI, 中國科學院, arXiv 2026 |
 | [Alterbute - 編輯物體內在屬性的新篇章](AI_Daily_Alterbute.md) | Intrinsic Attribute Editing, Visual Named Entities, Identity Preservation, Training-Free Inference, Google, arXiv 2026 |
 | [揭秘MMDiT Blocks：無需訓練即可分析與增強文本條件擴散模型](AI_Daily_Unraveling_MMDiT.md) | Training-Free, Attention Analysis, MMDiT, FLUX, SD3.5, 復旦大學, arXiv 2026 |
 | [ZestGuide - 零樣本空間佈局條件下的文本到圖像擴散模型](AI_Daily_ZestGuide.md) | Zero-Shot, Training-Free, Spatial Layout Control, Cross-Attention, ICCV 2023, Meta FAIR |
@@ -89,4 +90,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-19*
+*Last Updated: 2026-01-20*
