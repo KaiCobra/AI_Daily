@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[ResTok - 讓視覺自回歸模型「重拾視覺」，實現高效高保真生成](AI_Daily_ResTok.md)
+[MMD Guidance - 無需訓練，實現擴散模型的分佈自適應](AI_Daily_MMD-Guidance.md)
 
 ## 🎯 我們在做什麼？
 
@@ -43,6 +43,7 @@
 ### Diffusion Models
 | Research | Keywords |
 |----------|----------|
+| [MMD Guidance - 無需訓練，實現擴散模型的分佈自適應](AI_Daily_MMD-Guidance.md) | Training-Free, Distribution Adaptation, MMD, Inference-Time Guidance, Few-Shot, University of Waterloo, CUHK, arXiv 2026 |
 | [Sissi - 無需訓練，透過語義-風格整合實現零樣本風格引導的圖像生成](AI_Daily_Sissi.md) | Zero-Shot, Training-Free, Style Transfer, ReFlow, Attention Modulation, DSSI, 中國科學院, arXiv 2026 |
 | [Alterbute - 編輯物體內在屬性的新篇章](AI_Daily_Alterbute.md) | Intrinsic Attribute Editing, Visual Named Entities, Identity Preservation, Training-Free Inference, Google, arXiv 2026 |
 | [揭秘MMDiT Blocks：無需訓練即可分析與增強文本條件擴散模型](AI_Daily_Unraveling_MMDiT.md) | Training-Free, Attention Analysis, MMDiT, FLUX, SD3.5, 復旦大學, arXiv 2026 |
@@ -91,4 +92,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-21*
+*Last Updated: 2026-01-22*
