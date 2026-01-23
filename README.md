@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[MMD Guidance - 無需訓練，實現擴散模型的分佈自適應](AI_Daily_MMD-Guidance.md)
+[Mirai - 讓自回歸視覺生成擁有「預見未來」的能力](AI_Daily_Mirai.md)
 
 ## 🎯 我們在做什麼？
 
@@ -63,6 +63,7 @@
 ### Autoregressive Models (AR)
 | Research | Keywords |
 |----------|----------|
+| [Mirai - 讓自回歸視覺生成擁有「預見未來」的能力](AI_Daily_Mirai.md) | Autoregressive, Foresight, Training-Time Enhancement, 10x Acceleration, 東京大學, 北京大學, arXiv 2026 |
 | [RadAR - 從序列到空間，重排序自回歸實現高效視覺生成](AI_Daily_RadAR.md) | Autoregressive, Zero-Shot, Parallel Generation, Efficient |
 | [EditAR - 統一條件圖像生成的自回歸新篇章](AI%20Daily_%20EditAR%20-%20統一條件圖像生成的自回歸新篇章.md) | Autoregressive, Image Generation |
 | [Multimodal Autoregressive Pre-training of Large Vision Encoders](AI%20Daily_%20Multimodal%20Autoregressive%20Pre-training%20of%20Large%20Vision%20Encoders.md) | Vision Encoders, Multimodal |
@@ -92,4 +93,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-22*
+*Last Updated: 2026-01-23*
