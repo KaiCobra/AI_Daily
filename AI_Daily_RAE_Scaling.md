@@ -23,7 +23,7 @@
 
 4.  **更快的收斂速度和更高的生成質量**：與 VAE 相比，RAE 在訓練過程中收斂速度更快（在 GenEval 上快 4.0 倍，在 DPG-Bench 上快 4.6 倍），並能生成更高質量的圖像。
 
-![RAE vs VAE pre-training](asset/RAE_Scaling/fig1-1.png)
+![RAE vs VAE pre-training](asset/RAE_Scaling/fig1-01.png)
 *圖 1：RAE 在預訓練階段的收斂速度明顯快於 VAE。*
 
 ## 技術方法詳解
@@ -42,7 +42,7 @@ RAE 框架主要由兩部分組成：
 
 ### 訓練流程
 
-![RAE 訓練流程](asset/RAE_Scaling/fig3-1.png)
+![RAE 訓練流程](asset/RAE_Scaling/fig3-04.png)
 *圖 2：RAE 的訓練流程圖。左側為解碼器訓練，右側為統一模型訓練。*
 
 訓練分為兩個階段：
@@ -71,7 +71,7 @@ $$ t_{\text{shift}} = \frac{t_{\text{ref}}}{1 + (\alpha - 1) t_{\text{ref}}} \qu
 
 下表比較了 RAE 和 VAE 在不同數據集上的重建性能（以 FID 分數衡量，越低越好）。
 
-![RAE vs VAE 重建質量](asset/RAE_Scaling/tables-1.png)
+![RAE vs VAE 重建質量](asset/RAE_Scaling/tables-03.png)
 *表 1 & 2：左側為不同訓練數據對 RAE 重建質量的影響；右側為 RAE 與 VAE 的重建性能比較。*
 
 從右側的 **Table 2** 可以看出，無論是在 ImageNet、YFCC 還是文本數據集上，RAE 的 FID 分數都顯著低於 SDXL 和 FLUX 所使用的 VAE，證明了其卓越的重建能力。
