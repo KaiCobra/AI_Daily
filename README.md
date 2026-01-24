@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[Mirai - 讓自回歸視覺生成擁有「預見未來」的能力](AI_Daily_Mirai.md)
+[RAE - 重新定義擴散模型，Yann LeCun 親自下場的降維打擊](AI_Daily_RAE_Scaling.md)
 
 ## 🎯 我們在做什麼？
 
@@ -43,6 +43,7 @@
 ### Diffusion Models
 | Research | Keywords |
 |----------|----------|
+| [RAE - 重新定義擴散模型，Yann LeCun 親自下場的降維打擊](AI_Daily_RAE_Scaling.md) | Representation Autoencoders, Diffusion Transformers, Scaling, RAE vs VAE, Yann LeCun, NYU, Meta FAIR, arXiv 2026 |
 | [MMD Guidance - 無需訓練，實現擴散模型的分佈自適應](AI_Daily_MMD-Guidance.md) | Training-Free, Distribution Adaptation, MMD, Inference-Time Guidance, Few-Shot, University of Waterloo, CUHK, arXiv 2026 |
 | [Sissi - 無需訓練，透過語義-風格整合實現零樣本風格引導的圖像生成](AI_Daily_Sissi.md) | Zero-Shot, Training-Free, Style Transfer, ReFlow, Attention Modulation, DSSI, 中國科學院, arXiv 2026 |
 | [Alterbute - 編輯物體內在屬性的新篇章](AI_Daily_Alterbute.md) | Intrinsic Attribute Editing, Visual Named Entities, Identity Preservation, Training-Free Inference, Google, arXiv 2026 |
@@ -93,4 +94,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-23*
+*Last Updated: 2026-01-24*
