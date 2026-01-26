@@ -43,7 +43,7 @@
 ### Diffusion Models
 | Research | Keywords |
 |----------|----------|
-| [FlexVAR - 擺脫殘差預測，實現靈活高效的視覺自回歸生成](AI_Daily_FlexVAR.md) | Representation Autoencoders, Diffusion Transformers, Scaling, RAE vs VAE, Yann LeCun, NYU, Meta FAIR, arXiv 2026 |
+| [VAR RL Done Right - 解決視覺自回歸生成中的異步策略衝突](AI_Daily_VAR_RL_Done_Right.md) | Representation Autoencoders, Diffusion Transformers, Scaling, RAE vs VAE, Yann LeCun, NYU, Meta FAIR, arXiv 2026 |
 | [MMD Guidance - 無需訓練，實現擴散模型的分佈自適應](AI_Daily_MMD-Guidance.md) | Training-Free, Distribution Adaptation, MMD, Inference-Time Guidance, Few-Shot, University of Waterloo, CUHK, arXiv 2026 |
 | [Sissi - 無需訓練，透過語義-風格整合實現零樣本風格引導的圖像生成](AI_Daily_Sissi.md) | Zero-Shot, Training-Free, Style Transfer, ReFlow, Attention Modulation, DSSI, 中國科學院, arXiv 2026 |
 | [Alterbute - 編輯物體內在屬性的新篇章](AI_Daily_Alterbute.md) | Intrinsic Attribute Editing, Visual Named Entities, Identity Preservation, Training-Free Inference, Google, arXiv 2026 |
@@ -79,7 +79,8 @@
 | [AREdit - 無需訓練的VAR圖像編輯新範式](AI_Daily_AREdit.md) | VAR, Training-Free, Image Editing, Zero-Shot |
 | [ToProVAR - 視覺自回歸模型高效優化新框架](AI%20Daily_%20ToProVAR%20-%20基於注意力熵的視覺自回歸模型高效優化新框架.md) | VAR, Optimization, Attention Entropy |
 | [Visual Autoregressive Modelling for Monocular Depth Estimation](AI%20Daily_%20Visual%20Autoregressive%20Modelling%20for%20Monocular%20Depth%20Estimation.md) | VAR, Depth Estimation |
-| [FlexVAR - 擺脫殘差預測，實現靈活高效的視覺自回歸生成](AI_Daily_FlexVAR.md) | VAR, Training-Free, Ground-Truth Prediction, Flexible Generation, Beijing Jiaotong University, arXiv 2026 |
+| [VAR RL Done Right - 解決視覺自回歸生成中的異步策略衝突](AI_Daily_VAR_RL_Done_Right.md) | VAR, Reinforcement Learning, GRPO, Value as Middle Return, Text Rendering, Tsinghua University, ByteDance, arXiv 2026 |
+| [FlexVAR - 擺脱殘餘預測，實現靈活高效的視覺自回歸生成](AI_Daily_FlexVAR.md) | VAR, Training-Free, Ground-Truth Prediction, Flexible Generation, Beijing Jiaotong University, arXiv 2026 |
 | [VAR-LIDE](AI_Daily_VAR-LIDE.md) | Visual Autoregressive, Image Generation |
 
 
