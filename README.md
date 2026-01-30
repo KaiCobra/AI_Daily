@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[RAE - 當擴散模型遇上自回歸，Yann LeCun帶隊挑戰VAE霸權](AI_Daily_RAE-DiT.md)
+[iFSQ - 一行代碼統一AR與Diffusion，實現高效圖像生成](AI_Daily_iFSQ.md)
 
 ## 🎯 我們在做什麼？
 
@@ -34,6 +34,11 @@
 
 
 ## 已發布文章
+
+### Tokenization & Quantization
+| Research | Keywords |
+|----------|----------|
+| [iFSQ - 一行代碼統一AR與Diffusion，實現高效圖像生成](AI_Daily_iFSQ.md) | FSQ, Quantization, Distribution Matching, Unified Tokenizer, AR vs Diffusion, Peking University, Tencent Hunyuan, arXiv 2026 |
 
 ### Unified Autoregressive Models
 | Research | Keywords |
@@ -97,4 +102,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-27*
+*Last Updated: 2026-01-30*
