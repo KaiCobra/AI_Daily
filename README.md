@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[iFSQ - 一行代碼統一AR與Diffusion，實現高效圖像生成](AI_Daily_iFSQ.md)
+[AR-Omni - 邁向純自回歸的「Any-to-Any」多模態生成](AI_Daily_AR-Omni.md)
 
 ## 🎯 我們在做什麼？
 
@@ -43,6 +43,7 @@
 ### Unified Autoregressive Models
 | Research | Keywords |
 |----------|----------|
+| [AR-Omni - 邁向純自回歸的「Any-to-Any」多模態生成](AI_Daily_AR-Omni.md) | Unified Autoregressive, Any-to-Any Generation, Multimodal, Streaming Speech, Real-time, 香港理工大學, arXiv 2026 |
 | [PackCache - 無需訓練，加速統一自回歸影片生成的新方法](AI_Daily_PackCache.md) | Training-Free, KV-Cache, Autoregressive Video Generation, Inference Acceleration, University of Central Florida, arXiv 2026 |
 
 ### Diffusion Models
@@ -102,4 +103,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-30*
+*Last Updated: 2026-01-31*
