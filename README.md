@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[AR-Omni - 邁向純自回歸的「Any-to-Any」多模態生成](AI_Daily_AR-Omni.md)
+[SSG - 無需訓練，用尺度空間引導解放 VAR 模型潛力](AI_Daily_SSG.md)
 
 ## 🎯 我們在做什麼？
 
@@ -79,6 +79,7 @@
 ### Visual Autoregressive Models (VAR)
 | Research | Keywords |
 |----------|----------|
+| [SSG - 無需訓練，用尺度空間引導解放 VAR 模型潛力](AI_Daily_SSG.md) | VAR, Training-Free, Inference Guidance, Coarse-to-Fine, Information Theory, ICLR 2026 |
 | [ResTok - 讓視覺自回歸模型「重拾視覺」，實現高效高保真生成](AI_Daily_ResTok.md) | VAR, Hierarchical Residuals, 1D Tokenizer, Autoregressive Image Generation, 南京大學, 快手科技, arXiv 2026 |
 | [VAR-Scaling - 探索視覺自回歸模型的推理時縮放新策略](AI_Daily_VAR-Scaling.md) | VAR, Inference-Time Scaling, KDE, Density-Adaptive Sampling, PRCV 2025, Xidian University, arXiv 2026 |
 | [VideoAR - 結合Next-Frame與Next-Scale預測的自回歸影片生成新篇章](AI_Daily_VideoAR.md) | VAR, Video Generation, Next-Frame Prediction, Next-Scale Prediction, Baidu ERNIE, arXiv 2026 |
@@ -103,4 +104,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-01-31*
+*Last Updated: 2026-02-01*
