@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[SSG - 無需訓練，用尺度空間引導解放 VAR 模型潛力](AI_Daily_SSG.md)
+[SoftCFG - 無需訓練，用不確定性引導穩定視覺自回歸模型](AI_Daily_SoftCFG.md)
 
 ## 🎯 我們在做什麼？
 
@@ -79,6 +79,7 @@
 ### Visual Autoregressive Models (VAR)
 | Research | Keywords |
 |----------|----------|
+| [SoftCFG - 無需訓練，用不確定性引導穩定視覺自回歸模型](AI_Daily_SoftCFG.md) | VAR, Training-Free, Inference Guidance, Uncertainty-guided, Classifier-Free Guidance, KU Leuven, ICLR 2026 |
 | [SSG - 無需訓練，用尺度空間引導解放 VAR 模型潛力](AI_Daily_SSG.md) | VAR, Training-Free, Inference Guidance, Coarse-to-Fine, Information Theory, ICLR 2026 |
 | [ResTok - 讓視覺自回歸模型「重拾視覺」，實現高效高保真生成](AI_Daily_ResTok.md) | VAR, Hierarchical Residuals, 1D Tokenizer, Autoregressive Image Generation, 南京大學, 快手科技, arXiv 2026 |
 | [VAR-Scaling - 探索視覺自回歸模型的推理時縮放新策略](AI_Daily_VAR-Scaling.md) | VAR, Inference-Time Scaling, KDE, Density-Adaptive Sampling, PRCV 2025, Xidian University, arXiv 2026 |
@@ -104,4 +105,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-01*
+*Last Updated: 2026-02-02*
