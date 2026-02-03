@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[SoftCFG - 無需訓練，用不確定性引導穩定視覺自回歸模型](AI_Daily_SoftCFG.md)
+[AREdit - 無需訓練的VAR圖像編輯新篇章](AI_Daily_AREdit.md)
 
 ## 🎯 我們在做什麼？
 
@@ -85,7 +85,7 @@
 | [VAR-Scaling - 探索視覺自回歸模型的推理時縮放新策略](AI_Daily_VAR-Scaling.md) | VAR, Inference-Time Scaling, KDE, Density-Adaptive Sampling, PRCV 2025, Xidian University, arXiv 2026 |
 | [VideoAR - 結合Next-Frame與Next-Scale預測的自回歸影片生成新篇章](AI_Daily_VideoAR.md) | VAR, Video Generation, Next-Frame Prediction, Next-Scale Prediction, Baidu ERNIE, arXiv 2026 |
 | [DiverseVAR - 解放視覺自回歸模型的多樣性潛能](AI%20Daily_%20DiverseVAR%20-%20解放視覺自回歸模型的多樣性潛能.md) | VAR, Training-Free, Diversity Collapse, MBZUAI |
-| [AREdit - 無需訓練的VAR圖像編輯新範式](AI_Daily_AREdit.md) | VAR, Training-Free, Image Editing, Zero-Shot |
+| [AREdit - 無需訓練的VAR圖像編輯新篇章](AI_Daily_AREdit.md) | VAR, Training-Free, Image Editing, Zero-Shot, Snap Research, NTU, arXiv 2025 |
 | [ToProVAR - 視覺自回歸模型高效優化新框架](AI%20Daily_%20ToProVAR%20-%20基於注意力熵的視覺自回歸模型高效優化新框架.md) | VAR, Optimization, Attention Entropy |
 | [Visual Autoregressive Modelling for Monocular Depth Estimation](AI%20Daily_%20Visual%20Autoregressive%20Modelling%20for%20Monocular%20Depth%20Estimation.md) | VAR, Depth Estimation |
 | [VAR RL Done Right - 解決視覺自回歸生成中的異步策略衝突](AI_Daily_VAR_RL_Done_Right.md) | VAR, Reinforcement Learning, GRPO, Value as Middle Return, Text Rendering, Tsinghua University, ByteDance, arXiv 2026 |
@@ -105,4 +105,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-02*
+*Last Updated: 2026-02-03*
