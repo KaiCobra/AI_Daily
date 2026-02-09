@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[Untwisting RoPE - 解旋 RoPE，為 DiT 中的共享注意力機制引入頻率控制](AI_Daily_Untwisting_RoPE.md)
+[Light Forcing - 無需訓練，用稀疏注意力為自回歸影片擴散模型按下加速鍵](AI_Daily_Light_Forcing.md)
 
 ## 🎯 我們在做什麼？
 
@@ -72,6 +72,7 @@
 ### Autoregressive Models (AR)
 | Research | Keywords |
 |----------|----------|
+| [Light Forcing - 無需訓練，用稀疏注意力為自回歸影片擴散模型按下加速鍵](AI_Daily_Light_Forcing.md) | Training-Free, Sparse Attention, Autoregressive Video Generation, Chunk-Aware Growth, Hierarchical Sparse Attention, Real-time Generation, 南洋理工大學, 香港科技大學, arXiv 2026 |
 | [Mirai - 讓自回歸視覺生成擁有「預見未來」的能力](AI_Daily_Mirai.md) | Autoregressive, Foresight, Training-Time Enhancement, 10x Acceleration, 東京大學, 北京大學, arXiv 2026 |
 | [RadAR - 從序列到空間，重排序自回歸實現高效視覺生成](AI_Daily_RadAR.md) | Autoregressive, Zero-Shot, Parallel Generation, Efficient |
 | [EditAR - 統一條件圖像生成的自回歸新篇章](AI%20Daily_%20EditAR%20-%20統一條件圖像生成的自回歸新篇章.md) | Autoregressive, Image Generation |
@@ -109,4 +110,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-07*
+*Last Updated: 2026-02-09*
