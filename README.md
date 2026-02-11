@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[HSI-VAR - 當視覺自回歸遇上高光譜，開啟影像修復新篇章](AI_Daily_HSI-VAR.md)
+[FusionEdit - 無需訓練，實現語義融合與注意力調製的圖像編輯新境界](AI_Daily_FusionEdit.md)
 
 ## 🎯 我們在做什麼？
 
@@ -59,6 +59,7 @@
 | [LooseRoPE - 內容感知注意力操控，實現無縫語義融合](AI_Daily_LooseRoPE.md) | Training-Free, Attention Modulation, RoPE, Semantic Harmonization, Zero-Shot |
 | [FAM Diffusion - 頻率與注意力調製實現高效高解析度圖像生成](AI_Daily_FAM_Diffusion.md) | Training-Free, Attention Modulation, High-Resolution, CVPR 2025 |
 | [TP-Blend - 融合雙提示注意力配對，實現擴散模型中精確的物體風格融合](AI_Daily_TP-Blend.md) | Training-Free, Attention Modulation, Cross-Attention, Self-Attention, Image Editing, GenPi Inc., arXiv 2026 |
+| [FusionEdit - 無需訓練，實現語義融合與注意力調製的圖像編輯新境界](AI_Daily_FusionEdit.md) | Training-Free, Attention Modulation, Semantic Fusion, Soft Mask, AdaIN, Rectified Flow, Image Editing, arXiv 2026 |
 | [Untwisting RoPE - 解旋 RoPE，為 DiT 中的共享注意力機制引入頻率控制](AI_Daily_Untwisting_RoPE.md) | Training-Free, Attention Modulation, RoPE, Frequency Control, Style Transfer, DiT, Simon Fraser University, Tel Aviv University, arXiv 2026 |
 
 ### Flow Matching
@@ -111,4 +112,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-10*
+*Last Updated: 2026-02-11*
