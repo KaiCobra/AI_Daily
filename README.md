@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[FusionEdit - 無需訓練，實現語義融合與注意力調製的圖像編輯新境界](AI_Daily_FusionEdit.md)
+[BAR - 用遮罩位元建模突破自回歸圖像生成的極限](AI_Daily_Masked_Bit_Modeling.md)
 
 ## 🎯 我們在做什麼？
 
@@ -38,6 +38,7 @@
 ### Tokenization & Quantization
 | Research | Keywords |
 |----------|----------|
+| [BAR - 用遮罩位元建模突破自回歸圖像生成的極限](AI_Daily_Masked_Bit_Modeling.md) | Masked Bit Modeling, Autoregressive, Discrete Tokenizer, Bit Budget, FSQ, Scalable Generation, Google, arXiv 2026 |
 | [iFSQ - 一行代碼統一AR與Diffusion，實現高效圖像生成](AI_Daily_iFSQ.md) | FSQ, Quantization, Distribution Matching, Unified Tokenizer, AR vs Diffusion, Peking University, Tencent Hunyuan, arXiv 2026 |
 
 ### Unified Autoregressive Models
@@ -112,4 +113,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-11*
+*Last Updated: 2026-02-12*
