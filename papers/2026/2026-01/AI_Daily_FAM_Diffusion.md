@@ -31,7 +31,7 @@
 
 3.  **高效的單次生成**：與許多需要進行多次迭代或基於補丁（Patch-based）的生成方法（如DemoFusion）不同，FAM Diffusion採用單次前向傳遞（One-pass）的生成策略，從而實現了極低的延遲開銷，使其在實際應用中更具可行性。
 
-![FAM Diffusion 概覽](assets/fam_diffusion_architecture.webp)
+![FAM Diffusion 概覽](../../../assets/fam_diffusion_architecture.webp)
 *圖一：FAM Diffusion 的整體架構圖。該方法首先在原生解析度下生成圖像，然後利用頻率調製（FM）和注意力調製（AM）模組來指導高解析度的去噪過程，以確保全局結構和局部細節的一致性。*
 
 ---
@@ -75,7 +75,7 @@ FAM Diffusion的整體流程建立在一個測試時的擴散-去噪策略之上
 
 *表一：系統級比較。FAM Diffusion在各項指標上均優於或持平於現有方法，同時保持了極低的延遲。*
 
-![實驗結果對比](assets/fam_diffusion_qualitative.webp)
+![實驗結果對比](../../../assets/fam_diffusion_qualitative.webp)
 *圖二：與其他方法的定性比較。可以看出，DemoFusion和HiDiffusion等方法在生成的人物或動物圖像中出現了明顯的結構重複和細節失真，而FAM Diffusion生成的圖像在結構和細節上都更為自然和準確。*
 
 ### 定性分析

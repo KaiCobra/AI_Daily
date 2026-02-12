@@ -25,7 +25,7 @@ SoftCFG的主要貢獻可以總結為以下三點：
 2.  **步驟歸一化（Step Normalization）**: 引入一種歸一化機制，限制每一步累積的擾動總量，從而穩定長序列的生成過程，防止模型偏離軌道。
 3.  **即插即用且高效**: 作為一種無需訓練的方法，SoftCFG可以無縫集成到現有的AR模型（如AliTok、LuminaGPT）中，且幾乎不增加額外的計算開銷，同時在ImageNet 256x256數據集上達到了AR模型中最先進的FID分數。
 
-![CFG vs SoftCFG 對比圖](assets/softcfg_figure1_comparison.png)
+![CFG vs SoftCFG 對比圖](../../../assets/softcfg_figure1_comparison.png)
 *圖1：標準CFG（a）僅在第一步應用引導，而SoftCFG（b）則在整個生成過程中根據token置信度自適應地調整引導強度。實驗結果（c）顯示SoftCFG在多個AR模型上均顯著降低了FID。*
 
 ---
@@ -40,7 +40,7 @@ $$ z_t^{CFG} = z_t^{cond} + \gamma \cdot (z_t^{cond} - z_t^{uncond}) $$
 
 在AR模型中，由於每一步的預測都依賴於之前所有步驟生成的token所構成的KV快取（KV Cache），導致條件和無條件分支的KV快取迅速趨同，這就是「引導消退」的根源。
 
-![Guidance Diminishing 問題](assets/softcfg_figure3_guidance_diminishing.png)
+![Guidance Diminishing 問題](../../../assets/softcfg_figure3_guidance_diminishing.png)
 *圖2：在AR模型中，標準CFG的引導信號（橙線與藍線的差異）隨著生成步驟的增加而迅速消失。*
 
 SoftCFG的核心思想是**在推理過程中持續地、自適應地對無條件分支的KV快取進行擾動**，從而維持一個健康的引導差距。
@@ -59,7 +59,7 @@ $$ V_{uncond, i}' = V_{uncond, i} + (1 - P_{max, i})^k \cdot (V_{cond, i} - V_{u
 - $(1 - P_{max, i})$ 代表不確定性，不確定性越高的token獲得的引導越強。
 - $k$ 是一個超參數，用於調整不確定性權重的影響力。
 
-![SoftCFG 方法架構圖](assets/softcfg_figure6_method_diagram.png)
+![SoftCFG 方法架構圖](../../../assets/softcfg_figure6_method_diagram.png)
 *圖3：SoftCFG（b）與傳統擾動策略（a）的對比。SoftCFG根據每個token的預測概率（P）來施加柔和、加權的擾動，而不是對所有token一視同仁。*
 
 ### 2. 步驟歸一化（Step Normalization）
@@ -88,10 +88,10 @@ SoftCFG在標準的ImageNet 256x256圖像生成任務上進行了廣泛評估，
 
 定性比較也顯示出SoftCFG在視覺質量上的優勢。與標準CFG相比，SoftCFG生成的圖像更加連貫和自然，有效減少了因「過度引導」造成的物體扭曲和偽影。
 
-![生成圖像視覺對比](assets/softcfg_figure2_visual_comparison.png)
+![生成圖像視覺對比](../../../assets/softcfg_figure2_visual_comparison.png)
 *圖4：由LuminaGPT-8B生成的圖像對比。標準CFG（左）生成的圖像中出現了不合理的物體融合（如大象鼻子變成了香蕉），而SoftCFG（右）則生成了更為連貫和合理的圖像。*
 
-![Over-guidance 問題示例](assets/softcfg_figure4_over_guidance.png)
+![Over-guidance 問題示例](../../../assets/softcfg_figure4_over_guidance.png)
 *圖5：過度引導現象的圖示。當引導強度過大時，模型會錯誤地將提示詞中的「香蕉」映射到大象的象牙上，導致語義錯亂。*
 
 ---

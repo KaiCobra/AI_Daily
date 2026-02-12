@@ -14,7 +14,7 @@
 
 為了解決這一根本性難題，來自東京大學等機構的研究者們提出了一個名為 **Mirai**（日語「未來」）的通用訓練框架。其核心思想是在訓練階段為AR模型注入「**Foresight**」（預見）能力，即引入來自未來token的訓練信號。這使得模型在學習生成當前token時，能夠「預見」到未來的圖像結構，從而學習到更具全局觀的內部表徵，有效提升了生成圖像的結構連貫性。
 
-![Mirai生成結果與基線模型LlamaGen-B的比較](assets/mirai_visual_comparison.webp)
+![Mirai生成結果與基線模型LlamaGen-B的比較](../../../assets/mirai_visual_comparison.webp)
 *圖1：Mirai（下）與基線模型（上）在生成結果上的比較。Mirai能夠生成結構更完整、全局一致性更強的圖像，如完整的火箭發射煙霧。*
 
 最重要的是，Mirai框架的設計極具巧思：它**無需對模型架構進行任何修改**，且**不增加任何額外的推理開銷**。Foresight機制僅在訓練階段發揮作用，推理時則完全移除，確保了模型的生成效率不受影響。
@@ -37,7 +37,7 @@ $$\mathcal{L}_{\text{foresight}} = \mathbb{E}\left[\frac{1}{NK}\sum_{n=1}^{N}\su
 
 2.  **Mirai-I (Implicit Foresight)**：使用一個預訓練好的、**凍結的雙向Encoder**（如DINOv2）作為Foresight Encoder。這種方式提供了更豐富、更具上下文的隱式未來信息，通過將AR模型的內部狀態與雙向Encoder在對應空間位置的特徵進行對齊，讓AR模型學習到更強的全局表徵。
 
-![Mirai框架概覽](assets/mirai_figure1_overview.webp)
+![Mirai框架概覽](../../../assets/mirai_figure1_overview.webp)
 *圖2：Mirai框架探索的三個維度：(a) 注入層級，(b) 定位方式，(c) Foresight來源。實驗證明，在內部表徵層（Internal）進行2D網格對齊效果最佳。*
 
 ## 實驗結果與性能指標
@@ -49,7 +49,7 @@ $$\mathcal{L}_{\text{foresight}} = \mathbb{E}\left[\frac{1}{NK}\sum_{n=1}^{N}\su
 -   **驚人的訓練加速**：Mirai-I能夠將LlamaGen-B的收斂速度**提升高達10倍**，而Mirai-E也能達到5倍的加速效果。這意味著達到相同的生成質量（以FID指標衡量），Mirai所需的訓練時間大幅縮短。
 -   **生成質量顯著改善**：在經過充分訓練後，Mirai-I將基線模型的FID從5.34降低到了**4.34**，這是一個非常顯著的提升，表明生成圖像的保真度和多樣性都得到了改善。
 
-![Mirai訓練加速曲線](assets/mirai_training_acceleration.webp)
+![Mirai訓練加速曲線](../../../assets/mirai_training_acceleration.webp)
 *圖3：Mirai-I（藍線）和Mirai-E（紅線）相比基線模型LlamaGen-B（黃線）在訓練過程中的FID曲線，展現了顯著的加速效果。*
 
 ### 關鍵設計的消融實驗

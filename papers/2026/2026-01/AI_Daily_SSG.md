@@ -23,7 +23,7 @@ Visual Autoregressive (VAR) 模型透過「Next-Scale Prediction」實現了高�
 
 4.  **通用性與高效性**：SSG 是一個即插即用的模塊，適用於所有採用離散視覺 Token 的 VAR 模型，且幾乎不增加任何推理時間和計算成本，展現了極高的效率和實用價值。
 
-![SSG 效果對比](assets/ssg_figure1.webp)
+![SSG 效果對比](../../../assets/ssg_figure1.webp)
 *圖 1：SSG 提供了一個無需訓練的生成質量改進方法，能夠在幾乎沒有成本的情況下，為 Next-Scale Prediction 模型帶來更清晰的細節、更少的瑕疵和更好的全局一致性。*
 
 ## 技術方法詳解
@@ -52,7 +52,7 @@ $$ \ell_k^{\text{SSG}} = \ell_k + \beta_k \Delta_k = \ell_k + \beta_k (\ell_k - 
 
 這個公式的本質是：**在模型原始預測的基礎上，額外疊加一個經過放大的「語義殘差」，從而強化模型對新細節的關注**。
 
-![SSG 方法概覽](assets/ssg_method.webp)
+![SSG 方法概覽](../../../assets/ssg_method.webp)
 *圖 2：VAR 結構化模型的概覽，並整合了我們的 SSG 模塊。在每個步驟，自回歸 Transformer 預測 Logits，SSG 在採樣前通過減去一個 DSE 增強的先驗來隔離和放大高頻語義殘差，從而對其進行引導。*
 
 ### Discrete Spatial Enhancement (DSE)
@@ -67,7 +67,7 @@ SSG 在多個 VAR 模型和基準測試中均展現出卓越的性能。
 
 如下表所示，在 ImageNet 256x256 數據集上，SSG 為從 VAR-d16 到 VAR-d30 的所有模型都帶來了穩定的 FID（衡量生成圖像真實性和多樣性的核心指標）提升，最高降幅達 **0.34**，且**完全沒有增加推理時間**。
 
-![SSG 性能提升](assets/ssg_table1.webp)
+![SSG 性能提升](../../../assets/ssg_table1.webp)
 *表 1：在 ImageNet 256x256 上的性能。SSG 在所有先進的 Tokenization 策略上都顯著提高了 VAR 模型的性能，並且沒有增加推理延遲。*
 
 ### 超越同類生成模型

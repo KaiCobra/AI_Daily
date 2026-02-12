@@ -32,7 +32,7 @@ $$u_t^i(x^i,z) = \sum_{(x_0,x_1) \in [d]^{N \times N}} u_t^i(x^i,z|x_0,x_1) \fra
 
 $$\dot{p_t}(x) + \text{div}_x(p_t u_t) = 0$$
 
-![decentralized_ar_theory.webp](assets/decentralized_ar_theory.webp)
+![decentralized_ar_theory.webp](../../../assets/decentralized_ar_theory.webp)
 *圖一：論文中關於離散流匹配和概率生成速度的理論推導部分截圖。*
 
 ### 2. 自回歸作為離散流匹配的特例
@@ -53,12 +53,12 @@ $$u_t^i(x^i,z) = \sum_{k=1}^K p_t(S_k|z) u_t^i(x,z|S_k)$$
 
 實驗結果表明，**去中心化訓練的專家模型集成（expert ensemble）在多個基準測試中達到了與中心化訓練模型幾乎持平的性能**，僅有微小的系統性權衡。例如，在 LLaVA 的設置中，去中心化模型在核心的 VQAv2 和 GQA 等問答基準上甚至略有提升，而在一些分佈偏移的基準上（如 TextVQA）性能有所下降。
 
-![decentralized_ar_results.webp](assets/decentralized_ar_results.webp)
+![decentralized_ar_results.webp](../../../assets/decentralized_ar_results.webp)
 *圖二：LLaVA 模型在學術任務導向數據集上的實驗結果對比。*
 
 在更具挑戰性的 InternVL 設置中，專家集成模型在大多數通用基準上同樣保持了與中心化模型相當的性能。這些結果有力地證明了去中心化訓練策略在多模態領域的可行性和有效性。
 
-![decentralized_ar_table1.webp](assets/decentralized_ar_table1.webp)
+![decentralized_ar_table1.webp](../../../assets/decentralized_ar_table1.webp)
 *圖三：InternVL 模型訓練所使用的數據集混合列表。*
 
 ## 相關研究背景

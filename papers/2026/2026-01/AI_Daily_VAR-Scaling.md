@@ -14,7 +14,7 @@
 - **arXiv**: [2601.07293](https://arxiv.org/abs/2601.07293)
 - **代碼**: [https://github.com/007mh/VAR-Scaling](https://github.com/007mh/VAR-Scaling)
 
-![論文首頁](assets/var_scaling_page1.webp)
+![論文首頁](../../../assets/var_scaling_page1.webp)
 
 ---
 
@@ -60,7 +60,7 @@ $$ h = \sigma[\frac{n(d + 2)}{4}]^{-\frac{1}{d+4}} $$
 
 通過這種方式，每個離散的Token都可以被映射到一個連續的密度分數上，從而構建出一個準連續的特徵空間。
 
-![方法示意圖](assets/var_scaling_method.webp)
+![方法示意圖](../../../assets/var_scaling_method.webp)
 
 **密度引導的代表性樣本選擇**
 
@@ -93,7 +93,7 @@ VAR-Scaling在多個基準測試上都取得了優異的表現。論文在ImageN
 
 下圖展示了在ImageNet-50k上，不同採樣策略對FID和IS指標的影響。可以看出，Top-k採樣（高密度）能夠持續降低FID並提升IS，而另外兩種策略則效果較差，驗證了高密度樣本對應高質量輸出的假設。
 
-![實驗結果圖](assets/var_scaling_results.webp)
+![實驗結果圖](../../../assets/var_scaling_results.webp)
 
 ---
 
