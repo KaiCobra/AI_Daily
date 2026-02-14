@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[PTQ4ARVG - 無需訓練，為自回歸視覺生成模型量身打造的量化框架](papers/2026/2026-02/AI_Daily_PTQ4ARVG.md)
+[Look-Ahead and Look-Back Flows - 無需訓練的軌跡平滑化圖像生成](papers/2026/2026-02/AI_Daily_Look_Ahead_Look_Back_Flows.md)
 
 ## 🎯 我們在做什麼？
 
@@ -67,6 +67,7 @@
 ### Flow Matching
 | Research | Keywords |
 |----------|----------|
+| [Look-Ahead and Look-Back Flows - 無需訓練的軌跡平滑化圖像生成](papers/2026/2026-02/AI_Daily_Look_Ahead_Look_Back_Flows.md) | Training-Free, Flow Matching, Trajectory Smoothing, Curvature-Gated, Exponential Moving Average, Harvard University, arXiv 2026 |
 | [Decentralized Autoregressive Generation - 當自回歸遇上流匹配與去中心化](papers/2026/2026-01/AI_Daily_Decentralized_AR.md) | Autoregressive, Flow Matching, Decentralized Training, Multimodal Models, Lancaster University, arXiv 2026 |
 | [FlowAR - 當尺度自回歸遇上流匹配，圖像生成的新篇章](papers/2024/2024-12/AI_Daily_FlowAR.md) | VAR, Flow Matching, Scale-wise Autoregressive, Spatial-adaLN, Johns Hopkins, ByteDance, arXiv 2024 |
 | [SoFlow - 流模型論文深度解析](papers/2024/2024-11/AI_Daily_SoFlow.md) | Flow Models, Image Generation |
@@ -114,4 +115,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-13*
+*Last Updated: 2026-02-14*
