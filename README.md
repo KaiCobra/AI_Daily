@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[Look-Ahead and Look-Back Flows - 無需訓練的軌跡平滑化圖像生成](papers/2026/2026-02/AI_Daily_Look_Ahead_Look_Back_Flows.md)
+[SSG - 縮放空間引導下的多尺度視覺自迴歸生成](papers/2026/2026-02/AI_Daily_SSG.md)
 
 ## 🎯 我們在做什麼？
 
@@ -89,8 +89,8 @@
 | [DreamVAR - 當VAR遇上強化學習，實現高保真主體驅動圖像生成](papers/2026/2026-01/AI_Daily_DreamVAR.md) | VAR, Reinforcement Learning, GRPO, Subject-Driven Generation, Pre-filling, ICASSP 2026, Nanjing University, arXiv 2026 |
 | [SparVAR - 無需訓練，探索視覺自回歸模型中的稀疏性以實現高效加速](papers/2026/2026-04/AI_Daily_SparVAR.md) | VAR, Training-Free, Sparsity, Acceleration, Attention, 中國科學院, arXiv 2026 |
 | [NOVA - 無需訓練，用熵引導VAR模型實現自適應加速](papers/2026/2026-02/AI_Daily_NOVA.md) | VAR, Training-Free, Token Reduction, Entropy Analysis, Dual-Linkage, Acceleration, 同濟大學, 哈爾濱工業大學, arXiv 2026 |
+| [SSG - 縮放空間引導下的多尺度視覺自迴歸生成](papers/2026/2026-02/AI_Daily_SSG.md) | VAR, Training-Free, Inference Guidance, Scaled Spatial Guidance, DSE, Frequency Domain, Information Bottleneck, KAIST, ICLR 2026 |
 | [SoftCFG - 無需訓練，用不確定性引導穩定視覺自回歸模型](papers/2026/2026-01/AI_Daily_SoftCFG.md) | VAR, Training-Free, Inference Guidance, Uncertainty-guided, Classifier-Free Guidance, KU Leuven, ICLR 2026 |
-| [SSG - 無需訓練，用尺度空間引導解放 VAR 模型潛力](papers/2026/2026-01/AI_Daily_SSG.md) | VAR, Training-Free, Inference Guidance, Coarse-to-Fine, Information Theory, ICLR 2026 |
 | [ResTok - 讓視覺自回歸模型「重拾視覺」，實現高效高保真生成](papers/2026/2026-01/AI_Daily_ResTok.md) | VAR, Hierarchical Residuals, 1D Tokenizer, Autoregressive Image Generation, 南京大學, 快手科技, arXiv 2026 |
 | [VAR-Scaling - 探索視覺自回歸模型的推理時縮放新策略](papers/2026/2026-01/AI_Daily_VAR-Scaling.md) | VAR, Inference-Time Scaling, KDE, Density-Adaptive Sampling, PRCV 2025, Xidian University, arXiv 2026 |
 | [VideoAR - 結合Next-Frame與Next-Scale預測的自回歸影片生成新篇章](papers/2026/2026-01/AI_Daily_VideoAR.md) | VAR, Video Generation, Next-Frame Prediction, Next-Scale Prediction, Baidu ERNIE, arXiv 2026 |
@@ -115,4 +115,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-14*
+*Last Updated: 2026-02-15*
