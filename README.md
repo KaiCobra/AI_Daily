@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[SparVAR - 無需訓練，探索視覺自回歸模型中的稀疏性以實現高效加速](papers/2026/2026-02/AI_Daily_SparVAR.md)
+[Untwisting RoPE - 解旋 RoPE，為 DiT 中的共享注意力機制引入頻率控制](papers/2026/2026-02/AI_Daily_Untwisting_RoPE.md)
 
 ## 🎯 我們在做什麼？
 
@@ -62,7 +62,7 @@
 | [FAM Diffusion - 頻率與注意力調製實現高效高解析度圖像生成](papers/2026/2026-01/AI_Daily_FAM_Diffusion.md) | Training-Free, Attention Modulation, High-Resolution, CVPR 2025 |
 | [TP-Blend - 融合雙提示注意力配對，實現擴散模型中精確的物體風格融合](papers/2026/2026-01/AI_Daily_TP-Blend.md) | Training-Free, Attention Modulation, Cross-Attention, Self-Attention, Image Editing, GenPi Inc., arXiv 2026 |
 | [FusionEdit - 無需訓練，實現語義融合與注意力調製的圖像編輯新境界](papers/2026/2026-02/AI_Daily_FusionEdit.md) | Training-Free, Attention Modulation, Semantic Fusion, Soft Mask, AdaIN, Rectified Flow, Image Editing, arXiv 2026 |
-| [Untwisting RoPE - 解旋 RoPE，為 DiT 中的共享注意力機制引入頻率控制](papers/2026/2026-01/AI_Daily_Untwisting_RoPE.md) | Training-Free, Attention Modulation, RoPE, Frequency Control, Style Transfer, DiT, Simon Fraser University, Tel Aviv University, arXiv 2026 |
+| [Untwisting RoPE - 解旋 RoPE，為 DiT 中的共享注意力機制引入頻率控制](papers/2026/2026-02/AI_Daily_Untwisting_RoPE.md) | Training-Free, Attention Modulation, RoPE, Frequency Control, Style Transfer, DiT, Simon Fraser University, Tel Aviv University, arXiv 2026 |
 
 ### Flow Matching
 | Research | Keywords |
@@ -115,4 +115,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-16*
+*Last Updated: 2026-02-17*
