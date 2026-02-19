@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[DIAMOND - 無需訓練，用直接推論修正 Flow Matching 模型中的生成瑕疵](papers/2026/2026-02/AI_Daily_DIAMOND.md)
+[BAR - 用遮罩位元建模突破自回歸圖像生成的極限](papers/2026/2026-02/AI_Daily_BAR.md)
 
 ## 🎯 我們在做什麼？
 
@@ -39,7 +39,7 @@
 | Research | Keywords |
 |----------|----------|
 | [PTQ4ARVG - 無需訓練，為自回歸視覺生成模型量身打造的量化框架](papers/2026/2026-02/AI_Daily_PTQ4ARVG.md) | Post-Training Quantization, Training-Free, ARVG, Gain-Projected Scaling, Static Token-Wise Quantization, Distribution-Guided Calibration, ICLR 2026, 中科院自動化所, arXiv 2026 |
-| [BAR - 用遮罩位元建模突破自回歸圖像生成的極限](papers/2026/2026-02/AI_Daily_Masked_Bit_Modeling.md) | Masked Bit Modeling, Autoregressive, Discrete Tokenizer, Bit Budget, FSQ, Scalable Generation, Google, arXiv 2026 |
+| [BAR - 用遮罩位元建模突破自回歸圖像生成的極限](papers/2026/2026-02/AI_Daily_BAR.md) | Masked Bit Modeling, Autoregressive, Discrete Tokenizer, Bit Budget, FSQ, Scalable Generation, Google, arXiv 2026 |
 | [iFSQ - 一行代碼統一AR與Diffusion，實現高效圖像生成](papers/2026/2026-01/AI_Daily_iFSQ.md) | FSQ, Quantization, Distribution Matching, Unified Tokenizer, AR vs Diffusion, Peking University, Tencent Hunyuan, arXiv 2026 |
 
 ### Unified Autoregressive Models
@@ -116,4 +116,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-18*
+*Last Updated: 2026-02-19*
