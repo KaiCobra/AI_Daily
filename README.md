@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[BAR - 用遮罩位元建模突破自回歸圖像生成的極限](papers/2026/2026-02/AI_Daily_BAR.md)
+[BitDance - 用二元 Token 擴展自回歸生成模型的新篇章](papers/2026/2026-02/AI_Daily_BitDance.md)
 
 ## 🎯 我們在做什麼？
 
@@ -38,6 +38,7 @@
 ### Tokenization & Quantization
 | Research | Keywords |
 |----------|----------|
+| [BitDance - 用二元 Token 擴展自回歸生成模型的新篇章](papers/2026/2026-02/AI_Daily_BitDance.md) | Binary Tokens, Binary Diffusion Head, Next-Patch Diffusion, Autoregressive, Parallel Decoding, LFQ, Rectified Flow, ByteDance, arXiv 2026 |
 | [PTQ4ARVG - 無需訓練，為自回歸視覺生成模型量身打造的量化框架](papers/2026/2026-02/AI_Daily_PTQ4ARVG.md) | Post-Training Quantization, Training-Free, ARVG, Gain-Projected Scaling, Static Token-Wise Quantization, Distribution-Guided Calibration, ICLR 2026, 中科院自動化所, arXiv 2026 |
 | [BAR - 用遮罩位元建模突破自回歸圖像生成的極限](papers/2026/2026-02/AI_Daily_BAR.md) | Masked Bit Modeling, Autoregressive, Discrete Tokenizer, Bit Budget, FSQ, Scalable Generation, Google, arXiv 2026 |
 | [iFSQ - 一行代碼統一AR與Diffusion，實現高效圖像生成](papers/2026/2026-01/AI_Daily_iFSQ.md) | FSQ, Quantization, Distribution Matching, Unified Tokenizer, AR vs Diffusion, Peking University, Tencent Hunyuan, arXiv 2026 |
@@ -116,4 +117,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-19*
+*Last Updated: 2026-02-20*
