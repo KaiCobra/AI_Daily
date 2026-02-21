@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[BitDance - 用二元 Token 擴展自回歸生成模型的新篇章](papers/2026/2026-02/AI_Daily_BitDance.md)
+[VAREdit - 指令引導圖像編輯的VAR新標竿](papers/2026/2026-02/AI_Daily_VAREdit/AI_Daily_VAREdit.md)
 
 ## 🎯 我們在做什麼？
 
@@ -97,6 +97,7 @@
 | [VAR-Scaling - 探索視覺自回歸模型的推理時縮放新策略](papers/2026/2026-01/AI_Daily_VAR-Scaling.md) | VAR, Inference-Time Scaling, KDE, Density-Adaptive Sampling, PRCV 2025, Xidian University, arXiv 2026 |
 | [VideoAR - 結合Next-Frame與Next-Scale預測的自回歸影片生成新篇章](papers/2026/2026-01/AI_Daily_VideoAR.md) | VAR, Video Generation, Next-Frame Prediction, Next-Scale Prediction, Baidu ERNIE, arXiv 2026 |
 | [DiverseVAR - 解放視覺自回歸模型的多樣性潛能](papers/2025/2025-01/AI_Daily_DiverseVAR.md) | VAR, Training-Free, Diversity Collapse, MBZUAI |
+| [VAREdit - 指令引導圖像編輯的VAR新標竿](papers/2026/2026-02/AI_Daily_VAREdit/AI_Daily_VAREdit.md) | VAR, Instruction-Guided Image Editing, Scale-Aligned Reference, SAR Module, Attention Injection, HiDream.ai, USTC, ICLR 2026 |
 | [AREdit - 無需訓練的VAR圖像編輯新篇章](papers/2025/2025-03/AI_Daily_AREdit.md) | VAR, Training-Free, Image Editing, Zero-Shot, Snap Research, NTU, arXiv 2025 |
 | [ToProVAR - 視覺自回歸模型高效優化新框架](papers/2026/2026-01/AI_Daily_ToProVAR.md) | VAR, Optimization, Attention Entropy |
 | [Visual Autoregressive Modelling for Monocular Depth Estimation](papers/2025/2025-01/AI_Daily_VAR_Depth_Estimation.md) | VAR, Depth Estimation |
@@ -117,4 +118,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-20*
+*Last Updated: 2026-02-21*
