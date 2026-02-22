@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[VAREdit - 指令引導圖像編輯的VAR新標竿](papers/2026/2026-02/AI_Daily_VAREdit/AI_Daily_VAREdit.md)
+[EchoGen - 當視覺自回歸模型遇上主體驅動生成，實現高效零樣本合成](papers/2026/2026-02/AI_Daily_EchoGen.md)
 
 ## 🎯 我們在做什麼？
 
@@ -104,6 +104,7 @@
 | [VAR RL Done Right - 解決視覺自回歸生成中的異步策略衝突](papers/2026/2026-01/AI_Daily_VAR_RL_Done_Right.md) | VAR, Reinforcement Learning, GRPO, Value as Middle Return, Text Rendering, Tsinghua University, ByteDance, arXiv 2026 |
 | [FlexVAR - 擺脱殘餘預測，實現靈活高效的視覺自回歸生成](papers/2026/2026-01/AI_Daily_FlexVAR.md) | VAR, Training-Free, Ground-Truth Prediction, Flexible Generation, Beijing Jiaotong University, arXiv 2026 |
 | [VAR-LIDE](papers/2026/2026-01/AI_Daily_VAR-LIDE.md) | Visual Autoregressive, Image Generation |
+| [EchoGen - 當視覺自回歸模型遇上主體驅動生成，實現高效零樣本合成](papers/2026/2026-02/AI_Daily_EchoGen.md) | VAR, Subject-Driven Generation, Zero-Shot, Feed-Forward, Dual-Path Injection, DINOv2, Multi-Modal Attention, Infinity, Alibaba, USTC, ICLR 2026 |
 
 
 ## 📮 保持聯繫
@@ -118,4 +119,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-21*
+*Last Updated: 2026-02-22*
