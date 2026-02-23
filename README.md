@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[EchoGen - 當視覺自回歸模型遇上主體驅動生成，實現高效零樣本合成](papers/2026/2026-02/AI_Daily_EchoGen.md)
+[ARPG - 解鎖隨機並行解碼的自回歸圖像生成新境界](papers/2026/2026-02/AI_Daily_ARPG.md)
 
 ## 🎯 我們在做什麼？
 
@@ -78,6 +78,7 @@
 ### Autoregressive Models (AR)
 | Research | Keywords |
 |----------|----------|
+| [ARPG - 解鎖隨機並行解碼的自回歸圖像生成新境界](papers/2026/2026-02/AI_Daily_ARPG.md) | Autoregressive, Randomized Parallel Decoding, Two-Pass Decoder, Zero-Shot, KV Cache, Decoupled Decoding, Westlake University, Chinese Academy of Sciences, ICLR 2026 |
 | [Light Forcing - 無需訓練，用稀疏注意力為自回歸影片擴散模型按下加速鍵](papers/2026/2026-02/AI_Daily_Light_Forcing.md) | Training-Free, Sparse Attention, Autoregressive Video Generation, Chunk-Aware Growth, Hierarchical Sparse Attention, Real-time Generation, 南洋理工大學, 香港科技大學, arXiv 2026 |
 | [Mirai - 讓自回歸視覺生成擁有「預見未來」的能力](papers/2026/2026-01/AI_Daily_Mirai.md) | Autoregressive, Foresight, Training-Time Enhancement, 10x Acceleration, 東京大學, 北京大學, arXiv 2026 |
 | [RadAR - 從序列到空間，重排序自回歸實現高效視覺生成](papers/2025/2025-01/AI_Daily_RadAR.md) | Autoregressive, Zero-Shot, Parallel Generation, Efficient |
@@ -119,4 +120,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-22*
+*Last Updated: 2026-02-23*
