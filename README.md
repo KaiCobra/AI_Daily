@@ -64,6 +64,7 @@
 | [TP-Blend - 融合雙提示注意力配對，實現擴散模型中精確的物體風格融合](papers/2026/2026-01/AI_Daily_TP-Blend.md) | Training-Free, Attention Modulation, Cross-Attention, Self-Attention, Image Editing, GenPi Inc., arXiv 2026 |
 | [FusionEdit - 無需訓練，實現語義融合與注意力調製的圖像編輯新境界](papers/2026/2026-02/AI_Daily_FusionEdit.md) | Training-Free, Attention Modulation, Semantic Fusion, Soft Mask, AdaIN, Rectified Flow, Image Editing, arXiv 2026 |
 | [Untwisting RoPE - 解旋 RoPE，為 DiT 中的共享注意力機制引入頻率控制](papers/2026/2026-02/AI_Daily_Untwisting_RoPE.md) | Training-Free, Attention Modulation, RoPE, Frequency Control, Style Transfer, DiT, Simon Fraser University, Tel Aviv University, arXiv 2026 |
+| [DCAG - 雙通道注意力引導，解鎖 DiT 圖像編輯的 Value 空間控制](papers/2026/2026-02/AI_Daily_DCAG/AI_Daily_DCAG.md) | Training-Free, Attention Modulation, Bias-Delta Structure, Key-Value Channels, Image Editing, PIE-Bench, iFLYTEK, arXiv 2026 |
 
 ### Flow Matching
 | Research | Keywords |
@@ -120,4 +121,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-23*
+*Last Updated: 2026-02-24*
