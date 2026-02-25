@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[ARPG - 解鎖隨機並行解碼的自回歸圖像生成新境界](papers/2026/2026-02/AI_Daily_ARPG.md)
+[LapFlow - 當拉普拉斯金字塔遇上流匹配，實現高效多尺度圖像生成](papers/2026/2026-02/AI_Daily_LapFlow.md)
 
 ## 🎯 我們在做什麼？
 
@@ -69,6 +69,7 @@
 ### Flow Matching
 | Research | Keywords |
 |----------|----------|
+| [LapFlow - 當拉普拉斯金字塔遇上流匹配，實現高效多尺度圖像生成](papers/2026/2026-02/AI_Daily_LapFlow.md) | Laplacian Pyramid, Multi-scale, Flow Matching, Mixture-of-Transformers, MoT, Causal Attention, DiT, Progressive Training, ImageNet, ICLR 2026, Georgia Tech, arXiv 2026 |
 | [DIAMOND - 無需訓練，用直接推論修正 Flow Matching 模型中的生成瑕疵](papers/2026/2026-02/AI_Daily_DIAMOND.md) | Training-Free, Zero-Shot, Flow Matching, Artifact Mitigation, Trajectory Correction, Rectified Flow, FLUX, ICML 2026, Jagiellonian University, arXiv 2026 |
 | [Look-Ahead and Look-Back Flows - 無需訓練的軌跡平滑化圖像生成](papers/2026/2026-02/AI_Daily_Look_Ahead_Look_Back_Flows.md) | Training-Free, Flow Matching, Trajectory Smoothing, Curvature-Gated, Exponential Moving Average, Harvard University, arXiv 2026 |
 | [Decentralized Autoregressive Generation - 當自回歸遇上流匹配與去中心化](papers/2026/2026-01/AI_Daily_Decentralized_AR.md) | Autoregressive, Flow Matching, Decentralized Training, Multimodal Models, Lancaster University, arXiv 2026 |
