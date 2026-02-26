@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[LapFlow - 當拉普拉斯金字塔遇上流匹配，實現高效多尺度圖像生成](papers/2026/2026-02/AI_Daily_LapFlow.md)
+[DCAG - 雙通道注意力引導，解鎖 DiT 圖像編輯的 Value 空間控制](papers/2026/2026-02/AI_Daily_DCAG/AI_Daily_DCAG.md)
 
 ## 🎯 我們在做什麼？
 
@@ -122,4 +122,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-24*
+*Last Updated: 2026-02-26*
