@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[RFC - 運用輸出入關係加速DiT，實現更準確的特徵快取](papers/2026/2026-02/AI_Daily_RFC/AI_Daily_RFC.md)
+[SCALAR - 解鎖VAR模型的可控生成，注入尺度感知新思路](papers/2026/2026-03/AI_Daily_SCALAR/AI_Daily_SCALAR.md)
 
 ## 🎯 我們在做什麼？
 
@@ -92,6 +92,7 @@
 ### Visual Autoregressive Models (VAR)
 | Research | Keywords |
 |----------|----------|
+| [SCALAR - 解鎖VAR模型的可控生成，注入尺度感知新思路](papers/2026/2026-03/AI_Daily_SCALAR/AI_Daily_SCALAR.md) | VAR, Controllable Generation, Scale-wise Conditional Decoding, DINOv2, Unified Control Alignment, Zero-Shot Inpainting, Alibaba Amap, AAAI 2026 |
 | [HSI-VAR - 當視覺自回歸遇上高光譜，開啟影像修復新篇章](papers/2026/2026-02/AI_Daily_HSI-VAR.md) | VAR, Hyperspectral Image Restoration, All-in-One Restoration, Degradation-Aware Guidance, Spatial-Spectral Adaptation, Harbin Institute of Technology, Harvard University, arXiv 2026 |
 | [DreamVAR - 當VAR遇上強化學習，實現高保真主體驅動圖像生成](papers/2026/2026-01/AI_Daily_DreamVAR.md) | VAR, Reinforcement Learning, GRPO, Subject-Driven Generation, Pre-filling, ICASSP 2026, Nanjing University, arXiv 2026 |
 | [SparVAR - 無需訓練，探索視覺自回歸模型中的稀疏性以實現高效加速](papers/2026/2026-02/AI_Daily_SparVAR.md) | VAR, Training-Free, Sparse Attention, Acceleration, Block-wise Kernel, Cross-Scale Similarity, 中科院自動化所, arXiv 2026 |
