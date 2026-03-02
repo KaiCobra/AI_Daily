@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[SCALAR - 解鎖VAR模型的可控生成，注入尺度感知新思路](papers/2026/2026-03/AI_Daily_SCALAR/AI_Daily_SCALAR.md)
+[Modulation Guidance - 重新思考擴散模型中的全域文字條件，提出 Training-Free 的 Modulation Guidance](papers/2026/03_Rethinking_Global_Text_Conditioning_in_Diffusion_Transformers/README.md)
 
 ## 🎯 我們在做什麼？
 
@@ -66,6 +66,7 @@
 | [Untwisting RoPE - 解旋 RoPE，為 DiT 中的共享注意力機制引入頻率控制](papers/2026/2026-02/AI_Daily_Untwisting_RoPE.md) | Training-Free, Attention Modulation, RoPE, Frequency Control, Style Transfer, DiT, Simon Fraser University, Tel Aviv University, arXiv 2026 |
 | [DiT條件嵌入中的隱藏語義瓶頸 — 揭示 Diffusion Transformers 的冗餘性](papers/2026/2026-02/AI_Daily_Semantic_Bottleneck/AI_Daily_Semantic_Bottleneck.md) | Conditional Embeddings, Semantic Bottleneck, Cosine Similarity, Sparse Magnitude, Pruning, AdaLN, DiT, ICLR 2026, KAIST, arXiv 2026 |
 | [RFC - 運用輸出入關係加速DiT，實現更準確的特徵快取](papers/2026/2026-02/AI_Daily_RFC/AI_Daily_RFC.md) | Diffusion Transformers, Inference Acceleration, Feature Caching, Training-Free, Input-Output Relationship, Relational Feature Estimation, Relational Cache Scheduling, Yonsei University, KIST, ICLR 2026 |
+| [Modulation Guidance - 重新思考擴散模型中的全域文字條件，提出 Training-Free 的 Modulation Guidance](papers/2026/03_Rethinking_Global_Text_Conditioning_in_Diffusion_Transformers/README.md) | Training-Free, Modulation Space, CLIP Pooled Embedding, Diffusion Transformers, Aesthetics, Complexity, Hands Correction, FLUX, HiDream, COSMOS, ICLR 2026, Yandex Research, Adobe Research |
 | [DCAG - 雙通道注意力引導，解鎖 DiT 圖像編輯的 Value 空間控制](papers/2026/2026-02/AI_Daily_DCAG/AI_Daily_DCAG.md) | Training-Free, Attention Modulation, Bias-Delta Structure, Key-Value Channels, Image Editing, PIE-Bench, iFLYTEK, arXiv 2026 |
 
 ### Flow Matching
@@ -125,4 +126,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-28*
+*Last Updated: 2026-03-02*
