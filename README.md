@@ -35,6 +35,11 @@
 
 ## 已發布文章
 
+### 比較分析
+| Research | Keywords |
+|----------|----------|
+| [Modulation Guidance 與 Training-Free Attention Modulation 系列論文深度比較](papers/2026/03_Modulation_Guidance_Comparison/README.md) | Modulation Guidance, Attention Modulation, Training-Free, RoPE, AdaLN, DiT, Diffusion Models |
+
 ### Tokenization & Quantization
 | Research | Keywords |
 |----------|----------|
