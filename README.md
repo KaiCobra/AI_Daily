@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[ARPG - 解鎖隨機並行解碼的自回歸圖像生成新境界](papers/2026/2026-02/AI_Daily_ARPG.md)
+[Modulation Guidance - 重新思考擴散模型中的全域文字條件，提出 Training-Free 的 Modulation Guidance](papers/2026/03_Rethinking_Global_Text_Conditioning_in_Diffusion_Transformers/README.md)
 
 ## 🎯 我們在做什麼？
 
@@ -64,11 +64,15 @@
 | [TP-Blend - 融合雙提示注意力配對，實現擴散模型中精確的物體風格融合](papers/2026/2026-01/AI_Daily_TP-Blend.md) | Training-Free, Attention Modulation, Cross-Attention, Self-Attention, Image Editing, GenPi Inc., arXiv 2026 |
 | [FusionEdit - 無需訓練，實現語義融合與注意力調製的圖像編輯新境界](papers/2026/2026-02/AI_Daily_FusionEdit.md) | Training-Free, Attention Modulation, Semantic Fusion, Soft Mask, AdaIN, Rectified Flow, Image Editing, arXiv 2026 |
 | [Untwisting RoPE - 解旋 RoPE，為 DiT 中的共享注意力機制引入頻率控制](papers/2026/2026-02/AI_Daily_Untwisting_RoPE.md) | Training-Free, Attention Modulation, RoPE, Frequency Control, Style Transfer, DiT, Simon Fraser University, Tel Aviv University, arXiv 2026 |
+| [DiT條件嵌入中的隱藏語義瓶頸 — 揭示 Diffusion Transformers 的冗餘性](papers/2026/2026-02/AI_Daily_Semantic_Bottleneck/AI_Daily_Semantic_Bottleneck.md) | Conditional Embeddings, Semantic Bottleneck, Cosine Similarity, Sparse Magnitude, Pruning, AdaLN, DiT, ICLR 2026, KAIST, arXiv 2026 |
+| [RFC - 運用輸出入關係加速DiT，實現更準確的特徵快取](papers/2026/2026-02/AI_Daily_RFC/AI_Daily_RFC.md) | Diffusion Transformers, Inference Acceleration, Feature Caching, Training-Free, Input-Output Relationship, Relational Feature Estimation, Relational Cache Scheduling, Yonsei University, KIST, ICLR 2026 |
+| [Modulation Guidance - 重新思考擴散模型中的全域文字條件，提出 Training-Free 的 Modulation Guidance](papers/2026/03_Rethinking_Global_Text_Conditioning_in_Diffusion_Transformers/README.md) | Training-Free, Modulation Space, CLIP Pooled Embedding, Diffusion Transformers, Aesthetics, Complexity, Hands Correction, FLUX, HiDream, COSMOS, ICLR 2026, Yandex Research, Adobe Research |
 | [DCAG - 雙通道注意力引導，解鎖 DiT 圖像編輯的 Value 空間控制](papers/2026/2026-02/AI_Daily_DCAG/AI_Daily_DCAG.md) | Training-Free, Attention Modulation, Bias-Delta Structure, Key-Value Channels, Image Editing, PIE-Bench, iFLYTEK, arXiv 2026 |
 
 ### Flow Matching
 | Research | Keywords |
 |----------|----------|
+| [LapFlow - 當拉普拉斯金字塔遇上流匹配，實現高效多尺度圖像生成](papers/2026/2026-02/AI_Daily_LapFlow.md) | Laplacian Pyramid, Multi-scale, Flow Matching, Mixture-of-Transformers, MoT, Causal Attention, DiT, Progressive Training, ImageNet, ICLR 2026, Georgia Tech, arXiv 2026 |
 | [DIAMOND - 無需訓練，用直接推論修正 Flow Matching 模型中的生成瑕疵](papers/2026/2026-02/AI_Daily_DIAMOND.md) | Training-Free, Zero-Shot, Flow Matching, Artifact Mitigation, Trajectory Correction, Rectified Flow, FLUX, ICML 2026, Jagiellonian University, arXiv 2026 |
 | [Look-Ahead and Look-Back Flows - 無需訓練的軌跡平滑化圖像生成](papers/2026/2026-02/AI_Daily_Look_Ahead_Look_Back_Flows.md) | Training-Free, Flow Matching, Trajectory Smoothing, Curvature-Gated, Exponential Moving Average, Harvard University, arXiv 2026 |
 | [Decentralized Autoregressive Generation - 當自回歸遇上流匹配與去中心化](papers/2026/2026-01/AI_Daily_Decentralized_AR.md) | Autoregressive, Flow Matching, Decentralized Training, Multimodal Models, Lancaster University, arXiv 2026 |
@@ -89,6 +93,8 @@
 ### Visual Autoregressive Models (VAR)
 | Research | Keywords |
 |----------|----------|
+| [AlignVAR - 實現全域一致性的視覺自回歸圖像超解析度](papers/2026-03-03_AlignVAR/AlignVAR.md) | VAR, Image Super-Resolution, Global Consistency, Spatial Consistency Autoregression, Hierarchical Consistency Constraint, CVPR 2026 |
+| [SCALAR - 解鎖VAR模型的可控生成，注入尺度感知新思路](papers/2026/2026-03/AI_Daily_SCALAR/AI_Daily_SCALAR.md) | VAR, Controllable Generation, Scale-wise Conditional Decoding, DINOv2, Unified Control Alignment, Zero-Shot Inpainting, Alibaba Amap, AAAI 2026 |
 | [HSI-VAR - 當視覺自回歸遇上高光譜，開啟影像修復新篇章](papers/2026/2026-02/AI_Daily_HSI-VAR.md) | VAR, Hyperspectral Image Restoration, All-in-One Restoration, Degradation-Aware Guidance, Spatial-Spectral Adaptation, Harbin Institute of Technology, Harvard University, arXiv 2026 |
 | [DreamVAR - 當VAR遇上強化學習，實現高保真主體驅動圖像生成](papers/2026/2026-01/AI_Daily_DreamVAR.md) | VAR, Reinforcement Learning, GRPO, Subject-Driven Generation, Pre-filling, ICASSP 2026, Nanjing University, arXiv 2026 |
 | [SparVAR - 無需訓練，探索視覺自回歸模型中的稀疏性以實現高效加速](papers/2026/2026-02/AI_Daily_SparVAR.md) | VAR, Training-Free, Sparse Attention, Acceleration, Block-wise Kernel, Cross-Scale Similarity, 中科院自動化所, arXiv 2026 |
@@ -121,4 +127,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-02-24*
+*Last Updated: 2026-03-02*
