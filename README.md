@@ -98,6 +98,7 @@
 ### Visual Autoregressive Models (VAR)
 | Research | Keywords |
 |----------|----------|
+| [AlignVAR - 實現全域一致性的視覺自回歸圖像超解析度](papers/2026-03-03_AlignVAR/AlignVAR.md) | VAR, Image Super-Resolution, Global Consistency, Spatial Consistency Autoregression, Hierarchical Consistency Constraint, CVPR 2026 |
 | [SCALAR - 解鎖VAR模型的可控生成，注入尺度感知新思路](papers/2026/2026-03/AI_Daily_SCALAR/AI_Daily_SCALAR.md) | VAR, Controllable Generation, Scale-wise Conditional Decoding, DINOv2, Unified Control Alignment, Zero-Shot Inpainting, Alibaba Amap, AAAI 2026 |
 | [HSI-VAR - 當視覺自回歸遇上高光譜，開啟影像修復新篇章](papers/2026/2026-02/AI_Daily_HSI-VAR.md) | VAR, Hyperspectral Image Restoration, All-in-One Restoration, Degradation-Aware Guidance, Spatial-Spectral Adaptation, Harbin Institute of Technology, Harvard University, arXiv 2026 |
 | [DreamVAR - 當VAR遇上強化學習，實現高保真主體驅動圖像生成](papers/2026/2026-01/AI_Daily_DreamVAR.md) | VAR, Reinforcement Learning, GRPO, Subject-Driven Generation, Pre-filling, ICASSP 2026, Nanjing University, arXiv 2026 |
