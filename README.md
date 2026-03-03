@@ -39,6 +39,7 @@
 | Research | Keywords |
 |----------|----------|
 | [Modulation Guidance 與 Training-Free Attention Modulation 系列論文深度比較](papers/2026/03_Modulation_Guidance_Comparison/README.md) | Modulation Guidance, Attention Modulation, Training-Free, RoPE, AdaLN, DiT, Diffusion Models |
+| [雙維度協同控制應用場景案例分析](papers/2026/03_Dual_Dimensional_Control_Scenarios/README.md) | Attention Modulation, Modulation Guidance, Synergistic Control, Application Scenarios, Image Editing, Style Transfer |
 
 ### Tokenization & Quantization
 | Research | Keywords |
