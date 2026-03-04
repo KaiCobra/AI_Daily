@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[Modulation Guidance - 重新思考擴散模型中的全域文字條件，提出 Training-Free 的 Modulation Guidance](papers/2026/03_Rethinking_Global_Text_Conditioning_in_Diffusion_Transformers/README.md)
+[PixelRush - 20秒產出4K高解析度圖像的單步擴散模型](papers/2026/2026-03-04_PixelRush.md)
 
 ## 🎯 我們在做什麼？
 
@@ -74,6 +74,7 @@
 | [RFC - 運用輸出入關係加速DiT，實現更準確的特徵快取](papers/2026/2026-02/AI_Daily_RFC/AI_Daily_RFC.md) | Diffusion Transformers, Inference Acceleration, Feature Caching, Training-Free, Input-Output Relationship, Relational Feature Estimation, Relational Cache Scheduling, Yonsei University, KIST, ICLR 2026 |
 | [Modulation Guidance - 重新思考擴散模型中的全域文字條件，提出 Training-Free 的 Modulation Guidance](papers/2026/03_Rethinking_Global_Text_Conditioning_in_Diffusion_Transformers/README.md) | Training-Free, Modulation Space, CLIP Pooled Embedding, Diffusion Transformers, Aesthetics, Complexity, Hands Correction, FLUX, HiDream, COSMOS, ICLR 2026, Yandex Research, Adobe Research |
 | [DCAG - 雙通道注意力引導，解鎖 DiT 圖像編輯的 Value 空間控制](papers/2026/2026-02/AI_Daily_DCAG/AI_Daily_DCAG.md) | Training-Free, Attention Modulation, Bias-Delta Structure, Key-Value Channels, Image Editing, PIE-Bench, iFLYTEK, arXiv 2026 |
+| [PixelRush - 20秒產出4K高解析度圖像的單步擴散模型](papers/2026/2026-03-04_PixelRush.md) | Training-Free, High-Resolution Image Generation, One-step Diffusion, Patch-based, Partial Inversion, Seamless Blending, Noise Injection, SDXL-Turbo, Qualcomm AI Research, CVPR 2026 |
 
 ### Flow Matching
 | Research | Keywords |
@@ -133,4 +134,4 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-03-02*
+*Last Updated: 2026-03-04*
