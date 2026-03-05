@@ -8,7 +8,7 @@
 
 ## 📋 今日文章
 
-[StepVAR - 無需訓練，用結構與紋理引導VAR模型剪枝，實現高效推理](papers/2026/2026-03/AI_Daily_StepVAR/AI_Daily_StepVAR.md)
+[MVAR - 用馬可夫假設重塑視覺自回歸，以線性複雜度實現高效圖像生成](papers/2026/2026-03/AI_Daily_MVAR/AI_Daily_MVAR.md)
 
 ## 🎯 我們在做什麼？
 
@@ -120,6 +120,7 @@
 | [FlexVAR - 擺脱殘餘預測，實現靈活高效的視覺自回歸生成](papers/2026/2026-01/AI_Daily_FlexVAR.md) | VAR, Training-Free, Ground-Truth Prediction, Flexible Generation, Beijing Jiaotong University, arXiv 2026 |
 | [VAR-LIDE](papers/2026/2026-01/AI_Daily_VAR-LIDE.md) | Visual Autoregressive, Image Generation |
 | [EchoGen - 當視覺自回歸模型遇上主體驅動生成，實現高效零樣本合成](papers/2026/2026-02/AI_Daily_EchoGen.md) | VAR, Subject-Driven Generation, Zero-Shot, Feed-Forward, Dual-Path Injection, DINOv2, Multi-Modal Attention, Infinity, Alibaba, USTC, ICLR 2026 |
+| [MVAR - 用馬可夫假設重塑視覺自回歸，以線性複雜度實現高效圖像生成](papers/2026/2026-03/AI_Daily_MVAR/AI_Daily_MVAR.md) | VAR, Scale Markovian Conditioning, Spatial Markov Attention, Parallel Training, KV-Cache-Free, O(Nk) Complexity, Memory Efficiency, 電子科技大學, ICLR 2026 |
 | [StepVAR - 無需訓練，用結構與紋理引導VAR模型剪枝，實現高效推理](papers/2026/2026-03/AI_Daily_StepVAR/AI_Daily_StepVAR.md) | VAR, Training-Free, Token Pruning, Inference Acceleration, PCA, High-Pass Filter, Nearest Neighbor Feature Propagation, HART, Infinity, InfinityStar, USTC, arXiv 2026 |
 
 
@@ -135,6 +136,7 @@
 
 **每天進步一點點，與 AI 一起成長** 🌱
 
-*Last Updated: 2026-03-04*
+*Last Updated: 2026-03-05*
 
+<!-- 2026-03-05: Added MVAR -->
 <!-- 2026-03-04: Added StepVAR -->
