@@ -1,144 +1,193 @@
-# AI Daily 📰
+# AI Daily
 
 > 每天一篇論文，跟上 AI 最新潮流
 
-你是否也有這樣的困擾？AI 領域發展太快，每天都有新論文發表,卻沒時間一一追蹤？
+AI 領域發展太快，每天都有新論文發表，卻沒時間一一追蹤？**AI Daily** 為你精選每天最值得關注的 AI 論文，用深入淺出的方式解析最前沿的研究成果。
 
-**AI Daily** 為你精選每天最值得關注的 AI 論文，用深入淺出的方式解析最前沿的研究成果。讓你在通勤、午休、睡前，輕鬆掌握 AI 最新動態！
+## 我們在做什麼？
 
-## 📋 今日文章
+每天從海量論文中，挑選最具價值的研究進行深度解析：
 
-[AlignVAR - 解決VAR圖像超解析度的全域一致性問題，實現高效高保真重建](papers/2026/2026-03-06/2026-03-06-AlignVAR.md)
+- **精選優質論文** — 只挑最新、最有影響力的研究
+- **深入淺出解析** — 複雜理論也能輕鬆理解
+- **每日更新** — 保持對 AI 領域的敏銳度
+- **涵蓋熱門領域** — 深度學習、圖像生成、計算機視覺等
 
-## 🎯 我們在做什麼？
+### 關注焦點
 
-每天從海量論文中，挑選一篇最具價值的研究進行深度解析：
-
-- ✅ **精選優質論文** - 只挑最新、最有影響力的研究
-- ✅ **深入淺出解析** - 複雜理論也能輕鬆理解
-- ✅ **每日更新** - 保持對 AI 領域的敏銳度
-- ✅ **涵蓋熱門領域** - 深度學習、圖像生成、計算機視覺等
-
-## 🔥 關注焦點
-
-### 主要研究領域
-- **圖像生成技術** - Diffusion Models、Autoregressive Models、Flow Matching
-- **深度學習前沿** - 最新架構與訓練方法
-- **計算機視覺** - 圖像理解、深度估計、多模態學習
+- **圖像生成技術** — Diffusion Models、Autoregressive Models、Flow Matching
+- **深度學習前沿** — 最新架構與訓練方法
+- **計算機視覺** — 圖像理解、深度估計、多模態學習
 
 ### 論文來源
-來自全球頂尖研究機構的最新成果：
-- 🏛️ **頂尖大學** - Stanford、MIT、清華、北大等
-- 🏢 **科技巨頭** - Meta FAIR、NVIDIA、Google、Adobe
-- 📄 **頂級會議** - CVPR、ICCV、NeurIPS、ICML、AAAI
 
+來自全球頂尖研究機構的最新成果：Stanford、MIT、清華、北大、Meta FAIR、NVIDIA、Google、Adobe 等。優先收錄 CVPR、ICCV、NeurIPS、ICML、AAAI、ICLR 等頂級會議論文。
 
-## 已發布文章
+---
+
+## 目錄結構
+
+```
+papers/
+├── YYYY/
+│   └── YYYY-MM/
+│       └── PaperName/
+│           ├── AI_Daily_PaperName.md   # 論文閱讀筆記
+│           └── asset/                   # 論文圖片（從原始 PDF 提取）
+skills/
+└── pdf-image-extractor/                 # PDF 圖片提取工具
+```
+
+---
+
+## 論文索引（按日期）
+
+### 2023
+
+| 日期 | 論文 | 主題 | arXiv |
+|------|------|------|-------|
+| 2023-01 | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | Zero-shot 空間佈局條件生成 | [2306.13754](https://arxiv.org/abs/2306.13754) |
+
+### 2024
+
+| 日期 | 論文 | 主題 | arXiv |
+|------|------|------|-------|
+| 2024-11 | [SoFlow](papers/2024/2024-11/SoFlow/AI_Daily_SoFlow.md) | Second-order Flow Matching | [2411.05520](https://arxiv.org/abs/2411.05520) |
+| 2024-12 | [FlowAR](papers/2024/2024-12/FlowAR/AI_Daily_FlowAR.md) | Flow Matching + Autoregressive | [2412.15205](https://arxiv.org/abs/2412.15205) |
+
+### 2025
+
+| 日期 | 論文 | 主題 | arXiv |
+|------|------|------|-------|
+| 2025-01 | [DiverseVAR](papers/2025/2025-01/DiverseVAR/AI_Daily_DiverseVAR.md) | VAR 多樣性生成 | [2501.09751](https://arxiv.org/abs/2501.09751) |
+| 2025-01 | [EditAR](papers/2025/2025-01/EditAR/AI_Daily_EditAR.md) | 自回歸圖像編輯 | [2501.04699](https://arxiv.org/abs/2501.04699) |
+| 2025-01 | [JanusFlow](papers/2025/2025-01/JanusFlow/AI_Daily_JanusFlow.md) | 統一多模態理解與生成 | [2411.07975](https://arxiv.org/abs/2411.07975) |
+| 2025-01 | [Multimodal AR Vision Encoders](papers/2025/2025-01/Multimodal_AR_Vision_Encoders/AI_Daily_Multimodal_AR_Vision_Encoders.md) | 多模態自回歸視覺編碼器 | [2501.01030](https://arxiv.org/abs/2501.01030) |
+| 2025-01 | [RadAR](papers/2025/2025-01/RadAR/AI_Daily_RadAR.md) | 放射學自回歸模型 | [2501.04382](https://arxiv.org/abs/2501.04382) |
+| 2025-01 | [VAR Depth Estimation](papers/2025/2025-01/VAR_Depth_Estimation/AI_Daily_VAR_Depth_Estimation.md) | VAR 深度估計 | [2512.22653](https://arxiv.org/abs/2512.22653) |
+| 2025-03 | [AREdit](papers/2025/2025-03/AREdit/AI_Daily_AREdit.md) | 無需訓練的 VAR 圖像編輯 | [2501.13101](https://arxiv.org/abs/2501.13101) |
+
+### 2026-01
+
+| 日期 | 論文 | 主題 | arXiv |
+|------|------|------|-------|
+| 2026-01 | [AR-Omni](papers/2026/2026-01/AR-Omni/AI_Daily_AR-Omni.md) | 純自回歸 Any-to-Any 多模態生成 | [2601.06849](https://arxiv.org/abs/2601.06849) |
+| 2026-01 | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | 編輯物體內在屬性 | [2601.10714](https://arxiv.org/abs/2601.10714) |
+| 2026-01 | [Decentralized AR](papers/2026/2026-01/Decentralized_AR/AI_Daily_Decentralized_AR.md) | 去中心化自回歸生成 | [2601.03915](https://arxiv.org/abs/2601.03915) |
+| 2026-01 | [DreamVAR](papers/2026/2026-01/DreamVAR/AI_Daily_DreamVAR.md) | VAR + 強化學習主體驅動生成 | [2601.01122](https://arxiv.org/abs/2601.01122) |
+| 2026-01 | [FAM Diffusion](papers/2026/2026-01/FAM_Diffusion/AI_Daily_FAM_Diffusion.md) | 頻率與注意力調製高效生成 | [2411.18552](https://arxiv.org/abs/2411.18552) |
+| 2026-01 | [FlexVAR](papers/2026/2026-01/FlexVAR/AI_Daily_FlexVAR.md) | 靈活高效視覺自回歸生成 | [2601.06850](https://arxiv.org/abs/2601.06850) |
+| 2026-01 | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | 內容感知注意力操控 | [2601.07256](https://arxiv.org/abs/2601.07256) |
+| 2026-01 | [MMD-Guidance](papers/2026/2026-01/MMD-Guidance/AI_Daily_MMD-Guidance.md) | 無需訓練的分佈自適應引導 | [2601.08379](https://arxiv.org/abs/2601.08379) |
+| 2026-01 | [Mirai](papers/2026/2026-01/Mirai/AI_Daily_Mirai.md) | 自回歸視覺生成預見未來 | [2601.06838](https://arxiv.org/abs/2601.06838) |
+| 2026-01 | [PackCache](papers/2026/2026-01/PackCache/AI_Daily_PackCache.md) | 無需訓練加速自回歸影片生成 | [2601.07777](https://arxiv.org/abs/2601.07777) |
+| 2026-01 | [RAE](papers/2026/2026-01/RAE/AI_Daily_RAE.md) | 擴散 + 自回歸挑戰 VAE | [2601.16208](https://arxiv.org/abs/2601.16208) |
+| 2026-01 | [ResTok](papers/2026/2026-01/ResTok/AI_Daily_ResTok.md) | 高效高保真視覺自回歸生成 | [2601.03955](https://arxiv.org/abs/2601.03955) |
+| 2026-01 | [SSG](papers/2026/2026-01/SSG/AI_Daily_SSG.md) | 尺度空間引導解放 VAR 潛力 | [2602.05534](https://arxiv.org/abs/2602.05534) |
+| 2026-01 | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md) | 零樣本風格引導圖像生成 | [2601.06605](https://arxiv.org/abs/2601.06605) |
+| 2026-01 | [SoftCFG](papers/2026/2026-01/SoftCFG/AI_Daily_SoftCFG.md) | 不確定性引導穩定 VAR | [2510.00996](https://arxiv.org/abs/2510.00996) |
+| 2026-01 | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | 雙提示注意力配對物體風格融合 | [2601.08011](https://arxiv.org/abs/2601.08011) |
+| 2026-01 | [ToProVAR](papers/2026/2026-01/ToProVAR/AI_Daily_ToProVAR.md) | 注意力熵高效優化 VAR | [2506.08908](https://arxiv.org/abs/2506.08908) |
+| 2026-01 | [Unraveling MMDiT](papers/2026/2026-01/Unraveling_MMDiT/AI_Daily_Unraveling_MMDiT.md) | 無需訓練分析增強 MMDiT | [2601.02211](https://arxiv.org/abs/2601.02211) |
+| 2026-01 | [Untwisting RoPE](papers/2026/2026-01/Untwisting_RoPE/AI_Daily_Untwisting_RoPE.md) | DiT 共享注意力頻率控制 | [2602.05013](https://arxiv.org/abs/2602.05013) |
+| 2026-01 | [VAR-LIDE](papers/2026/2026-01/VAR-LIDE/AI_Daily_VAR-LIDE.md) | VAR + VLM 零參考圖像修復 | [2511.18591](https://arxiv.org/abs/2511.18591) |
+| 2026-01 | [VAR-Scaling](papers/2026/2026-01/VAR-Scaling/AI_Daily_VAR-Scaling.md) | VAR 推理時縮放策略 | [2601.07293](https://arxiv.org/abs/2601.07293) |
+| 2026-01 | [VAR RL Done Right](papers/2026/2026-01/VAR_RL_Done_Right/AI_Daily_VAR_RL_Done_Right.md) | VAR 異步策略衝突解決 | [2601.02256](https://arxiv.org/abs/2601.02256) |
+| 2026-01 | [VideoAR](papers/2026/2026-01/VideoAR/AI_Daily_VideoAR.md) | 自回歸影片生成 | [2601.05966](https://arxiv.org/abs/2601.05966) |
+| 2026-01 | [iFSQ](papers/2026/2026-01/iFSQ/AI_Daily_iFSQ.md) | 統一 AR 與 Diffusion 高效生成 | [2601.17124](https://arxiv.org/abs/2601.17124) |
+
+### 2026-02
+
+| 日期 | 論文 | 主題 | arXiv |
+|------|------|------|-------|
+| 2026-02 | [ARPG](papers/2026/2026-02/ARPG/AI_Daily_ARPG.md) | 隨機並行解碼自回歸生成 | [2503.10568](https://arxiv.org/abs/2503.10568) |
+| 2026-02 | [BAR](papers/2026/2026-02/BAR/AI_Daily_BAR.md) | Masked Bit Modeling 自回歸生成 | [2602.09024](https://arxiv.org/abs/2602.09024) |
+| 2026-02 | [BitDance](papers/2026/2026-02/BitDance/AI_Daily_BitDance.md) | 二元 Token 自回歸生成 | [2602.14041](https://arxiv.org/abs/2602.14041) |
+| 2026-02 | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | 雙通道注意力引導圖像編輯 | [2602.18022](https://arxiv.org/abs/2602.18022) |
+| 2026-02 | [DIAMOND](papers/2026/2026-02/DIAMOND/AI_Daily_DIAMOND.md) | 直接推論修正 Flow Matching | [2602.00883](https://arxiv.org/abs/2602.00883) |
+| 2026-02 | [EchoGen](papers/2026/2026-02/EchoGen/AI_Daily_EchoGen.md) | VAR 主體驅動零樣本合成 | [2509.26127](https://arxiv.org/abs/2509.26127) |
+| 2026-02 | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | 語義融合注意力調製圖像編輯 | [2602.08725](https://arxiv.org/abs/2602.08725) |
+| 2026-02 | [HSI-VAR](papers/2026/2026-02/HSI-VAR/AI_Daily_HSI-VAR.md) | VAR 高光譜影像修復 | [2602.00749](https://arxiv.org/abs/2602.00749) |
+| 2026-02 | [LapFlow](papers/2026/2026-02/LapFlow/AI_Daily_LapFlow.md) | 拉普拉斯金字塔 + 流匹配 | [2602.19461](https://arxiv.org/abs/2602.19461) |
+| 2026-02 | [Light Forcing](papers/2026/2026-02/Light_Forcing/AI_Daily_Light_Forcing.md) | 稀疏注意力加速自回歸影片擴散 | [2602.04789](https://arxiv.org/abs/2602.04789) |
+| 2026-02 | [Look-Ahead Look-Back Flows](papers/2026/2026-02/Look_Ahead_Look_Back_Flows/AI_Daily_Look_Ahead_Look_Back_Flows.md) | 無需訓練軌跡平滑化生成 | [2602.09449](https://arxiv.org/abs/2602.09449) |
+| 2026-02 | [NOVA](papers/2026/2026-02/NOVA/AI_Daily_NOVA.md) | 熵引導 VAR 自適應加速 | [2602.01345](https://arxiv.org/abs/2602.01345) |
+| 2026-02 | [PTQ4ARVG](papers/2026/2026-02/PTQ4ARVG/AI_Daily_PTQ4ARVG.md) | 自回歸視覺生成量化框架 | [2601.21238](https://arxiv.org/abs/2601.21238) |
+| 2026-02 | [RFC](papers/2026/2026-02/RFC/AI_Daily_RFC.md) | 輸出入關係加速 DiT 特徵快取 | [2602.19506](https://arxiv.org/abs/2602.19506) |
+| 2026-02 | [Semantic Bottleneck](papers/2026/2026-02/Semantic_Bottleneck/AI_Daily_Semantic_Bottleneck.md) | DiT 條件嵌入語義瓶頸 (ICLR 2026) | [2602.21596](https://arxiv.org/abs/2602.21596) |
+| 2026-02 | [SparVAR](papers/2026/2026-02/SparVAR/AI_Daily_SparVAR.md) | VAR 稀疏性高效加速 | [2602.04361](https://arxiv.org/abs/2602.04361) |
+| 2026-02 | [VAREdit](papers/2026/2026-02/VAREdit/AI_Daily_VAREdit.md) | 指令引導 VAR 圖像編輯 | [2508.15772](https://arxiv.org/abs/2508.15772) |
+
+### 2026-03
+
+| 日期 | 論文 | 主題 | arXiv |
+|------|------|------|-------|
+| 2026-03 | [AlignVAR](papers/2026/2026-03/AlignVAR/AI_Daily_AlignVAR.md) | VAR 全域一致性超解析度 | [2603.00589](https://arxiv.org/abs/2603.00589) |
+| 2026-03 | [MVAR](papers/2026/2026-03/MVAR/AI_Daily_MVAR.md) | 馬可夫假設線性複雜度 VAR | [2505.12742](https://arxiv.org/abs/2505.12742) |
+| 2026-03 | [PixelRush](papers/2026/2026-03/PixelRush/AI_Daily_PixelRush.md) | 20秒 4K 單步擴散模型 | [2602.12769](https://arxiv.org/abs/2602.12769) |
+| 2026-03 | [SCALAR](papers/2026/2026-03/SCALAR/AI_Daily_SCALAR.md) | VAR 尺度感知可控生成 | [2507.19946](https://arxiv.org/abs/2507.19946) |
+| 2026-03 | [StepVAR](papers/2026/2026-03/StepVAR/AI_Daily_StepVAR.md) | 結構紋理引導 VAR 剪枝 | [2603.01757](https://arxiv.org/abs/2603.01757) |
+| 2026-03 | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | DiT 全域文本條件機制 | [2602.09268](https://arxiv.org/abs/2602.09268) |
 
 ### 比較分析
-| Research | Keywords |
-|----------|----------|
-| [Modulation Guidance 與 Training-Free Attention Modulation 系列論文深度比較](papers/2026/03_Modulation_Guidance_Comparison/README.md) | Modulation Guidance, Attention Modulation, Training-Free, RoPE, AdaLN, DiT, Diffusion Models |
-| [雙維度協同控制應用場景案例分析](papers/2026/03_Dual_Dimensional_Control_Scenarios/README.md) | Attention Modulation, Modulation Guidance, Synergistic Control, Application Scenarios, Image Editing, Style Transfer |
 
-### Tokenization & Quantization
-| Research | Keywords |
-|----------|----------|
-| [BitDance - 用二元 Token 擴展自回歸生成模型的新篇章](papers/2026/2026-02/AI_Daily_BitDance.md) | Binary Tokens, Binary Diffusion Head, Next-Patch Diffusion, Autoregressive, Parallel Decoding, LFQ, Rectified Flow, ByteDance, arXiv 2026 |
-| [PTQ4ARVG - 無需訓練，為自回歸視覺生成模型量身打造的量化框架](papers/2026/2026-02/AI_Daily_PTQ4ARVG.md) | Post-Training Quantization, Training-Free, ARVG, Gain-Projected Scaling, Static Token-Wise Quantization, Distribution-Guided Calibration, ICLR 2026, 中科院自動化所, arXiv 2026 |
-| [BAR - 用遮罩位元建模突破自回歸圖像生成的極限](papers/2026/2026-02/AI_Daily_BAR.md) | Masked Bit Modeling, Autoregressive, Discrete Tokenizer, Bit Budget, FSQ, Scalable Generation, Google, arXiv 2026 |
-| [iFSQ - 一行代碼統一AR與Diffusion，實現高效圖像生成](papers/2026/2026-01/AI_Daily_iFSQ.md) | FSQ, Quantization, Distribution Matching, Unified Tokenizer, AR vs Diffusion, Peking University, Tencent Hunyuan, arXiv 2026 |
+| 日期 | 報告 | 主題 |
+|------|------|------|
+| 2026-03 | [Modulation Guidance 比較](papers/2026/2026-03/Modulation_Guidance_Comparison/AI_Daily_Modulation_Guidance_Comparison.md) | Modulation Guidance 系列論文深度比較 |
+| 2026-03 | [雙維度控制場景分析](papers/2026/2026-03/Dual_Dimensional_Control_Scenarios/AI_Daily_Dual_Dimensional_Control_Scenarios.md) | 雙維度協同控制應用場景案例分析 |
 
-### Unified Autoregressive Models
-| Research | Keywords |
-|----------|----------|
-| [AR-Omni - 邁向純自回歸的「Any-to-Any」多模態生成](papers/2026/2026-01/AI_Daily_AR-Omni.md) | Unified Autoregressive, Any-to-Any Generation, Multimodal, Streaming Speech, Real-time, 香港理工大學, arXiv 2026 |
-| [PackCache - 無需訓練，加速統一自回歸影片生成的新方法](papers/2026/2026-01/AI_Daily_PackCache.md) | Training-Free, KV-Cache, Autoregressive Video Generation, Inference Acceleration, University of Central Florida, arXiv 2026 |
+---
 
-### Diffusion Models
-| Research | Keywords |
-|----------|----------|
-| [RAE - 當擴散模型遇上自回歸，Yann LeCun帶隊挑戰VAE霸權](papers/2026/2026-01/AI_Daily_RAE-DiT.md) | Representation Autoencoders, Diffusion Transformers, Scaling, RAE vs VAE, Flow Matching, Yann LeCun, NYU, Meta FAIR, arXiv 2026 |
-| [FlexVAR - 擺脫殘差預測，實現靈活高效的視覺自回歸生成](papers/2026/2026-01/AI_Daily_FlexVAR.md) | Representation Autoencoders, Diffusion Transformers, Scaling, RAE vs VAE, Yann LeCun, NYU, Meta FAIR, arXiv 2026 |
-| [MMD Guidance - 無需訓練，實現擴散模型的分佈自適應](papers/2026/2026-01/AI_Daily_MMD-Guidance.md) | Training-Free, Distribution Adaptation, MMD, Inference-Time Guidance, Few-Shot, University of Waterloo, CUHK, arXiv 2026 |
-| [Sissi - 無需訓練，透過語義-風格整合實現零樣本風格引導的圖像生成](papers/2026/2026-01/AI_Daily_Sissi.md) | Zero-Shot, Training-Free, Style Transfer, ReFlow, Attention Modulation, DSSI, 中國科學院, arXiv 2026 |
-| [Alterbute - 編輯物體內在屬性的新篇章](papers/2026/2026-01/AI_Daily_Alterbute.md) | Intrinsic Attribute Editing, Visual Named Entities, Identity Preservation, Training-Free Inference, Google, arXiv 2026 |
-| [揭秘MMDiT Blocks：無需訓練即可分析與增強文本條件擴散模型](papers/2026/2026-01/AI_Daily_Unraveling_MMDiT.md) | Training-Free, Attention Analysis, MMDiT, FLUX, SD3.5, 復旦大學, arXiv 2026 |
-| [ZestGuide - 零樣本空間佈局條件下的文本到圖像擴散模型](papers/2023/2023-01/AI_Daily_ZestGuide.md) | Zero-Shot, Training-Free, Spatial Layout Control, Cross-Attention, ICCV 2023, Meta FAIR |
-| [LooseRoPE - 內容感知注意力操控，實現無縫語義融合](papers/2026/2026-01/AI_Daily_LooseRoPE.md) | Training-Free, Attention Modulation, RoPE, Semantic Harmonization, Zero-Shot |
-| [FAM Diffusion - 頻率與注意力調製實現高效高解析度圖像生成](papers/2026/2026-01/AI_Daily_FAM_Diffusion.md) | Training-Free, Attention Modulation, High-Resolution, CVPR 2025 |
-| [TP-Blend - 融合雙提示注意力配對，實現擴散模型中精確的物體風格融合](papers/2026/2026-01/AI_Daily_TP-Blend.md) | Training-Free, Attention Modulation, Cross-Attention, Self-Attention, Image Editing, GenPi Inc., arXiv 2026 |
-| [FusionEdit - 無需訓練，實現語義融合與注意力調製的圖像編輯新境界](papers/2026/2026-02/AI_Daily_FusionEdit.md) | Training-Free, Attention Modulation, Semantic Fusion, Soft Mask, AdaIN, Rectified Flow, Image Editing, arXiv 2026 |
-| [Untwisting RoPE - 解旋 RoPE，為 DiT 中的共享注意力機制引入頻率控制](papers/2026/2026-02/AI_Daily_Untwisting_RoPE.md) | Training-Free, Attention Modulation, RoPE, Frequency Control, Style Transfer, DiT, Simon Fraser University, Tel Aviv University, arXiv 2026 |
-| [DiT條件嵌入中的隱藏語義瓶頸 — 揭示 Diffusion Transformers 的冗餘性](papers/2026/2026-02/AI_Daily_Semantic_Bottleneck/AI_Daily_Semantic_Bottleneck.md) | Conditional Embeddings, Semantic Bottleneck, Cosine Similarity, Sparse Magnitude, Pruning, AdaLN, DiT, ICLR 2026, KAIST, arXiv 2026 |
-| [RFC - 運用輸出入關係加速DiT，實現更準確的特徵快取](papers/2026/2026-02/AI_Daily_RFC/AI_Daily_RFC.md) | Diffusion Transformers, Inference Acceleration, Feature Caching, Training-Free, Input-Output Relationship, Relational Feature Estimation, Relational Cache Scheduling, Yonsei University, KIST, ICLR 2026 |
-| [Modulation Guidance - 重新思考擴散模型中的全域文字條件，提出 Training-Free 的 Modulation Guidance](papers/2026/03_Rethinking_Global_Text_Conditioning_in_Diffusion_Transformers/README.md) | Training-Free, Modulation Space, CLIP Pooled Embedding, Diffusion Transformers, Aesthetics, Complexity, Hands Correction, FLUX, HiDream, COSMOS, ICLR 2026, Yandex Research, Adobe Research |
-| [DCAG - 雙通道注意力引導，解鎖 DiT 圖像編輯的 Value 空間控制](papers/2026/2026-02/AI_Daily_DCAG/AI_Daily_DCAG.md) | Training-Free, Attention Modulation, Bias-Delta Structure, Key-Value Channels, Image Editing, PIE-Bench, iFLYTEK, arXiv 2026 |
-| [PixelRush - 20秒產出4K高解析度圖像的單步擴散模型](papers/2026/2026-03-04_PixelRush.md) | Training-Free, High-Resolution Image Generation, One-step Diffusion, Patch-based, Partial Inversion, Seamless Blending, Noise Injection, SDXL-Turbo, Qualcomm AI Research, CVPR 2026 |
-
-### Flow Matching
-| Research | Keywords |
-|----------|----------|
-| [LapFlow - 當拉普拉斯金字塔遇上流匹配，實現高效多尺度圖像生成](papers/2026/2026-02/AI_Daily_LapFlow.md) | Laplacian Pyramid, Multi-scale, Flow Matching, Mixture-of-Transformers, MoT, Causal Attention, DiT, Progressive Training, ImageNet, ICLR 2026, Georgia Tech, arXiv 2026 |
-| [DIAMOND - 無需訓練，用直接推論修正 Flow Matching 模型中的生成瑕疵](papers/2026/2026-02/AI_Daily_DIAMOND.md) | Training-Free, Zero-Shot, Flow Matching, Artifact Mitigation, Trajectory Correction, Rectified Flow, FLUX, ICML 2026, Jagiellonian University, arXiv 2026 |
-| [Look-Ahead and Look-Back Flows - 無需訓練的軌跡平滑化圖像生成](papers/2026/2026-02/AI_Daily_Look_Ahead_Look_Back_Flows.md) | Training-Free, Flow Matching, Trajectory Smoothing, Curvature-Gated, Exponential Moving Average, Harvard University, arXiv 2026 |
-| [Decentralized Autoregressive Generation - 當自回歸遇上流匹配與去中心化](papers/2026/2026-01/AI_Daily_Decentralized_AR.md) | Autoregressive, Flow Matching, Decentralized Training, Multimodal Models, Lancaster University, arXiv 2026 |
-| [FlowAR - 當尺度自回歸遇上流匹配，圖像生成的新篇章](papers/2024/2024-12/AI_Daily_FlowAR.md) | VAR, Flow Matching, Scale-wise Autoregressive, Spatial-adaLN, Johns Hopkins, ByteDance, arXiv 2024 |
-| [SoFlow - 流模型論文深度解析](papers/2024/2024-11/AI_Daily_SoFlow.md) | Flow Models, Image Generation |
-| [JanusFlow](papers/2025/2025-01/AI_Daily_JanusFlow.md) | Flow Matching, Unified Generation |
-
-### Autoregressive Models (AR)
-| Research | Keywords |
-|----------|----------|
-| [ARPG - 解鎖隨機並行解碼的自回歸圖像生成新境界](papers/2026/2026-02/AI_Daily_ARPG.md) | Autoregressive, Randomized Parallel Decoding, Two-Pass Decoder, Zero-Shot, KV Cache, Decoupled Decoding, Westlake University, Chinese Academy of Sciences, ICLR 2026 |
-| [Light Forcing - 無需訓練，用稀疏注意力為自回歸影片擴散模型按下加速鍵](papers/2026/2026-02/AI_Daily_Light_Forcing.md) | Training-Free, Sparse Attention, Autoregressive Video Generation, Chunk-Aware Growth, Hierarchical Sparse Attention, Real-time Generation, 南洋理工大學, 香港科技大學, arXiv 2026 |
-| [Mirai - 讓自回歸視覺生成擁有「預見未來」的能力](papers/2026/2026-01/AI_Daily_Mirai.md) | Autoregressive, Foresight, Training-Time Enhancement, 10x Acceleration, 東京大學, 北京大學, arXiv 2026 |
-| [RadAR - 從序列到空間，重排序自回歸實現高效視覺生成](papers/2025/2025-01/AI_Daily_RadAR.md) | Autoregressive, Zero-Shot, Parallel Generation, Efficient |
-| [EditAR - 統一條件圖像生成的自回歸新篇章](papers/2025/2025-01/AI_Daily_EditAR.md) | Autoregressive, Image Generation |
-| [Multimodal Autoregressive Pre-training of Large Vision Encoders](papers/2025/2025-01/AI_Daily_Multimodal_AR_Vision_Encoders.md) | Vision Encoders, Multimodal |
+## 論文索引（按主題）
 
 ### Visual Autoregressive Models (VAR)
-| Research | Keywords |
-|----------|----------|
-| [AlignVAR - 實現全域一致性的視覺自回歸圖像超解析度](papers/2026-03-03_AlignVAR/AlignVAR.md) | VAR, Image Super-Resolution, Global Consistency, Spatial Consistency Autoregression, Hierarchical Consistency Constraint, CVPR 2026 |
-| [SCALAR - 解鎖VAR模型的可控生成，注入尺度感知新思路](papers/2026/2026-03/AI_Daily_SCALAR/AI_Daily_SCALAR.md) | VAR, Controllable Generation, Scale-wise Conditional Decoding, DINOv2, Unified Control Alignment, Zero-Shot Inpainting, Alibaba Amap, AAAI 2026 |
-| [HSI-VAR - 當視覺自回歸遇上高光譜，開啟影像修復新篇章](papers/2026/2026-02/AI_Daily_HSI-VAR.md) | VAR, Hyperspectral Image Restoration, All-in-One Restoration, Degradation-Aware Guidance, Spatial-Spectral Adaptation, Harbin Institute of Technology, Harvard University, arXiv 2026 |
-| [DreamVAR - 當VAR遇上強化學習，實現高保真主體驅動圖像生成](papers/2026/2026-01/AI_Daily_DreamVAR.md) | VAR, Reinforcement Learning, GRPO, Subject-Driven Generation, Pre-filling, ICASSP 2026, Nanjing University, arXiv 2026 |
-| [SparVAR - 無需訓練，探索視覺自回歸模型中的稀疏性以實現高效加速](papers/2026/2026-02/AI_Daily_SparVAR.md) | VAR, Training-Free, Sparse Attention, Acceleration, Block-wise Kernel, Cross-Scale Similarity, 中科院自動化所, arXiv 2026 |
-| [NOVA - 無需訓練，用熵引導VAR模型實現自適應加速](papers/2026/2026-02/AI_Daily_NOVA.md) | VAR, Training-Free, Token Reduction, Entropy Analysis, Dual-Linkage, Acceleration, 同濟大學, 哈爾濱工業大學, arXiv 2026 |
-| [SSG - 縮放空間引導下的多尺度視覺自迴歸生成](papers/2026/2026-02/AI_Daily_SSG.md) | VAR, Training-Free, Inference Guidance, Scaled Spatial Guidance, DSE, Frequency Domain, Information Bottleneck, KAIST, ICLR 2026 |
-| [SoftCFG - 無需訓練，用不確定性引導穩定視覺自回歸模型](papers/2026/2026-01/AI_Daily_SoftCFG.md) | VAR, Training-Free, Inference Guidance, Uncertainty-guided, Classifier-Free Guidance, KU Leuven, ICLR 2026 |
-| [ResTok - 讓視覺自回歸模型「重拾視覺」，實現高效高保真生成](papers/2026/2026-01/AI_Daily_ResTok.md) | VAR, Hierarchical Residuals, 1D Tokenizer, Autoregressive Image Generation, 南京大學, 快手科技, arXiv 2026 |
-| [VAR-Scaling - 探索視覺自回歸模型的推理時縮放新策略](papers/2026/2026-01/AI_Daily_VAR-Scaling.md) | VAR, Inference-Time Scaling, KDE, Density-Adaptive Sampling, PRCV 2025, Xidian University, arXiv 2026 |
-| [VideoAR - 結合Next-Frame與Next-Scale預測的自回歸影片生成新篇章](papers/2026/2026-01/AI_Daily_VideoAR.md) | VAR, Video Generation, Next-Frame Prediction, Next-Scale Prediction, Baidu ERNIE, arXiv 2026 |
-| [DiverseVAR - 解放視覺自回歸模型的多樣性潛能](papers/2025/2025-01/AI_Daily_DiverseVAR.md) | VAR, Training-Free, Diversity Collapse, MBZUAI |
-| [VAREdit - 指令引導圖像編輯的VAR新標竿](papers/2026/2026-02/AI_Daily_VAREdit/AI_Daily_VAREdit.md) | VAR, Instruction-Guided Image Editing, Scale-Aligned Reference, SAR Module, Attention Injection, HiDream.ai, USTC, ICLR 2026 |
-| [AREdit - 無需訓練的VAR圖像編輯新篇章](papers/2025/2025-03/AI_Daily_AREdit.md) | VAR, Training-Free, Image Editing, Zero-Shot, Snap Research, NTU, arXiv 2025 |
-| [ToProVAR - 視覺自回歸模型高效優化新框架](papers/2026/2026-01/AI_Daily_ToProVAR.md) | VAR, Optimization, Attention Entropy |
-| [Visual Autoregressive Modelling for Monocular Depth Estimation](papers/2025/2025-01/AI_Daily_VAR_Depth_Estimation.md) | VAR, Depth Estimation |
-| [VAR RL Done Right - 解決視覺自回歸生成中的異步策略衝突](papers/2026/2026-01/AI_Daily_VAR_RL_Done_Right.md) | VAR, Reinforcement Learning, GRPO, Value as Middle Return, Text Rendering, Tsinghua University, ByteDance, arXiv 2026 |
-| [FlexVAR - 擺脱殘餘預測，實現靈活高效的視覺自回歸生成](papers/2026/2026-01/AI_Daily_FlexVAR.md) | VAR, Training-Free, Ground-Truth Prediction, Flexible Generation, Beijing Jiaotong University, arXiv 2026 |
-| [VAR-LIDE](papers/2026/2026-01/AI_Daily_VAR-LIDE.md) | Visual Autoregressive, Image Generation |
-| [EchoGen - 當視覺自回歸模型遇上主體驅動生成，實現高效零樣本合成](papers/2026/2026-02/AI_Daily_EchoGen.md) | VAR, Subject-Driven Generation, Zero-Shot, Feed-Forward, Dual-Path Injection, DINOv2, Multi-Modal Attention, Infinity, Alibaba, USTC, ICLR 2026 |
-| [MVAR - 用馬可夫假設重塑視覺自回歸，以線性複雜度實現高效圖像生成](papers/2026/2026-03/AI_Daily_MVAR/AI_Daily_MVAR.md) | VAR, Scale Markovian Conditioning, Spatial Markov Attention, Parallel Training, KV-Cache-Free, O(Nk) Complexity, Memory Efficiency, 電子科技大學, ICLR 2026 |
-| [StepVAR - 無需訓練，用結構與紋理引導VAR模型剪枝，實現高效推理](papers/2026/2026-03/AI_Daily_StepVAR/AI_Daily_StepVAR.md) | VAR, Training-Free, Token Pruning, Inference Acceleration, PCA, High-Pass Filter, Nearest Neighbor Feature Propagation, HART, Infinity, InfinityStar, USTC, arXiv 2026 |
-| [AlignVAR - 解決VAR圖像超解析度的全域一致性問題，實現高效高保真重建](papers/2026/2026-03-06/2026-03-06-AlignVAR.md) | VAR, Image Super-Resolution, Global Consistency, Spatial Consistency Autoregression, Hierarchical Consistency Constraint, Adaptive Mask, 電子科技大學, CVPR 2026 |
 
+**架構與改進：** [FlexVAR](papers/2026/2026-01/FlexVAR/AI_Daily_FlexVAR.md) | [DiverseVAR](papers/2025/2025-01/DiverseVAR/AI_Daily_DiverseVAR.md) | [ResTok](papers/2026/2026-01/ResTok/AI_Daily_ResTok.md) | [RAE](papers/2026/2026-01/RAE/AI_Daily_RAE.md) | [iFSQ](papers/2026/2026-01/iFSQ/AI_Daily_iFSQ.md) | [BAR](papers/2026/2026-02/BAR/AI_Daily_BAR.md) | [BitDance](papers/2026/2026-02/BitDance/AI_Daily_BitDance.md) | [MVAR](papers/2026/2026-03/MVAR/AI_Daily_MVAR.md)
 
-## 📮 保持聯繫
+**加速與效率：** [SparVAR](papers/2026/2026-02/SparVAR/AI_Daily_SparVAR.md) | [NOVA](papers/2026/2026-02/NOVA/AI_Daily_NOVA.md) | [PackCache](papers/2026/2026-01/PackCache/AI_Daily_PackCache.md) | [ToProVAR](papers/2026/2026-01/ToProVAR/AI_Daily_ToProVAR.md) | [StepVAR](papers/2026/2026-03/StepVAR/AI_Daily_StepVAR.md) | [PTQ4ARVG](papers/2026/2026-02/PTQ4ARVG/AI_Daily_PTQ4ARVG.md) | [VAR-Scaling](papers/2026/2026-01/VAR-Scaling/AI_Daily_VAR-Scaling.md)
 
-喜歡我們的內容嗎？歡迎關注、分享、交流！
+**引導與控制：** [SSG](papers/2026/2026-01/SSG/AI_Daily_SSG.md) | [SoftCFG](papers/2026/2026-01/SoftCFG/AI_Daily_SoftCFG.md) | [SCALAR](papers/2026/2026-03/SCALAR/AI_Daily_SCALAR.md) | [VAR RL Done Right](papers/2026/2026-01/VAR_RL_Done_Right/AI_Daily_VAR_RL_Done_Right.md)
 
-如果你有想看的論文主題或建議，也歡迎隨時提出。
+**應用（編輯/修復/超解析度）：** [AREdit](papers/2025/2025-03/AREdit/AI_Daily_AREdit.md) | [EditAR](papers/2025/2025-01/EditAR/AI_Daily_EditAR.md) | [VAREdit](papers/2026/2026-02/VAREdit/AI_Daily_VAREdit.md) | [VAR-LIDE](papers/2026/2026-01/VAR-LIDE/AI_Daily_VAR-LIDE.md) | [AlignVAR](papers/2026/2026-03/AlignVAR/AI_Daily_AlignVAR.md) | [HSI-VAR](papers/2026/2026-02/HSI-VAR/AI_Daily_HSI-VAR.md) | [VAR Depth Estimation](papers/2025/2025-01/VAR_Depth_Estimation/AI_Daily_VAR_Depth_Estimation.md)
+
+**風格與主體驅動：** [DreamVAR](papers/2026/2026-01/DreamVAR/AI_Daily_DreamVAR.md) | [EchoGen](papers/2026/2026-02/EchoGen/AI_Daily_EchoGen.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md)
+
+### Autoregressive Generation (General)
+
+[FlowAR](papers/2024/2024-12/FlowAR/AI_Daily_FlowAR.md) | [Mirai](papers/2026/2026-01/Mirai/AI_Daily_Mirai.md) | [AR-Omni](papers/2026/2026-01/AR-Omni/AI_Daily_AR-Omni.md) | [Decentralized AR](papers/2026/2026-01/Decentralized_AR/AI_Daily_Decentralized_AR.md) | [ARPG](papers/2026/2026-02/ARPG/AI_Daily_ARPG.md) | [VideoAR](papers/2026/2026-01/VideoAR/AI_Daily_VideoAR.md) | [Multimodal AR Vision Encoders](papers/2025/2025-01/Multimodal_AR_Vision_Encoders/AI_Daily_Multimodal_AR_Vision_Encoders.md) | [RadAR](papers/2025/2025-01/RadAR/AI_Daily_RadAR.md)
+
+### Diffusion Models & Flow Matching
+
+**架構與機制分析：** [Unraveling MMDiT](papers/2026/2026-01/Unraveling_MMDiT/AI_Daily_Unraveling_MMDiT.md) | [Semantic Bottleneck](papers/2026/2026-02/Semantic_Bottleneck/AI_Daily_Semantic_Bottleneck.md) | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | [Untwisting RoPE](papers/2026/2026-01/Untwisting_RoPE/AI_Daily_Untwisting_RoPE.md)
+
+**引導與加速：** [MMD-Guidance](papers/2026/2026-01/MMD-Guidance/AI_Daily_MMD-Guidance.md) | [Light Forcing](papers/2026/2026-02/Light_Forcing/AI_Daily_Light_Forcing.md) | [RFC](papers/2026/2026-02/RFC/AI_Daily_RFC.md) | [DIAMOND](papers/2026/2026-02/DIAMOND/AI_Daily_DIAMOND.md) | [Look-Ahead Look-Back Flows](papers/2026/2026-02/Look_Ahead_Look_Back_Flows/AI_Daily_Look_Ahead_Look_Back_Flows.md) | [SoFlow](papers/2024/2024-11/SoFlow/AI_Daily_SoFlow.md) | [LapFlow](papers/2026/2026-02/LapFlow/AI_Daily_LapFlow.md)
+
+**高效生成：** [FAM Diffusion](papers/2026/2026-01/FAM_Diffusion/AI_Daily_FAM_Diffusion.md) | [PixelRush](papers/2026/2026-03/PixelRush/AI_Daily_PixelRush.md)
+
+### Image Editing (Training-Free)
+
+[DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md)
+
+### Unified / Multi-modal
+
+[JanusFlow](papers/2025/2025-01/JanusFlow/AI_Daily_JanusFlow.md) | [AR-Omni](papers/2026/2026-01/AR-Omni/AI_Daily_AR-Omni.md)
+
+---
+
+## 工具
+
+- **[PDF Image Extractor](skills/pdf-image-extractor/)** — 從論文 PDF 中提取高品質圖片的工具
+
+---
+
+## 保持聯繫
+
+喜歡我們的內容嗎？歡迎關注、分享、交流！如果你有想看的論文主題或建議，也歡迎隨時提出。
 
 > **Contact Me**: k20010928@gmail.com
 
 ---
 
-**每天進步一點點，與 AI 一起成長** 🌱
+*每天進步一點點，與 AI 一起成長。*
 
 *Last Updated: 2026-03-06*
-
-<!-- 2026-03-06: Added AlignVAR -->
-<!-- 2026-03-05: Added MVAR -->
-<!-- 2026-03-04: Added StepVAR -->
