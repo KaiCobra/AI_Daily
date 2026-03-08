@@ -2,9 +2,9 @@
 
 ## 今日閱讀
 
-**[ATM (ISLock) - 首個針對 AR 視覺模型的免訓練圖像編輯策略，透過 Anchor Token Matching 實現隱式結構鎖定](papers/2026-03-07-ATM-ISLock.md)**
+**[AREdit - 首個基於 VAR 的免訓練文字引導圖像編輯框架，透過隨機性快取與自適應細粒度遮罩實現精確局部控制](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md)**
 
-AR 模型在圖像編輯中面臨注意力圖空間貧乏與結構誤差序列累積兩大難題。ATM 在潛在空間中以最近鄰匹配選擇錨點 Token，引發隱式注意力對齊，搭配動態窗口與自適應約束放寬，在保持結構的同時維持生成自主性。ICCV 2025 頂會論文，南開大學出品。
+擴散模型的反轉技術（Inversion）容易引發誤差傳播與全局性修改。AREdit 基於 VAR 架構，透過快取 token 概率分佈徹底繞過反轉，再以自適應遮罩精確定位需修改的區域，處理 1K 解析度圖像僅需 1.2 秒，比現有方法快約 9 倍。ICCV 2025 頂會論文，Snap Research & NTU 出品。
 
 ---
 
@@ -135,6 +135,7 @@ skills/
 | 2026-03 | [PixelRush](papers/2026/2026-03/PixelRush/AI_Daily_PixelRush.md) | 20秒 4K 單步擴散模型 | [2602.12769](https://arxiv.org/abs/2602.12769) |
 | 2026-03 | [SCALAR](papers/2026/2026-03/SCALAR/AI_Daily_SCALAR.md) | VAR 尺度感知可控生成 | [2507.19946](https://arxiv.org/abs/2507.19946) |
 | 2026-03 | [StepVAR](papers/2026/2026-03/StepVAR/AI_Daily_StepVAR.md) | 結構紋理引導 VAR 剪枝 | [2603.01757](https://arxiv.org/abs/2603.01757) |
+| 2026-03 | [AREdit](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | 首個 VAR-based 免訓練文字引導圖像編輯 (ICCV 2025) | [2503.23897](https://arxiv.org/abs/2503.23897) |
 | 2026-03 | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | 首個 AR 模型免訓練圖像編輯 (ICCV 2025) | [2504.10434](https://arxiv.org/abs/2504.10434) |
 | 2026-03 | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | DiT 全域文本條件機制 | [2602.09268](https://arxiv.org/abs/2602.09268) |
 
@@ -157,7 +158,7 @@ skills/
 
 **引導與控制：** [SSG](papers/2026/2026-01/SSG/AI_Daily_SSG.md) | [SoftCFG](papers/2026/2026-01/SoftCFG/AI_Daily_SoftCFG.md) | [SCALAR](papers/2026/2026-03/SCALAR/AI_Daily_SCALAR.md) | [VAR RL Done Right](papers/2026/2026-01/VAR_RL_Done_Right/AI_Daily_VAR_RL_Done_Right.md)
 
-**應用（編輯/修復/超解析度）：** [AREdit](papers/2025/2025-03/AREdit/AI_Daily_AREdit.md) | [EditAR](papers/2025/2025-01/EditAR/AI_Daily_EditAR.md) | [VAREdit](papers/2026/2026-02/VAREdit/AI_Daily_VAREdit.md) | [VAR-LIDE](papers/2026/2026-01/VAR-LIDE/AI_Daily_VAR-LIDE.md) | [AlignVAR](papers/2026/2026-03/AlignVAR/AI_Daily_AlignVAR.md) | [HSI-VAR](papers/2026/2026-02/HSI-VAR/AI_Daily_HSI-VAR.md) | [VAR Depth Estimation](papers/2025/2025-01/VAR_Depth_Estimation/AI_Daily_VAR_Depth_Estimation.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md)
+**應用（編輯/修復/超解析度）：** [AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [AREdit (2025-03)](papers/2025/2025-03/AREdit/AI_Daily_AREdit.md) | [EditAR](papers/2025/2025-01/EditAR/AI_Daily_EditAR.md) | [VAREdit](papers/2026/2026-02/VAREdit/AI_Daily_VAREdit.md) | [VAR-LIDE](papers/2026/2026-01/VAR-LIDE/AI_Daily_VAR-LIDE.md) | [AlignVAR](papers/2026/2026-03/AlignVAR/AI_Daily_AlignVAR.md) | [HSI-VAR](papers/2026/2026-02/HSI-VAR/AI_Daily_HSI-VAR.md) | [VAR Depth Estimation](papers/2025/2025-01/VAR_Depth_Estimation/AI_Daily_VAR_Depth_Estimation.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md)
 
 **風格與主體驅動：** [DreamVAR](papers/2026/2026-01/DreamVAR/AI_Daily_DreamVAR.md) | [EchoGen](papers/2026/2026-02/EchoGen/AI_Daily_EchoGen.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md)
 
@@ -175,7 +176,7 @@ skills/
 
 ### Image Editing (Training-Free)
 
-[ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md)
+[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md)
 
 ### Unified / Multi-modal
 
@@ -199,4 +200,4 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-03-07*
+*Last Updated: 2026-03-08*
