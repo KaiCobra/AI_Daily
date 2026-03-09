@@ -2,9 +2,9 @@
 
 ## 今日閱讀
 
-**[AREdit - 首個基於 VAR 的免訓練文字引導圖像編輯框架，透過隨機性快取與自適應細粒度遮罩實現精確局部控制](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md)**
+**[Self-Flow - Black Forest Labs + MIT 提出的自監督 Flow Matching 框架，透過 Dual-Timestep Scheduling 創造信息不對稱，完全免除外部對齊模型，收斂速度比 REPA 快 2.8 倍](papers/2026/2026-03/SelfFlow/AI_Daily_SelfFlow.md)**
 
-擴散模型的反轉技術（Inversion）容易引發誤差傳播與全局性修改。AREdit 基於 VAR 架構，透過快取 token 概率分佈徹底繞過反轉，再以自適應遮罩精確定位需修改的區域，處理 1K 解析度圖像僅需 1.2 秒，比現有方法快約 9 倍。ICCV 2025 頂會論文，Snap Research & NTU 出品。
+現有 Flow Matching 模型依賴 DINOv2 等外部模型進行特徵對齊，但更強的編碼器反而導致生成質量下降。Self-Flow 提出雙時間步調度，對不同 token 應用異構噪聲創造信息不對稱，學生網絡必須從教師網絡的更乾淨視角推斷語義。在 T2I、T2V、T2A 三個模態全面超越 REPA，625M 參數模型甚至超越 1B 參數的 REPA。Black Forest Labs (FLUX 作者) + MIT 出品。
 
 ---
 
@@ -136,6 +136,7 @@ skills/
 | 2026-03 | [SCALAR](papers/2026/2026-03/SCALAR/AI_Daily_SCALAR.md) | VAR 尺度感知可控生成 | [2507.19946](https://arxiv.org/abs/2507.19946) |
 | 2026-03 | [StepVAR](papers/2026/2026-03/StepVAR/AI_Daily_StepVAR.md) | 結構紋理引導 VAR 剪枝 | [2603.01757](https://arxiv.org/abs/2603.01757) |
 | 2026-03 | [AREdit](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | 首個 VAR-based 免訓練文字引導圖像編輯 (ICCV 2025) | [2503.23897](https://arxiv.org/abs/2503.23897) |
+| 2026-03-09 | [Self-Flow](papers/2026/2026-03/SelfFlow/AI_Daily_SelfFlow.md) | 自監督 Flow Matching，Dual-Timestep 信息不對稱 | [2603.06507](https://arxiv.org/abs/2603.06507) |
 | 2026-03 | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | 首個 AR 模型免訓練圖像編輯 (ICCV 2025) | [2504.10434](https://arxiv.org/abs/2504.10434) |
 | 2026-03 | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | DiT 全域文本條件機制 | [2602.09268](https://arxiv.org/abs/2602.09268) |
 
@@ -167,6 +168,8 @@ skills/
 [FlowAR](papers/2024/2024-12/FlowAR/AI_Daily_FlowAR.md) | [Mirai](papers/2026/2026-01/Mirai/AI_Daily_Mirai.md) | [AR-Omni](papers/2026/2026-01/AR-Omni/AI_Daily_AR-Omni.md) | [Decentralized AR](papers/2026/2026-01/Decentralized_AR/AI_Daily_Decentralized_AR.md) | [ARPG](papers/2026/2026-02/ARPG/AI_Daily_ARPG.md) | [VideoAR](papers/2026/2026-01/VideoAR/AI_Daily_VideoAR.md) | [Multimodal AR Vision Encoders](papers/2025/2025-01/Multimodal_AR_Vision_Encoders/AI_Daily_Multimodal_AR_Vision_Encoders.md) | [RadAR](papers/2025/2025-01/RadAR/AI_Daily_RadAR.md)
 
 ### Diffusion Models & Flow Matching
+
+**自監督表示學習：** [Self-Flow](papers/2026/2026-03/SelfFlow/AI_Daily_SelfFlow.md)
 
 **架構與機制分析：** [Unraveling MMDiT](papers/2026/2026-01/Unraveling_MMDiT/AI_Daily_Unraveling_MMDiT.md) | [Semantic Bottleneck](papers/2026/2026-02/Semantic_Bottleneck/AI_Daily_Semantic_Bottleneck.md) | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | [Untwisting RoPE](papers/2026/2026-01/Untwisting_RoPE/AI_Daily_Untwisting_RoPE.md)
 
@@ -200,4 +203,4 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-03-08*
+*Last Updated: 2026-03-09*
