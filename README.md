@@ -2,9 +2,9 @@
 
 ## 今日閱讀
 
-**[Self-Flow - Black Forest Labs + MIT 提出的自監督 Flow Matching 框架，透過 Dual-Timestep Scheduling 創造信息不對稱，完全免除外部對齊模型，收斂速度比 REPA 快 2.8 倍](papers/2026/2026-03/SelfFlow/AI_Daily_SelfFlow.md)**
+**[LayerBind - 天津大學提出的 CVPR 2026 論文，首個同時解決 DiT 區域佈局與遮擋控制的免訓練方法，通過層級注意力綁定與透明度調度器，在 FLUX 和 SD3.5 上達到 SOTA 遮擋控制能力](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md)**
 
-現有 Flow Matching 模型依賴 DINOv2 等外部模型進行特徵對齊，但更強的編碼器反而導致生成質量下降。Self-Flow 提出雙時間步調度，對不同 token 應用異構噪聲創造信息不對稱，學生網絡必須從教師網絡的更乾淨視角推斷語義。在 T2I、T2V、T2A 三個模態全面超越 REPA，625M 參數模型甚至超越 1B 參數的 REPA。Black Forest Labs (FLUX 作者) + MIT 出品。
+現有 DiT 佈局控制方法要麼引入訓練偏差，要麼無法處理遮擋順序。LayerBind 觀察到佈局和遮擋在去噪早期就已確立，提出兩階段策略：Layer-wise Instance Initialization（早期分支融合建立佈局）和 Layer-wise Semantic Nursing（後期注意力增強維持遮擋）。在 BindBench 複雜遮擋評測上大幅超越所有競爭方法，且僅增加 30% 推理時間。天津大學出品，CVPR 2026 接收。
 
 ---
 
@@ -137,6 +137,7 @@ skills/
 | 2026-03 | [StepVAR](papers/2026/2026-03/StepVAR/AI_Daily_StepVAR.md) | 結構紋理引導 VAR 剪枝 | [2603.01757](https://arxiv.org/abs/2603.01757) |
 | 2026-03 | [AREdit](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | 首個 VAR-based 免訓練文字引導圖像編輯 (ICCV 2025) | [2503.23897](https://arxiv.org/abs/2503.23897) |
 | 2026-03-09 | [Self-Flow](papers/2026/2026-03/SelfFlow/AI_Daily_SelfFlow.md) | 自監督 Flow Matching，Dual-Timestep 信息不對稱 | [2603.06507](https://arxiv.org/abs/2603.06507) |
+| 2026-03-11 | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | 免訓練 DiT 區域佈局與遮擋控制 (CVPR 2026) | [2603.05769](https://arxiv.org/abs/2603.05769) |
 | 2026-03 | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | 首個 AR 模型免訓練圖像編輯 (ICCV 2025) | [2504.10434](https://arxiv.org/abs/2504.10434) |
 | 2026-03 | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | DiT 全域文本條件機制 | [2602.09268](https://arxiv.org/abs/2602.09268) |
 
@@ -179,7 +180,7 @@ skills/
 
 ### Image Editing (Training-Free)
 
-[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md)
+[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md)
 
 ### Unified / Multi-modal
 
@@ -203,4 +204,4 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-03-09*
+*Last Updated: 2026-03-11*
