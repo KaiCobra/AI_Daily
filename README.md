@@ -2,9 +2,9 @@
 
 ## 今日閱讀
 
-**[LayerBind - 天津大學提出的 CVPR 2026 論文，首個同時解決 DiT 區域佈局與遮擋控制的免訓練方法，通過層級注意力綁定與透明度調度器，在 FLUX 和 SD3.5 上達到 SOTA 遮擋控制能力](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md)**
+**[KV-Lock & RAISE — 2026-03-12 雙論文精讀：免訓練 KV 注意力動態排程影片編輯 + 需求驅動演化 T2I 對齊](papers/2026/2026-03/2026-03-12-KV-Lock-and-RAISE.md)**
 
-現有 DiT 佈局控制方法要麼引入訓練偏差，要麼無法處理遮擋順序。LayerBind 觀察到佈局和遮擋在去噪早期就已確立，提出兩階段策略：Layer-wise Instance Initialization（早期分支融合建立佈局）和 Layer-wise Semantic Nursing（後期注意力增強維持遮擋）。在 BindBench 複雜遮擋評測上大幅超越所有競爭方法，且僅增加 30% 推理時間。天津大學出品，CVPR 2026 接收。
+**KV-Lock** 提出以「擴散幻覺檢測（去噪預測變異數）」為信號，動態排程背景 KV 快取的融合比例與 CFG 尺度，在 DiT 影片擴散模型中實現前景品質與背景一致性的完美平衡，無需任何訓練即可即插即用。**RAISE** (CVPR 2026) 則將 T2I 生成公式化為需求驅動的演化過程，透過分析器-重寫器-驗證器三代理系統，並行探索提示詞重寫、噪聲重採樣和指令式編輯三種策略，在 GenEval 達到 0.94 的 SOTA 對齊分數，同時比基準方法少用 80% 的 VLM 呼叫次數。
 
 ---
 
@@ -138,6 +138,7 @@ skills/
 | 2026-03 | [AREdit](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | 首個 VAR-based 免訓練文字引導圖像編輯 (ICCV 2025) | [2503.23897](https://arxiv.org/abs/2503.23897) |
 | 2026-03-09 | [Self-Flow](papers/2026/2026-03/SelfFlow/AI_Daily_SelfFlow.md) | 自監督 Flow Matching，Dual-Timestep 信息不對稱 | [2603.06507](https://arxiv.org/abs/2603.06507) |
 | 2026-03-11 | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | 免訓練 DiT 區域佈局與遮擋控制 (CVPR 2026) | [2603.05769](https://arxiv.org/abs/2603.05769) |
+| 2026-03-12 | [KV-Lock & RAISE](papers/2026/2026-03/2026-03-12-KV-Lock-and-RAISE.md) | 免訓練 KV 注意力控制影片編輯 & 需求自適應演化 T2I 對齊 (CVPR 2026) | [2603.09657](https://arxiv.org/abs/2603.09657) / [2603.00483](https://arxiv.org/abs/2603.00483) |
 | 2026-03 | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | 首個 AR 模型免訓練圖像編輯 (ICCV 2025) | [2504.10434](https://arxiv.org/abs/2504.10434) |
 | 2026-03 | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | DiT 全域文本條件機制 | [2602.09268](https://arxiv.org/abs/2602.09268) |
 
@@ -204,4 +205,4 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-03-11*
+*Last Updated: 2026-03-12*
