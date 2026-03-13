@@ -2,9 +2,9 @@
 
 ## 今日閱讀
 
-**[KV-Lock & RAISE — 2026-03-12 雙論文精讀：免訓練 KV 注意力動態排程影片編輯 + 需求驅動演化 T2I 對齊](papers/2026/2026-03/2026-03-12-KV-Lock-and-RAISE.md)**
+**[Scale-wise Autoregressive Style-Aligned — 2026-03-13：首個 VAR-based 免訓練風格對齊圖像生成，推理速度快 6× 以上](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md)**
 
-**KV-Lock** 提出以「擴散幻覺檢測（去噪預測變異數）」為信號，動態排程背景 KV 快取的融合比例與 CFG 尺度，在 DiT 影片擴散模型中實現前景品質與背景一致性的完美平衡，無需任何訓練即可即插即用。**RAISE** (CVPR 2026) 則將 T2I 生成公式化為需求驅動的演化過程，透過分析器-重寫器-驗證器三代理系統，並行探索提示詞重寫、噪聲重採樣和指令式編輯三種策略，在 GenEval 達到 0.94 的 SOTA 對齊分數，同時比基準方法少用 80% 的 VLM 呼叫次數。
+本文提出首個基於**尺度自迴歸模型 (Scale-wise Autoregressive / VAR)** 的**免訓練 (Training-Free)** 風格對齊圖像生成框架。透過分析 next-scale prediction 過程中各階段的特性，提出三個核心組件：**初始特徵替換**（統一 RGB 統計）、**關鍵特徵插值**（對齊物件位置與風格）、**動態風格注入**（以調度函數漸進式調變自注意力 Value 特徵）。在 Infinity 2B 模型上實現 1.58 秒/張的推理速度，比最快的競爭方法 StyleAligned 快 **7×**，同時在雙一致性 (Dual Consistency) 指標上取得最佳成績。
 
 ---
 
@@ -138,6 +138,7 @@ skills/
 | 2026-03 | [AREdit](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | 首個 VAR-based 免訓練文字引導圖像編輯 (ICCV 2025) | [2503.23897](https://arxiv.org/abs/2503.23897) |
 | 2026-03-09 | [Self-Flow](papers/2026/2026-03/SelfFlow/AI_Daily_SelfFlow.md) | 自監督 Flow Matching，Dual-Timestep 信息不對稱 | [2603.06507](https://arxiv.org/abs/2603.06507) |
 | 2026-03-11 | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | 免訓練 DiT 區域佈局與遮擋控制 (CVPR 2026) | [2603.05769](https://arxiv.org/abs/2603.05769) |
+| 2026-03-13 | [Scale-wise AR Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) | 首個 VAR-based 免訓練風格對齊圖像生成，推理速度快 6× 以上 | [2504.06144](https://arxiv.org/abs/2504.06144) |
 | 2026-03-12 | [KV-Lock & RAISE](papers/2026/2026-03/2026-03-12-KV-Lock-and-RAISE.md) | 免訓練 KV 注意力控制影片編輯 & 需求自適應演化 T2I 對齊 (CVPR 2026) | [2603.09657](https://arxiv.org/abs/2603.09657) / [2603.00483](https://arxiv.org/abs/2603.00483) |
 | 2026-03 | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | 首個 AR 模型免訓練圖像編輯 (ICCV 2025) | [2504.10434](https://arxiv.org/abs/2504.10434) |
 | 2026-03 | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | DiT 全域文本條件機制 | [2602.09268](https://arxiv.org/abs/2602.09268) |
@@ -163,7 +164,7 @@ skills/
 
 **應用（編輯/修復/超解析度）：** [AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [AREdit (2025-03)](papers/2025/2025-03/AREdit/AI_Daily_AREdit.md) | [EditAR](papers/2025/2025-01/EditAR/AI_Daily_EditAR.md) | [VAREdit](papers/2026/2026-02/VAREdit/AI_Daily_VAREdit.md) | [VAR-LIDE](papers/2026/2026-01/VAR-LIDE/AI_Daily_VAR-LIDE.md) | [AlignVAR](papers/2026/2026-03/AlignVAR/AI_Daily_AlignVAR.md) | [HSI-VAR](papers/2026/2026-02/HSI-VAR/AI_Daily_HSI-VAR.md) | [VAR Depth Estimation](papers/2025/2025-01/VAR_Depth_Estimation/AI_Daily_VAR_Depth_Estimation.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md)
 
-**風格與主體驅動：** [DreamVAR](papers/2026/2026-01/DreamVAR/AI_Daily_DreamVAR.md) | [EchoGen](papers/2026/2026-02/EchoGen/AI_Daily_EchoGen.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md)
+**風格與主體驅動：** [Scale-wise AR Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) | [DreamVAR](papers/2026/2026-01/DreamVAR/AI_Daily_DreamVAR.md) | [EchoGen](papers/2026/2026-02/EchoGen/AI_Daily_EchoGen.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md)
 
 ### Autoregressive Generation (General)
 
@@ -205,4 +206,4 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-03-12*
+*Last Updated: 2026-03-13*
