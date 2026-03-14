@@ -2,9 +2,9 @@
 
 ## 今日閱讀
 
-**[Scale-wise Autoregressive Style-Aligned — 2026-03-13：首個 VAR-based 免訓練風格對齊圖像生成，推理速度快 6× 以上](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md)**
+**[Delta-K — 2026-03-14：免訓練 Cross-Attention Key 空間增強，解決多實例概念遺漏問題](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md)**
 
-本文提出首個基於**尺度自迴歸模型 (Scale-wise Autoregressive / VAR)** 的**免訓練 (Training-Free)** 風格對齊圖像生成框架。透過分析 next-scale prediction 過程中各階段的特性，提出三個核心組件：**初始特徵替換**（統一 RGB 統計）、**關鍵特徵插值**（對齊物件位置與風格）、**動態風格注入**（以調度函數漸進式調變自注意力 Value 特徵）。在 Infinity 2B 模型上實現 1.58 秒/張的推理速度，比最快的競爭方法 StyleAligned 快 **7×**，同時在雙一致性 (Dual Consistency) 指標上取得最佳成績。
+本文提出 **Delta-K**，一個與主幹網路無關、隨插即用的**免訓練（Training-Free）**推理框架，專門解決文本到圖像生成中的**多實例概念遺漏（Concept Omission）**問題。論文核心洞見在於：概念遺漏並非單純的注意力激活不足，而是發生在擴散採樣**早期語義規劃階段**的 Key 空間語義匹配失敗。Delta-K 透過 VLM 識別缺失概念，計算差異鍵向量 $\Delta K = K_{input}(P) - K_{input}(P_{mask})$，並在早期去噪步驟中動態注入，配合 Adam 線上優化調度強度 $\alpha_t$，在 T2I-CompBench 上將 SDXL 的 Complex 分數提升 +0.0302，Spatial 提升 +0.0355，同時保持推理效率。
 
 ---
 
@@ -142,6 +142,7 @@ skills/
 | 2026-03-12 | [KV-Lock & RAISE](papers/2026/2026-03/2026-03-12-KV-Lock-and-RAISE.md) | 免訓練 KV 注意力控制影片編輯 & 需求自適應演化 T2I 對齊 (CVPR 2026) | [2603.09657](https://arxiv.org/abs/2603.09657) / [2603.00483](https://arxiv.org/abs/2603.00483) |
 | 2026-03 | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | 首個 AR 模型免訓練圖像編輯 (ICCV 2025) | [2504.10434](https://arxiv.org/abs/2504.10434) |
 | 2026-03 | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | DiT 全域文本條件機制 | [2602.09268](https://arxiv.org/abs/2602.09268) |
+| 2026-03-14 | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md) | 免訓練 Cross-Attention Key 空間增強，解決多實例概念遺漏 | [2603.10210](https://arxiv.org/abs/2603.10210) |
 
 ### 比較分析
 
@@ -182,7 +183,7 @@ skills/
 
 ### Image Editing (Training-Free)
 
-[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md)
+[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md)
 
 ### Unified / Multi-modal
 
@@ -206,4 +207,4 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-03-13*
+*Last Updated: 2026-03-14*
