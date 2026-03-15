@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[StyleGallery — 2026-03-15：免訓練語義感知個性化風格遷移，支持任意數量參考圖](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md)**
+
+本文提出 **StyleGallery**（CVPR 2026），一個**免訓練（Training-Free）**且**語義感知（Semantic-aware）**的圖像風格遷移框架。其核心創新在於：利用擴散模型內部的 UNet 中間特徵進行 K-means 語義聚類，通過三維相似度（統計特徵、DINOv2 語義相似度、幾何位置）實現精確的區域匹配，並以 **Sparse Attention**（語義遮罩稀疏化 Q/K/V）結合能量函數引導採樣優化，在無需額外訓練或語義分割遮罩的情況下，實現細粒度的區域級風格遷移。StyleGallery 支持任意數量的風格參考圖，在 ArtFID 指標上以 **24.536** 大幅超越次優方法 StyTR-2（25.804），為個性化風格定制提供了全新的 Zero-shot 解決方案。
+
+---
+
 **[Delta-K — 2026-03-14：免訓練 Cross-Attention Key 空間增強，解決多實例概念遺漏問題](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md)**
 
 本文提出 **Delta-K**，一個與主幹網路無關、隨插即用的**免訓練（Training-Free）**推理框架，專門解決文本到圖像生成中的**多實例概念遺漏（Concept Omission）**問題。論文核心洞見在於：概念遺漏並非單純的注意力激活不足，而是發生在擴散採樣**早期語義規劃階段**的 Key 空間語義匹配失敗。Delta-K 透過 VLM 識別缺失概念，計算差異鍵向量 $\Delta K = K_{input}(P) - K_{input}(P_{mask})$，並在早期去噪步驟中動態注入，配合 Adam 線上優化調度強度 $\alpha_t$，在 T2I-CompBench 上將 SDXL 的 Complex 分數提升 +0.0302，Spatial 提升 +0.0355，同時保持推理效率。
@@ -143,6 +149,7 @@ skills/
 | 2026-03 | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | 首個 AR 模型免訓練圖像編輯 (ICCV 2025) | [2504.10434](https://arxiv.org/abs/2504.10434) |
 | 2026-03 | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | DiT 全域文本條件機制 | [2602.09268](https://arxiv.org/abs/2602.09268) |
 | 2026-03-14 | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md) | 免訓練 Cross-Attention Key 空間增強，解決多實例概念遺漏 | [2603.10210](https://arxiv.org/abs/2603.10210) |
+| 2026-03-15 | [StyleGallery](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md) | 免訓練語義感知個性化風格遷移，支持任意數量參考圖 (CVPR 2026) | [2603.10354](https://arxiv.org/abs/2603.10354) |
 
 ### 比較分析
 
@@ -185,6 +192,10 @@ skills/
 
 [AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md)
 
+### Style Transfer (Training-Free)
+
+[StyleGallery (CVPR 2026)](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md) | [Scale-wise AR Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md)
+
 ### Unified / Multi-modal
 
 [JanusFlow](papers/2025/2025-01/JanusFlow/AI_Daily_JanusFlow.md) | [AR-Omni](papers/2026/2026-01/AR-Omni/AI_Daily_AR-Omni.md)
@@ -207,4 +218,4 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-03-14*
+*Last Updated: 2026-03-15*
