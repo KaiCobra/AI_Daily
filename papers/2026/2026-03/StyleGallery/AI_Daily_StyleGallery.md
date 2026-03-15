@@ -16,7 +16,7 @@
 2. **無需外部模型的語義聚類**：直接利用擴散模型內部的特徵進行語義區域分割，無需依賴額外的語義分割模型。
 3. **多維度聚類匹配與優化**：通過統計特徵、語義相似度和幾何位置三個維度進行精確的區域匹配，並結合區域風格損失（Regional Style Loss）和全局內容損失（Global Content Loss）引導生成過程。
 
-![StyleGallery Teaser](../../assets/StyleGallery_fig1_teaser.png)
+![StyleGallery Teaser](../../../../assets/StyleGallery_fig1_teaser.png)
 *圖 1：StyleGallery 與傳統風格遷移方法的對比。StyleGallery 能夠自動聚類語義區域，並支持從多個風格參考中自定義區域對應關係，實現高度個性化的風格遷移。*
 
 ## 技術方法簡述
@@ -29,7 +29,7 @@ $$d(t) = \frac{1}{1 + \exp(5 \cdot (\frac{t}{T} - 0.7))}$$
 $$F_{mix} = \sum_{t}^{T} \left( \frac{d(t)}{\sum_{k}^{T} d(k)} \right) \cdot F_t$$
 隨後，對融合特徵 $F_{mix}$ 進行 PCA 降維和 K-means 聚類，生成初始的語義遮罩（Semantic Mask），並通過聚類優化（合併相似聚類、消除孤立點）得到最終的精細遮罩。
 
-![StyleGallery Framework](../../assets/StyleGallery_fig2_framework.png)
+![StyleGallery Framework](../../../../assets/StyleGallery_fig2_framework.png)
 *圖 2：StyleGallery 的整體框架，包含聚類分類、聚類匹配和採樣優化三個階段。*
 
 ### 2. 聚類區域匹配 (Cluster Matching)
@@ -51,7 +51,7 @@ $$\mathcal{L}_{RST} = \mathcal{L}_{RSL} + \lambda_c * \mathcal{L}_{GCL}$$
 在每個時間步，使用 Adam 優化器更新潛在向量 $z_{t-1}$：
 $$z_{t-1} = z_{t-1} - \eta \nabla_{z_{t-1}} \mathcal{L}_{RST}(z_{t-1}, z_{t-1}^{ref})$$
 
-![Sparse Attention](../../assets/StyleGallery_fig4_sparse_attn.png)
+![Sparse Attention](../../../../assets/StyleGallery_fig4_sparse_attn.png)
 *圖 3：基於語義匹配的稀疏注意力機制。通過遮罩保留相關語義的權重，將無關區域置零，實現精確的區域風格遷移。*
 
 ## 實驗結果和性能指標
@@ -70,7 +70,7 @@ $$z_{t-1} = z_{t-1} - \eta \nabla_{z_{t-1}} \mathcal{L}_{RST}(z_{t-1}, z_{t-1}^{
 
 定性比較顯示，StyleGallery 能夠實現細粒度的語義級風格遷移（如精確區分天空、山脈、草地），同時完美保留內容結構，避免了其他方法常見的風格語義洩漏（Semantic leakage）和風格化不足問題。
 
-![Qualitative Comparison](../../assets/StyleGallery_fig5_qualitative.png)
+![Qualitative Comparison](../../../../assets/StyleGallery_fig5_qualitative.png)
 *圖 4：與最新風格遷移方法的定性比較。StyleGallery 在保留內容結構的同時，實現了高質量的語義感知風格遷移。*
 
 ## 相關研究背景
