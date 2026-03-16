@@ -219,3 +219,6 @@ skills/
 *每天進步一點點，與 AI 一起成長。*
 
 *Last Updated: 2026-03-15*
+
+### 2026-03-16
+* [Reflective Flow Sampling Enhancement (RF-Sampling)](papers/2026/2026-03/RF-Sampling/README.md) - 專為 Flow Matching 模型（如 FLUX）設計的 Training-free 推論增強框架，首次在 FLUX 上實現 Test-time Scaling。
