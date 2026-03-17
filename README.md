@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[Just-in-Time (JiT) — 2026-03-17：免訓練空間加速 Diffusion Transformers，FLUX.1-dev 實現 7x 加速 (CVPR 2026)](papers/2026/2026-03/JiT/AI_Daily_JiT.md)**
+
+本文提出 **JiT（Just-in-Time）**（CVPR 2026），一個**免訓練（Training-Free）**的 Diffusion Transformers 空間加速框架。其核心洞見在於：圖像生成是「先全局後細節」的過程，對所有空間區域均等計算是嚴重的效率浪費。JiT 設計了**空間近似生成 ODE（SAG-ODE）**，通過動態選擇的稀疏 anchor token 子集驅動完整 latent state 演化（$\frac{d\mathbf{y}}{dt} = \mathbf{\Pi}_k \mathbf{u}_\theta(\mathbf{S}_k^\top \mathbf{y}, t)$），並以**確定性微流（DMF）**確保新 token 激活時的無縫過渡，配合**重要性引導的 Token 激活（ITA）**動態分配計算資源到高頻細節區域。在 FLUX.1-dev 上，JiT 以 **7x** 加速（3.67 秒）實現幾乎無損的生成質量，ImageReward 達 0.9746，T2I-Comp 達 0.4961，全面超越 RALU、Bottleneck Sampling、TeaCache 等方法。
+
+---
+
 **[StyleGallery — 2026-03-15：免訓練語義感知個性化風格遷移，支持任意數量參考圖](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md)**
 
 本文提出 **StyleGallery**（CVPR 2026），一個**免訓練（Training-Free）**且**語義感知（Semantic-aware）**的圖像風格遷移框架。其核心創新在於：利用擴散模型內部的 UNet 中間特徵進行 K-means 語義聚類，通過三維相似度（統計特徵、DINOv2 語義相似度、幾何位置）實現精確的區域匹配，並以 **Sparse Attention**（語義遮罩稀疏化 Q/K/V）結合能量函數引導採樣優化，在無需額外訓練或語義分割遮罩的情況下，實現細粒度的區域級風格遷移。StyleGallery 支持任意數量的風格參考圖，在 ArtFID 指標上以 **24.536** 大幅超越次優方法 StyTR-2（25.804），為個性化風格定制提供了全新的 Zero-shot 解決方案。
@@ -150,6 +156,7 @@ skills/
 | 2026-03 | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | DiT 全域文本條件機制 | [2602.09268](https://arxiv.org/abs/2602.09268) |
 | 2026-03-14 | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md) | 免訓練 Cross-Attention Key 空間增強，解決多實例概念遺漏 | [2603.10210](https://arxiv.org/abs/2603.10210) |
 | 2026-03-15 | [StyleGallery](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md) | 免訓練語義感知個性化風格遷移，支持任意數量參考圖 (CVPR 2026) | [2603.10354](https://arxiv.org/abs/2603.10354) |
+| 2026-03-17 | [JiT](papers/2026/2026-03/JiT/AI_Daily_JiT.md) | 免訓練空間加速 DiT，FLUX.1-dev 實現 7x 加速 (CVPR 2026) | [2603.10744](https://arxiv.org/abs/2603.10744) |
 
 ### 比較分析
 
@@ -186,7 +193,7 @@ skills/
 
 **引導與加速：** [MMD-Guidance](papers/2026/2026-01/MMD-Guidance/AI_Daily_MMD-Guidance.md) | [Light Forcing](papers/2026/2026-02/Light_Forcing/AI_Daily_Light_Forcing.md) | [RFC](papers/2026/2026-02/RFC/AI_Daily_RFC.md) | [DIAMOND](papers/2026/2026-02/DIAMOND/AI_Daily_DIAMOND.md) | [Look-Ahead Look-Back Flows](papers/2026/2026-02/Look_Ahead_Look_Back_Flows/AI_Daily_Look_Ahead_Look_Back_Flows.md) | [SoFlow](papers/2024/2024-11/SoFlow/AI_Daily_SoFlow.md) | [LapFlow](papers/2026/2026-02/LapFlow/AI_Daily_LapFlow.md)
 
-**高效生成：** [FAM Diffusion](papers/2026/2026-01/FAM_Diffusion/AI_Daily_FAM_Diffusion.md) | [PixelRush](papers/2026/2026-03/PixelRush/AI_Daily_PixelRush.md)
+**高效生成：** [FAM Diffusion](papers/2026/2026-01/FAM_Diffusion/AI_Daily_FAM_Diffusion.md) | [PixelRush](papers/2026/2026-03/PixelRush/AI_Daily_PixelRush.md) | [JiT (CVPR 2026)](papers/2026/2026-03/JiT/AI_Daily_JiT.md)
 
 ### Image Editing (Training-Free)
 
@@ -218,7 +225,10 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-03-15*
+*Last Updated: 2026-03-17*
+
+### 2026-03-17
+* [Just-in-Time (JiT)](papers/2026/2026-03/JiT/AI_Daily_JiT.md) - 免訓練空間加速 Diffusion Transformers，FLUX.1-dev 實現 7x 加速 (CVPR 2026)。
 
 ### 2026-03-16
 * [Reflective Flow Sampling Enhancement (RF-Sampling)](papers/2026/2026-03/RF-Sampling/README.md) - 專為 Flow Matching 模型（如 FLUX）設計的 Training-free 推論增強框架，首次在 FLUX 上實現 Test-time Scaling。
