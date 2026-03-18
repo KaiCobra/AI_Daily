@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[CSD-VAR — 2026-03-18：首個基於 VAR 的內容-風格分解框架，尺度感知交替優化 + SVD 校正 (ICCV 2025)](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md)**
+
+本文提出 **CSD-VAR**（ICCV 2025，Qualcomm AI Research），這是首個將**內容-風格分解（Content-Style Decomposition, CSD）**應用於**視覺自回歸模型（VAR）**的框架。核心洞見在於：VAR 的早期尺度（$k=1,2,3$）主要編碼風格資訊，後期尺度（$k=4,...,9$）則捕捉內容結構。CSD-VAR 提出三大創新：(1) **尺度感知交替優化**，將內容與風格的損失優化分離，防止梯度混合；(2) **SVD-based 風格嵌入校正**，利用 LLM 生成子概念並構建內容投影矩陣 $P_\text{proj} = V_r^T V_r$，透過 $e_s' = e_s - e_s^T P_\text{proj}$ 去除風格嵌入中的內容洩漏；(3) **增強型 K-V 記憶體**，在特定尺度的自注意力層前注入可學習的 K-V 對以捕捉複雜細節。此外，論文提出 **CSD-100** 評估基準。在定量比較中，CSD-VAR 在內容對齊（CLIP-I: **0.795**）、風格對齊（CSD-S: **0.564**）和文本對齊（CLIP-T: **0.332**）上全面超越 DreamBooth、B-LoRA 和 Inspiration Tree。
+
+---
+
 **[Just-in-Time (JiT) — 2026-03-17：免訓練空間加速 Diffusion Transformers，FLUX.1-dev 實現 7x 加速 (CVPR 2026)](papers/2026/2026-03/JiT/AI_Daily_JiT.md)**
 
 本文提出 **JiT（Just-in-Time）**（CVPR 2026），一個**免訓練（Training-Free）**的 Diffusion Transformers 空間加速框架。其核心洞見在於：圖像生成是「先全局後細節」的過程，對所有空間區域均等計算是嚴重的效率浪費。JiT 設計了**空間近似生成 ODE（SAG-ODE）**，通過動態選擇的稀疏 anchor token 子集驅動完整 latent state 演化（$\frac{d\mathbf{y}}{dt} = \mathbf{\Pi}_k \mathbf{u}_\theta(\mathbf{S}_k^\top \mathbf{y}, t)$），並以**確定性微流（DMF）**確保新 token 激活時的無縫過渡，配合**重要性引導的 Token 激活（ITA）**動態分配計算資源到高頻細節區域。在 FLUX.1-dev 上，JiT 以 **7x** 加速（3.67 秒）實現幾乎無損的生成質量，ImageReward 達 0.9746，T2I-Comp 達 0.4961，全面超越 RALU、Bottleneck Sampling、TeaCache 等方法。
@@ -157,6 +163,7 @@ skills/
 | 2026-03-14 | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md) | 免訓練 Cross-Attention Key 空間增強，解決多實例概念遺漏 | [2603.10210](https://arxiv.org/abs/2603.10210) |
 | 2026-03-15 | [StyleGallery](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md) | 免訓練語義感知個性化風格遷移，支持任意數量參考圖 (CVPR 2026) | [2603.10354](https://arxiv.org/abs/2603.10354) |
 | 2026-03-17 | [JiT](papers/2026/2026-03/JiT/AI_Daily_JiT.md) | 免訓練空間加速 DiT，FLUX.1-dev 實現 7x 加速 (CVPR 2026) | [2603.10744](https://arxiv.org/abs/2603.10744) |
+| 2026-03-18 | [CSD-VAR](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md) | 首個 VAR-based 內容-風格分解，尺度感知優化 + SVD 校正 (ICCV 2025) | [2507.13984](https://arxiv.org/abs/2507.13984) |
 
 ### 比較分析
 
@@ -179,7 +186,7 @@ skills/
 
 **應用（編輯/修復/超解析度）：** [AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [AREdit (2025-03)](papers/2025/2025-03/AREdit/AI_Daily_AREdit.md) | [EditAR](papers/2025/2025-01/EditAR/AI_Daily_EditAR.md) | [VAREdit](papers/2026/2026-02/VAREdit/AI_Daily_VAREdit.md) | [VAR-LIDE](papers/2026/2026-01/VAR-LIDE/AI_Daily_VAR-LIDE.md) | [AlignVAR](papers/2026/2026-03/AlignVAR/AI_Daily_AlignVAR.md) | [HSI-VAR](papers/2026/2026-02/HSI-VAR/AI_Daily_HSI-VAR.md) | [VAR Depth Estimation](papers/2025/2025-01/VAR_Depth_Estimation/AI_Daily_VAR_Depth_Estimation.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md)
 
-**風格與主體驅動：** [Scale-wise AR Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) | [DreamVAR](papers/2026/2026-01/DreamVAR/AI_Daily_DreamVAR.md) | [EchoGen](papers/2026/2026-02/EchoGen/AI_Daily_EchoGen.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md)
+**風格與主體驅動：** [CSD-VAR (ICCV 2025)](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md) | [Scale-wise AR Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) | [DreamVAR](papers/2026/2026-01/DreamVAR/AI_Daily_DreamVAR.md) | [EchoGen](papers/2026/2026-02/EchoGen/AI_Daily_EchoGen.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md)
 
 ### Autoregressive Generation (General)
 
@@ -201,7 +208,7 @@ skills/
 
 ### Style Transfer (Training-Free)
 
-[StyleGallery (CVPR 2026)](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md) | [Scale-wise AR Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md)
+[CSD-VAR (ICCV 2025)](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md) | [StyleGallery (CVPR 2026)](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md) | [Scale-wise AR Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md)
 
 ### Unified / Multi-modal
 
@@ -225,7 +232,10 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-03-17*
+*Last Updated: 2026-03-18*
+
+### 2026-03-18
+* [CSD-VAR](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md) - 首個 VAR-based 內容-風格分解框架，尺度感知交替優化 + SVD 校正 (ICCV 2025)。
 
 ### 2026-03-17
 * [Just-in-Time (JiT)](papers/2026/2026-03/JiT/AI_Daily_JiT.md) - 免訓練空間加速 Diffusion Transformers，FLUX.1-dev 實現 7x 加速 (CVPR 2026)。
