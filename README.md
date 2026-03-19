@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[TAUE — 2026-03-19：免訓練噪聲移植與跨層注意力共享，首個完整層次化圖像生成框架 (CVPR 2026 Findings)](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md)**
+
+本文提出 **TAUE（Training-free Noise Transplantation and Cultivation Diffusion Model）**（CVPR 2026 Findings，Hosei University & DFKI），首個能夠在**無需微調或額外數據**的情況下同時生成前景、背景和複合圖像的層次化圖像生成框架。核心洞見在於：現有的 training-free 方法僅能生成孤立的前景，而 TAUE 提出兩大創新機制：(1) **噪聲移植（Noise Transplantation）**，在去噪過程的中間時間步（50%）提取前景中間潛在變量 $L_{fg}$，並將其移植到後續生成的初始噪聲中，配合拉普拉斯高通濾波器保留高頻結構細節；(2) **跨層注意力共享（Cross-Attention Shearing）**，透過對象掩碼 $m_{obj}$ 將前景提示詞的交叉注意力限制在對象區域，背景提示詞應用於其餘區域，以像素級凸組合 $A_{mix} = m_{obj} \odot A_{fg} + (1 - m_{obj}) \odot A_{bg}$ 實現語義協調。在 MS-COCO 基準上，TAUE 在 FID（60.53）和 CLIP-S（0.323）上超越微調模型 LayerDiffuse，前景重建 PSNR 達 20.46、SSIM 達 0.901，全面超越所有 training-free 基線。此外，TAUE 支持佈局與尺寸控制、解耦多對象生成和背景替換等實際應用。
+
+---
+
 **[CDG — 2026-03-19：以「語義降級條件」取代空提示，幾何解耦引導信號實現更精準的組合生成 (CVPR 2026)](papers/2026/2026-03/CDG/AI_Daily_CDG.md)**
 
 本文提出 **CDG（Condition-Degradation Guidance）**（CVPR 2026，National University of Defense Technology），一個**免訓練（Training-Free）**的 Classifier-Free Guidance 替代方案。核心洞見在於：CFG 依賴語義空洞的空提示 $\varnothing$ 作為負樣本，導致引導信號與主去噪方向發生幾何糾纏。CDG 提出以「語義降級條件 $\boldsymbol{c}_{\text{deg}}$」取代 $\varnothing$，將引導從「好 vs. 空」轉變為「好 vs. 幾乎好」的精細對比。方法核心為**分層降級策略（Stratified Degradation）**：利用 Weighted PageRank (WPR) 分析 Transformer 文本編碼器的自注意力圖，識別「內容 token」（高語義重要性）與「上下文聚合 token」（低語義重要性），優先降級前者並透過掩碼插值構建 $\boldsymbol{c}_{\text{deg}}$。幾何分析表明，CDG 的引導信號與去噪子空間保持近乎完美的正交性（幾何解耦 ≈ 1.0），而 CFG 存在嚴重的早期糾纏。在 SD3、SD3.5、FLUX.1-dev 和 Qwen-Image 上的實驗顯示，CDG 在 FID、CLIP Score、VQA Score 和 GenAI-Bench 組合推理基準上全面超越 CFG、CADS、PAG、SEG 等基線，在 Differentiation 任務上提升高達 **+3.64**。
@@ -171,6 +177,7 @@ skills/
 | 2026-03-17 | [JiT](papers/2026/2026-03/JiT/AI_Daily_JiT.md) | 免訓練空間加速 DiT，FLUX.1-dev 實現 7x 加速 (CVPR 2026) | [2603.10744](https://arxiv.org/abs/2603.10744) |
 | 2026-03-18 | [CSD-VAR](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md) | 首個 VAR-based 內容-風格分解，尺度感知優化 + SVD 校正 (ICCV 2025) | [2507.13984](https://arxiv.org/abs/2507.13984) |
 | 2026-03-19 | [CDG](papers/2026/2026-03/CDG/AI_Daily_CDG.md) | 語義降級條件取代空提示，幾何解耦引導信號精準組合生成 (CVPR 2026) | [2603.10780](https://arxiv.org/abs/2603.10780) |
+| 2026-03-19 | [TAUE](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md) | 免訓練噪聲移植與跨層注意力共享，首個完整層次化圖像生成 (CVPR 2026 Findings) | [2511.02580](https://arxiv.org/abs/2511.02580) |
 
 ### 比較分析
 
@@ -211,7 +218,7 @@ skills/
 
 ### Image Editing (Training-Free)
 
-[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md)
+[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md) | [TAUE (CVPR 2026 Findings)](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md)
 
 ### Style Transfer (Training-Free)
 
@@ -239,7 +246,10 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-03-18*
+*Last Updated: 2026-03-19*
+
+### 2026-03-19
+* [TAUE](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md) - 免訓練噪聲移植與跨層注意力共享，首個完整層次化圖像生成框架 (CVPR 2026 Findings)。
 
 ### 2026-03-18
 * [CSD-VAR](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md) - 首個 VAR-based 內容-風格分解框架，尺度感知交替優化 + SVD 校正 (ICCV 2025)。
