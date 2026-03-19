@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[CDG — 2026-03-19：以「語義降級條件」取代空提示，幾何解耦引導信號實現更精準的組合生成 (CVPR 2026)](papers/2026/2026-03/CDG/AI_Daily_CDG.md)**
+
+本文提出 **CDG（Condition-Degradation Guidance）**（CVPR 2026，National University of Defense Technology），一個**免訓練（Training-Free）**的 Classifier-Free Guidance 替代方案。核心洞見在於：CFG 依賴語義空洞的空提示 $\varnothing$ 作為負樣本，導致引導信號與主去噪方向發生幾何糾纏。CDG 提出以「語義降級條件 $\boldsymbol{c}_{\text{deg}}$」取代 $\varnothing$，將引導從「好 vs. 空」轉變為「好 vs. 幾乎好」的精細對比。方法核心為**分層降級策略（Stratified Degradation）**：利用 Weighted PageRank (WPR) 分析 Transformer 文本編碼器的自注意力圖，識別「內容 token」（高語義重要性）與「上下文聚合 token」（低語義重要性），優先降級前者並透過掩碼插值構建 $\boldsymbol{c}_{\text{deg}}$。幾何分析表明，CDG 的引導信號與去噪子空間保持近乎完美的正交性（幾何解耦 ≈ 1.0），而 CFG 存在嚴重的早期糾纏。在 SD3、SD3.5、FLUX.1-dev 和 Qwen-Image 上的實驗顯示，CDG 在 FID、CLIP Score、VQA Score 和 GenAI-Bench 組合推理基準上全面超越 CFG、CADS、PAG、SEG 等基線，在 Differentiation 任務上提升高達 **+3.64**。
+
+---
+
 **[CSD-VAR — 2026-03-18：首個基於 VAR 的內容-風格分解框架，尺度感知交替優化 + SVD 校正 (ICCV 2025)](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md)**
 
 本文提出 **CSD-VAR**（ICCV 2025，Qualcomm AI Research），這是首個將**內容-風格分解（Content-Style Decomposition, CSD）**應用於**視覺自回歸模型（VAR）**的框架。核心洞見在於：VAR 的早期尺度（$k=1,2,3$）主要編碼風格資訊，後期尺度（$k=4,...,9$）則捕捉內容結構。CSD-VAR 提出三大創新：(1) **尺度感知交替優化**，將內容與風格的損失優化分離，防止梯度混合；(2) **SVD-based 風格嵌入校正**，利用 LLM 生成子概念並構建內容投影矩陣 $P_\text{proj} = V_r^T V_r$，透過 $e_s' = e_s - e_s^T P_\text{proj}$ 去除風格嵌入中的內容洩漏；(3) **增強型 K-V 記憶體**，在特定尺度的自注意力層前注入可學習的 K-V 對以捕捉複雜細節。此外，論文提出 **CSD-100** 評估基準。在定量比較中，CSD-VAR 在內容對齊（CLIP-I: **0.795**）、風格對齊（CSD-S: **0.564**）和文本對齊（CLIP-T: **0.332**）上全面超越 DreamBooth、B-LoRA 和 Inspiration Tree。
@@ -164,6 +170,7 @@ skills/
 | 2026-03-15 | [StyleGallery](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md) | 免訓練語義感知個性化風格遷移，支持任意數量參考圖 (CVPR 2026) | [2603.10354](https://arxiv.org/abs/2603.10354) |
 | 2026-03-17 | [JiT](papers/2026/2026-03/JiT/AI_Daily_JiT.md) | 免訓練空間加速 DiT，FLUX.1-dev 實現 7x 加速 (CVPR 2026) | [2603.10744](https://arxiv.org/abs/2603.10744) |
 | 2026-03-18 | [CSD-VAR](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md) | 首個 VAR-based 內容-風格分解，尺度感知優化 + SVD 校正 (ICCV 2025) | [2507.13984](https://arxiv.org/abs/2507.13984) |
+| 2026-03-19 | [CDG](papers/2026/2026-03/CDG/AI_Daily_CDG.md) | 語義降級條件取代空提示，幾何解耦引導信號精準組合生成 (CVPR 2026) | [2603.10780](https://arxiv.org/abs/2603.10780) |
 
 ### 比較分析
 
