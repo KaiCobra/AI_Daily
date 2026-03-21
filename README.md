@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[Text Embedding Steering — 2026-03-21：文本嵌入空間線性插值實現免訓練連續圖像編輯控制](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md)**
+
+本文提出一個完全**免訓練（Training-Free）**的連續圖像編輯框架（Reve，Yossi Gandelsman），核心洞察在於：隨著文本條件生成模型的持續進化，僅在文本編碼器（Text Encoder）表示空間中進行簡單的**線性插值（Linear Interpolation）**就足以實現平滑、連續且解耦的圖像編輯控制。方法透過 LLM 自動生成去偏對比提示詞對，計算 Difference-of-Means **轉向向量（Steering Vector）**，並以 **Style-Token Pooling** 實現屬性解耦。提出的 **Elastic Range Search** 演算法自動確定最佳編輯強度區間，避免欠轉向和過轉向。在 Qwen-Image 骨幹上，免訓練方法達到 $\Delta$VQA = 0.63，逼近需要訓練的 SliderEdit（0.75），同時保持更好的滑桿平滑度。由於完全在文本嵌入空間操作，方法天然支持跨模態泛化（圖像 + 影片生成）。
+
+---
+
 **[ADAPT — 2026-03-20：注意力驅動自適應提示詞調度與正交補空間插值，免訓練稀有概念生成 (CVPR 2026 Findings)](papers/2026/2026-03/ADAPT/AI_Daily_ADAPT.md)**
 
 本文提出 **ADAPT（Attention Driven Adaptive Prompt Scheduling and InTerpolating Orthogonal Complements）**（CVPR 2026 Findings，Hanyang University），一個完全**免訓練（Training-Free）**的稀有組合概念生成框架。核心洞見在於：前作 R2F 依賴 GPT-4o 進行提示詞調度存在隨機性和語義不對齊問題。ADAPT 提出三大互補模組：(1) **自適應提示詞調度（APS）**，利用空間注意力收斂作為語義飽和指標，以 top-k attention scores 動態決定從常見概念到稀有概念的轉換時機，徹底消除 LLM 依賴；(2) **池化嵌入操作（PEM）**，將稀有概念的 CLIP 池化嵌入投影到常見概念的正交補空間，提取解耦的稀有語義方向 $\Delta_r$，並以餘弦相似度自適應加權 $\delta(\gamma)$ 平衡基礎語義與稀有屬性；(3) **潛在空間操作（LSM）**，在注意力層輸出上注入正交引導向量，實現細粒度屬性控制。在 RareBench 上，ADAPT 以 **83.1%** 平均對齊分數全面超越 R2F（75.7%），在多物體關係類別上提升高達 **+16.2%**，同時在 PickScore 和 ImageReward 上取得最高分。
@@ -185,6 +191,7 @@ skills/
 | 2026-03-19 | [CDG](papers/2026/2026-03/CDG/AI_Daily_CDG.md) | 語義降級條件取代空提示，幾何解耦引導信號精準組合生成 (CVPR 2026) | [2603.10780](https://arxiv.org/abs/2603.10780) |
 | 2026-03-19 | [TAUE](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md) | 免訓練噪聲移植與跨層注意力共享，首個完整層次化圖像生成 (CVPR 2026 Findings) | [2511.02580](https://arxiv.org/abs/2511.02580) |
 | 2026-03-20 | [ADAPT](papers/2026/2026-03/ADAPT/AI_Daily_ADAPT.md) | 注意力驅動自適應提示詞調度與正交補空間插值，免訓練稀有概念生成 (CVPR 2026 Findings) | [2603.19157](https://arxiv.org/abs/2603.19157) |
+| 2026-03-21 | [Text Embedding Steering](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md) | 文本嵌入空間線性插值實現免訓練連續圖像編輯控制 | [2603.17998](https://arxiv.org/abs/2603.17998) |
 
 ### 比較分析
 
@@ -229,7 +236,7 @@ skills/
 
 ### Image Editing (Training-Free)
 
-[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md) | [TAUE (CVPR 2026 Findings)](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md)
+[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md) | [TAUE (CVPR 2026 Findings)](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md) | [Text Embedding Steering](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md)
 
 ### Style Transfer (Training-Free)
 
@@ -257,7 +264,13 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-03-20*
+*Last Updated: 2026-03-21*
+
+### 2026-03-21
+* [Text Embedding Steering](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md) - 文本嵌入空間線性插值實現免訓練連續圖像編輯控制，Steering Vector + Elastic Range Search。
+
+### 2026-03-20
+* [ADAPT](papers/2026/2026-03/ADAPT/AI_Daily_ADAPT.md) - 注意力驅動自適應提示詞調度與正交補空間插值，免訓練稀有概念生成 (CVPR 2026 Findings)。
 
 ### 2026-03-19
 * [TAUE](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md) - 免訓練噪聲移植與跨層注意力共享，首個完整層次化圖像生成框架 (CVPR 2026 Findings)。
