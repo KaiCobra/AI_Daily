@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[Token Painter — 2026-03-22：MAR 模型首次應用於文本引導圖像修復，Training-Free 頻域融合 + 自適應注意力增強超越 SOTA (AAAI 2026)](papers/2026/2026-03/TokenPainter/AI_Daily_TokenPainter.md)**
+
+本文提出 **Token Painter**（AAAI 2026，USTC & MBZUAI），首次將**掩碼自回歸模型（MAR）**應用於文本引導的圖像修復任務。核心洞見在於：Diffusion 模型的全局去噪特性導致修復區域的結構更受上下文而非文本提示引導，而 MAR 天然支持局部 token 生成且不改變背景。然而，直接應用 MAR 會導致文本語義被背景 token 淹沒。Token Painter 提出兩大**免訓練（Training-Free）**模塊：(1) **雙流編碼器信息融合（DEIF）**，在頻域中融合 T&B（文本+背景）的高頻上下文風格與 T-only 的低頻語義結構，通過自適應統計對齊和修改高斯函數生成全新引導 token；(2) **自適應解碼器注意力分數增強（ADAE）**，以 $\alpha = \log_N HW$ 自適應增強修復區域對引導 token 的注意力，並利用動態係數 $\beta = \log_{N_2+1} N_1$ 加強修復 token 間的交互。在 EditBench 和 BrushBench 上，Token Painter 在圖像質量（IR: **13.01**）、背景一致性（PSNR: **26.39**）和文本對齊（CLIP-S: **14.46**）上全面超越 BrushNet、PowerPaint、HD-Painter 等微調和 training-free 方法。
+
+---
+
 **[Text Embedding Steering — 2026-03-21：文本嵌入空間線性插值實現免訓練連續圖像編輯控制](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md)**
 
 本文提出一個完全**免訓練（Training-Free）**的連續圖像編輯框架（Reve，Yossi Gandelsman），核心洞察在於：隨著文本條件生成模型的持續進化，僅在文本編碼器（Text Encoder）表示空間中進行簡單的**線性插值（Linear Interpolation）**就足以實現平滑、連續且解耦的圖像編輯控制。方法透過 LLM 自動生成去偏對比提示詞對，計算 Difference-of-Means **轉向向量（Steering Vector）**，並以 **Style-Token Pooling** 實現屬性解耦。提出的 **Elastic Range Search** 演算法自動確定最佳編輯強度區間，避免欠轉向和過轉向。在 Qwen-Image 骨幹上，免訓練方法達到 $\Delta$VQA = 0.63，逼近需要訓練的 SliderEdit（0.75），同時保持更好的滑桿平滑度。由於完全在文本嵌入空間操作，方法天然支持跨模態泛化（圖像 + 影片生成）。
@@ -192,6 +198,7 @@ skills/
 | 2026-03-19 | [TAUE](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md) | 免訓練噪聲移植與跨層注意力共享，首個完整層次化圖像生成 (CVPR 2026 Findings) | [2511.02580](https://arxiv.org/abs/2511.02580) |
 | 2026-03-20 | [ADAPT](papers/2026/2026-03/ADAPT/AI_Daily_ADAPT.md) | 注意力驅動自適應提示詞調度與正交補空間插值，免訓練稀有概念生成 (CVPR 2026 Findings) | [2603.19157](https://arxiv.org/abs/2603.19157) |
 | 2026-03-21 | [Text Embedding Steering](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md) | 文本嵌入空間線性插值實現免訓練連續圖像編輯控制 | [2603.17998](https://arxiv.org/abs/2603.17998) |
+| 2026-03-22 | [Token Painter](papers/2026/2026-03/TokenPainter/AI_Daily_TokenPainter.md) | MAR-based Training-Free 文本引導圖像修復，頻域融合 + 注意力增強 (AAAI 2026) | [2509.23919](https://arxiv.org/abs/2509.23919) |
 
 ### 比較分析
 
@@ -212,7 +219,7 @@ skills/
 
 **引導與控制：** [SSG](papers/2026/2026-01/SSG/AI_Daily_SSG.md) | [SoftCFG](papers/2026/2026-01/SoftCFG/AI_Daily_SoftCFG.md) | [SCALAR](papers/2026/2026-03/SCALAR/AI_Daily_SCALAR.md) | [VAR RL Done Right](papers/2026/2026-01/VAR_RL_Done_Right/AI_Daily_VAR_RL_Done_Right.md)
 
-**應用（編輯/修復/超解析度）：** [AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [AREdit (2025-03)](papers/2025/2025-03/AREdit/AI_Daily_AREdit.md) | [EditAR](papers/2025/2025-01/EditAR/AI_Daily_EditAR.md) | [VAREdit](papers/2026/2026-02/VAREdit/AI_Daily_VAREdit.md) | [VAR-LIDE](papers/2026/2026-01/VAR-LIDE/AI_Daily_VAR-LIDE.md) | [AlignVAR](papers/2026/2026-03/AlignVAR/AI_Daily_AlignVAR.md) | [HSI-VAR](papers/2026/2026-02/HSI-VAR/AI_Daily_HSI-VAR.md) | [VAR Depth Estimation](papers/2025/2025-01/VAR_Depth_Estimation/AI_Daily_VAR_Depth_Estimation.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md)
+**應用（編輯/修復/超解析度）：** [AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [AREdit (2025-03)](papers/2025/2025-03/AREdit/AI_Daily_AREdit.md) | [EditAR](papers/2025/2025-01/EditAR/AI_Daily_EditAR.md) | [VAREdit](papers/2026/2026-02/VAREdit/AI_Daily_VAREdit.md) | [VAR-LIDE](papers/2026/2026-01/VAR-LIDE/AI_Daily_VAR-LIDE.md) | [AlignVAR](papers/2026/2026-03/AlignVAR/AI_Daily_AlignVAR.md) | [HSI-VAR](papers/2026/2026-02/HSI-VAR/AI_Daily_HSI-VAR.md) | [VAR Depth Estimation](papers/2025/2025-01/VAR_Depth_Estimation/AI_Daily_VAR_Depth_Estimation.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [Token Painter (AAAI 2026)](papers/2026/2026-03/TokenPainter/AI_Daily_TokenPainter.md)
 
 **風格與主體驅動：** [CSD-VAR (ICCV 2025)](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md) | [Scale-wise AR Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) | [DreamVAR](papers/2026/2026-01/DreamVAR/AI_Daily_DreamVAR.md) | [EchoGen](papers/2026/2026-02/EchoGen/AI_Daily_EchoGen.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md)
 
@@ -236,7 +243,7 @@ skills/
 
 ### Image Editing (Training-Free)
 
-[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md) | [TAUE (CVPR 2026 Findings)](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md) | [Text Embedding Steering](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md)
+[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md) | [TAUE (CVPR 2026 Findings)](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md) | [Text Embedding Steering](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md) | [Token Painter (AAAI 2026)](papers/2026/2026-03/TokenPainter/AI_Daily_TokenPainter.md)
 
 ### Style Transfer (Training-Free)
 
@@ -264,7 +271,10 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-03-21*
+*Last Updated: 2026-03-22*
+
+### 2026-03-22
+* [Token Painter](papers/2026/2026-03/TokenPainter/AI_Daily_TokenPainter.md) - MAR 模型首次應用於文本引導圖像修復，Training-Free 頻域融合 + 自適應注意力增強超越所有 SOTA (AAAI 2026)。
 
 ### 2026-03-21
 * [Text Embedding Steering](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md) - 文本嵌入空間線性插值實現免訓練連續圖像編輯控制，Steering Vector + Elastic Range Search。
