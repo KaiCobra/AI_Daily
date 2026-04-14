@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[HAM — 2026-04-14：免訓練異構注意力調節風格轉換，同時操縱 Self-Attention 與 Cross-Attention 達成 SOTA 風格-內容平衡 (CVPR 2026 Findings)](papers/2026/2026-04/HAM/AI_Daily_HAM.md)**
+
+本文提出 **HAM (Heterogeneous Attention Modulation)**（CVPR 2026 Findings，Hangzhou Dianzi University & ICT CAS），一種**免訓練（Training-Free）**的擴散模型風格轉換方法。核心洞見在於：現有免訓練方法（如 StyleID、STAM）僅在自注意力（Self-Attention）區塊內操作，導致風格與內容的權衡失衡。HAM 創新地提出**異構注意力調節**策略，同時利用自注意力與交叉注意力（Cross-Attention）通道：(1) **全局注意力調節（GAR）**，透過 AdaIN 融合內容與風格教師模型的 Q/K/V 投影，並以超參數 $\alpha$ 加權融入學生生成器的自注意力層，實現宏觀的內容保護與風格融合；(2) **局部注意力移植（LAT）**，將風格教師的 K/V 直接移植至交叉注意力通道，同時以超參數 $\beta$ 加權融合內容教師的 Query 進行身份保護；(3) **風格注入噪聲初始化（SINI）**，以內容殘差噪聲 + AdaIN 風格化噪聲的雙組件架構設定初始潛在噪聲。在 MS-COCO + WikiArt 上，HAM 在 LPIPS（**0.479**）、DINO（**0.728**）、CLIP-I（**0.682**）、DC（**2.113**）與 CC（**2.057**）等指標上全面超越 StyleID、STAM、DiffArtist 等方法，並兼容 SD2.1 與 SD3.5 架構。
+
+---
+
 **[Token Painter — 2026-03-22：MAR 模型首次應用於文本引導圖像修復，Training-Free 頻域融合 + 自適應注意力增強超越 SOTA (AAAI 2026)](papers/2026/2026-03/TokenPainter/AI_Daily_TokenPainter.md)**
 
 本文提出 **Token Painter**（AAAI 2026，USTC & MBZUAI），首次將**掩碼自回歸模型（MAR）**應用於文本引導的圖像修復任務。核心洞見在於：Diffusion 模型的全局去噪特性導致修復區域的結構更受上下文而非文本提示引導，而 MAR 天然支持局部 token 生成且不改變背景。然而，直接應用 MAR 會導致文本語義被背景 token 淹沒。Token Painter 提出兩大**免訓練（Training-Free）**模塊：(1) **雙流編碼器信息融合（DEIF）**，在頻域中融合 T&B（文本+背景）的高頻上下文風格與 T-only 的低頻語義結構，通過自適應統計對齊和修改高斯函數生成全新引導 token；(2) **自適應解碼器注意力分數增強（ADAE）**，以 $\alpha = \log_N HW$ 自適應增強修復區域對引導 token 的注意力，並利用動態係數 $\beta = \log_{N_2+1} N_1$ 加強修復 token 間的交互。在 EditBench 和 BrushBench 上，Token Painter 在圖像質量（IR: **13.01**）、背景一致性（PSNR: **26.39**）和文本對齊（CLIP-S: **14.46**）上全面超越 BrushNet、PowerPaint、HD-Painter 等微調和 training-free 方法。
@@ -200,6 +206,12 @@ skills/
 | 2026-03-21 | [Text Embedding Steering](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md) | 文本嵌入空間線性插值實現免訓練連續圖像編輯控制 | [2603.17998](https://arxiv.org/abs/2603.17998) |
 | 2026-03-22 | [Token Painter](papers/2026/2026-03/TokenPainter/AI_Daily_TokenPainter.md) | MAR-based Training-Free 文本引導圖像修復，頻域融合 + 注意力增強 (AAAI 2026) | [2509.23919](https://arxiv.org/abs/2509.23919) |
 
+### 2026-04
+
+| 日期 | 論文 | 主題 | arXiv |
+|------|------|------|-------|
+| 2026-04-14 | [HAM](papers/2026/2026-04/HAM/AI_Daily_HAM.md) | 免訓練異構注意力調節風格轉換，Self-Attn + Cross-Attn 雙通道 SOTA (CVPR 2026 Findings) | [2603.24043](https://arxiv.org/abs/2603.24043) |
+
 ### 比較分析
 
 | 日期 | 報告 | 主題 |
@@ -247,7 +259,7 @@ skills/
 
 ### Style Transfer (Training-Free)
 
-[CSD-VAR (ICCV 2025)](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md) | [StyleGallery (CVPR 2026)](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md) | [Scale-wise AR Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md)
+[CSD-VAR (ICCV 2025)](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md) | [StyleGallery (CVPR 2026)](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md) | [Scale-wise AR Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [HAM (CVPR 2026 Findings)](papers/2026/2026-04/HAM/AI_Daily_HAM.md)
 
 ### Unified / Multi-modal
 
@@ -271,7 +283,10 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-03-22*
+*Last Updated: 2026-04-14*
+
+### 2026-04-14
+* [HAM](papers/2026/2026-04/HAM/AI_Daily_HAM.md) - 免訓練異構注意力調節風格轉換，同時操縱 Self-Attention 與 Cross-Attention 達成 SOTA 風格-內容平衡 (CVPR 2026 Findings)。
 
 ### 2026-03-22
 * [Token Painter](papers/2026/2026-03/TokenPainter/AI_Daily_TokenPainter.md) - MAR 模型首次應用於文本引導圖像修復，Training-Free 頻域融合 + 自適應注意力增強超越所有 SOTA (AAAI 2026)。
