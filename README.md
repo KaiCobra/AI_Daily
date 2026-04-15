@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[AFM — 2026-04-15：免訓練交叉注意力頻域調變，首次揭示擴散模型注意力的時頻演進規律並實現原則性頻譜控制](papers/2026/2026-04/AFM/AI_Daily_AFM.md)**
+
+本文提出 **AFM (Attention Frequency Modulation)**（Seunghun Oh & Unsang Park），一種**免訓練（Training-Free）**的擴散模型推論期介入方法。核心洞見在於：將交叉注意力（Cross-Attention）視為潛在網格上的時空訊號，並透過傅立葉頻譜分析揭示了一個穩定的「由粗到細（Coarse-to-Fine）」頻譜演進規律。AFM 在 Softmax 之前的 Logit 空間中，對交叉注意力進行 Token 級別的**傅立葉域頻譜重加權**，透過與去噪進度對齊的排程函數，連續調整 Token 競爭的空間尺度。具體而言，AFM-curve 有效抑制了編碼器注意力在生成後期的高頻碎片化現象（98-99% 的樣本對呈現一致的負向 HF-ratio 偏移），同時保持文本-影像語義對齊（CLIP 餘弦相似度幾乎不變）。在 Stable Diffusion v1.5 和 v1.4 上，AFM 在高頻殘差上引發的感知變化顯著大於低頻分量（78% 樣本 LPIPS_high > LPIPS_low），證明其精確地引導了細節與紋理的增強而非粗略結構改變，全面超越 SAG 和 FreeU 等現有免訓練基線。
+
+---
+
 **[HAM — 2026-04-14：免訓練異構注意力調節風格轉換，同時操縱 Self-Attention 與 Cross-Attention 達成 SOTA 風格-內容平衡 (CVPR 2026 Findings)](papers/2026/2026-04/HAM/AI_Daily_HAM.md)**
 
 本文提出 **HAM (Heterogeneous Attention Modulation)**（CVPR 2026 Findings，Hangzhou Dianzi University & ICT CAS），一種**免訓練（Training-Free）**的擴散模型風格轉換方法。核心洞見在於：現有免訓練方法（如 StyleID、STAM）僅在自注意力（Self-Attention）區塊內操作，導致風格與內容的權衡失衡。HAM 創新地提出**異構注意力調節**策略，同時利用自注意力與交叉注意力（Cross-Attention）通道：(1) **全局注意力調節（GAR）**，透過 AdaIN 融合內容與風格教師模型的 Q/K/V 投影，並以超參數 $\alpha$ 加權融入學生生成器的自注意力層，實現宏觀的內容保護與風格融合；(2) **局部注意力移植（LAT）**，將風格教師的 K/V 直接移植至交叉注意力通道，同時以超參數 $\beta$ 加權融合內容教師的 Query 進行身份保護；(3) **風格注入噪聲初始化（SINI）**，以內容殘差噪聲 + AdaIN 風格化噪聲的雙組件架構設定初始潛在噪聲。在 MS-COCO + WikiArt 上，HAM 在 LPIPS（**0.479**）、DINO（**0.728**）、CLIP-I（**0.682**）、DC（**2.113**）與 CC（**2.057**）等指標上全面超越 StyleID、STAM、DiffArtist 等方法，並兼容 SD2.1 與 SD3.5 架構。
@@ -210,6 +216,7 @@ skills/
 
 | 日期 | 論文 | 主題 | arXiv |
 |------|------|------|-------|
+| 2026-04-15 | [AFM](papers/2026/2026-04/AFM/AI_Daily_AFM.md) | 免訓練交叉注意力頻域調變，首次揭示注意力時頻演進規律 | [2603.28114](https://arxiv.org/abs/2603.28114) |
 | 2026-04-14 | [HAM](papers/2026/2026-04/HAM/AI_Daily_HAM.md) | 免訓練異構注意力調節風格轉換，Self-Attn + Cross-Attn 雙通道 SOTA (CVPR 2026 Findings) | [2603.24043](https://arxiv.org/abs/2603.24043) |
 
 ### 比較分析
@@ -243,7 +250,7 @@ skills/
 
 **自監督表示學習：** [Self-Flow](papers/2026/2026-03/SelfFlow/AI_Daily_SelfFlow.md)
 
-**架構與機制分析：** [Unraveling MMDiT](papers/2026/2026-01/Unraveling_MMDiT/AI_Daily_Unraveling_MMDiT.md) | [Semantic Bottleneck](papers/2026/2026-02/Semantic_Bottleneck/AI_Daily_Semantic_Bottleneck.md) | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | [Untwisting RoPE](papers/2026/2026-01/Untwisting_RoPE/AI_Daily_Untwisting_RoPE.md)
+**架構與機制分析：** [Unraveling MMDiT](papers/2026/2026-01/Unraveling_MMDiT/AI_Daily_Unraveling_MMDiT.md) | [Semantic Bottleneck](papers/2026/2026-02/Semantic_Bottleneck/AI_Daily_Semantic_Bottleneck.md) | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | [Untwisting RoPE](papers/2026/2026-01/Untwisting_RoPE/AI_Daily_Untwisting_RoPE.md) | [AFM](papers/2026/2026-04/AFM/AI_Daily_AFM.md)
 
 **引導與加速：** [MMD-Guidance](papers/2026/2026-01/MMD-Guidance/AI_Daily_MMD-Guidance.md) | [Light Forcing](papers/2026/2026-02/Light_Forcing/AI_Daily_Light_Forcing.md) | [RFC](papers/2026/2026-02/RFC/AI_Daily_RFC.md) | [DIAMOND](papers/2026/2026-02/DIAMOND/AI_Daily_DIAMOND.md) | [Look-Ahead Look-Back Flows](papers/2026/2026-02/Look_Ahead_Look_Back_Flows/AI_Daily_Look_Ahead_Look_Back_Flows.md) | [SoFlow](papers/2024/2024-11/SoFlow/AI_Daily_SoFlow.md) | [LapFlow](papers/2026/2026-02/LapFlow/AI_Daily_LapFlow.md)
 
@@ -283,7 +290,10 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-04-14*
+*Last Updated: 2026-04-15*
+
+### 2026-04-15
+* [AFM](papers/2026/2026-04/AFM/AI_Daily_AFM.md) - 免訓練交叉注意力頻域調變，首次揭示擴散模型注意力的時頻演進規律並實現原則性頻譜控制。
 
 ### 2026-04-14
 * [HAM](papers/2026/2026-04/HAM/AI_Daily_HAM.md) - 免訓練異構注意力調節風格轉換，同時操縱 Self-Attention 與 Cross-Attention 達成 SOTA 風格-內容平衡 (CVPR 2026 Findings)。
