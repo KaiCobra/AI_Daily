@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[SHIFT — 2026-04-16：LLM 激活引導技術首次遷移至百億參數級 DiT，免訓練推理期概念擦除與風格轉換](papers/2026/2026-04/SHIFT/AI_Daily_SHIFT.md)**
+
+本文提出 **SHIFT (Steering Hidden Intermediates in Flow Transformers)**（Nina Konovalova, Andrey Kuznetsov, Aibek Alanov；FusionBrain Lab & HSE University），一種**免訓練（Training-Free）**的擴散變壓器推理期控制框架。核心洞見在於：大型語言模型中成熟的激活引導（Activation Steering）技術可以成功遷移至擁有統一注意力機制的百億參數級 DiT 模型（如 FLUX）。SHIFT 透過收集少量對比提示詞對（僅需 20 對），計算特定概念的引導向量（Steering Vectors），並在推理時動態應用於文本編碼器池化嵌入和 DiT 主幹的文本標記激活。引入基於 SVM 的分類器正則化機制有效防止過度引導。在 I2P 基準測試的裸露內容擦除任務中，SHIFT 實現了超過 **3-4 倍**的抑制效果（Total: 97 vs. 基線最佳 342），同時維持幾乎不變的 CLIP 分數。此外，SHIFT 支持具體概念擦除、風格轉換和局部小物件移除，並證明了引導向量在蒸餾版本間的可轉移性（schnell → dev）。
+
+---
+
 **[AFM — 2026-04-15：免訓練交叉注意力頻域調變，首次揭示擴散模型注意力的時頻演進規律並實現原則性頻譜控制](papers/2026/2026-04/AFM/AI_Daily_AFM.md)**
 
 本文提出 **AFM (Attention Frequency Modulation)**（Seunghun Oh & Unsang Park），一種**免訓練（Training-Free）**的擴散模型推論期介入方法。核心洞見在於：將交叉注意力（Cross-Attention）視為潛在網格上的時空訊號，並透過傅立葉頻譜分析揭示了一個穩定的「由粗到細（Coarse-to-Fine）」頻譜演進規律。AFM 在 Softmax 之前的 Logit 空間中，對交叉注意力進行 Token 級別的**傅立葉域頻譜重加權**，透過與去噪進度對齊的排程函數，連續調整 Token 競爭的空間尺度。具體而言，AFM-curve 有效抑制了編碼器注意力在生成後期的高頻碎片化現象（98-99% 的樣本對呈現一致的負向 HF-ratio 偏移），同時保持文本-影像語義對齊（CLIP 餘弦相似度幾乎不變）。在 Stable Diffusion v1.5 和 v1.4 上，AFM 在高頻殘差上引發的感知變化顯著大於低頻分量（78% 樣本 LPIPS_high > LPIPS_low），證明其精確地引導了細節與紋理的增強而非粗略結構改變，全面超越 SAG 和 FreeU 等現有免訓練基線。
@@ -217,6 +223,7 @@ skills/
 | 日期 | 論文 | 主題 | arXiv |
 |------|------|------|-------|
 | 2026-04-15 | [AFM](papers/2026/2026-04/AFM/AI_Daily_AFM.md) | 免訓練交叉注意力頻域調變，首次揭示注意力時頻演進規律 | [2603.28114](https://arxiv.org/abs/2603.28114) |
+| 2026-04-16 | [SHIFT](papers/2026/2026-04/SHIFT/AI_Daily_SHIFT.md) | LLM 激活引導遷移至 DiT，免訓練概念擦除與風格轉換 | [2604.09213](https://arxiv.org/abs/2604.09213) |
 | 2026-04-14 | [HAM](papers/2026/2026-04/HAM/AI_Daily_HAM.md) | 免訓練異構注意力調節風格轉換，Self-Attn + Cross-Attn 雙通道 SOTA (CVPR 2026 Findings) | [2603.24043](https://arxiv.org/abs/2603.24043) |
 
 ### 比較分析
