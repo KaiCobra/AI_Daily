@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[MAST — 2026-04-17：Logit 層級注意力質量分配實現免訓練多風格轉換，四模組協同解決邊界偽影與注意力扁平化](papers/2026/2026-04/MAST/AI_Daily_MAST.md)**
+
+本文提出 **MAST (Mask-Guided Attention Mass Allocation)**（Dongguk University），一種**免訓練（Training-Free）**的多風格轉換框架。核心洞見在於：現有 diffusion-based style transfer 方法主要針對單一風格設計，擴展到多風格場景時面臨邊界偽影、注意力扁平化與結構不一致三大挑戰。MAST 提出四個互補模組：(1) **LQA (Layout-preserving Query Anchoring)**，透過線性混合 content/stylized query 穩定語義佈局；(2) **LAMA (Logit-level Attention Mass Allocation)**，在 Logit 層級以 closed-form bias 確定性地分配 attention probability mass，從根本上防止風格洩漏；(3) **STS (Sharpness-aware Temperature Scaling)**，以二次多項式擬合自適應溫度係數，恢復因多風格拼接導致的注意力銳度退化；(4) **DDI (Discrepancy-aware Detail Injection)**，基於餘弦相似度差異動態注入高頻細節。在 MS-COCO + WikiArt 上，MAST 在 ArtFID（**14.780**）、FID（**8.656**）、CFSD（**0.132**）與 M-FID（**15.193**）上全面超越 Z*、StyleID、DiffuseST 等方法，且從 1→5 風格的 MAD 僅為 **0.288**，展現極強的多風格擴展穩定性。
+
+---
+
 **[SHIFT — 2026-04-16：LLM 激活引導技術首次遷移至百億參數級 DiT，免訓練推理期概念擦除與風格轉換](papers/2026/2026-04/SHIFT/AI_Daily_SHIFT.md)**
 
 本文提出 **SHIFT (Steering Hidden Intermediates in Flow Transformers)**（Nina Konovalova, Andrey Kuznetsov, Aibek Alanov；FusionBrain Lab & HSE University），一種**免訓練（Training-Free）**的擴散變壓器推理期控制框架。核心洞見在於：大型語言模型中成熟的激活引導（Activation Steering）技術可以成功遷移至擁有統一注意力機制的百億參數級 DiT 模型（如 FLUX）。SHIFT 透過收集少量對比提示詞對（僅需 20 對），計算特定概念的引導向量（Steering Vectors），並在推理時動態應用於文本編碼器池化嵌入和 DiT 主幹的文本標記激活。引入基於 SVM 的分類器正則化機制有效防止過度引導。在 I2P 基準測試的裸露內容擦除任務中，SHIFT 實現了超過 **3-4 倍**的抑制效果（Total: 97 vs. 基線最佳 342），同時維持幾乎不變的 CLIP 分數。此外，SHIFT 支持具體概念擦除、風格轉換和局部小物件移除，並證明了引導向量在蒸餾版本間的可轉移性（schnell → dev）。
@@ -225,6 +231,7 @@ skills/
 | 2026-04-15 | [AFM](papers/2026/2026-04/AFM/AI_Daily_AFM.md) | 免訓練交叉注意力頻域調變，首次揭示注意力時頻演進規律 | [2603.28114](https://arxiv.org/abs/2603.28114) |
 | 2026-04-16 | [SHIFT](papers/2026/2026-04/SHIFT/AI_Daily_SHIFT.md) | LLM 激活引導遷移至 DiT，免訓練概念擦除與風格轉換 | [2604.09213](https://arxiv.org/abs/2604.09213) |
 | 2026-04-14 | [HAM](papers/2026/2026-04/HAM/AI_Daily_HAM.md) | 免訓練異構注意力調節風格轉換，Self-Attn + Cross-Attn 雙通道 SOTA (CVPR 2026 Findings) | [2603.24043](https://arxiv.org/abs/2603.24043) |
+| 2026-04-17 | [MAST](papers/2026/2026-04/MAST/AI_Daily_MAST.md) | 免訓練 Logit 層級注意力質量分配多風格轉換，四模組協同消除邊界偽影 | [2604.12281](https://arxiv.org/abs/2604.12281) |
 
 ### 比較分析
 
@@ -273,7 +280,7 @@ skills/
 
 ### Style Transfer (Training-Free)
 
-[CSD-VAR (ICCV 2025)](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md) | [StyleGallery (CVPR 2026)](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md) | [Scale-wise AR Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [HAM (CVPR 2026 Findings)](papers/2026/2026-04/HAM/AI_Daily_HAM.md)
+[CSD-VAR (ICCV 2025)](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md) | [StyleGallery (CVPR 2026)](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md) | [Scale-wise AR Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [HAM (CVPR 2026 Findings)](papers/2026/2026-04/HAM/AI_Daily_HAM.md) | [MAST](papers/2026/2026-04/MAST/AI_Daily_MAST.md)
 
 ### Unified / Multi-modal
 
@@ -297,7 +304,10 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-04-15*
+*Last Updated: 2026-04-17*
+
+### 2026-04-17
+* [MAST](papers/2026/2026-04/MAST/AI_Daily_MAST.md) - 免訓練 Logit 層級注意力質量分配多風格轉換，四模組協同消除邊界偽影與注意力扁平化。
 
 ### 2026-04-15
 * [AFM](papers/2026/2026-04/AFM/AI_Daily_AFM.md) - 免訓練交叉注意力頻域調變，首次揭示擴散模型注意力的時頻演進規律並實現原則性頻譜控制。
