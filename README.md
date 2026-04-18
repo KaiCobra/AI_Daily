@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[FIA-Edit — 2026-04-18：頻率交互注意力實現免反轉高保真文本引導圖像編輯，自注意力頻域融合 + 特徵注入雙模組 (AAAI 2026)](papers/2026/2026-04/FIA-Edit/AI_Daily_FIA-Edit.md)**
+
+本文提出 **FIA-Edit (Frequency-Interactive Attention)**（AAAI 2026，華中科技大學 & 聯影醫療），一種**免反轉（Inversion-Free）**的高效文本引導圖像編輯框架。核心洞見在於：現有免反轉方法（如 FlowEdit）雖然避免了耗時的潛在反轉過程，但因缺乏對源圖像特徵的顯式整合，導致背景保留不佳與語義不一致。FIA-Edit 提出兩大互補模組：(1) **FRI (Frequency Representation Interaction)**，在自注意力層中對源/目標特徵進行 2D FFT 頻域分解，以高斯濾波器分離高低頻分量後進行交叉加權融合（λ₁=0.8 強調源高頻結構，λ₂=0.2 引入目標低頻語義），再經 IFFT 重建替換目標 Q/K；(2) **FIJ (Feature Injection)**，在 DiT 後期交叉注意力層中注入源側 Q/K/V 與文本嵌入，僅在生成早期階段（前 27 步）應用以穩定語義對齊。在 PIE-Bench 上，FIA-Edit 以結構距離 **10.34**、PSNR **27.32**、MSE **28.66** 全面超越 FlowEdit、DNAEdit、P2P、FTEdit 等方法，綜合排名 **1.7**（最佳），且在 RTX 4090 上僅需 **6.3 秒**處理 512×512 圖像。此外，FIA-Edit 首次將通用圖像編輯應用於臨床手術出血數據增強，使下游分類 Recall 提升 +3.41%、F1 提升 +3.54%。
+
+---
+
 **[MAST — 2026-04-17：Logit 層級注意力質量分配實現免訓練多風格轉換，四模組協同解決邊界偽影與注意力扁平化](papers/2026/2026-04/MAST/AI_Daily_MAST.md)**
 
 本文提出 **MAST (Mask-Guided Attention Mass Allocation)**（Dongguk University），一種**免訓練（Training-Free）**的多風格轉換框架。核心洞見在於：現有 diffusion-based style transfer 方法主要針對單一風格設計，擴展到多風格場景時面臨邊界偽影、注意力扁平化與結構不一致三大挑戰。MAST 提出四個互補模組：(1) **LQA (Layout-preserving Query Anchoring)**，透過線性混合 content/stylized query 穩定語義佈局；(2) **LAMA (Logit-level Attention Mass Allocation)**，在 Logit 層級以 closed-form bias 確定性地分配 attention probability mass，從根本上防止風格洩漏；(3) **STS (Sharpness-aware Temperature Scaling)**，以二次多項式擬合自適應溫度係數，恢復因多風格拼接導致的注意力銳度退化；(4) **DDI (Discrepancy-aware Detail Injection)**，基於餘弦相似度差異動態注入高頻細節。在 MS-COCO + WikiArt 上，MAST 在 ArtFID（**14.780**）、FID（**8.656**）、CFSD（**0.132**）與 M-FID（**15.193**）上全面超越 Z*、StyleID、DiffuseST 等方法，且從 1→5 風格的 MAD 僅為 **0.288**，展現極強的多風格擴展穩定性。
@@ -232,6 +238,7 @@ skills/
 | 2026-04-16 | [SHIFT](papers/2026/2026-04/SHIFT/AI_Daily_SHIFT.md) | LLM 激活引導遷移至 DiT，免訓練概念擦除與風格轉換 | [2604.09213](https://arxiv.org/abs/2604.09213) |
 | 2026-04-14 | [HAM](papers/2026/2026-04/HAM/AI_Daily_HAM.md) | 免訓練異構注意力調節風格轉換，Self-Attn + Cross-Attn 雙通道 SOTA (CVPR 2026 Findings) | [2603.24043](https://arxiv.org/abs/2603.24043) |
 | 2026-04-17 | [MAST](papers/2026/2026-04/MAST/AI_Daily_MAST.md) | 免訓練 Logit 層級注意力質量分配多風格轉換，四模組協同消除邊界偽影 | [2604.12281](https://arxiv.org/abs/2604.12281) |
+| 2026-04-18 | [FIA-Edit](papers/2026/2026-04/FIA-Edit/AI_Daily_FIA-Edit.md) | 頻率交互注意力免反轉高保真圖像編輯，自注意力頻域融合 + 特徵注入 (AAAI 2026) | [2511.12151](https://arxiv.org/abs/2511.12151) |
 
 ### 比較分析
 
@@ -276,7 +283,7 @@ skills/
 
 ### Image Editing (Training-Free)
 
-[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md) | [TAUE (CVPR 2026 Findings)](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md) | [Text Embedding Steering](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md) | [Token Painter (AAAI 2026)](papers/2026/2026-03/TokenPainter/AI_Daily_TokenPainter.md)
+[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md) | [TAUE (CVPR 2026 Findings)](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md) | [Text Embedding Steering](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md) | [Token Painter (AAAI 2026)](papers/2026/2026-03/TokenPainter/AI_Daily_TokenPainter.md) | [FIA-Edit (AAAI 2026)](papers/2026/2026-04/FIA-Edit/AI_Daily_FIA-Edit.md)
 
 ### Style Transfer (Training-Free)
 
@@ -304,7 +311,10 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-04-17*
+*Last Updated: 2026-04-18*
+
+### 2026-04-18
+* [FIA-Edit](papers/2026/2026-04/FIA-Edit/AI_Daily_FIA-Edit.md) - 頻率交互注意力免反轉高保真圖像編輯，自注意力頻域融合 + 特徵注入雙模組 (AAAI 2026)。
 
 ### 2026-04-17
 * [MAST](papers/2026/2026-04/MAST/AI_Daily_MAST.md) - 免訓練 Logit 層級注意力質量分配多風格轉換，四模組協同消除邊界偽影與注意力扁平化。
