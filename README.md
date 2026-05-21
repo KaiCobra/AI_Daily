@@ -2,9 +2,9 @@
 
 ## 今日閱讀
 
-**[FIA-Edit — 2026-04-18：頻率交互注意力實現免反轉高保真文本引導圖像編輯，自注意力頻域融合 + 特徵注入雙模組 (AAAI 2026)](papers/2026/2026-04/FIA-Edit/AI_Daily_FIA-Edit.md)**
+**[VAGS — 2026-05-21：速度自適應引導尺度，Training-Free 替換固定 CFG，Flow Matching 圖像編輯與生成雙任務 SOTA](papers/2026/2026-05/VAGS/AI_Daily_VAGS.md)**
 
-本文提出 **FIA-Edit (Frequency-Interactive Attention)**（AAAI 2026，華中科技大學 & 聯影醫療），一種**免反轉（Inversion-Free）**的高效文本引導圖像編輯框架。核心洞見在於：現有免反轉方法（如 FlowEdit）雖然避免了耗時的潛在反轉過程，但因缺乏對源圖像特徵的顯式整合，導致背景保留不佳與語義不一致。FIA-Edit 提出兩大互補模組：(1) **FRI (Frequency Representation Interaction)**，在自注意力層中對源/目標特徵進行 2D FFT 頻域分解，以高斯濾波器分離高低頻分量後進行交叉加權融合（λ₁=0.8 強調源高頻結構，λ₂=0.2 引入目標低頻語義），再經 IFFT 重建替換目標 Q/K；(2) **FIJ (Feature Injection)**，在 DiT 後期交叉注意力層中注入源側 Q/K/V 與文本嵌入，僅在生成早期階段（前 27 步）應用以穩定語義對齊。在 PIE-Bench 上，FIA-Edit 以結構距離 **10.34**、PSNR **27.32**、MSE **28.66** 全面超越 FlowEdit、DNAEdit、P2P、FTEdit 等方法，綜合排名 **1.7**（最佳），且在 RTX 4090 上僅需 **6.3 秒**處理 512×512 圖像。此外，FIA-Edit 首次將通用圖像編輯應用於臨床手術出血數據增強，使下游分類 Recall 提升 +3.41%、F1 提升 +3.54%。
+本文提出 **VAGS (Velocity-Adaptive Guidance Scale)**（Harvard University & University of Hong Kong），一種完全**免訓練（Training-Free）**的即插即用方法，用於替換 Flow-based 模型中固定的 Classifier-Free Guidance（CFG）尺度。核心洞見在於：固定 CFG 是 Flow-based 採樣的根本性瓶頸——早期步驟由噪聲主導，強引導只會放大無信息的差異；後期步驟需要更強的方向性承諾。VAGS 提出統一的自適應規則：$\lambda_{i} = \lambda \exp(\kappa(2\sigma_{i}-1)s_{i})$，其中 $\sigma_{i}$ 追蹤去噪進度（時間軸），$s_{i}$ 測量任務相關速度場的餘弦相似度（幾何軸）。對於免反轉圖像編輯，$s_{i}$ 為源/目標引導速度的對齊度；對於生成，$s_{i}$ 為無條件/條件速度的對齊度。方法無需額外的網絡前向傳遞，計算開銷僅增加 1.3-1.8%。在 PIE-Bench 上，FlowEdit+VAGS 將結構距離從 30.31 降至 **13.84**，MSE 降低 **62%**；在 COCO17 上，VAGS-Gen 將 FID 從 28.46 降至 **26.07**，IS 從 33.64 提升至 **35.15**，全面超越固定 CFG 和現有 Training-Free 引導方法。
 
 ---
 
@@ -240,6 +240,12 @@ skills/
 | 2026-04-17 | [MAST](papers/2026/2026-04/MAST/AI_Daily_MAST.md) | 免訓練 Logit 層級注意力質量分配多風格轉換，四模組協同消除邊界偽影 | [2604.12281](https://arxiv.org/abs/2604.12281) |
 | 2026-04-18 | [FIA-Edit](papers/2026/2026-04/FIA-Edit/AI_Daily_FIA-Edit.md) | 頻率交互注意力免反轉高保真圖像編輯，自注意力頻域融合 + 特徵注入 (AAAI 2026) | [2511.12151](https://arxiv.org/abs/2511.12151) |
 
+### 2026-05
+
+| 日期 | 論文 | 主題 | arXiv |
+|------|------|------|-------|
+| 2026-05-21 | [VAGS](papers/2026/2026-05/VAGS/AI_Daily_VAGS.md) | Training-Free 速度自適應 CFG，Flow Matching 圖像編輯與生成雙任務 SOTA | [2605.15661](https://arxiv.org/abs/2605.15661) |
+
 ### 比較分析
 
 | 日期 | 報告 | 主題 |
@@ -273,7 +279,7 @@ skills/
 
 **架構與機制分析：** [Unraveling MMDiT](papers/2026/2026-01/Unraveling_MMDiT/AI_Daily_Unraveling_MMDiT.md) | [Semantic Bottleneck](papers/2026/2026-02/Semantic_Bottleneck/AI_Daily_Semantic_Bottleneck.md) | [Rethinking Global Text Conditioning](papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md) | [Untwisting RoPE](papers/2026/2026-01/Untwisting_RoPE/AI_Daily_Untwisting_RoPE.md) | [AFM](papers/2026/2026-04/AFM/AI_Daily_AFM.md)
 
-**引導與加速：** [MMD-Guidance](papers/2026/2026-01/MMD-Guidance/AI_Daily_MMD-Guidance.md) | [Light Forcing](papers/2026/2026-02/Light_Forcing/AI_Daily_Light_Forcing.md) | [RFC](papers/2026/2026-02/RFC/AI_Daily_RFC.md) | [DIAMOND](papers/2026/2026-02/DIAMOND/AI_Daily_DIAMOND.md) | [Look-Ahead Look-Back Flows](papers/2026/2026-02/Look_Ahead_Look_Back_Flows/AI_Daily_Look_Ahead_Look_Back_Flows.md) | [SoFlow](papers/2024/2024-11/SoFlow/AI_Daily_SoFlow.md) | [LapFlow](papers/2026/2026-02/LapFlow/AI_Daily_LapFlow.md)
+**引導與加速：** [MMD-Guidance](papers/2026/2026-01/MMD-Guidance/AI_Daily_MMD-Guidance.md) | [Light Forcing](papers/2026/2026-02/Light_Forcing/AI_Daily_Light_Forcing.md) | [RFC](papers/2026/2026-02/RFC/AI_Daily_RFC.md) | [DIAMOND](papers/2026/2026-02/DIAMOND/AI_Daily_DIAMOND.md) | [Look-Ahead Look-Back Flows](papers/2026/2026-02/Look_Ahead_Look_Back_Flows/AI_Daily_Look_Ahead_Look_Back_Flows.md) | [SoFlow](papers/2024/2024-11/SoFlow/AI_Daily_SoFlow.md) | [LapFlow](papers/2026/2026-02/LapFlow/AI_Daily_LapFlow.md) | [VAGS](papers/2026/2026-05/VAGS/AI_Daily_VAGS.md)
 
 **高效生成：** [FAM Diffusion](papers/2026/2026-01/FAM_Diffusion/AI_Daily_FAM_Diffusion.md) | [PixelRush](papers/2026/2026-03/PixelRush/AI_Daily_PixelRush.md) | [JiT (CVPR 2026)](papers/2026/2026-03/JiT/AI_Daily_JiT.md)
 
@@ -283,7 +289,7 @@ skills/
 
 ### Image Editing (Training-Free)
 
-[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md) | [TAUE (CVPR 2026 Findings)](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md) | [Text Embedding Steering](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md) | [Token Painter (AAAI 2026)](papers/2026/2026-03/TokenPainter/AI_Daily_TokenPainter.md) | [FIA-Edit (AAAI 2026)](papers/2026/2026-04/FIA-Edit/AI_Daily_FIA-Edit.md)
+[AREdit (ICCV 2025)](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) | [ATM (ISLock)](papers/2026-03-07-ATM-ISLock.md) | [DCAG](papers/2026/2026-02/DCAG/AI_Daily_DCAG.md) | [FusionEdit](papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md) | [Alterbute](papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md) | [LooseRoPE](papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [ZestGuide](papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md) | [LayerBind](papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md) | [Delta-K](papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md) | [TAUE (CVPR 2026 Findings)](papers/2026/2026-03/TAUE/AI_Daily_TAUE.md) | [Text Embedding Steering](papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md) | [Token Painter (AAAI 2026)](papers/2026/2026-03/TokenPainter/AI_Daily_TokenPainter.md) | [FIA-Edit (AAAI 2026)](papers/2026/2026-04/FIA-Edit/AI_Daily_FIA-Edit.md) | [VAGS](papers/2026/2026-05/VAGS/AI_Daily_VAGS.md)
 
 ### Style Transfer (Training-Free)
 
@@ -311,7 +317,10 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-04-18*
+*Last Updated: 2026-05-21*
+
+### 2026-05-21
+* [VAGS](papers/2026/2026-05/VAGS/AI_Daily_VAGS.md) - Training-Free 速度自適應 CFG，Flow Matching 圖像編輯與生成雙任務 SOTA，Harvard + HKU 聯合出品。
 
 ### 2026-04-18
 * [FIA-Edit](papers/2026/2026-04/FIA-Edit/AI_Daily_FIA-Edit.md) - 頻率交互注意力免反轉高保真圖像編輯，自注意力頻域融合 + 特徵注入雙模組 (AAAI 2026)。
