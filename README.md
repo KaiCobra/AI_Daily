@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[TC-JEPA — 2026-05-22：文字條件化 JEPA 降低遮罩預測不確定性，非對比式視覺-語言預訓練超越 CLIP，ADE20k 分割 SOTA (ICML 2026)](papers/2026/2026-05/TC-JEPA/AI_Daily_TC-JEPA.md)**
+
+本文提出 **TC-JEPA (Text-Conditional JEPA)**（Apple），一種將**文字條件化（Text-Conditioning）**引入 I-JEPA 框架的自監督視覺表示學習方法，發表於 ICML 2026。核心洞見在於：JEPA 的遮罩特徵預測任務存在固有的視覺不確定性（例如被遮罩的書架背景），導致模型難以學習豐富的語義表示。TC-JEPA 使用 LLM 合成的圖像標題作為條件，透過一個細粒度文字條件器在預測器的**多個層級**上計算稀疏交叉注意力（Sparse Cross-Attention），使預測的區塊特徵成為文字的函數，並引入稀疏性正則化 $\mathcal{L}_{\text{sparse}}$ 和跨層一致性正則化 $\mathcal{L}_{\text{consistency}}$ 以捕捉細粒度的圖像-詞彙對應關係。TC-JEPA 提供了一種純基於特徵預測的**非對比式視覺-語言預訓練**新範式，無需對比損失或 grounding 標註。在 IN-1k 線性探測上，ViT-H/14 達到 **80.4%** Top-1 準確率，超越 I-JEPA（79.3%）；在 ADE20k 語義分割上，以 CC27M 預訓練的 ViT-L/16 達到 **42.1 mIoU**，超越使用 5× 更多資料的 DINOv2（41.8）和使用 75× 更多資料的 Web-DINO（40.3）；在 VQA 和 Image Captioning 任務上亦全面超越 CLIP 和 SPARC 等對比學習基線。
+
+---
+
 **[VAGS — 2026-05-21：速度自適應引導尺度，Training-Free 替換固定 CFG，Flow Matching 圖像編輯與生成雙任務 SOTA](papers/2026/2026-05/VAGS/AI_Daily_VAGS.md)**
 
 本文提出 **VAGS (Velocity-Adaptive Guidance Scale)**（Harvard University & University of Hong Kong），一種完全**免訓練（Training-Free）**的即插即用方法，用於替換 Flow-based 模型中固定的 Classifier-Free Guidance（CFG）尺度。核心洞見在於：固定 CFG 是 Flow-based 採樣的根本性瓶頸——早期步驟由噪聲主導，強引導只會放大無信息的差異；後期步驟需要更強的方向性承諾。VAGS 提出統一的自適應規則：$\lambda_{i} = \lambda \exp(\kappa(2\sigma_{i}-1)s_{i})$，其中 $\sigma_{i}$ 追蹤去噪進度（時間軸），$s_{i}$ 測量任務相關速度場的餘弦相似度（幾何軸）。對於免反轉圖像編輯，$s_{i}$ 為源/目標引導速度的對齊度；對於生成，$s_{i}$ 為無條件/條件速度的對齊度。方法無需額外的網絡前向傳遞，計算開銷僅增加 1.3-1.8%。在 PIE-Bench 上，FlowEdit+VAGS 將結構距離從 30.31 降至 **13.84**，MSE 降低 **62%**；在 COCO17 上，VAGS-Gen 將 FID 從 28.46 降至 **26.07**，IS 從 33.64 提升至 **35.15**，全面超越固定 CFG 和現有 Training-Free 引導方法。
