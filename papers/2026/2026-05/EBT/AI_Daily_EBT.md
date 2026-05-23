@@ -6,6 +6,7 @@
 - **Conference**: ICLR 2026 (Oral)
 - **Paper URL**: [https://arxiv.org/abs/2507.02092](https://arxiv.org/abs/2507.02092)
 - **Keywords**: Energy-Based Models, Transformer, System 2 Thinking, Scalable Learning, Multi-modal
+- **先備知識**：如果你對 Energy-Based Models 不熟悉，建議先閱讀 → **[先備知識：Energy-Based Models (EBMs) 核心概念與原理](Energy_Based_Models_Prerequisite.md)**
 
 ---
 
@@ -80,7 +81,7 @@ EBTs 在多個模態和任務上進行了廣泛的評估，展現了其作為下
 
 ### 相關研究背景
 
-* **Energy-Based Models (EBMs)**：傳統的 EBMs 訓練通常依賴對比方法（Contrastive methods），這在高維空間中面臨嚴重的擴展性問題。EBTs 採用了將學習框架化為優化問題的替代途徑，成功實現了規模化。
+* **Energy-Based Models (EBMs)**：傳統的 EBMs 訓練通常依賴對比方法（Contrastive methods），這在高維空間中面臨嚴重的擴展性問題。EBTs 採用了將學習框架化為優化問題的替代途徑，成功實現了規模化。如果你對 EBM 的基礎數學不熟悉，建議閱讀 **[先備知識：Energy-Based Models (EBMs) 核心概念與原理](Energy_Based_Models_Prerequisite.md)**。
 * **System 2 Thinking**：近期的模型如 OpenAI o1/o3、DeepSeek-R1 等通過強化學習（RL）實現了 System 2 Thinking。然而，這些方法依賴於規則明確、易於驗證的領域（如數學和程式碼），難以泛化到其他任務。EBTs 則提供了一種純粹基於無監督學習的通用解決方案。
 * **JEPA 架構**：JEPA（如 I-JEPA, V-JEPA, TC-JEPA）在潛在特徵空間中進行預測，同樣旨在學習豐富的表示。EBTs 則進一步將預測過程轉化為能量最小化，賦予了模型動態推理的能力。
 
