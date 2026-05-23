@@ -2,6 +2,12 @@
 
 ## 今日閱讀
 
+**[EBT — 2026-05-23：Energy-Based Transformers 無監督 System 2 Thinking，六個縮放軸全面超越 Transformer++，推理時提升性能高達 29% (ICLR 2026 Oral)](papers/2026/2026-05/EBT/AI_Daily_EBT.md)**
+
+本文提出 **Energy-Based Transformers (EBTs)**（UVA, UIUC, Amazon GenAI, Stanford, Harvard），一種全新的基於能量模型（EBM）的 Transformer 架構，發表於 ICLR 2026 並獲選為 Oral 論文。核心問題在於：現有的 System 2 Thinking 方法（如 OpenAI o1、DeepSeek-R1）依賴強化學習，局限於可驗證的特定領域（數學、程式碼）。EBTs 通過學習為每個輸入-預測對分配能量值，將預測問題重構為**能量最小化優化**，使模型能夠在任何模態上從純無監督學習中湧現出 System 2 Thinking。訓練採用優化框架（而非對比方法），通過梯度下降 $\hat{y}_{i+1} = \hat{y}_i - \alpha \nabla_{\hat{y}_i} E_\theta(x, \hat{y}_i)$ 最小化能量，並引入三項關鍵能量景觀正則化技術：Replay Buffer、Langevin Dynamics 隨機噪聲以及隨機化步長/步數。在自迴歸語言建模中，EBTs 在數據、批次大小、深度、參數、FLOPs、嵌入維度等**六個縮放軸上全面超越 Transformer++**（最高 35%），是首個在不修改分詞器的情況下實現此壯舉的方法。在推理時，EBTs 通過增加優化步數（思考更久）和自我驗證（Best-of-N 能量選擇）可將性能提升高達 **29%**，且 OOD 數據越遠收益越大（線性趨勢）。在圖像去噪任務中，EBTs 超越 Diffusion Transformers (DiTs) 的同時僅需 **1% 的前向傳遞次數**，ImageNet 線性探測準確率約為 DiT 的 **10 倍**。
+
+---
+
 **[TC-JEPA — 2026-05-22：文字條件化 JEPA 降低遮罩預測不確定性，非對比式視覺-語言預訓練超越 CLIP，ADE20k 分割 SOTA (ICML 2026)](papers/2026/2026-05/TC-JEPA/AI_Daily_TC-JEPA.md)**
 
 本文提出 **TC-JEPA (Text-Conditional JEPA)**（Apple），一種將**文字條件化（Text-Conditioning）**引入 I-JEPA 框架的自監督視覺表示學習方法，發表於 ICML 2026。核心洞見在於：JEPA 的遮罩特徵預測任務存在固有的視覺不確定性（例如被遮罩的書架背景），導致模型難以學習豐富的語義表示。TC-JEPA 使用 LLM 合成的圖像標題作為條件，透過一個細粒度文字條件器在預測器的**多個層級**上計算稀疏交叉注意力（Sparse Cross-Attention），使預測的區塊特徵成為文字的函數，並引入稀疏性正則化 $\mathcal{L}_{\text{sparse}}$ 和跨層一致性正則化 $\mathcal{L}_{\text{consistency}}$ 以捕捉細粒度的圖像-詞彙對應關係。TC-JEPA 提供了一種純基於特徵預測的**非對比式視覺-語言預訓練**新範式，無需對比損失或 grounding 標註。在 IN-1k 線性探測上，ViT-H/14 達到 **80.4%** Top-1 準確率，超越 I-JEPA（79.3%）；在 ADE20k 語義分割上，以 CC27M 預訓練的 ViT-L/16 達到 **42.1 mIoU**，超越使用 5× 更多資料的 DINOv2（41.8）和使用 75× 更多資料的 Web-DINO（40.3）；在 VQA 和 Image Captioning 任務上亦全面超越 CLIP 和 SPARC 等對比學習基線。
@@ -251,6 +257,7 @@ skills/
 | 日期 | 論文 | 主題 | arXiv |
 |------|------|------|-------|
 | 2026-05-21 | [VAGS](papers/2026/2026-05/VAGS/AI_Daily_VAGS.md) | Training-Free 速度自適應 CFG，Flow Matching 圖像編輯與生成雙任務 SOTA | [2605.15661](https://arxiv.org/abs/2605.15661) |
+| 2026-05-23 | [EBT](papers/2026/2026-05/EBT/AI_Daily_EBT.md) | Energy-Based Transformers 無監督 System 2 Thinking，六軸超越 Transformer++，推理提升 29% (ICLR 2026 Oral) | [2507.02092](https://arxiv.org/abs/2507.02092) |
 
 ### 比較分析
 
@@ -301,6 +308,10 @@ skills/
 
 [CSD-VAR (ICCV 2025)](papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md) | [StyleGallery (CVPR 2026)](papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md) | [Scale-wise AR Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) | [Sissi](papers/2026/2026-01/Sissi/AI_Daily_Sissi.md) | [TP-Blend](papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md) | [HAM (CVPR 2026 Findings)](papers/2026/2026-04/HAM/AI_Daily_HAM.md) | [MAST](papers/2026/2026-04/MAST/AI_Daily_MAST.md)
 
+### Energy-Based Models & System 2 Thinking
+
+[EBT (ICLR 2026 Oral)](papers/2026/2026-05/EBT/AI_Daily_EBT.md)
+
 ### Unified / Multi-modal
 
 [JanusFlow](papers/2025/2025-01/JanusFlow/AI_Daily_JanusFlow.md) | [AR-Omni](papers/2026/2026-01/AR-Omni/AI_Daily_AR-Omni.md)
@@ -323,7 +334,10 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-05-21*
+*Last Updated: 2026-05-23*
+
+### 2026-05-23
+* [EBT](papers/2026/2026-05/EBT/AI_Daily_EBT.md) - Energy-Based Transformers 無監督 System 2 Thinking，六個縮放軸全面超越 Transformer++，推理時提升性能高達 29%，UVA + UIUC + Amazon GenAI + Stanford + Harvard 聯合出品 (ICLR 2026 Oral)。
 
 ### 2026-05-21
 * [VAGS](papers/2026/2026-05/VAGS/AI_Daily_VAGS.md) - Training-Free 速度自適應 CFG，Flow Matching 圖像編輯與生成雙任務 SOTA，Harvard + HKU 聯合出品。
