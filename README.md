@@ -2,6 +2,10 @@
 
 ## 今日閱讀
 
+**[SEGA — 2026-05-24：頻譜能量引導注意力動態縮放 RoPE，Training-Free DiT 超解析度外推達 6144×6144，全面超越 YaRN/DyPE/UltraImage (University of Toronto)](papers/2026/2026-05/SEGA/AI_Daily_SEGA.md)**
+
+本文提出 **SEGA (Spectral-Energy Guided Attention)**（University of Toronto & Vector Institute），一種**免訓練（Training-Free）**的 Diffusion Transformer 高解析度外推方法。核心洞見在於：現有 RoPE 外推方法（如 YaRN）對所有頻率維度施加均勻縮放，導致全局結構與精細細節之間存在固有的 trade-off。SEGA 透過對每個去噪步驟的潛在特徵執行 2D FFT 頻譜分析，提取軸向功率譜（Axis-wise profiles）和徑向頻譜（Radial profile），並計算三個組件：(1) **參考尺度** $m_{\text{ref}} = (R_{\text{target}}/R_{\text{train}})^\kappa$，(2) **維度級校正** $s_d^{(a)} = \phi(z_d^{(a)}) - \mathbb{E}[\phi(z^{(a)})]$（零和重分配，tanh 非線性），(3) **全局振幅因子** $\sigma = 1 - \text{SF}(\mathcal{E}_{\text{iso}})^\gamma$（頻譜平坦度 Wiener entropy），最終縮放因子 $m_d^{(a)} = m_{\text{ref}} \cdot (1 - \sigma \cdot s_d^{(a)})$。SEGA 對低能量頻段施加較強縮放以保留位置區分度，對高能量頻段施加較弱縮放以避免過度放大，並在去噪初期（頻譜平坦）自動抑制動態調整。在 Flux 模型 4096×4096 解析度上，SEGA 的 ImageReward（**1.26**）、CLIP Score（**29.22**）和 FID（**150.05**）全面超越 YaRN（0.88 / 28.30 / 160.48）、DyPE（1.01 / 28.79 / 156.21）和 UltraImage（0.61 / 28.16 / 167.04），並在 Qwen 模型上取得相同趨勢的 SOTA 結果。方法無需微調或架構修改，可直接整合至任何 RoPE-based DiT 管線。
+---
 **[EBT — 2026-05-23：Energy-Based Transformers 無監督 System 2 Thinking，六個縮放軸全面超越 Transformer++，推理時提升性能高達 29% (ICLR 2026 Oral)](papers/2026/2026-05/EBT/AI_Daily_EBT.md)**
 
 本文提出 **Energy-Based Transformers (EBTs)**（UVA, UIUC, Amazon GenAI, Stanford, Harvard），一種全新的基於能量模型（EBM）的 Transformer 架構，發表於 ICLR 2026 並獲選為 Oral 論文。核心問題在於：現有的 System 2 Thinking 方法（如 OpenAI o1、DeepSeek-R1）依賴強化學習，局限於可驗證的特定領域（數學、程式碼）。EBTs 通過學習為每個輸入-預測對分配能量值，將預測問題重構為**能量最小化優化**，使模型能夠在任何模態上從純無監督學習中湧現出 System 2 Thinking。訓練採用優化框架（而非對比方法），通過梯度下降 $\hat{y}_{i+1} = \hat{y}_i - \alpha \nabla_{\hat{y}_i} E_\theta(x, \hat{y}_i)$ 最小化能量，並引入三項關鍵能量景觀正則化技術：Replay Buffer、Langevin Dynamics 隨機噪聲以及隨機化步長/步數。在自迴歸語言建模中，EBTs 在數據、批次大小、深度、參數、FLOPs、嵌入維度等**六個縮放軸上全面超越 Transformer++**（最高 35%），是首個在不修改分詞器的情況下實現此壯舉的方法。在推理時，EBTs 通過增加優化步數（思考更久）和自我驗證（Best-of-N 能量選擇）可將性能提升高達 **29%**，且 OOD 數據越遠收益越大（線性趨勢）。在圖像去噪任務中，EBTs 超越 Diffusion Transformers (DiTs) 的同時僅需 **1% 的前向傳遞次數**，ImageNet 線性探測準確率約為 DiT 的 **10 倍**。
@@ -334,7 +338,9 @@ skills/
 
 *每天進步一點點，與 AI 一起成長。*
 
-*Last Updated: 2026-05-23*
+*Last Updated: 2026-05-24*
+### 2026-05-24
+* [SEGA](papers/2026/2026-05/SEGA/AI_Daily_SEGA.md) - 頻譜能量引導注意力動態縮放 RoPE，Training-Free DiT 超解析度外推達 6144×6144，全面超越 YaRN/DyPE/UltraImage，University of Toronto + Vector Institute。
 
 ### 2026-05-23
 * [EBT](papers/2026/2026-05/EBT/AI_Daily_EBT.md) - Energy-Based Transformers 無監督 System 2 Thinking，六個縮放軸全面超越 Transformer++，推理時提升性能高達 29%，UVA + UIUC + Amazon GenAI + Stanford + Harvard 聯合出品 (ICLR 2026 Oral)。
