@@ -6,6 +6,14 @@
 
 ## 今日閱讀
 
+**[AlignVid — 2026-05-27：Training-Free 注意力縮放調製，解決 TI2V 語義忽視問題，ICML 2026 (HKUST & UCF)](papers/2026/2026-05/AlignVid/AI_Daily_AlignVid.md)**
+
+本文提出 **AlignVid**（HKUST, UCF, BAAI, CUHK），一種**免訓練（Training-Free）**的即插即用干預機制，專門解決文本引導圖像到視頻（TI2V）生成中普遍存在的**語義忽視（Semantic Negligence）**問題。核心洞見在於：當文本提示要求對參考圖像進行大幅修改（新增/刪除/修改物體）時，現有模型往往因**視覺主導（Visual Dominance）**而忽略文本指令——參考圖像的強大視覺先驗導致交叉注意力過度分散，抑制了新語義信息的整合。
+
+作者通過 Pilot Study 發現，對輸入圖像施加高斯模糊能改善語義遵從性，且從能量視角分析，這對應於更低熵的交叉注意力分佈。基於此，AlignVid 提出兩大模組：(1) **注意力縮放調製（ASM）**：通過對 Q/K 矩陣乘以縮放係數 $\gamma > 1$，等效於提高注意力 Softmax 的逆溫度，從而單調降低條件塊的注意力熵，實現「語義銳化」；(2) **引導調度（GS）**：通過模組級（Block-level）與步驟級（Step-level）的雙重調度，將 ASM 限制在前景敏感模組和語義決定性的去噪步驟中，避免美學質量下降。此外，本文推出了首個專門評估語義忽視的基準 **OmitI2V**（367 個人工標注樣本，VQA 評估協議）。在 FramePack 和 Wan2.1 上，AlignVid 在語義對齊指標上分別提升最高 **+6.82%（Modification）/ +7.79%（Addition）/ +6.34%（Deletion）**，同時美學質量幾乎不受影響。
+
+---
+
 **[RiT — 2026-05-26：自監督表徵空間的流匹配幾何學優勢，Vanilla DiT + x-Prediction 達成超高效生成 (Mila & Utrecht University)](papers/2026/2026-05/RiT/AI_Daily_RiT.md)**
 
 本文提出 **RiT (Representation Image Transformer)**（Mila – Québec AI Institute & Utrecht University），一個直接在凍結的自監督特徵表示空間（DINOv2）中進行流匹配（Flow Matching）的極簡 Vanilla Diffusion Transformer 框架。
