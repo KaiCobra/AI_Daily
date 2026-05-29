@@ -6,6 +6,14 @@
 
 ## 今日閱讀
 
+**[VIAR — 2026-05-29：視覺隱式自迴歸模型 (VIAR)：將顯式深層堆疊塌縮為單一隱式均衡層，解鎖常數訓練記憶體與每尺度彈性計算控制 (ICML 2026)](papers/2026/2026-05/VIAR/AI_Daily_VIAR.md)**
+
+本文提出 **VIAR (Visual Implicit Autoregressive Modeling)**（TeleAI），這是一個發表於 **ICML 2026** 的突破性視覺自迴歸生成框架。傳統的視覺自迴歸模型（VAR）雖然將自迴歸重新定義為「下一尺度預測（next-scale prediction）」，並實現了尺度內的並行化，但其在每個尺度轉換中仍依賴於深度堆疊的顯式 Transformer 網路。這導致隨著影像解析度的提高與模型寬度的增加，記憶體開銷（特別是 KV 快取）急劇膨脹，且每個尺度的計算量被固定，無法實現靈活的「按需計算」。
+
+VIAR 的核心創新在於：**利用深層均衡模型（DEQs）的隱式固定點（fixed-point）層，來替代 VAR 中深層的中間顯式堆疊。** 透過將顯式中間層塌縮為單一隱式均衡層，中間區塊參數減少了 **93.3%**，整體模型參數減少了 **61.6%**（從 2.0B 壓縮至 770.9M）。此外，VIAR 採用**隨機雅可比無梯度反向傳播（S-JFB）**訓練隱式層，實現了常數級的訓練記憶體，反向傳播記憶體與網路「深度」解耦，訓練參數/梯度記憶體減少 **61.6%**。在推理端，VIAR 暴露了每尺度迭代次數旋鈕（per-scale iteration knob），可在細尺度上減少迭代次數，在幾乎不損失影像品質的前提下，將峰值記憶體降低 **42.0%**，吞吐量提升 **2.1 倍**，徹底解鎖了彈性、可控的邊端影像生成。
+
+---
+
 **[SRC-Flow — 2026-05-28：緊湊語義表示空間解鎖正規化流 SOTA，ImageNet gFID 1.65，快手 Kling 團隊 (USTC & Kuaishou)](papers/2026/2026-05/SRC-Flow/AI_Daily_SRC-Flow.md)**
 
 本文提出 **SRC-Flow**（中國科學技術大學 & 快手 Kling 團隊），首次指出正規化流 (NF) 長期落後於擴散模型的根本原因：**語義容量不匹配 (Semantic-Capacity Mismatch)**。擴散模型可通過時間步相關的噪聲調度動態分配高維通道的學習壓力，而正規化流必須學習一個**單一固定雙射映射**，迫使其對完整高維表示空間的每一個維度都進行精確的可逆建模。RAE (Representation Autoencoder) 雖然提供了語義豐富的特徵，但其特徵通道高度過完整（前 32 個主成分即可解釋 99.06% 的方差），直接在完整 RAE 空間訓練 NF 效率極低（Naive Baseline gFID 僅 3.54，擴大模型寬度也無改善）。
@@ -18,7 +26,7 @@ SRC-Flow 的核心是引入**語義表示壓縮器 (SRC)**：在凍結的 RAE �
 
 本文提出 **AlignVid**（HKUST, UCF, BAAI, CUHK），一種**免訓練（Training-Free）**的即插即用干預機制，專門解決文本引導圖像到視頻（TI2V）生成中普遍存在的**語義忽視（Semantic Negligence）**問題。核心洞見在於：當文本提示要求對參考圖像進行大幅修改（新增/刪除/修改物體）時，現有模型往往因**視覺主導（Visual Dominance）**而忽略文本指令——參考圖像的強大視覺先驗導致交叉注意力過度分散，抑制了新語義信息的整合。
 
-作者通過 Pilot Study 發現，對輸入圖像施加高斯模糊能改善語義遵從性，且從能量視角分析，這對應於更低熵的交叉注意力分佈。基於此，AlignVid 提出兩大模組：(1) **注意力縮放調製（ASM）**：通過對 Q/K 矩陣乘以縮放係數 $\gamma > 1$，等效於提高注意力 Softmax 的逆溫度，從而單調降低條件塊的注意力熵，實現「語義銳化」；(2) **引導調度（GS）**：通過模組級（Block-level）與步驟級（Step-level）的雙重調度，將 ASM 限制在前景敏感模組和語義決定性的去噪步驟中，避免美學質量下降。此外，本文推出了首個專門評估語義忽視的基準 **OmitI2V**（367 個人工標注樣本，VQA 評估協議）。在 FramePack 和 Wan2.1 上，AlignVid 在語義對齊指標上分別提升最高 **+6.82%（Modification）/ +7.79%（Addition）/ +6.34%（Deletion）**，同時美學質量幾乎不受影響。
+作者通過 Pilot Study 發現，對輸入圖像施加高斯模糊能改善語義遵從性，且從能量視角分析，這對應於更低熵的交叉注意力分佈。基於此，AlignVid 提出兩大模組：(1) **注意力縮放調製（ASM）**：通過對 Q/K 矩陣乘以縮放係數 $\gamma > 1$，等效於提高注意力 Softmax 的逆溫度，從而單調降低條件塊的注意力熵，实现「語義銳化」；(2) **引導調度（GS）**：通過模組級（Block-level）與步驟級（Step-level）的雙重調度，將 ASM 限制在前景敏感模組和語義決定性的去噪步驟中，避免美學質量下降。此外，本文推出了首個專門評估語義忽視的基準 **OmitI2V**（367 個人工標注樣本，VQA 評估協議）。在 FramePack 和 Wan2.1 上，AlignVid 在語義對齊指標上分別提升最高 **+6.82%（Modification）/ +7.79%（Addition）/ +6.34%（Deletion）**，同時美學質量幾乎不受影響。
 
 ---
 
@@ -42,4 +50,4 @@ SRC-Flow 的核心是引入**語義表示壓縮器 (SRC)**：在凍結的 RAE �
 
 **[SEGA — 2026-05-24：頻譜能量引導注意力動態縮放 RoPE，Training-Free DiT 超解析度外推達 6144×6144，全面超越 YaRN/DyPE/UltraImage (University of Toronto)](papers/2026/2026-05/SEGA/AI_Daily_SEGA.md)**
 
-本文提出 **SEGA (Spectral-Energy Guided Attention)**（University of Toronto & Vector Institute），一種**免訓練（Training-Free）**的 Diffusion Transformer 高解析度外推方法。核心洞見在於：現有 RoPE 外推方法（如 YaRN）對所有頻率維度施加均勻縮放，導致全局結構與精細細節之間存在固有的 trade-off。SEGA 透過對每個去噪步驟的潛在特徵執行 2D FFT 頻譜分析，提取軸向功率譜（Axis-wise profiles）和徑向頻譜（Radial profile），並計算三個組件：(1) **參考尺度** $m_{\text{ref}} = (R_{\text{target}}/R_{\text{train}})^\kappa$，(2) **維度級校正** $s_d^{(a)} = \phi(z_d^{(a)}) - \mathbb{E}[\phi(z^{(a)})]$（零和重分配，tanh 非線性），(3) **全局振幅因子** $\sigma = 1 - \text{SF}(\mathcal{E}_{\text{iso}})^\gamma$（頻譜平坦度 Wiener entropy），最終縮放因子 $m_d^{(a)} = m_{\text{ref}} \cdot (1 - \sigma \cdot s_d^{(a)})$。SEGA 對低能量頻段施加較強縮放以保留位置區分度，對高能量頻段施加較弱縮放以避免過度放大，並在去噪初期（頻譜平坦）自動抑制動態調整。在 Flux 模型 4096×4096 解析度上，SEGA 的 ImageReward（**1.26**）、CLIP Score（**29.22**）和 FID（**150.05**）全面超越 YaRN（0.88 / 28.30 / 160.48），並在 Qwen 模型上取得相同趨勢的 SOTA 結果。方法無需微調或架構修改，可直接整合至任何 RoPE-based DiT 管線。
+本文提出 **SEGA (Spectral-Energy Guided Attention)**（University of Toronto & Vector Institute），一種**免訓練（Training-Free）**的 Diffusion Transformer 高解析度外推方法。核心洞見在於：現有 RoPE 外推方法（如 YaRN）對所有頻率維度施加均勻縮放，導致全局結構與精細細節之間存在固有的 trade-off。SEGA 透過對每個去噪步驟的潛在特徵執行 2D FFT 頻譜分析，提取軸向功率譜（Axis-wise profiles） and 徑向頻譜（Radial profile），並計算三個組件：(1) **參考尺度** $m_{\text{ref}} = (R_{\text{target}}/R_{\text{train}})^\kappa$，(2) **維度級校正** $s_d^{(a)} = \phi(z_d^{(a)}) - \mathbb{E}[\phi(z^{(a)})]$（零和重分配，tanh 非線性），(3) **全局振幅因子** $\sigma = 1 - \text{SF}(\mathcal{E}_{\text{iso}})^\gamma$（頻譜平坦度 Wiener entropy），最終縮放因子 $m_d^{(a)} = m_{\text{ref}} \cdot (1 - \sigma \cdot s_d^{(a)})$。SEGA 對低能量頻段施加較強縮放以保留位置區分度，對高能量頻段施加較弱縮放以避免過度放大，並在去噪初期（頻譜平坦）自動抑制動態調整。在 Flux 模型 4096×4096 解析度上，SEGA 的 ImageReward（**1.26**）、CLIP Score（**29.22**）和 FID（**150.05**）全面超越 YaRN（0.88 / 28.30 / 160.48），並在 Qwen 模型上取得相同趨勢的 SOTA 結果。方法無需微調或架構修改，可直接整合至任何 RoPE-based DiT 管線。
