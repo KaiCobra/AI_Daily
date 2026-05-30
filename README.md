@@ -6,6 +6,14 @@
 
 ## 今日閱讀
 
+**[JEPA-Guided Diffusion — 2026-05-30：超越生成器先驗，JEPA 世界模型引導擴散採樣生成真實世界罕見樣本，Training-Free 跨任務通用，ICML 2026 (Seoul National University)](papers/2026/2026-05/JEPA-Guided-Diffusion/AI_Daily_JEPA_Guided_Diffusion.md)**
+
+本文提出 **JEPA Guidance**（首爾大學），一個發表於 **ICML 2026** 的訓練免除 (Training-Free) 擴散採樣引導框架，從根本上重新定義了「少數樣本 (Minority Sample)」的概念。傳統少數採樣方法將罕見性定義在生成器自身的隱式先驗（Generator-Centric）中，導致生成的「少數樣本」只是在特定訓練集分佈下罕見，而非真實世界中語意罕見的樣本。本論文提出**世界中心 (World-Centric)** 少數採樣：利用在海量真實世界數據上預訓練的 JEPA 編碼器（如 DINOv2），其表徵空間雅可比矩陣的奇異值之和（JEPA-SCORE）作為真實世界密度的代理，引導擴散模型的逆向採樣走向真實世界先驗的低密度區，生成如「隱形戰機」、「老年女性軍人」等在現實中真正罕見的語意樣本。
+
+技術上，本論文結合**隨機 SVD (Randomized SVD)** 和**包絡定理 (Envelope Theorem)** 解決了高維雅可比矩陣 SVD 的計算瓶頸，並提供嚴格的誤差上界。透過**延遲引導 (Deferred Guidance)** 策略，JEPA Guidance 自然延伸至類別條件和文字條件生成任務。在 CelebA 64×64 上，本論文方法的 cFID 達到 **8.50**（遠優於 SGMS 的 61.76 和 BnS 的 67.10），JEPA-SCORE 達到 **-300.79**（最低）。在 SDXL-Lightning 文字條件生成中，JEPA-SCORE 達到 **-337.88**，同時 CLIP/PickScore 幾乎不受影響。下游分類器增強實驗中，僅 30K 的 JEPA Guidance 增強樣本即超越 50K 其他方法的增強效果（F1: 0.775 vs 0.757）。
+
+---
+
 **[VIAR — 2026-05-29：視覺隱式自迴歸模型 (VIAR)：將顯式深層堆疊塌縮為單一隱式均衡層，解鎖常數訓練記憶體與每尺度彈性計算控制 (ICML 2026)](papers/2026/2026-05/VIAR/AI_Daily_VIAR.md)**
 
 本文提出 **VIAR (Visual Implicit Autoregressive Modeling)**（TeleAI），這是一個發表於 **ICML 2026** 的突破性視覺自迴歸生成框架。傳統的視覺自迴歸模型（VAR）雖然將自迴歸重新定義為「下一尺度預測（next-scale prediction）」，並實現了尺度內的並行化，但其在每個尺度轉換中仍依賴於深度堆疊的顯式 Transformer 網路。這導致隨著影像解析度的提高與模型寬度的增加，記憶體開銷（特別是 KV 快取）急劇膨脹，且每個尺度的計算量被固定，無法實現靈活的「按需計算」。
