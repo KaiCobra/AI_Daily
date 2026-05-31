@@ -2,9 +2,21 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
+**Last Updated: 2026-05-31**
+
 ---
 
 ## 今日閱讀
+
+**[LeJEPA World Model — 2026-05-31：首個 JEPA 線性可識別性數學保證，Yann LeCun & Balestriero 嚴格證明高斯分佈是唯一能讓 LeJEPA 學習世界模型的潛在分佈，潛空間規劃等價性定理 (NYU & Brown University & Cold Spring Harbor Lab)](papers/2026/2026-05/LeJEPA/AI_Daily_LeJEPA.md)**
+
+本文由 **David Klindt（Cold Spring Harbor Laboratory）、Yann LeCun（NYU & Meta FAIR）、Randall Balestriero（Brown University）** 共同提出，是自監督學習與世界模型領域的一項**里程碑式理論工作**。本文首次為 JEPA 提供了**線性可識別性（Linear Identifiability）**的嚴格數學保證：在具有高斯潛變量與平穩加性噪聲轉移（Ornstein-Uhlenbeck 過程）的世界中，LeJEPA（對齊損失 + SIGReg 高斯正則化）能夠**線性恢復**世界的潛在變量（僅存在正交旋轉二義性）。
+
+核心理論突破在於利用 **Hermite 多項式的譜分解**：任何 $d$ 階 Hermite 多項式的轉移算子特徵值為 $\rho^d$，因此任何非線性畸變都會嚴格降低正樣本對的互相關（$\mathbb{E}[h_i(z')h_i(z)] \leq \rho$），等號成立若且唯若 $h_i$ 為純線性函數。這意味著 LeJEPA 的對齊損失會無情地懲罰所有非線性分量，逼迫表徵收斂到最優的線性解 $h(z) = Qz$（$Q$ 為正交矩陣）。**逆向定理**進一步利用 Sturm-Liouville 理論證明，在平穩加性噪聲轉移的物理世界中，**高斯分佈是唯一**能讓 LeJEPA 達成線性可識別性的潛在分佈——這顛覆了線性 ICA 中「高斯是詛咒」的傳統認知。**近似可識別性定理**則給出了優雅降級的誤差界限：$\mathbb{E}[\|h(z) - Qz\|^2] \leq D + (\varepsilon + D)^2$，其中 $D = \sqrt{n\delta / 2\rho(1-\rho)}$。
+
+實驗在 2D 複雜非線性混合（螺旋/拋物線/RealNVP 等）、高達 **1024 維**潛空間（SIGReg 保持 $R^2 > 0.999$），以及 DMC Reacher 機械臂像素級控制任務中全面驗證了理論。**潛空間規劃等價性定理**表明：高斯編碼器（$R^2=0.95$）的直線插值規劃與 Oracle 真實規劃統計上無顯著差異，而 RL Trajectory 編碼器（$R^2=0.80$）的規劃路徑出現嚴重的非物理彎曲。所有定理均在 **Lean 4 定理證明器**中完成形式化驗證。
+
+---
 
 **[JEPA-Guided Diffusion — 2026-05-30：超越生成器先驗，JEPA 世界模型引導擴散採樣生成真實世界罕見樣本，Training-Free 跨任務通用，ICML 2026 (Seoul National University)](papers/2026/2026-05/JEPA-Guided-Diffusion/AI_Daily_JEPA_Guided_Diffusion.md)**
 
