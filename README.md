@@ -2,11 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-05-31**
+**Last Updated: 2026-06-01**
 
 ---
 
 ## 今日閱讀
+
+**[VPG — 2026-05-28：Visual Prefix Guidance 視覺前綴引導，免訓練對抗自回歸曝光偏差，解鎖超強 compositional 生成 (NUS & HUST)](papers/2026/2026-05/VPG/AI_Daily_VPG.md)**
+
+本文提出 **VPG (Visual Prefix Guidance)**（新加坡國立大學 NUS 與 華中科技大學 HUST），一個專為視覺自回歸模型（VAR、Infinity、InfinityStar）設計的**免訓練（Training-Free）**、**即插即用（Drop-In）**的推理端引導採樣規則。核心洞見在於：自回歸模型在訓練時使用 Teacher Forcing（以 ground-truth 歷史為條件），但在推理時必須以自己生成的歷史（即 Prefix）為條件，這種訓練與推理的不匹配導致嚴重的 **Exposure Bias（曝光偏差）** 與 **Prefix Drift（前綴漂移）**。先前的 CFG 只針對外部語意條件，而忽視了歷史前綴本身的累積誤差。
+
+VPG 通過引入在推理時構建的**損毀前綴（Corrupted Prefix）**作為對照分支，並在 Logit 空間中進行外推：$\ell_k^{\text{VPG}} = (1+\lambda)\ell_k^{\text{gen}} - \lambda \ell_k^{\text{corr}}$，強制模型在每一步預測時優先選擇能增強已生成前綴後驗支持的候選 token。損毀前綴採用**同尺度全嵌入替換（Same-Scale Full-Embedding Replacement）**構造，在不引入 OOD 噪聲的前提下打破語意-位置綁定。在 ImageNet $256\times256$ 上，VPG 平均降低 **0.36** FID（VAR-d24+VPG 以 FID 1.83 超越 VAR-d30 基準 1.94）；在 InfinityStar 視頻模型上，多物體生成（+2.13）與語意對齊（+0.77）取得 VBench **SOTA**，整體得分提升 **+0.49**。
+
+---
 
 **[LeJEPA World Model — 2026-05-31：首個 JEPA 線性可識別性數學保證，Yann LeCun & Balestriero 嚴格證明高斯分佈是唯一能讓 LeJEPA 學習世界模型的潛在分佈，潛空間規劃等價性定理 (NYU & Brown University & Cold Spring Harbor Lab)](papers/2026/2026-05/LeJEPA/AI_Daily_LeJEPA.md)**
 
