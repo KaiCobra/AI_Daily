@@ -2,11 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-06-01**
+**Last Updated: 2026-06-02**
 
 ---
 
 ## 今日閱讀
+
+**[AttnRouter — 2026-06-02：MMDiT 時代的 Training-Free 圖像編輯新範式，KVInject 單次前向 α-混合 + 基於類別的注意力路由，在 Qwen-Image-Edit-2511 上定位 L30–45/S0–7 編輯子電路 (iFLYTEK)](papers/2026/2026-05/AttnRouter/README.md)**
+
+本文提出 **AttnRouter**（iFLYTEK），一個針對多模態擴散 Transformer（MMDiT）架構的**訓練免除（Training-Free）**圖像編輯框架，包含兩大核心貢獻：**KVInject** 與 **AttnRouter** 路由機制。核心洞見在於：UNet 時代的 MasaCtrl 在 MMDiT 上直接移植會導致 Composite Score 崩塌 31%，根本原因是 MMDiT 中來源圖像與噪聲流共用同一個聯合注意力（Joint Attention）通道，傳統的兩次前向傳播（Two-Forward）策略所記錄的 K/V 缺乏編輯語義。
+
+KVInject 通過**同一次前向傳播**中對來源半部（Source-Half）的 K/V 與噪聲半部（Noise-Half）的 K/V 進行 $\alpha$-混合（$K_{\text{noise}}^{\prime} = \alpha \cdot K_{\text{src}} + (1-\alpha) \cdot K_{\text{noise}}$），在零參數、$<2\%$ 計算開銷的條件下實現結構保留。通過系統性的消融分析，作者成功定位了 Qwen-Image-Edit-2511（60 層 MMDiT）中的**編輯有效子電路**：層區間 **L30–45**、去噪步區間 **S0–7**（僅前 7 步即可恢復 99% 的增益），以及穩定的混合強度甜點 **$\alpha \in [0.3, 0.5]$**。AttnRouter 通過 CLIP Zero-Shot 分類器自動識別編輯類別（Replace/Attribute/Background → $\alpha=0.3$；Remove/Style → $\alpha=0.5$；Add → Baseline），並路由到對應的 KVInject 配置。儘管分類器準確率僅 55%，Auto Router（Composite 0.4113）仍能閉合 98% 的 Oracle 差距（0.4127），因為容易混淆的類別天然共享相同路由。在 ImgEdit-Bench-100 上，AttnRouter 相比 Baseline 提升 Composite Score **+6.3%**（0.3879 → 0.4127），DINO-I 提升 **+8.5%**，同時完全規避了 MasaCtrl 的 Prompt-Mismatch 失效模式。
+
+---
 
 **[VPG — 2026-05-28：Visual Prefix Guidance 視覺前綴引導，免訓練對抗自回歸曝光偏差，解鎖超強 compositional 生成 (NUS & HUST)](papers/2026/2026-05/VPG/AI_Daily_VPG.md)**
 
