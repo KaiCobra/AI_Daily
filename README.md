@@ -2,11 +2,15 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-06-02**
+**Last Updated: 2026-06-03**
 
 ---
 
 ## 今日閱讀
+**[CVQ — 2026-06-03：Channel-wise Vector Quantization 通道維度向量量化，100% 代碼本利用率，解鎖漸進式「下一通道預測」自迴歸圖像生成新範式 (Westlake University & ZJU)](papers/2026/2026-06/2026-06-03-CVQ.md)**
+本文提出 **CVQ (Channel-wise Vector Quantization)**（西湖大學與浙江大學），這是一個顛覆性的圖像代碼化與自迴歸生成範式。傳統的 VQGAN 方案自提出以來一直採用空間補丁（Patch-wise）量化，但這種二維網格表徵面臨著嚴重的**代碼本崩潰（Codebook Collapse）**問題，且與一維自迴歸模型的單向預測模式存在結構失配。
+CVQ 的核心創新在於：**將量化軸從空間補丁轉向特徵通道。** 通過將圖像表徵為一維特徵通道的序列，CVQ 巧妙利用了通道特徵天然的「語義-細節解耦」與高可分性，無需任何額外的複雜技巧（如低維投影或輔助損失），即可在 16K 甚至 65K 的大規模代碼本下實現 **100% 的代碼本利用率**。在此基礎上，團隊提出 **CAR (Channel-wise Auto-Regressive)** 模型，通過**嵌套通道丟棄（Nested Channel Dropout）**訓練，CAR 實現了「先勾勒全局輪廓，再逐步填充細節」的漸進式生成。在 ImageNet-1K 重建中，CVQ-1024 取得了 **0.88** 的極低 rFID；在 Text-to-Image 生成中，CAR-8B 達到了 **0.79** 的 GenEval 分數與 **86.72** 的 DPG 分數，與最強的混合多尺度自迴歸模型並駕齊驅，顯著超越了採用傳統補丁預測的 Emu3-8B，證明了一維通道序列比強行展平的二維空間序列更適合自迴歸預測學習。
+---
 
 **[AttnRouter — 2026-06-02：MMDiT 時代的 Training-Free 圖像編輯新範式，KVInject 單次前向 α-混合 + 基於類別的注意力路由，在 Qwen-Image-Edit-2511 上定位 L30–45/S0–7 編輯子電路 (iFLYTEK)](papers/2026/2026-05/AttnRouter/README.md)**
 
