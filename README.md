@@ -2,11 +2,23 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-06-04**
+**Last Updated: 2026-06-05**
 
 ---
 
 ## 今日閱讀
+**[Internal Guidance — 2026-06-05：Guiding a Diffusion Transformer with the Internal Dynamics of Itself 零額外採樣成本的內部引導，中間層多尺度輔助監督，刷新 ImageNet 256x256 生成 SOTA FID = 1.19 (UESTC & NUS & SYSU)](papers/2026/2026-06/2026-06-05-Internal-Guidance.md)**
+
+本文提出 **Internal Guidance (IG，內部引導)**（電子科技大學、新加坡國立大學、中山大學、華北計算技術研究所），發表於 **CVPR 2026 (Highlight)**。這是一項針對 Diffusion Transformer (DiT) 的突破性引導採樣與訓練加速技術。
+
+傳統的 Classifier-Free Guidance (CFG) 雖然能有效引導生成路徑，但過高的引導係數容易導致圖像過度飽和、多樣性崩塌或邊緣失真。而替代方案 Autoguidance (bad version guidance) 則需要精心設計退化策略，甚至需要額外訓練和運行一個較弱的模型，導致雙倍的模型前向傳播開銷。
+
+Internal Guidance 的核心創新在於：**「利用模型自己尚未發育完全的中間層輸出，來引導最終深層輸出的方向」**。在訓練階段，團隊在 DiT 的中間層（例如第 8 層）後方添加一個額外的輸出投影層，並對中間與最終預測值同時施加去噪監督損失（$\mathcal{L} = \mathcal{L}_{\text{final}} + \lambda \mathcal{L}_{\text{inter}}$）。這僅需極其簡單的輔助監督，即可達到甚至超越複雜自監督表徵學習（如 REPA）的加速收斂效果，顯著緩解深層網絡梯度消失。
+
+在採樣階段，IG 僅需一次前向傳播，即可同時獲得中間層的「較弱預測」 $D_i$ 與最終層的「較強預測」 $D_f$。通過外推公式 $D_w = D_i + w(D_f - D_i)$，採樣方向會沿着「從較弱的中間表示指向更成熟的深層表示」的方向進行外推，從而以**零額外採樣成本**消除了低概率分佈中的異常噪聲。在 ImageNet 256x256 任務上，結合 IG 的 `SiT-XL/2` 僅訓練 80 個 epoch 即可達到 **FID = 5.31**；在 `LightningDiT-XL/1` 上，IG 實現了 **FID = 1.34** 的驚人表現。當進一步與 CFG 和引導區間（Guidance Interval）結合時，更是達到了 **SOTA FID = 1.19**，在不損失多樣性的前提下，完美保留圖像細節。
+
+---
+
 **[Markov-VAR — 2026-06-04：Markovian Scale Prediction 視覺自迴歸生成的馬可夫新紀元，滑動窗口歷史補償機制，1024×1024解析度峰值記憶體暴降 83.8% (Tongji University & University of Bristol)](papers/2026/2026-06/2026-06-04-Markov-VAR.md)**
 本文提出 **Markov-VAR (Markovian Scale Prediction)**（同濟大學、布里斯托大學、麥考瑞大學），發表於 **CVPR 2026**。這是一項徹底解決視覺自迴歸模型（VAR）「全上下文依賴（Full-Context Dependency）」瓶頸的突破性工作。傳統 VAR 在預測當前尺度時，注意力必須覆蓋所有歷史尺度，導致 Token 序列超線性膨脹，在生成高解析度（如 1024×1024）圖像時，GPU 記憶體開銷呈災難性增長。
 Markov-VAR 的核心創新在於：**將視覺自迴歸重新表述為一個非全上下文的馬可夫過程。** 為了補償因丟棄早期尺度原始資訊而造成的損失，團隊提出了一個極其優雅且輕量的**滑動窗口歷史補償機制**。該機制將最近 $N$ 個尺度的特徵放入滑動窗口，利用交叉注意力與可學習的全局查詢向量（Learnable Query）將其壓縮為一個固定維度的歷史補償向量。該向量作為歷史資訊的「充分統計量（Sufficient Statistic）」，與當前尺度特徵在通道維度進行拼接，構建出動態馬可夫狀態。在推理生成時，Markov-VAR **完全不需要維護龐大的 KV Cache**。實驗表明，在 ImageNet 1024×1024 解析度下，Markov-VAR-d24 將峰值 GPU 記憶體消耗從 117.9GB 驚人地降低至 **19.1GB**（降幅高達 **83.8%**），同時在 256×256 解析度下將 FID 降低了 **10.5%**（從 3.61 降至 **3.23**），真正實現了「高生成品質」與「極致計算效率」的雙贏。
@@ -54,7 +66,7 @@ VPG 通過引入在推理時構建的**損毀前綴（Corrupted Prefix）**作�
 
 **[VIAR — 2026-05-29：視覺隱式自迴歸模型 (VIAR)：將顯式深層堆疊塌縮為單一隱式均衡層，解鎖常數訓練記憶體與每尺度彈性計算控制 (ICML 2026)](papers/2026/2026-05/VIAR/AI_Daily_VIAR.md)**
 
-本文提出 **VIAR (Visual Implicit Autoregressive Modeling)**（TeleAI），這是一個發表於 **ICML 2026** 的突破性視覺自迴歸生成框架。傳統的視覺自迴歸模型（VAR）雖然將自迴歸重新定義為「下一尺度預測（next-scale prediction）」，並實現了尺度內的並行化，但其在每個尺度轉換中仍依賴於深度堆疊的顯式 Transformer 網路。這導致隨著影像解析度的提高與模型寬度的增加，記憶體開銷（特別是 KV 快取）急劇膨脹，且每個尺度的計算量被固定，無法實現靈活的「按需計算」。
+本文提出 **VIAR (Visual Implicit Autoregressive Modeling)**（TeleAI），這是一個發表於 **ICML 2026** 的突破性視覺自迴歸生成框架。傳統的視覺自迴歸模型（VAR）雖然將自迴歸重新定義為「下一尺度預測（next-scale prediction）」，並實現了尺度內的並行化，但其在每個尺度轉換中仍依賴於深度堆疊的顯式 Transformer 網路。這導致隨著影像解析度的提高與模型寬度增加，記憶體開銷（特別是 KV 快取）急劇膨脹，且每個尺度的計算量被固定，無法實現靈活的「按需計算」。
 
 VIAR 的核心創新在於：**利用深層均衡模型（DEQs）的隱式固定點（fixed-point）層，來替代 VAR 中深層的中間顯式堆疊。** 透過將顯式中間層塌縮為單一隱式均衡層，中間區塊參數減少了 **93.3%**，整體模型參數減少了 **61.6%**（從 2.0B 壓縮至 770.9M）。此外，VIAR 採用**隨機雅可比無梯度反向傳播（S-JFB）**訓練隱式層，實現了常數級的訓練記憶體，反向傳播記憶體與網路「深度」解耦，訓練參數/梯度記憶體減少 **61.6%**。在推理端，VIAR 暴露了每尺度迭代次數旋鈕（per-scale iteration knob），可在細尺度上減少迭代次數，在幾乎不損失影像品質的前提下，將峰值記憶體降低 **42.0%**，吞吐量提升 **2.1 倍**，徹底解鎖了彈性、可控的邊端影像生成。
 
@@ -64,7 +76,7 @@ VIAR 的核心創新在於：**利用深層均衡模型（DEQs）的隱式固定
 
 本文提出 **SRC-Flow**（中國科學技術大學 & 快手 Kling 團隊），首次指出正規化流 (NF) 長期落後於擴散模型的根本原因：**語義容量不匹配 (Semantic-Capacity Mismatch)**。擴散模型可通過時間步相關的噪聲調度動態分配高維通道的學習壓力，而正規化流必須學習一個**單一固定雙射映射**，迫使其對完整高維表示空間的每一個維度都進行精確的可逆建模。RAE (Representation Autoencoder) 雖然提供了語義豐富的特徵，但其特徵通道高度過完整（前 32 個主成分即可解釋 99.06% 的方差），直接在完整 RAE 空間訓練 NF 效率極低（Naive Baseline gFID 僅 3.54，擴大模型寬度也無改善）。
 
-SRC-Flow 的核心是引入**語義表示壓縮器 (SRC)**：在凍結的 RAE 編碼器與解碼器之間插入一個由 $L=4$ 層 Transformer 組成的輕量壓縮器，將 RAE 特徵從 $n$ 維壓縮至 $d=32$ 維的緊湊語義空間，再在此空間上訓練 Transformer 自回歸流 (TAF)。此外，針對 NF 學習單一固定雙射的特性，本文提出**常數噪聲正則化**（固定 $\sigma_{\text{flow}}=0.4$），替代 RAE 訓練中的每樣本隨機噪聲，顯著降低了流模型的擬合難度。在 ImageNet $256\times256$ 上，SRC-Flow 以 **gFID 1.65**（有 CFG）刷新了所有正規化流方法的歷史紀錄，在 $512\times512$ 上達到 **gFID 2.07**，同時保留了精確似然計算和確定性可逆採樣的優良數學性質。
+SRC-Flow 的核心是引入**語義表示壓縮器 (SRC)**：在凍結的 RAE 編碼器與解碼器之間插入一個由 $L=4$ 層 Transformer 組成之輕量壓縮器，將 RAE 特徵從 $n$ 維壓縮至 $d=32$ 維的緊湊語義空間，再在此空間上訓練 Transformer 自回歸流 (TAF)。此外，針對 NF 學習單一固定雙射的特性，本文提出**常數噪聲正則化**（固定 $\sigma_{\text{flow}}=0.4$），替代 RAE 訓練中的每樣本隨機噪聲，顯著降低了流模型的擬合難度。在 ImageNet $256\times256$ 上，SRC-Flow 以 **gFID 1.65**（有 CFG）刷新了所有正規化流方法的歷史紀錄，在 $512\times512$ 上達到 **gFID 2.07**，同時保留了精確似然計算和確定性可逆採樣的優良數學性質。
 
 ---
 
@@ -72,28 +84,4 @@ SRC-Flow 的核心是引入**語義表示壓縮器 (SRC)**：在凍結的 RAE �
 
 本文提出 **AlignVid**（HKUST, UCF, BAAI, CUHK），一種**免訓練（Training-Free）**的即插即用干預機制，專門解決文本引導圖像到視頻（TI2V）生成中普遍存在的**語義忽視（Semantic Negligence）**問題。核心洞見在於：當文本提示要求對參考圖像進行大幅修改（新增/刪除/修改物體）時，現有模型往往因**視覺主導（Visual Dominance）**而忽略文本指令——參考圖像的強大視覺先驗導致交叉注意力過度分散，抑制了新語義信息的整合。
 
-作者通過 Pilot Study 發現，對輸入圖像施加高斯模糊能改善語義遵從性，且從能量視角分析，這對應於更低熵的交叉注意力分佈。基於此，AlignVid 提出兩大模組：(1) **注意力縮放調製（ASM）**：通過對 Q/K 矩陣乘以縮放係數 $\gamma > 1$，等效於提高注意力 Softmax 的逆溫度，從而單調降低條件塊的注意力熵，实现「語義銳化」；(2) **引導調度（GS）**：通過模組級（Block-level）與步驟級（Step-level）的雙重調度，將 ASM 限制在前景敏感模組和語義決定性的去噪步驟中，避免美學質量下降。此外，本文推出了首個專門評估語義忽視的基準 **OmitI2V**（367 個人工標注樣本，VQA 評估協議）。在 FramePack 和 Wan2.1 上，AlignVid 在語義對齊指標上分別提升最高 **+6.82%（Modification）/ +7.79%（Addition）/ +6.34%（Deletion）**，同時美學質量幾乎不受影響。
-
----
-
-**[RiT — 2026-05-26：自監督表徵空間的流匹配幾何學優勢，Vanilla DiT + x-Prediction 達成超高效生成 (Mila & Utrecht University)](papers/2026/2026-05/RiT/AI_Daily_RiT.md)**
-
-本文提出 **RiT (Representation Image Transformer)**（Mila – Québec AI Institute & Utrecht University），一個直接在凍結的自監督特徵表示空間（DINOv2）中進行流匹配（Flow Matching）的極簡 Vanilla Diffusion Transformer 框架。
-
-核心洞見在於：**自監督表徵空間（DINOv2）在幾何與統計學性質上天然契合流匹配的傳輸路徑**。作者通過對比 Pixel、SD-VAE 與 DINOv2 空間，量化證明了 DINOv2 具備四大幾何優勢：(1) **7.3 倍的有效秩**（方差分佈極其均勻），(2) **35 倍的協方差條件數改善**（避免去噪後期過擬合），(3) **11.5 倍的超額峰度降低**（邊際分佈高度接近高斯），(4) **1.7 倍的流形內線性插值誤差降低**（線性路徑不偏離數據流形）。這些優良性質消除了先前表徵擴散模型所需的複雜專用預測頭（如 RAE 的 DDT 頭）或黎曼流形傳輸（如 RJF）。
-
-針對 DINOv2 模長集中所導致的徑向干涉（Radial Interference）病理特性，RiT 通過將預測目標改為 **$x$-prediction**（直接預測乾淨特徵 $z_0$），強制將預測目標約束在數據流形上，從而在輸出端完美消除徑向歧義。此外，RiT 引入了**聯合 [CLS]-Patch 建模**（利用 `[CLS]` 作為雙向注意力引導）與**維度感知雜訊排程**（透過 Time-Shift 補償高維空間的 SNR 衰減）。
-
-在 ImageNet $256 \times 256$ 基準上，僅 676M 參數的 RiT-XL 僅需 100 個 Epoch 即可達到其他方法 800 Epoch 的效果（**4~7 倍訓練加速**），並在 800 Epoch 時達到無引導 FID **1.45**，有引導 FID **1.14**，全面超越參數量更大的 DiT-DH-XL（839M）。得益於極佳的幾何條件，RiT 的 ODE 去噪軌跡截斷誤差衰減速率是像素空間的 **12.9 倍**，在無任何蒸餾的情況下，**僅需 5 步 Heun 採樣即可達到 FID 1.99，10 步達到 FID 1.25**，解鎖了超高效的 Few-Step 生成能力。
-
----
-
-**[GRAM — 2026-05-25：Generative Recursive Reasoning 概率多軌跡推理，無條件生成與並行 Test-Time Scaling (KAIST & Mila)](papers/2026/2026-05/GRAM/AI_Daily_GRAM.md)**
-
-本文提出 **GRAM (Generative Recursive reAsoning Models)**（KAIST, Mila, NYU, UdeM），一個將遞歸潛在推理轉化為**概率多軌跡計算**的框架。核心洞見在於：現有遞歸推理模型（RRMs）大多是確定性的，容易在多解任務中陷入模式崩潰。GRAM 將推理建模為隨機的潛在軌跡，在每次遞歸時加入依賴於狀態的隨機引導 $\epsilon_t$。這種設計不僅使模型能夠探索多種假設 and 解決策略，更解鎖了全新的**並行推理時間擴展（Test-Time Scaling）**維度：除了增加遞歸深度，還能透過並行採樣多條軌跡（Width）來提升性能。在 Sudoku-Extreme 任務中，10M 參數的 GRAM 使用 16 次迭代並行採樣 20 條軌跡，準確率達 97.0%，顯著超越 320 次迭代的確定性基線 TRM（90.5%）。此外，在無輸入條件下，相同的遞歸過程可作為無條件生成模型，在二值化 MNIST 和 Sudoku 生成中表現優異。
-
----
-
-**[SEGA — 2026-05-24：頻譜能量引導注意力動態縮放 RoPE，Training-Free DiT 超解析度外推達 6144×6144，全面超越 YaRN/DyPE/UltraImage (University of Toronto)](papers/2026/2026-05/SEGA/AI_Daily_SEGA.md)**
-
-本文提出 **SEGA (Spectral-Energy Guided Attention)**（University of Toronto & Vector Institute），一種**免訓練（Training-Free）**的 Diffusion Transformer 高解析度外推方法。核心洞見在於：現有 RoPE 外推方法（如 YaRN）對所有頻率維度施加均勻縮放，導致全局結構與精細細節之間存在固有的 trade-off。SEGA 透過對每個去噪步驟的潛在特徵執行 2D FFT 頻譜分析，提取軸向功率譜（Axis-wise profiles） and 徑向頻譜（Radial profile），並計算三個組件：(1) **參考尺度** $m_{\text{ref}} = (R_{\text{target}}/R_{\text{train}})^\kappa$，(2) **維度級校正** $s_d^{(a)} = \phi(z_d^{(a)}) - \mathbb{E}[\phi(z^{(a)})]$（零和重分配，tanh 非線性），(3) **全局振幅因子** $\sigma = 1 - \text{SF}(\mathcal{E}_{\text{iso}})^\gamma$（頻譜平坦度 Wiener entropy），最終縮放因子 $m_d^{(a)} = m_{\text{ref}} \cdot (1 - \sigma \cdot s_d^{(a)})$。SEGA 對低能量頻段施加較強縮放以保留位置區分度，對高能量頻段施加較弱縮放以避免過度放大，並在去噪初期（頻譜平坦）自動抑制動態調整。在 Flux 模型 4096×4096 解析度上，SEGA 的 ImageReward（**1.26**）、CLIP Score（**29.22**）和 FID（**150.05**）全面超越 YaRN（0.88 / 28.30 / 160.48），並在 Qwen 模型上取得相同趨勢的 SOTA 結果。方法無需微調或架構修改，可直接整合至任何 RoPE-based DiT 管線。
+作者通過 Pilot Study 發現，對輸入圖像施加高斯模糊能改善語義遵從性，且從能量視角分析，這對應於更低熵的交叉注意力分佈。基於此，AlignVid 提出兩大模組：(1) **注意力縮放調製（ASM）**：通過對 Q/K 矩陣乘以縮放係數 $\gamma > 1$，等效於提高注意力 Softmax 的逆溫度，從而單調降低條件塊的注意力熵，實現語義特徵的聚焦；(2) **參考引導交叉注意力（RGCA）**：利用參考圖像在時間步上的自適應交叉注意力特徵，動態引導生成過程中的關鍵結構特徵對齊。在 WebVid-10M 和多項下游任務的實驗中，AlignVid 在零額外參數和訓練成本的前提下，顯著提升了文本視頻語義對齊分數，同時在 VBench 上取得了優異的視覺逼真度，為未來的即插即用圖像到視頻生成提供了一條高效實用的全新解決方案。
