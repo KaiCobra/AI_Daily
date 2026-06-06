@@ -2,11 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-06-05**
+**Last Updated: 2026-06-06**
 
 ---
 
 ## 今日閱讀
+**[SSG — 2026-06-06：Guiding a Diffusion Model by Swapping Its Tokens Training-Free Token 交換引導，無需條件即可實現 CFG 級別的圖像品質提升，SDXL FID 從 119.04 降至 70.91，CVPR 2026 Oral (SJTU & vivo)](papers/2026/2026-06/SSG_Diffusion/AI_Daily_SSG.md)**
+
+本文提出 **SSG (Self-Swap Guidance)**（上海交通大學 MoE AI 重點實驗室 & vivo），發表於 **CVPR 2026 (Oral)**。這是一種極簡卻高效的 **Training-Free、Condition-Free** 擴散模型引導方法，通過在推理階段選擇性地交換語義最不相似的 Token Latents，構建弱化預測分支作為負面參考，從而引導採樣走向更高保真度的分佈。不同於 SAG、PAG、SEG 等在全局層面進行粗粒度擾動的方法，SSG 在 Token 粒度上精準操作，同時支援空間維度（破壞結構一致性）與通道維度（擾動紋理細節）的對抗性交換。引導公式為 $\tilde{\epsilon}(x_t) = \epsilon_{\text{ori}}(x_t) + \omega(\epsilon_{\text{ori}}(x_t) - \epsilon_{\text{pert}}(x_t))$，可作為即插即用模組插入任何現有擴散模型，並與 CFG 疊加使用。在 SDXL 無條件生成（MS-COCO 2014）中，SSG 將 FID 從 119.04 大幅降至 **70.91**，IS 從 9.08 提升至 **16.44**；條件生成 FID 達 **21.73**，ImageReward 達 **+0.276**，全面超越 SAG/PAG/SEG。
+
+---
+
 **[Internal Guidance — 2026-06-05：Guiding a Diffusion Transformer with the Internal Dynamics of Itself 零額外採樣成本的內部引導，中間層多尺度輔助監督，刷新 ImageNet 256x256 生成 SOTA FID = 1.19 (UESTC & NUS & SYSU)](papers/2026/2026-06/2026-06-05-Internal-Guidance.md)**
 
 本文提出 **Internal Guidance (IG，內部引導)**（電子科技大學、新加坡國立大學、中山大學、華北計算技術研究所），發表於 **CVPR 2026 (Highlight)**。這是一項針對 Diffusion Transformer (DiT) 的突破性引導採樣與訓練加速技術。
