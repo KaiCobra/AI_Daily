@@ -2,11 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-06-06**
+**Last Updated: 2026-06-07**
 
 ---
 
 ## 今日閱讀
+**[DDT — 2026-06-07：DDT: Decoupled Diffusion Transformer 解耦語義編碼器與速度解碼器，打破 Diffusion Transformer 優化困境，ImageNet 256×256 FID=1.31（4× 訓練加速），ImageNet 512×512 FID=1.28 SOTA，統計動態規劃推理加速 3× (Nanjing University & ByteDance Seed Vision, CVPR 2026)](papers/2026/2026-06/2026-06-07-DDT-Decoupled-Diffusion-Transformer.md)**
+
+本文提出 **DDT (Decoupled Diffusion Transformer)**（南京大學 & ByteDance Seed Vision），發表於 **CVPR 2026**。DDT 針對傳統 Diffusion Transformer（如 DiT、SiT）中「語義編碼」與「細節解碼」在同一模塊中相互競爭的**優化困境**，提出了一個優雅的解耦架構：專用的 **Condition Encoder** 負責從帶噪聲輸入中提取低頻語義自條件特徵 $\boldsymbol{z}_t$，而 **Velocity Decoder** 則接收 $\boldsymbol{z}_t$ 作為引導，專注於高頻細節的速度場預測。Encoder 採用 REPA 表示對齊損失 $\mathcal{L}_{enc} = 1 - \cos(r_*, h_\phi(\mathbf{h}_i))$ 與 DINOv2 特徵對齊，不僅加速收斂，還賦予了相鄰時間步自條件特徵的高度局部一致性（餘弦相似度 > 0.8）。基於此，作者提出**統計動態規劃（Statistic DP）**，將尋找最優 Encoder 共享策略轉化為最小和路徑問題，實現 3× 推理加速且幾乎無質量損失。消融實驗揭示了「重 Encoder、輕 Decoder」的非對稱設計（如 22En6De）隨模型規模增大效果越顯著。DDT-XL/2 在 ImageNet 256×256 上僅需 **256 Epoch** 即達 **FID=1.31**（REPA 需 800 Epoch），在 ImageNet 512×512 上達 **FID=1.28** 的全新 SOTA。
+
+---
+
 **[SSG — 2026-06-06：Guiding a Diffusion Model by Swapping Its Tokens Training-Free Token 交換引導，無需條件即可實現 CFG 級別的圖像品質提升，SDXL FID 從 119.04 降至 70.91，CVPR 2026 Oral (SJTU & vivo)](papers/2026/2026-06/SSG_Diffusion/AI_Daily_SSG.md)**
 
 本文提出 **SSG (Self-Swap Guidance)**（上海交通大學 MoE AI 重點實驗室 & vivo），發表於 **CVPR 2026 (Oral)**。這是一種極簡卻高效的 **Training-Free、Condition-Free** 擴散模型引導方法，通過在推理階段選擇性地交換語義最不相似的 Token Latents，構建弱化預測分支作為負面參考，從而引導採樣走向更高保真度的分佈。不同於 SAG、PAG、SEG 等在全局層面進行粗粒度擾動的方法，SSG 在 Token 粒度上精準操作，同時支援空間維度（破壞結構一致性）與通道維度（擾動紋理細節）的對抗性交換。引導公式為 $\tilde{\epsilon}(x_t) = \epsilon_{\text{ori}}(x_t) + \omega(\epsilon_{\text{ori}}(x_t) - \epsilon_{\text{pert}}(x_t))$，可作為即插即用模組插入任何現有擴散模型，並與 CFG 疊加使用。在 SDXL 無條件生成（MS-COCO 2014）中，SSG 將 FID 從 119.04 大幅降至 **70.91**，IS 從 9.08 提升至 **16.44**；條件生成 FID 達 **21.73**，ImageReward 達 **+0.276**，全面超越 SAG/PAG/SEG。
