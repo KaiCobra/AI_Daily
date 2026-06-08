@@ -2,11 +2,18 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-06-07**
+**Last Updated: 2026-06-08**
 
 ---
 
 ## 今日閱讀
+**[SeaCache — 2026-06-08：SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models 頻譜演化感知快取，透過頻域濾波器精準捕捉擴散模型內容冗餘，實現無需訓練的即插即用推理加速 (Sungkyunkwan University & NAVER Cloud, CVPR 2026 Oral)](papers/2026/2026-06/2026-06-08-SeaCache.md)**
+
+本文提出 **SeaCache (Spectral-Evolution-Aware Cache)**（成均館大學 & NAVER Cloud），發表於 **CVPR 2026 (Oral)**。這是一項針對擴散模型 (Diffusion Models) 推理加速的突破性 Training-Free 動態快取策略。傳統的快取加速方法（如 TeaCache、DiCache）通常直接在原始特徵空間中測量相鄰時間步的距離來決定是否重用特徵。然而，這種設計忽略了擴散模型的「頻譜演化 (Spectral Evolution)」先驗：早期時間步主要生成低頻結構，後期則專注於高頻細節，直接測量原始特徵距離會被高頻隨機噪聲嚴重干擾。
+
+SeaCache 的核心創新在於：**引入了頻譜演化感知 (SEA) 濾波器，將特徵轉換到更適合評估內容變化的空間。** 基於最優線性去噪器的理論推導，作者設計了一個隨時間步變化的頻域濾波器 $G_t(f)$，該濾波器能放大與內容相關的低頻信號，同時抑制由隨機變化主導的高頻噪聲。在經過密度歸一化後，SeaCache 透過 FFT/iFFT 將這個濾波器應用於輸入特徵，並在濾波後的特徵空間中測量 $\ell_1$ 距離。這種設計使得快取決策更聚焦於生成內容的實質變化，而非隨機噪聲的擾動。實驗表明，在 FLUX.1-dev、HunyuanVideo 和 Wan2.1 等頂級視覺生成模型上，SeaCache 展現了最先進的 Latency-Quality Trade-off。在 FLUX.1-dev 的激進加速設定（約 30% 刷新率）下，SeaCache 不僅延遲最低，且在 PSNR、LPIPS、SSIM 以及 CycleReward 人類偏好指標上均全面超越 TeaCache 和 TaylorSeer，完美保留了原始模型生成的語義內容和感知質量。
+
+---
 **[DDT — 2026-06-07：DDT: Decoupled Diffusion Transformer 解耦語義編碼器與速度解碼器，打破 Diffusion Transformer 優化困境，ImageNet 256×256 FID=1.31（4× 訓練加速），ImageNet 512×512 FID=1.28 SOTA，統計動態規劃推理加速 3× (Nanjing University & ByteDance Seed Vision, CVPR 2026)](papers/2026/2026-06/2026-06-07-DDT-Decoupled-Diffusion-Transformer.md)**
 
 本文提出 **DDT (Decoupled Diffusion Transformer)**（南京大學 & ByteDance Seed Vision），發表於 **CVPR 2026**。DDT 針對傳統 Diffusion Transformer（如 DiT、SiT）中「語義編碼」與「細節解碼」在同一模塊中相互競爭的**優化困境**，提出了一個優雅的解耦架構：專用的 **Condition Encoder** 負責從帶噪聲輸入中提取低頻語義自條件特徵 $\boldsymbol{z}_t$，而 **Velocity Decoder** 則接收 $\boldsymbol{z}_t$ 作為引導，專注於高頻細節的速度場預測。Encoder 採用 REPA 表示對齊損失 $\mathcal{L}_{enc} = 1 - \cos(r_*, h_\phi(\mathbf{h}_i))$ 與 DINOv2 特徵對齊，不僅加速收斂，還賦予了相鄰時間步自條件特徵的高度局部一致性（餘弦相似度 > 0.8）。基於此，作者提出**統計動態規劃（Statistic DP）**，將尋找最優 Encoder 共享策略轉化為最小和路徑問題，實現 3× 推理加速且幾乎無質量損失。消融實驗揭示了「重 Encoder、輕 Decoder」的非對稱設計（如 22En6De）隨模型規模增大效果越顯著。DDT-XL/2 在 ImageNet 256×256 上僅需 **256 Epoch** 即達 **FID=1.31**（REPA 需 800 Epoch），在 ImageNet 512×512 上達 **FID=1.28** 的全新 SOTA。
