@@ -2,11 +2,18 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-06-08**
+**Last Updated: 2026-06-09**
 
 ---
 
 ## 今日閱讀
+**[DAVE — 2026-06-09：Breaking the Lock-in: Diversifying Text-to-Image Generation via Representation Modulation，透過表示調製打破早期 DC 鎖定，實現 Training-Free 的圖像生成多樣性增強 (ICML 2026)](papers/2026/2026-06/2026-06-09-DAVE.md)**
+
+本文提出 **DAVE (DC Attenuation for diVersity Enhancement)**，發表於 **ICML 2026**。這是一項針對文本到圖像（Text-to-Image）生成模型多樣性不足問題的突破性免訓練（Training-Free）解決方案。作者深入分析了 Transformer 內部特徵，發現在生成早期，不同隨機種子下的零頻率空間平均值（即 DC 分量）會迅速收斂，導致「早期 DC 鎖定（Early DC Lock-in）」現象，這限制了後續生成過程中的結構變化。
+
+DAVE 的核心創新在於：**在早期生成階段選擇性地衰減 DC 分量**。通過一個極其簡單的空間平均和縮放操作，DAVE 成功打破了這種過早的結構承諾，放大了特定種子的空間殘差的相對影響力。在 Stable Diffusion 3.5、FLUX.1-dev 等模型上的實驗表明，DAVE 在幾乎不增加計算開銷的情況下，顯著提升了生成圖像的多樣性（如 Recall、Coverage 和 Vendi Score），同時完美保持了與提示詞的一致性和極具競爭力的圖像質量。這項研究證明了理解模型內部動態並進行表示調製（Representation Modulation）往往比設計複雜的外部約束更為有效。
+
+---
 **[SeaCache — 2026-06-08：SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models 頻譜演化感知快取，透過頻域濾波器精準捕捉擴散模型內容冗餘，實現無需訓練的即插即用推理加速 (Sungkyunkwan University & NAVER Cloud, CVPR 2026 Oral)](papers/2026/2026-06/2026-06-08-SeaCache.md)**
 
 本文提出 **SeaCache (Spectral-Evolution-Aware Cache)**（成均館大學 & NAVER Cloud），發表於 **CVPR 2026 (Oral)**。這是一項針對擴散模型 (Diffusion Models) 推理加速的突破性 Training-Free 動態快取策略。傳統的快取加速方法（如 TeaCache、DiCache）通常直接在原始特徵空間中測量相鄰時間步的距離來決定是否重用特徵。然而，這種設計忽略了擴散模型的「頻譜演化 (Spectral Evolution)」先驗：早期時間步主要生成低頻結構，後期則專注於高頻細節，直接測量原始特徵距離會被高頻隨機噪聲嚴重干擾。
