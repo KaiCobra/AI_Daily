@@ -2,11 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-06-09**
+**Last Updated: 2026-06-10**
 
 ---
 
 ## 今日閱讀
+**[HACK++ — 2026-06-10：HACK++: Towards More Effective Head-Aware Key-Value Compression for Efficient Visual Autoregressive Modeling，揭示 VAR 注意力頭的語義/結構二元性，Training-Free 解耦壓縮框架，Infinity-8B 內存節省 2.04× 吞吐提升 1.52×，KV Cache 可壓縮至 1% 仍保持近無損生成 (SJTU & Tsinghua)](papers/2026/2026-06/2026-06-10-HACK-plus-plus.md)**
+
+本文提出 **HACK++ (Head-Aware Key-Value Compression)**（上海交通大學 & 清華大學），是一項針對 Visual Autoregressive (VAR) 模型的 **Training-Free KV Cache 壓縮**框架。作者首先深入分析了 VAR 模型中注意力頭的行為，發現其可穩定地分為兩類：**Contextual Heads**（語境頭，呈垂直條紋注意力模式，負責語義一致性）與 **Structural Heads**（結構頭，呈多對角線注意力模式，負責空間連貫性）。這種二元性使得「一刀切」的壓縮策略在 VAR 上必然失效。HACK++ 的核心創新在於：**解耦注意力計算與 KV Cache 壓縮**，分別使用獨立的預算 $B_a$（注意力）和 $B_c$（Cache），允許 Cache 被更激進地壓縮；並為兩類頭設計了特定模式的重要性估計策略（語境頭用 query-subset attention，結構頭用離線 scale-prior × value norm）；同時引入依賴感知的自適應預算分配，動態調整不同頭、層、生成步驟的 cache 預算。在 Infinity-8B 上，HACK++ 在 30% 注意力預算、10% Cache 預算下實現 **2.04× 內存節省**和 **1.52× 吞吐提升**，且在極限 1% Cache 預算下仍保持近無損的生成質量。
+
+---
 **[DAVE — 2026-06-09：Breaking the Lock-in: Diversifying Text-to-Image Generation via Representation Modulation，透過表示調製打破早期 DC 鎖定，實現 Training-Free 的圖像生成多樣性增強 (ICML 2026)](papers/2026/2026-06/2026-06-09-DAVE.md)**
 
 本文提出 **DAVE (DC Attenuation for diVersity Enhancement)**，發表於 **ICML 2026**。這是一項針對文本到圖像（Text-to-Image）生成模型多樣性不足問題的突破性免訓練（Training-Free）解決方案。作者深入分析了 Transformer 內部特徵，發現在生成早期，不同隨機種子下的零頻率空間平均值（即 DC 分量）會迅速收斂，導致「早期 DC 鎖定（Early DC Lock-in）」現象，這限制了後續生成過程中的結構變化。
