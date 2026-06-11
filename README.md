@@ -2,11 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-06-10**
+**Last Updated: 2026-06-11**
 
 ---
 
 ## 今日閱讀
+**[OmniGen-AR — 2026-06-11：OmniGen-AR: AutoRegressive Any-to-Image Generation，統一自迴歸 Any-to-Image 框架，Disentangled Causal Attention (DCA) 解決多模態條件生成的資訊洩漏問題，1.5B 模型 GenEval 0.63、VBench 80.02（首個離散 Token AR 模型突破 80 分），Training-Free Inference (Fudan University & ByteDance Seed, NeurIPS 2026)](papers/2026/2026-06/OmniGen-AR/OmniGen-AR.md)**
+
+本文提出 **OmniGen-AR**（復旦大學 & 字節跳動 Seed），發表於 **NeurIPS 2026**。這是一個統一的自迴歸 Any-to-Image 生成框架，透過共享 Visual Tokenizer 將深度圖、語意分割圖、參考影像等多種視覺條件統一離散化為 Token，使單一模型同時支援 Text-to-Image、Text-to-Video、Image Editing、Depth-to-Image 與 Seg-to-Image 等五種以上任務。核心創新 **Disentangled Causal Attention (DCA)** 將全序列因果遮罩拆分為條件因果注意力與內容因果注意力：在訓練時以 10% 機率套用，阻斷內容 Token 對條件 Token 的直接依賴，防止 Shortcut Learning；推理時完全退化為標準 Next-Token Prediction，實現 Training-Free Inference。DCA 遮罩的數學設計為：當 Query 屬於內容區間 $C=[M+N_1, M+N_1+N_2)$、Key 屬於條件區間 $B=[M, M+N_1)$ 時，強制注意力權重為 $-\infty$。1.5B 模型在 GenEval 達 **0.63**，在 VBench 達 **80.02**，作者指出這是首次基於離散 Token 的純自迴歸模型突破 VBench 80 分大關。
+
+---
 **[HACK++ — 2026-06-10：HACK++: Towards More Effective Head-Aware Key-Value Compression for Efficient Visual Autoregressive Modeling，揭示 VAR 注意力頭的語義/結構二元性，Training-Free 解耦壓縮框架，Infinity-8B 內存節省 2.04× 吞吐提升 1.52×，KV Cache 可壓縮至 1% 仍保持近無損生成 (SJTU & Tsinghua)](papers/2026/2026-06/2026-06-10-HACK-plus-plus.md)**
 
 本文提出 **HACK++ (Head-Aware Key-Value Compression)**（上海交通大學 & 清華大學），是一項針對 Visual Autoregressive (VAR) 模型的 **Training-Free KV Cache 壓縮**框架。作者首先深入分析了 VAR 模型中注意力頭的行為，發現其可穩定地分為兩類：**Contextual Heads**（語境頭，呈垂直條紋注意力模式，負責語義一致性）與 **Structural Heads**（結構頭，呈多對角線注意力模式，負責空間連貫性）。這種二元性使得「一刀切」的壓縮策略在 VAR 上必然失效。HACK++ 的核心創新在於：**解耦注意力計算與 KV Cache 壓縮**，分別使用獨立的預算 $B_a$（注意力）和 $B_c$（Cache），允許 Cache 被更激進地壓縮；並為兩類頭設計了特定模式的重要性估計策略（語境頭用 query-subset attention，結構頭用離線 scale-prior × value norm）；同時引入依賴感知的自適應預算分配，動態調整不同頭、層、生成步驟的 cache 預算。在 Infinity-8B 上，HACK++ 在 30% 注意力預算、10% Cache 預算下實現 **2.04× 內存節省**和 **1.52× 吞吐提升**，且在極限 1% Cache 預算下仍保持近無損的生成質量。
