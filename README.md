@@ -2,11 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-06-11**
+**Last Updated: 2026-06-12**
 
 ---
 
 ## 今日閱讀
+**[IDEAL — 2026-06-12：In-DEpth ALignment Makes A Discrete Representation AutoEncoder，深度對齊打造新一代離散表示自編碼器，AR 圖像生成新 SOTA gFID 1.89，Zero-Shot 語義保留 80.89% Top-1，同時刷新重建 rFID 0.61 (Fudan University & UMD)](papers/2026/2026-06/IDEAL/AI_Daily_IDEAL.md)**
+
+本文提出 **IDEAL (In-DEpth ALignment)**（復旦大學、上海創新研究院 & 馬里蘭大學），一個創新的離散表示自編碼器框架。現有的 VFM-based tokenizer（如 VFMTok）僅使用深層 VFM 特徵進行量化，雖然語義豐富，但深層特徵缺乏低階空間細節，導致離散化後重建品質不佳。IDEAL 的核心洞見在於：**VFM 的淺層特徵保留了豐富的外觀細節，深層特徵攜帶高階語義，兩者在深度上具有天然的互補性。** 通過一個輕量級交叉注意力模組 $z = \text{AttnFuse}(f^{(d)}, f^{(s)})$，IDEAL 將淺層特徵（Block 8）和深層特徵（Block 24）融合為統一表示再進行向量量化。在解碼端，引入雙重對齊損失 $\mathcal{L}_{\text{deep}}$ 和 $\mathcal{L}_{\text{shallow}}$，強制重建特徵同時恢復語義結構和空間細節。在 ImageNet 上，IDEAL 達到 **rFID 0.61**（比前最佳好 0.28），Zero-Shot 分類 **Top-1 80.89%**（接近原始 SigLIP2 的 83.23%），且 AR 生成在 3B 參數下達到 **gFID 1.89**，創下自迴歸圖像生成的新 SOTA。
+
+---
 **[OmniGen-AR — 2026-06-11：OmniGen-AR: AutoRegressive Any-to-Image Generation，統一自迴歸 Any-to-Image 框架，Disentangled Causal Attention (DCA) 解決多模態條件生成的資訊洩漏問題，1.5B 模型 GenEval 0.63、VBench 80.02（首個離散 Token AR 模型突破 80 分），Training-Free Inference (Fudan University & ByteDance Seed, NeurIPS 2026)](papers/2026/2026-06/OmniGen-AR/OmniGen-AR.md)**
 
 本文提出 **OmniGen-AR**（復旦大學 & 字節跳動 Seed），發表於 **NeurIPS 2026**。這是一個統一的自迴歸 Any-to-Image 生成框架，透過共享 Visual Tokenizer 將深度圖、語意分割圖、參考影像等多種視覺條件統一離散化為 Token，使單一模型同時支援 Text-to-Image、Text-to-Video、Image Editing、Depth-to-Image 與 Seg-to-Image 等五種以上任務。核心創新 **Disentangled Causal Attention (DCA)** 將全序列因果遮罩拆分為條件因果注意力與內容因果注意力：在訓練時以 10% 機率套用，阻斷內容 Token 對條件 Token 的直接依賴，防止 Shortcut Learning；推理時完全退化為標準 Next-Token Prediction，實現 Training-Free Inference。DCA 遮罩的數學設計為：當 Query 屬於內容區間 $C=[M+N_1, M+N_1+N_2)$、Key 屬於條件區間 $B=[M, M+N_1)$ 時，強制注意力權重為 $-\infty$。1.5B 模型在 GenEval 達 **0.63**，在 VBench 達 **80.02**，作者指出這是首次基於離散 Token 的純自迴歸模型突破 VBench 80 分大關。
