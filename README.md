@@ -2,11 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-06-12**
+**Last Updated: 2026-06-13**
 
 ---
 
 ## 今日閱讀
+**[HAM — 2026-06-13：HAM: A Training-Free Style Transfer via Heterogeneous Attention Modulation for Diffusion Models，異質注意力調變免訓練風格轉換，CLIP-T 0.223 SOTA，LPIPS 0.479 全面領先，CVPR 2026 Findings (Hangzhou Dianzi University & ICT CAS)](2026-06-13-HAM-Style-Transfer.md)**
+
+本文提出 **HAM (Heterogeneous Attention Modulation)**（杭州電子科技大學 & 中科院計算所），發表於 **CVPR 2026 Findings**。這是一種針對擴散模型的**免訓練（Training-Free）**風格轉換方法，透過三個協同模組解決「風格-內容平衡」的核心難題：**全局注意力調節（GAR）**在自注意力層以 AdaIN 統計對齊融合內容與風格特徵；**局部注意力移植（LAT）**在交叉注意力層移植風格的 Key/Value，並以加權融合保護內容 Query；**注入風格的噪聲初始化（SINI）**在初始時間步 $T$ 以 AdaIN 融合內容與風格初始噪聲。HAM 的關鍵洞見在於：自注意力偏向空間結構，交叉注意力偏向語義注入，兩者需要「異質」的差異化操作，而非統一的替換策略。在 MS-COCO + WikiArt 基準上，HAM 在 LPIPS（0.479）和 LPIPS-Gray（0.362）指標上大幅領先所有對手，CLIP-T（0.223）達到最佳，ArtFID（15.151）、DC（2.113）、CC（2.057）全面超越 StyleID、DiffArtist 等 SOTA，實現了「強風格遷移」與「精確內容保留」的雙贏。
+
+---
 **[IDEAL — 2026-06-12：In-DEpth ALignment Makes A Discrete Representation AutoEncoder，深度對齊打造新一代離散表示自編碼器，AR 圖像生成新 SOTA gFID 1.89，Zero-Shot 語義保留 80.89% Top-1，同時刷新重建 rFID 0.61 (Fudan University & UMD)](papers/2026/2026-06/IDEAL/AI_Daily_IDEAL.md)**
 
 本文提出 **IDEAL (In-DEpth ALignment)**（復旦大學、上海創新研究院 & 馬里蘭大學），一個創新的離散表示自編碼器框架。現有的 VFM-based tokenizer（如 VFMTok）僅使用深層 VFM 特徵進行量化，雖然語義豐富，但深層特徵缺乏低階空間細節，導致離散化後重建品質不佳。IDEAL 的核心洞見在於：**VFM 的淺層特徵保留了豐富的外觀細節，深層特徵攜帶高階語義，兩者在深度上具有天然的互補性。** 通過一個輕量級交叉注意力模組 $z = \text{AttnFuse}(f^{(d)}, f^{(s)})$，IDEAL 將淺層特徵（Block 8）和深層特徵（Block 24）融合為統一表示再進行向量量化。在解碼端，引入雙重對齊損失 $\mathcal{L}_{\text{deep}}$ 和 $\mathcal{L}_{\text{shallow}}$，強制重建特徵同時恢復語義結構和空間細節。在 ImageNet 上，IDEAL 達到 **rFID 0.61**（比前最佳好 0.28），Zero-Shot 分類 **Top-1 80.89%**（接近原始 SigLIP2 的 83.23%），且 AR 生成在 3B 參數下達到 **gFID 1.89**，創下自迴歸圖像生成的新 SOTA。
