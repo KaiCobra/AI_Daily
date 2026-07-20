@@ -1,0 +1,154 @@
+# Existing AI Daily inventory
+
+## Git status
+[31m??[m .existing_reports_inventory.txt
+
+## Markdown reports
+./2026-06-13-HAM-Style-Transfer.md	AI Daily
+./papers/2023/2023-01/ZestGuide/AI_Daily_ZestGuide.md	AI Daily: ZestGuide - 零樣本空間佈局條件下的文本到圖像擴散模型
+./papers/2024/2024-11/SoFlow/AI_Daily_SoFlow.md	
+./papers/2024/2024-12/FlowAR/AI_Daily_FlowAR.md	AI Daily: FlowAR - 當尺度自回歸遇上流匹配，圖像生成的新篇章
+./papers/2025/2025-01/DiverseVAR/AI_Daily_DiverseVAR.md	AI Daily: DiverseVAR - 解放視覺自回歸模型的多樣性潛能
+./papers/2025/2025-01/EditAR/AI_Daily_EditAR.md	AI Daily: EditAR - 統一條件圖像生成的自回歸新篇章
+./papers/2025/2025-01/JanusFlow/AI_Daily_JanusFlow.md	AI Daily: JanusFlow - 融合自回歸與 Rectified Flow 的統一多模態新典範
+./papers/2025/2025-01/Multimodal_AR_Vision_Encoders/AI_Daily_Multimodal_AR_Vision_Encoders.md	AI Daily: Multimodal Autoregressive Pre-training of Large Vision Encoders
+./papers/2025/2025-01/RadAR/AI_Daily_RadAR.md	AI Daily: RadAR - 從序列到空間，重排序自回歸實現高效視覺生成
+./papers/2025/2025-01/VAR_Depth_Estimation/AI_Daily_VAR_Depth_Estimation.md	AI Daily: Visual Autoregressive Modelling for Monocular Depth Estimation
+./papers/2025/2025-03/AREdit/AI_Daily_AREdit.md	AI Daily: AREdit - 無需訓練的VAR圖像編輯新篇章
+./papers/2026-03-07-ATM-ISLock.md	AI Daily: Anchor Token Matching (ATM) - 突破自迴歸模型的免訓練圖像編輯瓶頸
+./papers/2026-07-20-SparVAR-Training-Free-VAR-Acceleration.md	AI Daily — SparVAR: 利用稀疏性實現視覺自迴歸模型的訓練無關加速
+./papers/2026/2026-01/AR-Omni/AI_Daily_AR-Omni.md	AI Daily: AR-Omni - 邁向純自回歸的「Any-to-Any」多模態生成
+./papers/2026/2026-01/Alterbute/AI_Daily_Alterbute.md	AI Daily: Alterbute - 編輯物體內在屬性的新篇章
+./papers/2026/2026-01/Decentralized_AR/AI_Daily_Decentralized_AR.md	AI Daily: Decentralized Autoregressive Generation - 當自回歸遇上流匹配與去中心化
+./papers/2026/2026-01/DreamVAR/AI_Daily_DreamVAR.md	AI Daily: DreamVAR - 當VAR遇上強化學習，實現高保真主體驅動圖像生成
+./papers/2026/2026-01/FAM_Diffusion/AI_Daily_FAM_Diffusion.md	AI Daily: FAM Diffusion - 頻率與注意力調製實現高效高解析度圖像生成
+./papers/2026/2026-01/FlexVAR/AI_Daily_FlexVAR.md	AI Daily: FlexVAR - 擺脫殘差預測，實現靈活高效的視覺自回歸生成
+./papers/2026/2026-01/LooseRoPE/AI_Daily_LooseRoPE.md	AI Daily: LooseRoPE - 內容感知注意力操控，實現無縫語義融合
+./papers/2026/2026-01/MMD-Guidance/AI_Daily_MMD-Guidance.md	AI Daily: MMD Guidance - 無需訓練，實現擴散模型的分佈自適應
+./papers/2026/2026-01/Mirai/AI_Daily_Mirai.md	AI Daily: Mirai - 讓自回歸視覺生成擁有「預見未來」的能力
+./papers/2026/2026-01/PackCache/AI_Daily_PackCache.md	AI Daily: PackCache - 無需訓練，加速統一自回歸影片生成的新方法
+./papers/2026/2026-01/RAE/AI_Daily_RAE.md	AI Daily: RAE - 當擴散模型遇上自回歸，Yann LeCun帶隊挑戰VAE霸權
+./papers/2026/2026-01/ResTok/AI_Daily_ResTok.md	AI Daily: ResTok - 讓視覺自回歸模型「重拾視覺」，實現高效高保真生成
+./papers/2026/2026-01/SSG/AI_Daily_SSG.md	AI Daily: SSG - 無需訓練，用尺度空間引導解放 VAR 模型潛力
+./papers/2026/2026-01/Sissi/AI_Daily_Sissi.md	AI Daily: Sissi - 無需訓練，透過語義-風格整合實現零樣本風格引導的圖像生成
+./papers/2026/2026-01/SoftCFG/AI_Daily_SoftCFG.md	AI Daily: SoftCFG - 無需訓練，用不確定性引導穩定視覺自回歸模型
+./papers/2026/2026-01/TP-Blend/AI_Daily_TP-Blend.md	AI Daily: TP-Blend - 融合雙提示注意力配對，實現擴散模型中精確的物體風格融合
+./papers/2026/2026-01/ToProVAR/AI_Daily_ToProVAR.md	AI Daily: ToProVAR - 基於注意力熵的視覺自回歸模型高效優化新框架
+./papers/2026/2026-01/Unraveling_MMDiT/AI_Daily_Unraveling_MMDiT.md	AI Daily: 揭秘MMDiT Blocks：無需訓練即可分析與增強文本條件擴散模型
+./papers/2026/2026-01/Untwisting_RoPE/AI_Daily_Untwisting_RoPE.md	AI Daily - 解旋 RoPE：為 DiT 中的共享注意力機制引入頻率控制
+./papers/2026/2026-01/VAR-LIDE/AI_Daily_VAR-LIDE.md	AI Daily: VAR-LIDE - 視覺自回歸與VLM結合，開創零參考圖像修復新紀元
+./papers/2026/2026-01/VAR-Scaling/AI_Daily_VAR-Scaling.md	AI Daily: VAR-Scaling - 探索視覺自回歸模型的推理時縮放新策略
+./papers/2026/2026-01/VAR_RL_Done_Right/AI_Daily_VAR_RL_Done_Right.md	AI Daily: VAR RL Done Right - 解決視覺自回歸生成中的異步策略衝突
+./papers/2026/2026-01/VideoAR/AI_Daily_VideoAR.md	AI Daily: VideoAR - 結合Next-Frame與Next-Scale預測的自回歸影片生成新篇章
+./papers/2026/2026-01/iFSQ/AI_Daily_iFSQ.md	AI Daily: iFSQ - 一行代碼統一AR與Diffusion，實現高效圖像生成
+./papers/2026/2026-02/ARPG/AI_Daily_ARPG.md	AI Daily: ARPG - 解鎖隨機並行解碼的自回歸圖像生成新境界
+./papers/2026/2026-02/BAR/AI_Daily_BAR.md	AI Daily: Autoregressive Image Generation with Masked Bit Modeling (BAR) 論文深度解析
+./papers/2026/2026-02/BitDance/AI_Daily_BitDance.md	AI Daily: BitDance - 用二元 Token 擴展自回歸生成模型的新篇章
+./papers/2026/2026-02/DCAG/AI_Daily_DCAG.md	AI Daily：雙通道注意力引導，實現無需訓練的圖像編輯
+./papers/2026/2026-02/DIAMOND/AI_Daily_DIAMOND.md	AI Daily: DIAMOND - 無需訓練，用直接推論修正 Flow Matching 模型中的生成瑕疵
+./papers/2026/2026-02/EchoGen/AI_Daily_EchoGen.md	AI Daily: EchoGen - 當視覺自回歸模型遇上主體驅動生成，實現高效零樣本合成
+./papers/2026/2026-02/FusionEdit/AI_Daily_FusionEdit.md	AI Daily: FusionEdit - 無需訓練，實現語義融合與注意力調製的圖像編輯新境界
+./papers/2026/2026-02/HSI-VAR/AI_Daily_HSI-VAR.md	AI Daily: HSI-VAR - 當視覺自回歸遇上高光譜，開啟影像修復新篇章
+./papers/2026/2026-02/LapFlow/AI_Daily_LapFlow.md	AI Daily: LapFlow - 當拉普拉斯金字塔遇上流匹配，實現高效多尺度圖像生成
+./papers/2026/2026-02/Light_Forcing/AI_Daily_Light_Forcing.md	AI Daily: Light Forcing - 無需訓練，用稀疏注意力為自回歸影片擴散模型按下加速鍵
+./papers/2026/2026-02/Look_Ahead_Look_Back_Flows/AI_Daily_Look_Ahead_Look_Back_Flows.md	AI Daily: Look-Ahead and Look-Back Flows - 無需訓練的軌跡平滑化圖像生成
+./papers/2026/2026-02/NOVA/AI_Daily_NOVA.md	AI Daily: NOVA - 無需訓練，用熵引導VAR模型實現自適應加速
+./papers/2026/2026-02/PTQ4ARVG/AI_Daily_PTQ4ARVG.md	AI Daily: PTQ4ARVG - 無需訓練，為自回歸視覺生成模型量身打造的量化框架
+./papers/2026/2026-02/RFC/AI_Daily_RFC.md	AI Daily: RFC - 運用輸出入關係加速DiT，實現更準確的特徵快取
+./papers/2026/2026-02/Semantic_Bottleneck/AI_Daily_Semantic_Bottleneck.md	AI Daily: DiT條件嵌入中的隱藏語義瓶頸 (ICLR 2026)
+./papers/2026/2026-02/SparVAR/AI_Daily_SparVAR.md	AI Daily: SparVAR - 無需訓練，探索視覺自回歸模型中的稀疏性以實現高效加速
+./papers/2026/2026-02/VAREdit/AI_Daily_VAREdit.md	AI Daily: VAREdit - 指令引導圖像編輯的VAR新標竿
+./papers/2026/2026-03/2026-03-12-KV-Lock-and-RAISE.md	AI Daily: 2026-03-12 論文研讀報告
+./papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md	AI Daily
+./papers/2026/2026-03/ADAPT/AI_Daily_ADAPT.md	AI Daily
+./papers/2026/2026-03/AREdit/AI_Daily_AREdit.md	AI Daily: AREdit - 首個基於VAR的免訓練文字引導圖像編輯框架
+./papers/2026/2026-03/AlignVAR/AI_Daily_AlignVAR.md	AI Daily：AlignVAR - 實現全域一致性的視覺自回歸圖像超解析度
+./papers/2026/2026-03/CDG/AI_Daily_CDG.md	AI Daily
+./papers/2026/2026-03/CSD-VAR/AI_Daily_CSD-VAR.md	AI Daily
+./papers/2026/2026-03/Delta-K/AI_Daily_Delta-K.md	AI Daily
+./papers/2026/2026-03/Dual_Dimensional_Control_Scenarios/AI_Daily_Dual_Dimensional_Control_Scenarios.md	AI Daily: 雙維度協同控制應用場景案例分析
+./papers/2026/2026-03/JiT/AI_Daily_JiT.md	AI Daily: Just-in-Time (JiT) - 免訓練的 Diffusion Transformers 空間加速框架
+./papers/2026/2026-03/LayerBind/AI_Daily_LayerBind.md	AI Daily: Layer-wise Instance Binding for Regional and Occlusion Control in Text-to-Image Diffusion Transformers
+./papers/2026/2026-03/MVAR/AI_Daily_MVAR.md	AI Daily - MVAR: 用馬可夫假設重塑視覺自回歸，以線性複雜度實現高效圖像生成
+./papers/2026/2026-03/Modulation_Guidance_Comparison/AI_Daily_Modulation_Guidance_Comparison.md	AI Daily: Modulation Guidance 與 Training-Free Attention Modulation 系列論文深度比較
+./papers/2026/2026-03/PixelRush/AI_Daily_PixelRush.md	AI Daily: PixelRush - 20秒產出4K高解析度圖像的單步擴散模型
+./papers/2026/2026-03/Rethinking_Global_Text_Conditioning/AI_Daily_Rethinking_Global_Text_Conditioning.md	AI Daily: Rethinking Global Text Conditioning in Diffusion Transformers
+./papers/2026/2026-03/SCALAR/AI_Daily_SCALAR.md	AI Daily: SCALAR - 解鎖VAR模型的可控生成，注入尺度感知新思路
+./papers/2026/2026-03/SelfFlow/AI_Daily_SelfFlow.md	AI Daily: Self-Supervised Flow Matching for Scalable Multi-Modal Synthesis
+./papers/2026/2026-03/StepVAR/AI_Daily_StepVAR.md	AI Daily - StepVAR: 無需訓練，用結構與紋理引導VAR模型剪枝，實現高效推理
+./papers/2026/2026-03/StyleGallery/AI_Daily_StyleGallery.md	AI Daily: StyleGallery - Training-free and Semantic-aware Personalized Style Transfer
+./papers/2026/2026-03/TAUE/AI_Daily_TAUE.md	AI Daily
+./papers/2026/2026-03/TextEmbeddingSteering/AI_Daily_TextEmbeddingSteering.md	AI Daily: The Unreasonable Effectiveness of Text Embedding Interpolation for Continuous Image Steering
+./papers/2026/2026-03/TokenPainter/AI_Daily_TokenPainter.md	AI Daily
+./papers/2026/2026-04/AFM/AI_Daily_AFM.md	AI Daily: Attention Frequency Modulation (AFM)
+./papers/2026/2026-04/FIA-Edit/AI_Daily_FIA-Edit.md	AI Daily: FIA-Edit (Frequency-Interactive Attention for Efficient and High-Fidelity Inversion-Free Text-Guided Image Editing)
+./papers/2026/2026-04/HAM/AI_Daily_HAM.md	AI Daily: HAM - A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models
+./papers/2026/2026-04/MAST/AI_Daily_MAST.md	AI Daily: MAST - Mask-Guided Attention Mass Allocation for Training-Free Multi-Style Transfer
+./papers/2026/2026-04/SHIFT/AI_Daily_SHIFT.md	AI Daily: SHIFT: Steering Hidden Intermediates in Flow Transformers
+./papers/2026/2026-05/AlignVid/AI_Daily_AlignVid.md	AI Daily
+./papers/2026/2026-05/EBT/AI_Daily_EBT.md	AI Daily
+./papers/2026/2026-05/EBT/Energy_Based_Models_Prerequisite.md	先備知識：能量模型 (Energy-Based Models, EBMs) 核心概念與原理
+./papers/2026/2026-05/GRAM/AI_Daily_GRAM.md	AI Daily
+./papers/2026/2026-05/JEPA-Guided-Diffusion/AI_Daily_JEPA_Guided_Diffusion.md	Beyond Generative Priors: Minority Sampling with JEPA-Guided Diffusion
+./papers/2026/2026-05/LeJEPA/AI_Daily_LeJEPA.md	AI Daily — When Does LeJEPA Learn a World Model?
+./papers/2026/2026-05/RiT/AI_Daily_RiT.md	
+./papers/2026/2026-05/SEGA/AI_Daily_SEGA.md	AI Daily: Spectral-Energy Guided Attention (SEGA)
+./papers/2026/2026-05/SRC-Flow/AI_Daily_SRC-Flow.md	AI Daily: SRC-Flow - Compact Semantic Representations Enable Normalizing Flows for Image Generation
+./papers/2026/2026-05/TC-JEPA/AI_Daily_TC-JEPA.md	AI Daily
+./papers/2026/2026-05/VAGS/AI_Daily_VAGS.md	AI Daily
+./papers/2026/2026-05/VIAR/AI_Daily_VIAR.md	AI Daily
+./papers/2026/2026-05/VPG/AI_Daily_VPG.md	AI Daily: VPG — 2026-05-28：Visual Prefix Guidance 視覺前綴引導，免訓練對抗自回歸曝光偏差，解鎖超強 compositional 生成 (NUS & HUST)
+./papers/2026/2026-06/2026-06-03-CVQ.md	AI Daily: Channel-wise Vector Quantization (CVQ) 深度解析
+./papers/2026/2026-06/2026-06-04-Markov-VAR.md	Markovian Scale Prediction: 視覺自迴歸生成的馬可夫新紀元
+./papers/2026/2026-06/2026-06-05-Internal-Guidance.md	AI Daily - 2026-06-05
+./papers/2026/2026-06/2026-06-07-DDT-Decoupled-Diffusion-Transformer.md	AI Daily: DDT - Decoupled Diffusion Transformer
+./papers/2026/2026-06/2026-06-08-SeaCache.md	AI Daily: SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models
+./papers/2026/2026-06/2026-06-09-DAVE.md	AI Daily
+./papers/2026/2026-06/2026-06-10-HACK-plus-plus.md	AI Daily
+./papers/2026/2026-06/IDEAL/AI_Daily_IDEAL.md	AI Daily：IDEAL - 深度對齊打造新一代離散表示自編碼器
+./papers/2026/2026-06/IDEAL/research_notes.md	IDEAL 論文研究筆記
+./papers/2026/2026-06/OmniGen-AR/OmniGen-AR.md	AI Daily: OmniGen-AR 統一自迴歸多模態生成框架
+./papers/2026/2026-06/SSG_Diffusion/AI_Daily_SSG.md	AI Daily: SSG - 無需訓練，用Token交換引導解放擴散模型潛力
+./skills/pdf-image-extractor/SKILL.md	PDF Image Extractor
+
+## Recent commits
+dff35fe 2026-07-20 Add AI Daily report on SparVAR
+cffd9cc 2026-06-13 Fix: Reformat HACK++ article - standardize Markdown style, rename images to semantic names, add cropped figures
+60f0b10 2026-06-13 Add AI Daily 2026-06-13: HAM - Training-Free Style Transfer via Heterogeneous Attention Modulation (CVPR 2026 Findings)
+108cc73 2026-06-12 AI Daily 2026-06-12: IDEAL - In-DEpth ALignment Makes A Discrete Representation AutoEncoder
+2a468d8 2026-06-11 feat: Add AI Daily 2026-06-11 - OmniGen-AR (NeurIPS 2026)
+c168d6e 2026-06-10 AI Daily 2026-06-10: HACK++ - Training-Free Head-Aware KV Compression for VAR Models (SJTU & Tsinghua)
+ef48d58 2026-06-09 Add AI Daily 2026-06-09: DAVE - Breaking the Lock-in (ICML 2026)
+fea0e56 2026-06-08 AI Daily 2026-06-08: SeaCache (CVPR 2026 Oral) - Spectral-Evolution-Aware Cache for Diffusion Model Acceleration
+979b345 2026-06-07 AI Daily 2026-06-07: DDT - Decoupled Diffusion Transformer (CVPR 2026)
+4c493b5 2026-06-06 AI Daily 2026-06-06: SSG - Guiding a Diffusion Model by Swapping Its Tokens (CVPR 2026 Oral)
+5cfe468 2026-06-05 AI Daily 2026-06-05: Internal Guidance (CVPR 2026 Highlight) - Zero-cost self-guidance for Diffusion Transformers, SOTA FID=1.19 on ImageNet 256x256
+36ff6e3 2026-06-04 AI Daily 2026-06-04: Markov-VAR (CVPR 2026) - Markovian Scale Prediction
+6277b41 2026-06-03 AI Daily 2026-06-03: Channel-wise Vector Quantization (CVQ) - 通道維度向量量化，100% 代碼本利用率，Next-Channel Prediction 自迴歸生成新範式
+2c15d1c 2026-06-02 AI Daily 2026-06-02: AttnRouter - Training-Free Image Editing on MMDiT via KVInject and Per-Category Attention Routing
+4413e47 2026-06-01 AI Daily 2026-06-01: VPG — Visual Prefix Guidance, Training-Free Inference Guidance for Autoregressive Visual Generation (NUS & HUST)
+b5a9fcc 2026-05-31 AI Daily 2026-05-31: When Does LeJEPA Learn a World Model? (Klindt, LeCun, Balestriero)
+9f6e4cb 2026-05-30 feat: Add AI Daily - JEPA-Guided Diffusion (ICML 2026)
+f62fb13 2026-05-29 AI Daily 2026-05-29: VIAR — 視覺隱式自迴歸模型 (ICML 2026)
+3e652ff 2026-05-28 AI Daily 2026-05-28: SRC-Flow — 緊湊語義表示空間解鎖正規化流 SOTA (gFID 1.65, USTC & Kuaishou)
+43c7044 2026-05-27 2026-05-27: AlignVid - Training-Free Attention Modulation for TI2V Semantic Fidelity (ICML 2026)
+5ade4e9 2026-05-26 feat: Add AI Daily RiT (2026-05-26) - Vanilla DiT in Representation Space
+4231d30 2026-05-25 Add GRAM: Generative Recursive Reasoning (2026-05-25)
+3d5d6c6 2026-05-24 Add AI Daily: SEGA (2026-05-24) - Spectral-Energy Guided Attention for Resolution Extrapolation in DiTs
+0f66e50 2026-05-23 2026-05-23: Add EBM prerequisite knowledge for EBT paper
+832d0d1 2026-05-23 2026-05-23: Add EBT (ICLR 2026 Oral) - Energy-Based Transformers are Scalable Learners and Thinkers
+1659863 2026-05-22 Add AI Daily: TC-JEPA (ICML 2026) - Text-Conditional JEPA for Semantically Rich Visual Representations
+a659445 2026-05-21 AI Daily 2026-05-21: VAGS - Training-Free Velocity Adaptive Guidance Scale for Flow Matching Image Editing and Generation (Harvard + HKU)
+698fb3c 2026-04-17 AI Daily 2026-04-18: FIA-Edit (AAAI 2026) - 頻率交互注意力免反轉高保真圖像編輯
+d92a837 2026-04-16 AI Daily: MAST - 免訓練 Logit 層級注意力質量分配多風格轉換 (2026-04-17)
+72171a3 2026-04-15 AI Daily: SHIFT - Steering Hidden Intermediates in Flow Transformers (2026-04-16)
+870779a 2026-04-14 Add AI Daily: AFM (Attention Frequency Modulation) - Training-Free Spectral Modulation of Diffusion Cross-Attention
+d48e563 2026-04-13 Add AI Daily: HAM - Training-Free Style Transfer via Heterogeneous Attention Modulation (CVPR 2026 Findings)
+7600320 2026-03-22 fix: 重新裁剪 Token Painter 所有圖片，提升聚焦度和品質
+8c7bf0c 2026-03-21 AI Daily 2026-03-22: Token Painter - MAR-based Training-Free Text-Guided Image Inpainting (AAAI 2026)
+35093c9 2026-03-20 AI Daily 2026-03-21: Text Embedding Steering - Training-Free Continuous Image Editing via Steering Vectors in Text Encoder Space
+b512bc9 2026-03-19 Add AI Daily: ADAPT - Attention Driven Adaptive Prompt Scheduling (CVPR 2026 Findings)
+8d63c7d 2026-03-18 2026-03-19: Add TAUE - Training-free Noise Transplant and Cultivation Diffusion Model (CVPR 2026 Findings)
+53413f4 2026-03-18 2026-03-19: Add CDG (CVPR 2026) - Guiding Diffusion Models with Semantically Degraded Conditions
+cb2a621 2026-03-17 2026-03-18: CSD-VAR - 首個VAR-based內容-風格分解框架 (ICCV 2025)
+aaf18b5 2026-03-16 2026-03-17: Add JiT - Training-Free Spatial Acceleration for Diffusion Transformers (CVPR 2026)
