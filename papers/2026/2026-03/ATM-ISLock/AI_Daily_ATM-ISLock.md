@@ -20,7 +20,7 @@
 
 為了解決這些問題，本文提出了 **Implicit Structure Locking (ISLock)**，這是**首個針對 AR 視覺模型的免訓練（Training-free）編輯策略**。
 
-![ISLock 編輯效果展示](../assets/2026-03-07/ATM_figure1_teaser.webp)
+![ISLock 編輯效果展示](../../../../assets/2026-03-07/ATM_figure1_teaser.webp)
 *圖 1：ISLock 能夠在保持原始圖像其他資訊不變的情況下，實現屬性/物體替換、添加/移除物體以及風格/狀態轉換。*
 
 ---
@@ -40,7 +40,7 @@ ISLock 的核心在於 **Anchor Token Matching (ATM)** 策略。與其強行移�
 
 這種過程引發了**隱式的注意力對齊（Implicit attention alignment）**，使模型能夠自然地計算出既保留結構連貫性，又能適應局部語義編輯（例如將毛髮紋理從「貓」過渡到「狗」）的注意力圖。
 
-![方法比較圖](../assets/2026-03-07/ATM_figure2_comparison.webp)
+![方法比較圖](../../../../assets/2026-03-07/ATM_figure2_comparison.webp)
 *圖 2：(左) 直接修改目標 Token 會因結構誤差累積導致內容嚴重扭曲。(中) 簡單的注意力注入會破壞內容連貫性。(右) ISLock 透過 ATM 策略有效緩解了這些問題，實現了高質量的結構保持編輯。*
 
 ### 2.2 動態窗口與自適應約束放寬

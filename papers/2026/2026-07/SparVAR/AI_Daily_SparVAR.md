@@ -75,13 +75,13 @@ $$\text{Attention}(Q_t, K_{\text{sparse}}, V_{\text{sparse}}) = \text{softmax}\l
 | **稀疏核速度** | **>5×** | 相比 FlashAttention 的前向計算速度 |
 | **高頻細節保留** | 幾乎完全保留 | PSNR、SSIM、LPIPS 與基線接近 |
 
-![SparVAR 生成質量對比](../asset/sparvar_quality_comparison.png)
+![SparVAR 生成質量對比](../../../../asset/sparvar_quality_comparison.png)
 
 *圖表 1：SparVAR 在無尺度跳過（w/o Skip Scales）和跳過最後 2 個尺度（w/ Skip Last 2 Scales）兩種設置下的生成質量對比。左側為 Infinity 基線，中間為 SparVAR，右側為 FastVAR。下方指標顯示 GenEval / PSNR 分數，SparVAR 在保持高頻細節的同時實現了顯著加速。[1]*
 
 ### 注意力激活模式分析
 
-![注意力激活模式可視化](../asset/sparvar_attention_patterns.png)
+![注意力激活模式可視化](../../../../asset/sparvar_attention_patterns.png)
 
 *圖表 2：VAR 模型（Infinity）中注意力激活模式的可視化。(a) 強注意力 Sink：早期尺度的 Token 持續吸引高注意力權重，充當全局錨點。(b) 跨尺度激活相似性：相鄰尺度的對應子塊呈現相似的激活分佈。(c) 明顯的空間局部性：高解析度尺度的注意力集中在局部空間帶狀區域。[1]*
 

@@ -19,7 +19,7 @@ HAM 的核心創新在於：
 3. **局部注意力移植 (Local Attention Transplantation, LAT)**：在交叉注意力層進行精確的控制，將風格特徵移植到生成過程中，同時保護內容查詢 (Query)。
 4. **注入風格的噪聲初始化 (Style-Infused Noise Initialization, SINI)**：在擴散過程的初始階段 (Timestep T)，透過自適應實例正規化 (AdaIN) 融合內容與風格的初始噪聲。
 
-![HAM 效果展示](assets/HAM_2026/fig1_teaser.png)
+![HAM 效果展示](../../../../assets/HAM_2026/fig1_teaser.png)
 
 ---
 
@@ -27,7 +27,7 @@ HAM 的核心創新在於：
 
 HAM 方法的整體架構建立在預訓練的擴散模型（如 Stable Diffusion 2.1 或 3.5）之上，無需進行任何微調或訓練。其核心技術包含三個模組：
 
-![HAM 方法架構圖](assets/HAM_2026/fig2_pipeline.png)
+![HAM 方法架構圖](../../../../assets/HAM_2026/fig2_pipeline.png)
 
 #### 1. 注入風格的噪聲初始化 (SINI)
 在擴散模型的初始時間步 $T$，HAM 融合了來自內容圖片和風格參考圖片的初始噪聲。為了平衡風格強度與內容保真度，公式如下：
@@ -62,17 +62,17 @@ $$
 
 HAM 在 MS-COCO 和 WikiArt 數據集上進行了廣泛的評估，並與現有的 SOTA 方法（如 ControlNet, StyleID, DiffArtist 等）進行了比較。
 
-![定量比較表格](assets/HAM_2026/table1_quantitative.png)
+![定量比較表格](../../../../assets/HAM_2026/table1_quantitative.png)
 
 - **風格強度 (Style Strength)**：在 CLIP-T 指標上取得最佳成績 (0.223)，在 FID 上取得次佳成績 (9.244)，證明其在提取和轉移風格特徵方面非常有效。
 - **內容保留 (Content Preservation)**：在 LPIPS (0.479) 和 LPIPS-Gray (0.362) 指標上大幅領先所有對手，這意味著 HAM 在保留內容結構和細節方面具有絕對優勢。
 - **綜合指標 (Comprehensive Metrics)**：在 ArtFID (15.151) 和作者提出的綜合指標 DC (2.113)、CC (2.057) 上均達到最先進水平，完美平衡了內容與風格。
 
-![與現有方法的定性比較](assets/HAM_2026/fig3_comparison.png)
+![與現有方法的定性比較](../../../../assets/HAM_2026/fig3_comparison.png)
 
 從視覺效果上來看，HAM 在面對多種複雜風格（如立體派、印象派、素描等）時，不僅能精準捕捉風格的筆觸與色彩，還能完美保留原圖中人物或物體的輪廓與細節，沒有出現其他方法常見的「風格崩壞」或「內容扭曲」。
 
-![消融實驗結果](assets/HAM_2026/fig4_ablation.png)
+![消融實驗結果](../../../../assets/HAM_2026/fig4_ablation.png)
 
 ---
 

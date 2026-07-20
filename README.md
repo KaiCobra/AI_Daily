@@ -2,23 +2,25 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-07-20**
+**Last Updated: 2026-07-21**
+
+📚 **[完整論文索引(106 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
-**[VPG — 2026-07-20：VPG: Visual Prefix Guidance for Autoregressive Image and Video Generation，訓練無關推理時引導方法，前綴後驗支撐改進 VAR FID 0.36、InfinityStar VBench 0.49，NUS & HUST (arXiv:2605.30317)](2026-07-20-VPG-Visual-Prefix-Guidance.md)**
+**[VPG — 2026-07-20：VPG: Visual Prefix Guidance for Autoregressive Image and Video Generation，訓練無關推理時引導方法，前綴後驗支撐改進 VAR FID 0.36、InfinityStar VBench 0.49，NUS & HUST (arXiv:2605.30317)](papers/2026/2026-07/VPG/AI_Daily_VPG.md)**
 
 本文提出 **VPG (Visual Prefix Guidance)**（新加坡國立大學 & 華中科技大學），一種**訓練無關（Training-Free）**的推理時引導方法，用於改進視覺自迴歸模型的生成質量。VPG 從**前綴後驗支撐**的新視角解決自迴歸模型的暴露偏差問題。在訓練時，自迴歸模型採用教師強制策略，每個預測步驟基於真實前綴；但推理時必須基於自生成前綴，導致訓練-推理不匹配。VPG 的核心創新在於提出了一個新的引導軸：不是強化外部條件（如 CFG），而是確保下一步預測對已生成前綴提供強後驗支撐。通過配對預測對比（真實前綴 vs. 腐蝕前綴）和同尺度全嵌入替換，VPG 實現了簡潔而有效的前綴後驗目標。在 VAR 上 FID 平均降低 **0.36**（最高 0.63），在 Infinity 上改進文本對齐指標，在 InfinityStar 上 VBench 分數提升 **0.49**。VPG 完全免訓練、即插即用，與 CFG 沿不同軸工作，可組合使用。這項工作完美符合用戶的多個研究興趣方向：訓練無關方法、注意力調製、VAR 模型改進、零樣本應用。
 
 ---
 
-**[SparVAR — 2026-07-20：SparVAR: Exploring Sparsity in Visual AutoRegressive Modeling for Training-Free Acceleration，利用注意力稀疏性實現訓練無關加速，1.57× 加速保持高頻細節，8B 模型 1024×1024 圖像生成降至 1 秒，CVPR 2026 (Chinese Academy of Sciences & City University of Hong Kong)](papers/2026-07-20-SparVAR-Training-Free-VAR-Acceleration.md)**
+**[SparVAR — 2026-07-20：SparVAR: Exploring Sparsity in Visual AutoRegressive Modeling for Training-Free Acceleration，利用注意力稀疏性實現訓練無關加速，1.57× 加速保持高頻細節，8B 模型 1024×1024 圖像生成降至 1 秒，CVPR 2026 (Chinese Academy of Sciences & City University of Hong Kong)](papers/2026/2026-07/SparVAR/AI_Daily_SparVAR.md)**
 
 本文提出 **SparVAR**（中科院自動化所、北京人工智能研究院、南京理工大學、香港城市大學），發表於 **CVPR 2026**。這是一項針對視覺自迴歸（VAR）模型推理加速的突破性工作，通過系統分析 VAR 注意力激活模式，揭示了三個關鍵稀疏性性質：**強注意力 Sink**（早期尺度 Token 持續吸引高注意力權重，充當全局錨點）、**跨尺度激活相似性**（相鄰尺度的注意力模式高度相似，可跨尺度轉移）、**明顯的空間局部性**（高解析度尺度的注意力集中在局部空間帶狀區域）。基於這些發現，SparVAR 設計了兩個協同模組：**跨尺度自相似稀疏注意力（$CS^4A$）**通過高效索引映射動態預測後續尺度的稀疏注意力模式，**跨尺度局部稀疏注意力（CSLA）**實現了塊級稀疏核，前向計算速度比 FlashAttention 快 5 倍以上。SparVAR 無需任何重新訓練，即插即用，在 8B 模型上實現 **1.57× 加速**（相比 FlashAttention 基線），生成 1024×1024 圖像時間降至 **1 秒**，同時幾乎完全保留高頻細節（PSNR、SSIM、LPIPS 與基線接近），相比尺度跳過方法（FastVAR、SkipVAR）有本質優勢。
 
 ---
-**[HAM — 2026-06-13：HAM: A Training-Free Style Transfer via Heterogeneous Attention Modulation for Diffusion Models，異質注意力調變免訓練風格轉換，CLIP-T 0.223 SOTA，LPIPS 0.479 全面領先，CVPR 2026 Findings (Hangzhou Dianzi University & ICT CAS)](2026-06-13-HAM-Style-Transfer.md)**
+**[HAM — 2026-06-13：HAM: A Training-Free Style Transfer via Heterogeneous Attention Modulation for Diffusion Models，異質注意力調變免訓練風格轉換，CLIP-T 0.223 SOTA，LPIPS 0.479 全面領先，CVPR 2026 Findings (Hangzhou Dianzi University & ICT CAS)](papers/2026/2026-06/HAM/AI_Daily_HAM.md)**
 
 本文提出 **HAM (Heterogeneous Attention Modulation)**（杭州電子科技大學 & 中科院計算所），發表於 **CVPR 2026 Findings**。這是一種針對擴散模型的**免訓練（Training-Free）**風格轉換方法，透過三個協同模組解決「風格-內容平衡」的核心難題：**全局注意力調節（GAR）**在自注意力層以 AdaIN 統計對齊融合內容與風格特徵；**局部注意力移植（LAT）**在交叉注意力層移植風格的 Key/Value，並以加權融合保護內容 Query；**注入風格的噪聲初始化（SINI）**在初始時間步 $T$ 以 AdaIN 融合內容與風格初始噪聲。HAM 的關鍵洞見在於：自注意力偏向空間結構，交叉注意力偏向語義注入，兩者需要「異質」的差異化操作，而非統一的替換策略。在 MS-COCO + WikiArt 基準上，HAM 在 LPIPS（0.479）和 LPIPS-Gray（0.362）指標上大幅領先所有對手，CLIP-T（0.223）達到最佳，ArtFID（15.151）、DC（2.113）、CC（2.057）全面超越 StyleID、DiffArtist 等 SOTA，實現了「強風格遷移」與「精確內容保留」的雙贏。
 
