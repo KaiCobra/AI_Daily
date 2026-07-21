@@ -1,12 +1,13 @@
 # 論文索引(全庫)
 
-共 106 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 107 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-07
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| MrFlow: Multi-Resolution Flow Matching 訓練無關多解析度流匹配加速 | [2607.01642](https://arxiv.org/abs/2607.01642) | [MrFlow](papers/2026/2026-07/MrFlow/AI_Daily_MrFlow.md) |
 | SparVAR: 利用稀疏性實現視覺自迴歸模型的訓練無關加速 | [2602.04361](https://arxiv.org/abs/2602.04361) | [SparVAR](papers/2026/2026-07/SparVAR/AI_Daily_SparVAR.md) |
 | VPG - 視覺自迴歸模型的前綴引導方法 | [2605.30317](https://arxiv.org/abs/2605.30317) | [VPG](papers/2026/2026-07/VPG/AI_Daily_VPG.md) |
 

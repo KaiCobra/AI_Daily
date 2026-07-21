@@ -9,6 +9,12 @@
 ---
 
 ## 今日閱讀
+**[MrFlow — 2026-07-21：Multi-Resolution Flow Matching: Training-Free Diffusion Acceleration via Staged Sampling，訓練無關多解析度流匹配加速，10 倍端到端加速保持 1% 質量損失，FLUX.1-dev 和 Qwen-Image 上 SOTA，可與時間步蒸餾組合達 25 倍加速，北京航空航天大學 & 瑞士聯邦理工學院 (arXiv:2607.01642)](papers/2026/2026-07/MrFlow/AI_Daily_MrFlow.md)**
+
+本文提出 **MrFlow** (Multi-Resolution Flow Matching)，一種**訓練無關（Training-Free）**的多解析度加速策略，專門針對現代流匹配（Flow Matching）擴散模型的推理加速。MrFlow 通過精妙的四階段管道設計——低解析度快速生成全局結構、像素空間超解析度、低強度噪聲注入、高解析度單步精化——實現了 **10 倍端到端加速**，同時保持生成質量在 **1% 以內的損失**。核心創新包括：（1）在像素空間進行超解析度而非潛在空間，充分利用自然圖像先驗；（2）基於信噪比條件推導的低強度噪聲注入理論基礎；（3）利用流匹配框架特性實現單步高解析度精化。在 FLUX.1-dev 上 8.25 倍加速下 GenEval 保持 0.63（原生 0.66），在 Qwen-Image 上 10.3 倍加速下 GenEval 保持 0.86（原生 0.88）。MrFlow 可直接與時間步蒸餾方法組合，在 Qwen-Image 上達到 **25.1 倍加速**。這項工作完美符合用戶的研究興趣：訓練無關方法、Flow Matching 方向、Zero-Shot 應用。
+
+---
+
 **[VPG — 2026-07-20：VPG: Visual Prefix Guidance for Autoregressive Image and Video Generation，訓練無關推理時引導方法，前綴後驗支撐改進 VAR FID 0.36、InfinityStar VBench 0.49，NUS & HUST (arXiv:2605.30317)](papers/2026/2026-07/VPG/AI_Daily_VPG.md)**
 
 本文提出 **VPG (Visual Prefix Guidance)**（新加坡國立大學 & 華中科技大學），一種**訓練無關（Training-Free）**的推理時引導方法，用於改進視覺自迴歸模型的生成質量。VPG 從**前綴後驗支撐**的新視角解決自迴歸模型的暴露偏差問題。在訓練時，自迴歸模型採用教師強制策略，每個預測步驟基於真實前綴；但推理時必須基於自生成前綴，導致訓練-推理不匹配。VPG 的核心創新在於提出了一個新的引導軸：不是強化外部條件（如 CFG），而是確保下一步預測對已生成前綴提供強後驗支撐。通過配對預測對比（真實前綴 vs. 腐蝕前綴）和同尺度全嵌入替換，VPG 實現了簡潔而有效的前綴後驗目標。在 VAR 上 FID 平均降低 **0.36**（最高 0.63），在 Infinity 上改進文本對齐指標，在 InfinityStar 上 VBench 分數提升 **0.49**。VPG 完全免訓練、即插即用，與 CFG 沿不同軸工作，可組合使用。這項工作完美符合用戶的多個研究興趣方向：訓練無關方法、注意力調製、VAR 模型改進、零樣本應用。
