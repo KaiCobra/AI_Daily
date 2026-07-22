@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-07-21**
+**Last Updated: 2026-07-22**
 
 📚 **[完整論文索引(106 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[Mage-Flow — 2026-07-22：Mage-Flow: An Efficient Native-Resolution Foundation Model for Image Generation and Editing，緊湊 4B 規模生成堆棧，系統級共設計實現高效原生解析度圖像生成與編輯，輕量級 Tokenizer 減少編碼解碼成本 12-22 倍，堆棧級 CUDA 核心融合實現 2.5 倍訓練加速，1024² 解析度 0.59 秒生成，Microsoft (arXiv:2607.19064)](papers/2026/2026-07/Mage-Flow/AI_Daily_Mage_Flow.md)**
+
+本文提出 **Mage-Flow**（Microsoft Mage Team），一個精心設計的 4B 規模生成堆棧，針對高效文本到圖像生成和指令式圖像編輯進行了系統級優化。核心創新包括：（1）**Mage-VAE** 輕量級 Tokenizer，通過一步擴散式編碼解碼與錨點潛在正則化，在保持重建質量的同時將編碼和解碼成本分別降低 **12 倍**和 **22 倍**；（2）**原生解析度多模態擴散 Transformer（NR-MMDiT）**，採用原生解析度打包方案支持靈活的解析度和寬高比（512-2048 像素），通過變長序列打包和堆棧級 CUDA 核心融合實現 **2.5 倍**訓練加速；（3）**統一生成-編輯框架**，基於共享 Mage-VAE 潛在空間和 NR-MMDiT 骨幹，開發了完整的模型族系（Base、RL 對齊、Turbo 變體）。在 1024² 解析度下，Mage-Flow-Turbo 可在單個 A100 GPU 上 **0.59 秒**生成圖像，Mage-Flow-Edit-Turbo 可在 **1.02 秒**編輯圖像，峰值 GPU 內存僅 18-20 GB。該工作展示了系統級共設計如何在緊湊規模下實現與 6B-80B 大型系統相競爭的性能，對資源受限的研究和部署場景具有重要啟示。
+
+---
+
 **[MrFlow — 2026-07-21：Multi-Resolution Flow Matching: Training-Free Diffusion Acceleration via Staged Sampling，訓練無關多解析度流匹配加速，10 倍端到端加速保持 1% 質量損失，FLUX.1-dev 和 Qwen-Image 上 SOTA，可與時間步蒸餾組合達 25 倍加速，北京航空航天大學 & 瑞士聯邦理工學院 (arXiv:2607.01642)](papers/2026/2026-07/MrFlow/AI_Daily_MrFlow.md)**
 
 本文提出 **MrFlow** (Multi-Resolution Flow Matching)，一種**訓練無關（Training-Free）**的多解析度加速策略，專門針對現代流匹配（Flow Matching）擴散模型的推理加速。MrFlow 通過精妙的四階段管道設計——低解析度快速生成全局結構、像素空間超解析度、低強度噪聲注入、高解析度單步精化——實現了 **10 倍端到端加速**，同時保持生成質量在 **1% 以內的損失**。核心創新包括：（1）在像素空間進行超解析度而非潛在空間，充分利用自然圖像先驗；（2）基於信噪比條件推導的低強度噪聲注入理論基礎；（3）利用流匹配框架特性實現單步高解析度精化。在 FLUX.1-dev 上 8.25 倍加速下 GenEval 保持 0.63（原生 0.66），在 Qwen-Image 上 10.3 倍加速下 GenEval 保持 0.86（原生 0.88）。MrFlow 可直接與時間步蒸餾方法組合，在 Qwen-Image 上達到 **25.1 倍加速**。這項工作完美符合用戶的研究興趣：訓練無關方法、Flow Matching 方向、Zero-Shot 應用。
