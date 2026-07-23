@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-07-22**
+**Last Updated: 2026-07-23**
 
 📚 **[完整論文索引(106 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[Appearance Pointers — 2026-07-23：Appearance Pointers: Multimodal Region Control of Diffusion Transformers，首個模態無關的 DiT 區域控制介面，無需重新訓練基礎模型，單次去噪過程同步處理多個文本/圖像區域條件，Region Correspondence + Aggregation Transformer 將注意力複雜度從 O(T·(RN)²) 降至 O(R(N/k)²)，AppearancePointers-37K 資料集，Brown University & Adobe Research (arXiv:2607.19344)](papers/2026/2026-07/AppearancePointers/AI_Daily_AppearancePointers.md)**
+
+本文提出 **Appearance Pointers**（Brown University & Adobe Research），一種輕量級、**模態無關（Modality-Agnostic）**的 DiT 區域控制機制，**無需重新訓練基礎模型**即可實現精確的多模態區域感知圖像生成。核心創新在於引入「外觀指標（Appearance Pointers）」——一種緊湊的 Token 表示法，不直接攜帶外觀資訊，而是作為路由指令，告訴 DiT 在正確的空間位置尋找對應的文本或圖像特徵。框架由兩個輕量模組組成：**Region Correspondence Transformer（$\Phi_{RC}$）**負責將 Mask、圖像 Token 和文本 Token 三者對齊，產生針對 DiT 雙流（image stream / text stream）的語義特徵圖；**Region Aggregation Transformer（$\Phi_A$）**則透過 region-wise self-attention 將多區域特徵壓縮為單一畫布大小的指標 Token，將注意力計算複雜度從 $\mathcal{O}(T\cdot(RN_{\text{reg}})^2)$ 降至 $\mathcal{O}(R(N_{\text{reg}}/k)^2)$，且指標只需在整個推理流程前計算一次。在 AppearancePointers-37K 基準上，圖像條件區域生成達到 CLIP-I **93.29**、DINO-I **69.31**、CLIP-IQA **95.57**，全面超越 MS-Diffusion 和 DreamRenderer*；文本條件區域生成在 CLIP-I（90.40）、DINO-I（56.09）、CLIP-IQA（95.02）均為最佳。這是首個能在**單次去噪過程**中同時處理多個文本和圖像區域條件的統一框架，完美契合 attention modulation、training-free 控制與 DiT 可控生成等研究方向。
+
+---
+
 **[Mage-Flow — 2026-07-22：Mage-Flow: An Efficient Native-Resolution Foundation Model for Image Generation and Editing，緊湊 4B 規模生成堆棧，系統級共設計實現高效原生解析度圖像生成與編輯，輕量級 Tokenizer 減少編碼解碼成本 12-22 倍，堆棧級 CUDA 核心融合實現 2.5 倍訓練加速，1024² 解析度 0.59 秒生成，Microsoft (arXiv:2607.19064)](papers/2026/2026-07/Mage-Flow/AI_Daily_Mage_Flow.md)**
 
 本文提出 **Mage-Flow**（Microsoft Mage Team），一個精心設計的 4B 規模生成堆棧，針對高效文本到圖像生成和指令式圖像編輯進行了系統級優化。核心創新包括：（1）**Mage-VAE** 輕量級 Tokenizer，通過一步擴散式編碼解碼與錨點潛在正則化，在保持重建質量的同時將編碼和解碼成本分別降低 **12 倍**和 **22 倍**；（2）**原生解析度多模態擴散 Transformer（NR-MMDiT）**，採用原生解析度打包方案支持靈活的解析度和寬高比（512-2048 像素），通過變長序列打包和堆棧級 CUDA 核心融合實現 **2.5 倍**訓練加速；（3）**統一生成-編輯框架**，基於共享 Mage-VAE 潛在空間和 NR-MMDiT 骨幹，開發了完整的模型族系（Base、RL 對齊、Turbo 變體）。在 1024² 解析度下，Mage-Flow-Turbo 可在單個 A100 GPU 上 **0.59 秒**生成圖像，Mage-Flow-Edit-Turbo 可在 **1.02 秒**編輯圖像，峰值 GPU 內存僅 18-20 GB。該工作展示了系統級共設計如何在緊湊規模下實現與 6B-80B 大型系統相競爭的性能，對資源受限的研究和部署場景具有重要啟示。
