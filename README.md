@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-07-23**
+**Last Updated: 2026-07-24**
 
 📚 **[完整論文索引(106 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[SpheRoPE — 2026-07-24：SpheRoPE: Zero-Shot Optimization-Free 360° Panorama Generation with Spherical RoPE，首個完全免訓練且免優化的零樣本 360° 全景生成框架，Spherical RoPE 頻譜分離策略（低頻 3D 笛卡爾坐標 + 高頻諧波量化）直接修改推理時 RoPE 編碼，Semantic Distortion CFG 三向引導機制，FAED 25.40 超越所有微調基線，支援 FLUX.1/FLUX.2/LTX-Video 多主幹，Amazon Prime Video & Tel-Aviv University (arXiv:2606.32033)](papers/2026/2026-07/SpheRoPE/SpheRoPE.md)**
+
+本文提出 **SpheRoPE**（Amazon Prime Video、Tel-Aviv University、Hebrew University of Jerusalem），一個**完全免訓練 (Training-Free)** 且**免優化 (Optimization-Free)** 的零樣本 360° 全景圖像與視頻生成框架。核心創新在於 **Spherical RoPE**：通過頻譜分離策略，將 RoPE 通道分為低頻（使用 3D 笛卡爾坐標 $X(r,c) = (\cos\theta\cos\phi+1)R$，$Y(r,c) = (\cos\theta\sin\phi+1)R$ 編碼球面流形，滿足水平週期性 C1 和極點收斂性 C2）和高頻（諧波量化 $\hat{\omega}_i = \text{round}(k_i)\cdot\omega_{\text{fund}}$ 保留局部紋理一致性）兩部分，在推理時直接修改預訓練 DiT 的位置編碼。此外，**Semantic Distortion CFG** 引入三向引導機制 $\hat{\epsilon} = \epsilon_{\text{uncond}} + w_{\text{sem}}(\epsilon_{\text{cond}} - \epsilon_{\text{uncond}}) + \gamma(\epsilon_{\text{geo}} - \epsilon_{\text{cond}})$，利用幾何錨定提示詞放大 ERP 畸變先驗。在 ODI-SR 基準上，SpheRoPE (FLUX.2) 以 **FAED 25.40** 超越所有微調基線（PAR 34.79, SMGD 33.55），視頻生成在 LTX 2.3 上以 1.11 秒/幀的速度全面領先基於優化的方法（DynamicScaler 51.56 秒/幀），用戶偏好研究中 88.5%-95.2% 的評估者更偏好 SpheRoPE。這是首個能在不修改任何模型權重的情況下，通過純推理時 Attention/RoPE Modulation 實現球面拓撲約束的框架，完美契合 training-free、zero-shot、attention modulation 研究方向。
+
+---
+
 **[Appearance Pointers — 2026-07-23：Appearance Pointers: Multimodal Region Control of Diffusion Transformers，首個模態無關的 DiT 區域控制介面，無需重新訓練基礎模型，單次去噪過程同步處理多個文本/圖像區域條件，Region Correspondence + Aggregation Transformer 將注意力複雜度從 O(T·(RN)²) 降至 O(R(N/k)²)，AppearancePointers-37K 資料集，Brown University & Adobe Research (arXiv:2607.19344)](papers/2026/2026-07/AppearancePointers/AI_Daily_AppearancePointers.md)**
 
 本文提出 **Appearance Pointers**（Brown University & Adobe Research），一種輕量級、**模態無關（Modality-Agnostic）**的 DiT 區域控制機制，**無需重新訓練基礎模型**即可實現精確的多模態區域感知圖像生成。核心創新在於引入「外觀指標（Appearance Pointers）」——一種緊湊的 Token 表示法，不直接攜帶外觀資訊，而是作為路由指令，告訴 DiT 在正確的空間位置尋找對應的文本或圖像特徵。框架由兩個輕量模組組成：**Region Correspondence Transformer（$\Phi_{RC}$）**負責將 Mask、圖像 Token 和文本 Token 三者對齊，產生針對 DiT 雙流（image stream / text stream）的語義特徵圖；**Region Aggregation Transformer（$\Phi_A$）**則透過 region-wise self-attention 將多區域特徵壓縮為單一畫布大小的指標 Token，將注意力計算複雜度從 $\mathcal{O}(T\cdot(RN_{\text{reg}})^2)$ 降至 $\mathcal{O}(R(N_{\text{reg}}/k)^2)$，且指標只需在整個推理流程前計算一次。在 AppearancePointers-37K 基準上，圖像條件區域生成達到 CLIP-I **93.29**、DINO-I **69.31**、CLIP-IQA **95.57**，全面超越 MS-Diffusion 和 DreamRenderer*；文本條件區域生成在 CLIP-I（90.40）、DINO-I（56.09）、CLIP-IQA（95.02）均為最佳。這是首個能在**單次去噪過程**中同時處理多個文本和圖像區域條件的統一框架，完美契合 attention modulation、training-free 控制與 DiT 可控生成等研究方向。
