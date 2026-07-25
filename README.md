@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-07-24**
+**Last Updated: 2026-07-25**
 
 📚 **[完整論文索引(106 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[Energy-Based Transformers are Scalable Learners and Thinkers — 2026-07-25：Energy-Based Transformers (EBTs)，將生成轉化為無監督的能量最小化最佳化問題，賦予模型推理時的 System 2 Thinking 能力。在預訓練 Scaling Rate 領先 Transformer++ 達 35%，推理時增加思考步驟可提升語言模型 29% 性能，在 Image Denoising 上以 99% 更少前向傳遞超越 DiT，OOD 泛化能力隨思考時間線性增長，ICLR 2026 Oral (UVA, UIUC, Amazon GenAI, Stanford, Harvard)](papers/2026/2026-07/2026-07-25-Energy-Based-Transformers.md)**
+
+本文提出 **Energy-Based Transformers (EBTs)**（University of Virginia、UIUC、Amazon GenAI、Stanford University、Harvard University），發表於 **ICLR 2026 Oral**。這是一項具備顛覆性潛力的生成模型基礎架構研究，核心創新在於將預測問題重構為**能量最小化（Energy Minimization）**：模型不直接預測答案，而是學習一個能量函數 $E_\theta(x, \hat{y})$ 來評估候選預測與上下文的相容性。在推理時，模型透過反覆的梯度下降（$\hat{y}_{i+1} = \hat{y}_{i} - \alpha \nabla_{\hat{y}_{i}} E_\theta(x, \hat{y}_{i}) + \eta_i$）來尋找最低能量點。這種機制賦予了模型純粹無監督的 **System 2 Thinking** 能力，完全不需要外部獎勵模型或強化學習。實驗顯示，EBT 在資料、參數、FLOPs 等多個維度上的 Scaling Rate 比標準 Transformer++ 高出高達 **35%**；推理時思考更久可帶來 **29%** 的性能提升，且資料越 OOD（Out-of-Distribution），思考帶來的效益越大。在連續空間的影像去噪任務上，EBT 僅使用 **1%** 的前向傳遞次數就超越了 Diffusion Transformer (DiT)，展現了極強的跨模態通用性。這項工作完美契合 Energy-based transformer、zero-shot thinking 與 OOD 泛化等前沿方向。
+
+---
+
 **[SpheRoPE — 2026-07-24：SpheRoPE: Zero-Shot Optimization-Free 360° Panorama Generation with Spherical RoPE，首個完全免訓練且免優化的零樣本 360° 全景生成框架，Spherical RoPE 頻譜分離策略（低頻 3D 笛卡爾坐標 + 高頻諧波量化）直接修改推理時 RoPE 編碼，Semantic Distortion CFG 三向引導機制，FAED 25.40 超越所有微調基線，支援 FLUX.1/FLUX.2/LTX-Video 多主幹，Amazon Prime Video & Tel-Aviv University (arXiv:2606.32033)](papers/2026/2026-07/SpheRoPE/SpheRoPE.md)**
 
 本文提出 **SpheRoPE**（Amazon Prime Video、Tel-Aviv University、Hebrew University of Jerusalem），一個**完全免訓練 (Training-Free)** 且**免優化 (Optimization-Free)** 的零樣本 360° 全景圖像與視頻生成框架。核心創新在於 **Spherical RoPE**：通過頻譜分離策略，將 RoPE 通道分為低頻（使用 3D 笛卡爾坐標 $X(r,c) = (\cos\theta\cos\phi+1)R$，$Y(r,c) = (\cos\theta\sin\phi+1)R$ 編碼球面流形，滿足水平週期性 C1 和極點收斂性 C2）和高頻（諧波量化 $\hat{\omega}_i = \text{round}(k_i)\cdot\omega_{\text{fund}}$ 保留局部紋理一致性）兩部分，在推理時直接修改預訓練 DiT 的位置編碼。此外，**Semantic Distortion CFG** 引入三向引導機制 $\hat{\epsilon} = \epsilon_{\text{uncond}} + w_{\text{sem}}(\epsilon_{\text{cond}} - \epsilon_{\text{uncond}}) + \gamma(\epsilon_{\text{geo}} - \epsilon_{\text{cond}})$，利用幾何錨定提示詞放大 ERP 畸變先驗。在 ODI-SR 基準上，SpheRoPE (FLUX.2) 以 **FAED 25.40** 超越所有微調基線（PAR 34.79, SMGD 33.55），視頻生成在 LTX 2.3 上以 1.11 秒/幀的速度全面領先基於優化的方法（DynamicScaler 51.56 秒/幀），用戶偏好研究中 88.5%-95.2% 的評估者更偏好 SpheRoPE。這是首個能在不修改任何模型權重的情況下，通過純推理時 Attention/RoPE Modulation 實現球面拓撲約束的框架，完美契合 training-free、zero-shot、attention modulation 研究方向。
