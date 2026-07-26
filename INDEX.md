@@ -1,12 +1,13 @@
 # 論文索引(全庫)
 
-共 109 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 110 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-07
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| Awakening Diffusion Transformers: Eliciting Stronger Generation and Understanding via Massive Activation Modulation | [2607.02968](https://arxiv.org/abs/2607.02968) | [EMA](papers/2026/2026-07/2026-07-26-Awakening-Diffusion-Transformers.md) |
 | Energy-Based Transformers are Scalable Learners and Thinkers (ICLR 2026 Oral) | [2507.02092](https://arxiv.org/abs/2507.02092) | [EBT](papers/2026/2026-07/2026-07-25-Energy-Based-Transformers.md) |
 | SpheRoPE: Zero-Shot Optimization-Free 360° Panorama Generation with Spherical RoPE | [2606.32033](https://arxiv.org/abs/2606.32033) | [SpheRoPE](papers/2026/2026-07/SpheRoPE/SpheRoPE.md) |
 | MrFlow: Multi-Resolution Flow Matching 訓練無關多解析度流匹配加速 | [2607.01642](https://arxiv.org/abs/2607.01642) | [MrFlow](papers/2026/2026-07/MrFlow/AI_Daily_MrFlow.md) |

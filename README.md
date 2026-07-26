@@ -2,16 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-07-25**
+**Last Updated: 2026-07-26**
 
-📚 **[完整論文索引(106 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(110 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
-**[Energy-Based Transformers are Scalable Learners and Thinkers — 2026-07-25：Energy-Based Transformers (EBTs)，將生成轉化為無監督的能量最小化最佳化問題，賦予模型推理時的 System 2 Thinking 能力。在預訓練 Scaling Rate 領先 Transformer++ 達 35%，推理時增加思考步驟可提升語言模型 29% 性能，在 Image Denoising 上以 99% 更少前向傳遞超越 DiT，OOD 泛化能力隨思考時間線性增長，ICLR 2026 Oral (UVA, UIUC, Amazon GenAI, Stanford, Harvard)](papers/2026/2026-07/2026-07-25-Energy-Based-Transformers.md)**
+**[Awakening Diffusion Transformers — 2026-07-26：EMA (Eliciting Massive Activation)，首個系統性分析 DiT 內部 Massive Activations 的 Training-Free 框架，DG 以 MA 抑制建構反事實分支提升細節生成（SD3 FID 9.52→5.77），MREP 以 AdaLN 調製提取更具辨識度的視覺表徵（ADE20K mIoU 54.8→56.1），Partial-Forward 設計使推理延遲低於 CFG（SD3.5 latency 15.7s→10.6s），SJTU & HKU & CityU (arXiv:2607.02968)](papers/2026/2026-07/2026-07-26-Awakening-Diffusion-Transformers.md)**
 
-本文提出 **Energy-Based Transformers (EBTs)**（University of Virginia、UIUC、Amazon GenAI、Stanford University、Harvard University），發表於 **ICLR 2026 Oral**。這是一項具備顛覆性潛力的生成模型基礎架構研究，核心創新在於將預測問題重構為**能量最小化（Energy Minimization）**：模型不直接預測答案，而是學習一個能量函數 $E_\theta(x, \hat{y})$ 來評估候選預測與上下文的相容性。在推理時，模型透過反覆的梯度下降（$\hat{y}_{i+1} = \hat{y}_{i} - \alpha \nabla_{\hat{y}_{i}} E_\theta(x, \hat{y}_{i}) + \eta_i$）來尋找最低能量點。這種機制賦予了模型純粹無監督的 **System 2 Thinking** 能力，完全不需要外部獎勵模型或強化學習。實驗顯示，EBT 在資料、參數、FLOPs 等多個維度上的 Scaling Rate 比標準 Transformer++ 高出高達 **35%**；推理時思考更久可帶來 **29%** 的性能提升，且資料越 OOD（Out-of-Distribution），思考帶來的效益越大。在連續空間的影像去噪任務上，EBT 僅使用 **1%** 的前向傳遞次數就超越了 Diffusion Transformer (DiT)，展現了極強的跨模態通用性。這項工作完美契合 Energy-based transformer、zero-shot thinking 與 OOD 泛化等前沿方向。
+本文提出 **EMA（Eliciting Massive Activation）**（上海交通大學、香港大學、香港城市大學等），一個**完全免訓練（Training-Free）**的統一框架，透過對 DiT 內部「海量激活（Massive Activations, MAs）」的系統性機理分析，同時提升生成品質與視覺理解能力。研究發現 MAs 廣泛分佈於所有空間 Token，但高度集中在少數固定 Channel 維度，且與 AdaLN 的殘差縮放因子高度對齊，主要受去噪時間步調控。在生成端，**DG（Detail Guidance）**透過自適應抑制 MA 維度（$\hat{z}_{t,i}^k = \rho_t z_{t,i}^k$ for $i \in \mathcal{I}_{\mathrm{MA}}^k$）建構缺乏細節的反事實分支，並以其殘差作為細節引導方向，在 DiT-XL/2 上將 FID 從 9.52 大幅降至 **5.77**，IS 從 122.79 提升至 **179.26**；在理解端，**MREP** 利用預訓練 AdaLN 調製壓制 MA 方向主導性並保留空間響應圖，在 ADE20K 上將 mIoU 從 54.8 提升至 **56.1**，NYUv2 深度估計 RMSE 降至 **0.220**。此外，DG 的 Partial-Forward 設計使 SD3.5 推理延遲從 15.7s 降至 **10.6s**，效率優於 CFG。本文完美契合 training-free、activation modulation、zero-shot enhancement 與生成-理解統一等前沿研究方向。
 
 ---
 
