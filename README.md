@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-07-26**
+**Last Updated: 2026-07-27**
 
 📚 **[完整論文索引(110 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[dRAE — 2026-07-24：dRAE: Representation Autoencoder with Hyper-Spherical Codes，首個從幾何視角解決高維語義特徵量化崩潰的離散 Tokenizer，HSQ（Hyper-Spherical Quantization）以 Angular Routing 解耦語義方向與特徵大小，詞表擴展至 131,072 仍保持 100% Codebook 利用率，rFID 0.42 / PSNR 24.52 大幅超越 VQRAE，T2I 生成 GenEval 0.63 僅用 12M 數據，UCAS & Zhejiang University & Peking University & Ant Group (arXiv:2607.22148)](papers/2026/2026-07/2026-07-27-dRAE.md)**
+
+本文提出 **dRAE（discrete Representation Autoencoder）**（中科院大學、浙江大學、北京大學、螞蟻集團），一個解決高維視覺語義特徵離散化瓶頸的新型 Tokenizer。論文的核心洞見在於：現有 VQ 方法在高維 representation 空間出現 **Codebook Collapse** 的根本原因是 **Metric Mismatch**——視覺基礎模型（如 CLIP、DINO、JEPA）的語義主要編碼在特徵向量的**方向（Angle）**上，而傳統 VQ 依賴歐式距離，容易被 **Magnitude** 主導，導致 code 分配與語義無關。為此，論文提出 **HSQ（Hyper-Spherical Quantization）**，在 code 分配階段改用餘弦相似度 $I_i = argmax_j rac{Z_i cdot C_j}{|Z_i|_2|C_j|_2}$，Codebook Loss 改為球面目標 $mathcal{L}_{	ext{codebook}} = 1 - mathrm{sg}[Z/|Z|_2] cdot Z_q/|Z_q|_2$，但刻意保留 Euclidean Commitment Loss 以維持 Magnitude 資訊（對重建不可或缺）。這種「分配看角度，約束看距離」的混合設計，使 dRAE 在詞表擴展至 $131,072$ 時依然穩定增長，達到 **rFID 0.42**、**PSNR 24.52**，並在僅 12M 訓練數據下於 GenEval 達到 **0.63**。論文同時揭示了 JEPA/DINO 等模型特徵的 Thin-Shell 幾何結構，對後續 VAR、AR 生成、JEPA 世界模型設計均有深遠啟示。
+
+---
+
 **[Awakening Diffusion Transformers — 2026-07-26：EMA (Eliciting Massive Activation)，首個系統性分析 DiT 內部 Massive Activations 的 Training-Free 框架，DG 以 MA 抑制建構反事實分支提升細節生成（SD3 FID 9.52→5.77），MREP 以 AdaLN 調製提取更具辨識度的視覺表徵（ADE20K mIoU 54.8→56.1），Partial-Forward 設計使推理延遲低於 CFG（SD3.5 latency 15.7s→10.6s），SJTU & HKU & CityU (arXiv:2607.02968)](papers/2026/2026-07/2026-07-26-Awakening-Diffusion-Transformers.md)**
 
 本文提出 **EMA（Eliciting Massive Activation）**（上海交通大學、香港大學、香港城市大學等），一個**完全免訓練（Training-Free）**的統一框架，透過對 DiT 內部「海量激活（Massive Activations, MAs）」的系統性機理分析，同時提升生成品質與視覺理解能力。研究發現 MAs 廣泛分佈於所有空間 Token，但高度集中在少數固定 Channel 維度，且與 AdaLN 的殘差縮放因子高度對齊，主要受去噪時間步調控。在生成端，**DG（Detail Guidance）**透過自適應抑制 MA 維度（$\hat{z}_{t,i}^k = \rho_t z_{t,i}^k$ for $i \in \mathcal{I}_{\mathrm{MA}}^k$）建構缺乏細節的反事實分支，並以其殘差作為細節引導方向，在 DiT-XL/2 上將 FID 從 9.52 大幅降至 **5.77**，IS 從 122.79 提升至 **179.26**；在理解端，**MREP** 利用預訓練 AdaLN 調製壓制 MA 方向主導性並保留空間響應圖，在 ADE20K 上將 mIoU 從 54.8 提升至 **56.1**，NYUv2 深度估計 RMSE 降至 **0.220**。此外，DG 的 Partial-Forward 設計使 SD3.5 推理延遲從 15.7s 降至 **10.6s**，效率優於 CFG。本文完美契合 training-free、activation modulation、zero-shot enhancement 與生成-理解統一等前沿研究方向。
