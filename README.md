@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-07-27**
+**Last Updated: 2026-07-28**
 
-📚 **[完整論文索引(110 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(111 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[Text Template Tokens — 2026-07-28：Text Template Tokens Are Implicit Semantic Registers in Diffusion Transformers，首個針對 Chat-Templated T2I DiT 的因果可解釋性框架，揭示聊天模板結構化標記（如 `<|im_end|>`）作為主導 Attention Sinks 並隱式承載語義的雙重角色，透過跨軌跡頭移植（Head Transplantation）與層級因果遮罩（Causal Masking）證明「讀取 Prompt 的頭」在因果上是惰性的，語義流向為 $\mathcal{S}\rightarrow\mathcal{I}\rightarrow\mathcal{R}$，Training-Free Head Pruning 剪除 20% FLOPs 僅損失 1.4 分 GenEval，揭示 DiT 的 Early Commit / Middle Carry / Late Refine 三階段深度分工，Nanjing University & Alibaba Group (arXiv:2607.19139)](papers/2026/2026-07/TextTemplateTokens/AI_Daily_TextTemplateTokens.md)**
+
+本文提出一個針對現代 Chat-Templated Text-to-Image Diffusion Transformers 的**因果可解釋性框架**（南京大學、阿里巴巴 Qwen 團隊、浙江大學），揭示了一個違反直覺的核心發現：聊天模板中的結構化標記（Structural Tokens，如 `<|im_end|>`）雖然在 VLM 編碼器輸出中幾乎不攜帶 Prompt 語義，卻在 DiT 內部成為**主導的 Attention Sinks** 並作為**隱式語義暫存器（Implicit Semantic Registers）**。在 GenEval 基準上，這 5 個模板標記吸收了 76%-78% 的影像到文字注意力質量（$\bar{m}_{\mathcal{R}}=0.187$），每個結構標記吸收的注意力是語義標記的 6.4-6.9 倍。透過**漸進式頭部移植（Progressive Head Swap）**實驗，作者證明「最讀語義標記的頭」在因果上是惰性的——僅替換約 18% 的「幾乎不讀語義標記的頭」就能翻轉物體身份，揭示語義的隱式傳遞路徑為 $\mathcal{S}\rightarrow\mathcal{I}\rightarrow\mathcal{R}$。基於此，作者提出 **Training-Free Head Pruning** 規則：剪除 360/1440 個頭（20% attention FLOPs），GenEval 僅從 76.1 降至 74.7（損失 1.4 points），而隨機剪枝則災難性地降至 51.3%。此外，論文揭示了 DiT 的深度分工：Early Layers（L1-10）負責 Commit 物體身份，Middle Layers（L11-50）負責 Carry，Late Layers（L51-60）負責 Refine，與 LLM 的 Stages of Inference 高度吻合。本文對 Attention Modulation、Training-Free 加速、Zero-Shot 影像編輯以及 Register Token 設計均有深遠啟示。
+
+---
+
 **[dRAE — 2026-07-24：dRAE: Representation Autoencoder with Hyper-Spherical Codes，首個從幾何視角解決高維語義特徵量化崩潰的離散 Tokenizer，HSQ（Hyper-Spherical Quantization）以 Angular Routing 解耦語義方向與特徵大小，詞表擴展至 131,072 仍保持 100% Codebook 利用率，rFID 0.42 / PSNR 24.52 大幅超越 VQRAE，T2I 生成 GenEval 0.63 僅用 12M 數據，UCAS & Zhejiang University & Peking University & Ant Group (arXiv:2607.22148)](papers/2026/2026-07/2026-07-27-dRAE.md)**
 
 本文提出 **dRAE（discrete Representation Autoencoder）**（中科院大學、浙江大學、北京大學、螞蟻集團），一個解決高維視覺語義特徵離散化瓶頸的新型 Tokenizer。論文的核心洞見在於：現有 VQ 方法在高維 representation 空間出現 **Codebook Collapse** 的根本原因是 **Metric Mismatch**——視覺基礎模型（如 CLIP、DINO、JEPA）的語義主要編碼在特徵向量的**方向（Angle）**上，而傳統 VQ 依賴歐式距離，容易被 **Magnitude** 主導，導致 code 分配與語義無關。為此，論文提出 **HSQ（Hyper-Spherical Quantization）**，在 code 分配階段改用餘弦相似度 $I_i = argmax_j rac{Z_i cdot C_j}{|Z_i|_2|C_j|_2}$，Codebook Loss 改為球面目標 $mathcal{L}_{	ext{codebook}} = 1 - mathrm{sg}[Z/|Z|_2] cdot Z_q/|Z_q|_2$，但刻意保留 Euclidean Commitment Loss 以維持 Magnitude 資訊（對重建不可或缺）。這種「分配看角度，約束看距離」的混合設計，使 dRAE 在詞表擴展至 $131,072$ 時依然穩定增長，達到 **rFID 0.42**、**PSNR 24.52**，並在僅 12M 訓練數據下於 GenEval 達到 **0.63**。論文同時揭示了 JEPA/DINO 等模型特徵的 Thin-Shell 幾何結構，對後續 VAR、AR 生成、JEPA 世界模型設計均有深遠啟示。
