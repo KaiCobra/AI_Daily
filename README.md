@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-07-28**
+**Last Updated: 2026-07-29**
 
-📚 **[完整論文索引(111 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(112 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[Twins — 2026-07-29：Twins: Learn to Predict Unified Representations with Focal Loss，打破視覺 Tokenization「不可能的三角」，Channel-wise 拼接 ViT 語義特徵與 VAE 細節特徵構建統一連續表示空間，揭示 DiT 聯合建模的三重優化不平衡（頻率偏置/內在維度/條件依賴），Focal Regression 自適應加權 VAE 困難維度提升 gFID 最高 10.57，重建 PSNR 31.46 / rFID 0.11 SOTA，理解 GQA 64.93 / MME-S 1971.0，Tencent Hunyuan Team (ICML 2026, arXiv:2607.22531)](papers/2026/2026-07/Twins/AI_Daily_Twins.md)**
+
+本文提出 **Twins**（Tencent Hunyuan 團隊），發表於 **ICML 2026**。這是一個打破視覺 Tokenization「不可能的三角」的統一連續視覺表示框架。傳統連續表示方法在語義理解（ViT 特徵）與高保真生成（VAE 特徵）之間長期存在鴻溝，Twins 透過最簡潔的 **Channel-wise 拼接** $\mathbf{z} = [f_{vit}(I), f_{vae}(I)]$ 將兩者統一，且不增加 token 長度，不增加注意力的平方級計算成本。然而，作者發現在 Diffusion Transformer 聯合建模時出現嚴重的**優化不平衡**：模型偏好低頻、低內在維度、與條件高度對齊的 ViT 特徵，而難以學習高頻、高複雜度的 VAE 特徵。為此，論文將 Focal Loss 引入 Flow Matching，對誤差較大的 VAE 維度施加自適應加權 $w_i = |v_i - v_{\theta,i}|^{2\gamma}$，顯著改善優化平衡。實驗顯示，Twins 在重建（**PSNR 31.46 / rFID 0.11**）、理解（**GQA 64.93 / MME-S 1971.0**）與生成（**gFID 提升最高 10.57**）三個維度上全面超越前代統一表示方法，為下一代多模態基礎模型提供了一條優雅且高效的統一表示之路。
+
+---
+
 **[Text Template Tokens — 2026-07-28：Text Template Tokens Are Implicit Semantic Registers in Diffusion Transformers，首個針對 Chat-Templated T2I DiT 的因果可解釋性框架，揭示聊天模板結構化標記（如 `<|im_end|>`）作為主導 Attention Sinks 並隱式承載語義的雙重角色，透過跨軌跡頭移植（Head Transplantation）與層級因果遮罩（Causal Masking）證明「讀取 Prompt 的頭」在因果上是惰性的，語義流向為 $\mathcal{S}\rightarrow\mathcal{I}\rightarrow\mathcal{R}$，Training-Free Head Pruning 剪除 20% FLOPs 僅損失 1.4 分 GenEval，揭示 DiT 的 Early Commit / Middle Carry / Late Refine 三階段深度分工，Nanjing University & Alibaba Group (arXiv:2607.19139)](papers/2026/2026-07/TextTemplateTokens/AI_Daily_TextTemplateTokens.md)**
 
 本文提出一個針對現代 Chat-Templated Text-to-Image Diffusion Transformers 的**因果可解釋性框架**（南京大學、阿里巴巴 Qwen 團隊、浙江大學），揭示了一個違反直覺的核心發現：聊天模板中的結構化標記（Structural Tokens，如 `<|im_end|>`）雖然在 VLM 編碼器輸出中幾乎不攜帶 Prompt 語義，卻在 DiT 內部成為**主導的 Attention Sinks** 並作為**隱式語義暫存器（Implicit Semantic Registers）**。在 GenEval 基準上，這 5 個模板標記吸收了 76%-78% 的影像到文字注意力質量（$\bar{m}_{\mathcal{R}}=0.187$），每個結構標記吸收的注意力是語義標記的 6.4-6.9 倍。透過**漸進式頭部移植（Progressive Head Swap）**實驗，作者證明「最讀語義標記的頭」在因果上是惰性的——僅替換約 18% 的「幾乎不讀語義標記的頭」就能翻轉物體身份，揭示語義的隱式傳遞路徑為 $\mathcal{S}\rightarrow\mathcal{I}\rightarrow\mathcal{R}$。基於此，作者提出 **Training-Free Head Pruning** 規則：剪除 360/1440 個頭（20% attention FLOPs），GenEval 僅從 76.1 降至 74.7（損失 1.4 points），而隨機剪枝則災難性地降至 51.3%。此外，論文揭示了 DiT 的深度分工：Early Layers（L1-10）負責 Commit 物體身份，Middle Layers（L11-50）負責 Carry，Late Layers（L51-60）負責 Refine，與 LLM 的 Stages of Inference 高度吻合。本文對 Attention Modulation、Training-Free 加速、Zero-Shot 影像編輯以及 Register Token 設計均有深遠啟示。
