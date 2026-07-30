@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-07-29**
+**Last Updated: 2026-07-30**
 
 📚 **[完整論文索引(112 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[UniGen-AR — 2026-07-30：UniGen-AR: Unifying Visual Generation with Auto-Regressive Modeling，首個將 VAR（Visual Auto-Regressive）下一尺度預測擴展至完整統一視覺生成（UVG）的框架，MLLM（Qwen2.5-VL）+ VAR Decoder（Infinity）混合架構，Block-wise 因果遮罩統一參考 Token 與目標 Token 序列，支援超過 15 種任務（T2I、修復、感知、編輯），推理延遲最高降低 19×，NYUv2 深度 RMSE 0.245 / Rain100L PSNR 33.71，揭示 VQ-VAE Codebook 設計為 VAR 可擴展性關鍵，CMU & UIUC & Toyota Research Institute (arXiv:2607.24157)](papers/2026/2026-07/2026-07-30-UniGen-AR.md)**
+
+本文提出 **UniGen-AR**（CMU、UIUC、Toyota Research Institute），是首個將視覺自迴歸（VAR）下一尺度預測範式與多模態語言模型（MLLM）條件化相結合，並擴展到完整統一視覺生成（UVG）設定的框架。現有擴散模型雖在 UVG 中佔主導地位，但迭代採樣帶來的巨大推理延遲限制了實際部署。UniGen-AR 以 Qwen2.5-VL 作為靈活的多模態編碼器，搭配 Infinity 風格的 VAR 解碼器，透過 Block-wise 因果遮罩將參考 Token 序列 $r^{\text{ref}}_K$ 作為非預測性上下文前綴，統一了超過 15 種任務的訓練。MLLM 的文字嵌入透過交叉注意力調製 VAR 解碼過程，訓練目標為 $\mathcal{L}_{\text{VAR}} = \sum_{k=1}^{K} \sum_{i=1}^{n_k} \text{CE}(p_{\theta}(\cdot|r_{<k}), r_k^{(i)})$。實驗顯示，UniGen-AR 在感知與修復任務上顯著超越先前 AR-based UVG 系統（Rain100L PSNR **33.71**，NYUv2 RMSE **0.245**），推理延遲相比擴散模型降低最高 **19 倍**，消融研究揭示 VQ-VAE Codebook 大小與層次結構是 VAR 可擴展性的關鍵瓶頸。
+
+---
+
 **[Twins — 2026-07-29：Twins: Learn to Predict Unified Representations with Focal Loss，打破視覺 Tokenization「不可能的三角」，Channel-wise 拼接 ViT 語義特徵與 VAE 細節特徵構建統一連續表示空間，揭示 DiT 聯合建模的三重優化不平衡（頻率偏置/內在維度/條件依賴），Focal Regression 自適應加權 VAE 困難維度提升 gFID 最高 10.57，重建 PSNR 31.46 / rFID 0.11 SOTA，理解 GQA 64.93 / MME-S 1971.0，Tencent Hunyuan Team (ICML 2026, arXiv:2607.22531)](papers/2026/2026-07/Twins/AI_Daily_Twins.md)**
 
 本文提出 **Twins**（Tencent Hunyuan 團隊），發表於 **ICML 2026**。這是一個打破視覺 Tokenization「不可能的三角」的統一連續視覺表示框架。傳統連續表示方法在語義理解（ViT 特徵）與高保真生成（VAE 特徵）之間長期存在鴻溝，Twins 透過最簡潔的 **Channel-wise 拼接** $\mathbf{z} = [f_{vit}(I), f_{vae}(I)]$ 將兩者統一，且不增加 token 長度，不增加注意力的平方級計算成本。然而，作者發現在 Diffusion Transformer 聯合建模時出現嚴重的**優化不平衡**：模型偏好低頻、低內在維度、與條件高度對齊的 ViT 特徵，而難以學習高頻、高複雜度的 VAE 特徵。為此，論文將 Focal Loss 引入 Flow Matching，對誤差較大的 VAE 維度施加自適應加權 $w_i = |v_i - v_{\theta,i}|^{2\gamma}$，顯著改善優化平衡。實驗顯示，Twins 在重建（**PSNR 31.46 / rFID 0.11**）、理解（**GQA 64.93 / MME-S 1971.0**）與生成（**gFID 提升最高 10.57**）三個維度上全面超越前代統一表示方法，為下一代多模態基礎模型提供了一條優雅且高效的統一表示之路。
