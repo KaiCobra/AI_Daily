@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-07-30**
+**Last Updated: 2026-07-31**
 
-📚 **[完整論文索引(112 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(113 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[SANA-Video 2.0 — 2026-07-31：SANA-Video 2.0: Hybrid Linear Attention with Attention Residuals for Efficient Video Generation，NVIDIA 提出混合線性-Softmax 注意力（75% 線性 + 25% Softmax 錨點，3:1 比例）搭配 Block Attention Residuals (AttnRes) 的影片擴散模型，5B 模型在單張 H100 上生成 720p/5s 僅需 13.06 秒，速度是 Wan 2.2-A14B 的 120 倍，VBench Total 84.30 / Quality 85.61，DiT 前向速度比全 Softmax 快 3.2×，AttnRes 提升深層有效秩 ~12%，Sol-Engine 全端最佳化再加速 3.58×，NVIDIA (arXiv:2607.21553)](papers/2026/2026-07/2026-07-31-SANA-Video-2.0.md)**
+
+本文提出 **SANA-Video 2.0**（NVIDIA），一個在 5B 和 14B 參數規模下的混合注意力影片擴散模型。核心創新在於 **Hybrid Linear-Softmax Attention**：以 3:1 比例混合門控線性注意力（$O(N)$ 複雜度）與週期性 Softmax 錨點，在保持長序列擴展效率的同時恢復全秩 token 互動。**Block Attention Residuals (AttnRes)** 將每 8 層的完成特徵摘要跨深度路由至後續線性層，路由公式為 $h_l(x) = \sum_{v_i \in \mathcal{V}_l} \alpha^{(\tau)}_{i \to l}(x) v_i(x)$，有效提升深層有效秩約 12%。透過代理實驗確認 25% Softmax 為最佳品質-效率 Pareto 點，並從頭訓練（無需後線性化），搭配 Sol-Engine 全端最佳化（算子融合、快取、稀疏注意力），5B 模型在單張 H100 上生成 720p/5s 影片僅需 **13.06 秒**，是 Wan 2.2-A14B 的 **120 倍**，VBench Total **84.30**（品質分 **85.61**）與 14B 全 Softmax 模型相當，為消費級硬體上的高品質長影片生成提供了一條務實的技術路徑。
+
+---
+
 **[UniGen-AR — 2026-07-30：UniGen-AR: Unifying Visual Generation with Auto-Regressive Modeling，首個將 VAR（Visual Auto-Regressive）下一尺度預測擴展至完整統一視覺生成（UVG）的框架，MLLM（Qwen2.5-VL）+ VAR Decoder（Infinity）混合架構，Block-wise 因果遮罩統一參考 Token 與目標 Token 序列，支援超過 15 種任務（T2I、修復、感知、編輯），推理延遲最高降低 19×，NYUv2 深度 RMSE 0.245 / Rain100L PSNR 33.71，揭示 VQ-VAE Codebook 設計為 VAR 可擴展性關鍵，CMU & UIUC & Toyota Research Institute (arXiv:2607.24157)](papers/2026/2026-07/2026-07-30-UniGen-AR.md)**
 
 本文提出 **UniGen-AR**（CMU、UIUC、Toyota Research Institute），是首個將視覺自迴歸（VAR）下一尺度預測範式與多模態語言模型（MLLM）條件化相結合，並擴展到完整統一視覺生成（UVG）設定的框架。現有擴散模型雖在 UVG 中佔主導地位，但迭代採樣帶來的巨大推理延遲限制了實際部署。UniGen-AR 以 Qwen2.5-VL 作為靈活的多模態編碼器，搭配 Infinity 風格的 VAR 解碼器，透過 Block-wise 因果遮罩將參考 Token 序列 $r^{\text{ref}}_K$ 作為非預測性上下文前綴，統一了超過 15 種任務的訓練。MLLM 的文字嵌入透過交叉注意力調製 VAR 解碼過程，訓練目標為 $\mathcal{L}_{\text{VAR}} = \sum_{k=1}^{K} \sum_{i=1}^{n_k} \text{CE}(p_{\theta}(\cdot|r_{<k}), r_k^{(i)})$。實驗顯示，UniGen-AR 在感知與修復任務上顯著超越先前 AR-based UVG 系統（Rain100L PSNR **33.71**，NYUv2 RMSE **0.245**），推理延遲相比擴散模型降低最高 **19 倍**，消融研究揭示 VQ-VAE Codebook 大小與層次結構是 VAR 可擴展性的關鍵瓶頸。
