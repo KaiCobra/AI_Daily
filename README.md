@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-07-31**
+**Last Updated: 2026-08-01**
 
 📚 **[完整論文索引(113 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[FreqForcing — 2026-08-01：FreqForcing: Autoregressive Long Video Generation via Spectral Self-Anchoring，首個從頻域視角系統性解決自迴歸長影片誤差累積的 Training-Free 框架，Spectral Self-Anchoring (SSA) 以雙分支注意力（Local + Anchor）在 3D FFT 頻域融合低頻穩定性與高頻動態，Gaussian Low-pass Filter 頻率選擇性注入 $\lambda H_{\mathrm{lp}}(\hat{A}_{\mathrm{anc}}-\hat{A}_{\mathrm{loc}})$，將 Self-Forcing 從 5s 預訓練 Zero-Shot 外推至 2 分鐘（24× 外推），VBench-Long Dynamic Degree 59.58 / Overall Consistency 20.94 超越所有 Training-Free 方法，SJTU & Tencent HY Team (arXiv:2607.27110)](papers/2026/2026-08/FreqForcing/AI_Daily_FreqForcing.md)**
+
+本文提出 **FreqForcing**（上海交通大學、騰訊 HY 團隊），一個**完全免訓練（Training-Free）**的自迴歸長影片生成框架。論文的核心洞見在於：自迴歸影片生成的誤差累積，在頻域上表現為 DC 與低頻頻段的**頻譜能量漂移（Spectral Energy Drift）**，而非單純的時序退化。Attention Sink 雖能緩解此問題，但無法根本解決。為此，FreqForcing 提出 **Spectral Self-Anchoring (SSA)**：在推理時維護一個固定容量的 Anchor Cache（保存預訓練範圍內的高品質幀），並與標準滑動窗口注意力的輸出在頻域進行融合。融合公式為 $\hat{A}_{\mathrm{fused}} = \hat{A}_{\mathrm{loc}} + \lambda H_{\mathrm{lp}}(\hat{A}_{\mathrm{anc}} - \hat{A}_{\mathrm{loc}})$，其中時空高斯低通濾波器 $H_{\mathrm{lp}}$ 選擇性地從錨點注意力中提取低頻穩定成分注入局部注意力，同時保留高頻動態細節。在 VBench-Long 基準上，FreqForcing 在 60s 生成中 Dynamic Degree 達 **59.58**、Overall Consistency 達 **20.94**，在 120s 生成中同樣以 **58.97 / 20.98** 超越所有 Training-Free 方法（Infinity-RoPE、Deep Forcing），並能與需大量計算的 Training-based 方法（LongLive、Rolling Forcing）競爭。這種推理時頻域調製的思想對 JEPA 世界模型長期 Rollout 穩定化、Energy-based Transformer 的 Zero-Shot 控制等前沿方向均有深遠啟示。
+
+---
+
 **[SANA-Video 2.0 — 2026-07-31：SANA-Video 2.0: Hybrid Linear Attention with Attention Residuals for Efficient Video Generation，NVIDIA 提出混合線性-Softmax 注意力（75% 線性 + 25% Softmax 錨點，3:1 比例）搭配 Block Attention Residuals (AttnRes) 的影片擴散模型，5B 模型在單張 H100 上生成 720p/5s 僅需 13.06 秒，速度是 Wan 2.2-A14B 的 120 倍，VBench Total 84.30 / Quality 85.61，DiT 前向速度比全 Softmax 快 3.2×，AttnRes 提升深層有效秩 ~12%，Sol-Engine 全端最佳化再加速 3.58×，NVIDIA (arXiv:2607.21553)](papers/2026/2026-07/2026-07-31-SANA-Video-2.0.md)**
 
 本文提出 **SANA-Video 2.0**（NVIDIA），一個在 5B 和 14B 參數規模下的混合注意力影片擴散模型。核心創新在於 **Hybrid Linear-Softmax Attention**：以 3:1 比例混合門控線性注意力（$O(N)$ 複雜度）與週期性 Softmax 錨點，在保持長序列擴展效率的同時恢復全秩 token 互動。**Block Attention Residuals (AttnRes)** 將每 8 層的完成特徵摘要跨深度路由至後續線性層，路由公式為 $h_l(x) = \sum_{v_i \in \mathcal{V}_l} \alpha^{(\tau)}_{i \to l}(x) v_i(x)$，有效提升深層有效秩約 12%。透過代理實驗確認 25% Softmax 為最佳品質-效率 Pareto 點，並從頭訓練（無需後線性化），搭配 Sol-Engine 全端最佳化（算子融合、快取、稀疏注意力），5B 模型在單張 H100 上生成 720p/5s 影片僅需 **13.06 秒**，是 Wan 2.2-A14B 的 **120 倍**，VBench Total **84.30**（品質分 **85.61**）與 14B 全 Softmax 模型相當，為消費級硬體上的高品質長影片生成提供了一條務實的技術路徑。

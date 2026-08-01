@@ -1,7 +1,13 @@
 # 論文索引(全庫)
 
-共 113 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 114 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
+
+## 2026-08
+
+| 論文 | arXiv | 解析 |
+|---|---|---|
+| FreqForcing: Autoregressive Long Video Generation via Spectral Self-Anchoring | [2607.27110](https://arxiv.org/abs/2607.27110) | [FreqForcing](papers/2026/2026-08/FreqForcing/AI_Daily_FreqForcing.md) |
 
 ## 2026-07
 
