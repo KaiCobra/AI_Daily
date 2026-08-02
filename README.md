@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-01**
+**Last Updated: 2026-08-02**
 
 📚 **[完整論文索引(113 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[Chimera — 2026-08-02：Chimera: Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers，Adobe Research 提出混合視覺擴散主幹（KDA 線性注意力 + MLA 全域注意力 + 模態感知短卷積 + 稀疏 MoE），完全捨棄位置編碼（NoPE）實現 Zero-Shot 長度外推（5s→30s，FID 僅退化 6.5%），HeteroP 超參轉移首次為異質視覺擴散模型建立 Chinchilla Scaling Laws（圖像 $N_{opt}\propto C^{0.48-0.52}$，影片 $N_{opt}\propto C^{0.53-0.56}$），完整版 Chimera 計算效率達 Wan 2.1 的 7.3×，KDA/MLA 主幹支援 1.68× 更長序列且推理速度快 2.14×，GenEval 0.82 / DPG-Bench 85.12，Adobe Research (arXiv:2607.28611)](papers/2026/2026-08/Chimera/AI_Daily_Chimera.md)**
+
+Adobe Research 提出 **Chimera**，一個將混合視覺擴散主幹架構與系統化 Scaling Recipe 共同設計的新框架，專為「Token 密集型（token-extensive）」的高解析度圖像與長影片生成而生。核心架構由三個互補機制構成：**Kimi Delta Attention (KDA)** 以 $\mathcal{O}(N)$ 複雜度進行長上下文狀態追蹤，**Multi-head Latent Attention (MLA)** 週期性插入以恢復全域互動，以及**模態感知短卷積（mShortConv）**在 KDA 更新前捕捉局部時空上下文。這三者的組合使模型能以單一時間優先光柵掃描處理多模態 token，完全捨棄了傳統位置編碼（NoPE），換來了驚人的 Zero-Shot 長度外推能力——僅在 5 秒影片上訓練，直接生成 30 秒影片時 FID 僅退化 6.5%，遠優於 Wan 2.1（50.5%）和 HunyuanVideo-1.5（53.6%）。在 Scaling 方面，論文提出 **HeteroP** 超參轉移方法，根據每個模組的功能性 fan-in 獨立計算縮放比例，首次為視覺擴散模型建立了 Chinchilla-style 計算最佳化定律，揭示圖像預訓練的最佳資源分配近似均衡（$N_{opt}\propto C^{0.48-0.52}$），而影片預訓練在高算力下略偏向增大模型（$N_{opt}\propto C^{0.53-0.56}$）。在僅約 600 H100 Days 的訓練預算下，完整版 Chimera 達到 Wan 2.1 基線的 **7.3 倍計算效率**，GenEval **0.82**，DPG-Bench **85.12**，並能 Zero-Shot 直接生成 2K/4K 高解析度圖像，為資源受限下的高效視覺生成提供了一條系統性的設計與擴展路徑。
+
+---
+
 **[FreqForcing — 2026-08-01：FreqForcing: Autoregressive Long Video Generation via Spectral Self-Anchoring，首個從頻域視角系統性解決自迴歸長影片誤差累積的 Training-Free 框架，Spectral Self-Anchoring (SSA) 以雙分支注意力（Local + Anchor）在 3D FFT 頻域融合低頻穩定性與高頻動態，Gaussian Low-pass Filter 頻率選擇性注入 $\lambda H_{\mathrm{lp}}(\hat{A}_{\mathrm{anc}}-\hat{A}_{\mathrm{loc}})$，將 Self-Forcing 從 5s 預訓練 Zero-Shot 外推至 2 分鐘（24× 外推），VBench-Long Dynamic Degree 59.58 / Overall Consistency 20.94 超越所有 Training-Free 方法，SJTU & Tencent HY Team (arXiv:2607.27110)](papers/2026/2026-08/FreqForcing/AI_Daily_FreqForcing.md)**
 
 本文提出 **FreqForcing**（上海交通大學、騰訊 HY 團隊），一個**完全免訓練（Training-Free）**的自迴歸長影片生成框架。論文的核心洞見在於：自迴歸影片生成的誤差累積，在頻域上表現為 DC 與低頻頻段的**頻譜能量漂移（Spectral Energy Drift）**，而非單純的時序退化。Attention Sink 雖能緩解此問題，但無法根本解決。為此，FreqForcing 提出 **Spectral Self-Anchoring (SSA)**：在推理時維護一個固定容量的 Anchor Cache（保存預訓練範圍內的高品質幀），並與標準滑動窗口注意力的輸出在頻域進行融合。融合公式為 $\hat{A}_{\mathrm{fused}} = \hat{A}_{\mathrm{loc}} + \lambda H_{\mathrm{lp}}(\hat{A}_{\mathrm{anc}} - \hat{A}_{\mathrm{loc}})$，其中時空高斯低通濾波器 $H_{\mathrm{lp}}$ 選擇性地從錨點注意力中提取低頻穩定成分注入局部注意力，同時保留高頻動態細節。在 VBench-Long 基準上，FreqForcing 在 60s 生成中 Dynamic Degree 達 **59.58**、Overall Consistency 達 **20.94**，在 120s 生成中同樣以 **58.97 / 20.98** 超越所有 Training-Free 方法（Infinity-RoPE、Deep Forcing），並能與需大量計算的 Training-based 方法（LongLive、Rolling Forcing）競爭。這種推理時頻域調製的思想對 JEPA 世界模型長期 Rollout 穩定化、Energy-based Transformer 的 Zero-Shot 控制等前沿方向均有深遠啟示。
