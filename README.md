@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-02**
+**Last Updated: 2026-08-03**
 
-📚 **[完整論文索引(113 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(115 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[Explorative Modeling — 2026-08-03：Explorative Modeling: Unlocking a Third Pretraining Axis and End-to-End Generation，UIUC & Harvard 提出生成式建模的「第三個預訓練軸」——探索（Exploration），與參數和資料並列，分解訓練迴圈而非生成過程以实現端到端生成，Forward XM 最小化 $\min_{i\in\{1,\ldots,K\}}J(\hat{y}_{i},x)$，Reverse XM 最小化 $\min_{i\in\{1,\dots,K\}}J(\hat{y},x_{i})$，FLOP 效率提升 4.1× / 樣本效率提升 6.2× / 參數效率提升 47%，ImageNet 256×256 無引導 gFID **1.43**，探索增益隨規模成長（資料效益 7%→36%，模型效益 13%→23%），與 Energy-Based Transformers 及 JEPA 世界模型結合有深遠啟示 (arXiv:2607.27372)](papers/2026/2026-08/ExploratveModeling/AI_Daily_Explorative_Modeling.md)**
+
+本文提出 **Explorative Modeling (XM)**（UIUC & Harvard），一個顏覆性的新生成式建模範式。現有可擴展的生成模型（Diffusion、Autoregressive、Flow Matching）均透過分解「生成過程（Generation Procedure）」來處理多眾數分佈，這根本上阻礙了端到端訓練。XM 改為分解「訓練迴圈（Training Loop）」：在每個訓練步驟，模型探索 $K$ 個候選生成與資料的配對，只對最佳匹配進行反向傳播。這一設計使「生成式表達力（Generative Expressivity）」成為第三個可獨立擴展的訓練軸，與參數和資料並列。實驗表明，在最強 RAE 方案上加入探索，可將 FLOP 效率提升 **4.1×**、樣本效率提升 **6.2×**、參數效率提升 **47%**，在 ImageNet 256×256 無引導生成下達到近 SOTA 的 **gFID 1.43**。探索帶來的增益隨規模成長：資料效益從 7% 升至 36%，模型效益從 13% 升至 23%。作為獨立的端到端生成方案，Explorative Policy 匹配 Diffusion Policy 在 Robomimic 上的表現，但推理僅需 **1 次前向傳遞**（NFE: 1）而非 100 次。論文明確指出 XM 與 Energy-Based Transformers 結合、以及與 JEPA 世界模型配對是兩大未來方向，為近期關注這兩個方向的研究者提供了極具啟發性的新規訓練范式。
+
+---
+
 **[Chimera — 2026-08-02：Chimera: Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers，Adobe Research 提出混合視覺擴散主幹（KDA 線性注意力 + MLA 全域注意力 + 模態感知短卷積 + 稀疏 MoE），完全捨棄位置編碼（NoPE）實現 Zero-Shot 長度外推（5s→30s，FID 僅退化 6.5%），HeteroP 超參轉移首次為異質視覺擴散模型建立 Chinchilla Scaling Laws（圖像 $N_{opt}\propto C^{0.48-0.52}$，影片 $N_{opt}\propto C^{0.53-0.56}$），完整版 Chimera 計算效率達 Wan 2.1 的 7.3×，KDA/MLA 主幹支援 1.68× 更長序列且推理速度快 2.14×，GenEval 0.82 / DPG-Bench 85.12，Adobe Research (arXiv:2607.28611)](papers/2026/2026-08/Chimera/AI_Daily_Chimera.md)**
 
 Adobe Research 提出 **Chimera**，一個將混合視覺擴散主幹架構與系統化 Scaling Recipe 共同設計的新框架，專為「Token 密集型（token-extensive）」的高解析度圖像與長影片生成而生。核心架構由三個互補機制構成：**Kimi Delta Attention (KDA)** 以 $\mathcal{O}(N)$ 複雜度進行長上下文狀態追蹤，**Multi-head Latent Attention (MLA)** 週期性插入以恢復全域互動，以及**模態感知短卷積（mShortConv）**在 KDA 更新前捕捉局部時空上下文。這三者的組合使模型能以單一時間優先光柵掃描處理多模態 token，完全捨棄了傳統位置編碼（NoPE），換來了驚人的 Zero-Shot 長度外推能力——僅在 5 秒影片上訓練，直接生成 30 秒影片時 FID 僅退化 6.5%，遠優於 Wan 2.1（50.5%）和 HunyuanVideo-1.5（53.6%）。在 Scaling 方面，論文提出 **HeteroP** 超參轉移方法，根據每個模組的功能性 fan-in 獨立計算縮放比例，首次為視覺擴散模型建立了 Chinchilla-style 計算最佳化定律，揭示圖像預訓練的最佳資源分配近似均衡（$N_{opt}\propto C^{0.48-0.52}$），而影片預訓練在高算力下略偏向增大模型（$N_{opt}\propto C^{0.53-0.56}$）。在僅約 600 H100 Days 的訓練預算下，完整版 Chimera 達到 Wan 2.1 基線的 **7.3 倍計算效率**，GenEval **0.82**，DPG-Bench **85.12**，並能 Zero-Shot 直接生成 2K/4K 高解析度圖像，為資源受限下的高效視覺生成提供了一條系統性的設計與擴展路徑。
