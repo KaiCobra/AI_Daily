@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-03**
+**Last Updated: 2026-08-04**
 
 📚 **[完整論文索引(115 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[Signed Rectified Flow — 2026-08-04：Signed Rectified Flow: Negativity-Controlled Generation，將 Rectified Flow 推廣至帶符號測度 $\pi^{\mathtt{sign}}=(1+\alpha)\pi^+-\alpha\pi^-$，提供數學保證的負向排斥生成框架，State-Aware CFG 在 ImageNet 256×256 以 16 NFE 將 FID 從 2.38 降至 1.82，Data Repulsive Flow 反記憶化 FID 2.03 同時增大訓練集最近鄰距離，SD 3.5 裸露 ASR 從 15.19% 降至 6.33%，UT Austin (arXiv:2607.18516)](papers/2026/2026-08/SignedRF/AI_Daily_SignedRF.md)**
+
+本文提出 **Signed Rectified Flow (Signed RF)**（UT Austin，Qiang Liu 課題組），一個將 Rectified Flow 推廣至**帶符號測度（Signed Measure）**的生成框架。核心思想是定義帶符號目標 $\pi^{\mathtt{sign}}=(1+\alpha)\pi^+-\alpha\pi^-$，雖然帶符號測度不能直接採樣，但 Signed RF 構建了一個有效的 ODE 生成過程，能在數學上**保證**生成樣本集中在 $\pi^+$ 的正區域，同時完全排斥被 $\pi^-$ 主導的區域。理論分析揭示了三個關鍵概念：**可達區域（Reachable Region）**、**負區域（Negative Region）**和**幽靈區域（Ghost Region）**，帶電粒子類比提供了直觀的物理圖像。實踐上，Signed RF 作為 State-Aware CFG 在 ImageNet 256×256 以 16 NFE 將 FID 從 2.38 降至 **1.82**；作為 Data Repulsive Flow 在反記憶化測試中 FID 保持 **2.03**（基礎模型 2.07）同時顯著增大與訓練集的最近鄰距離；在 SD 3.5 安全生成中將對抗性提示詞的裸露 ASR 從 15.19% 降至 **6.33%**。這項工作完美融合了 Flow Matching 理論、Energy-based Model 的負向排斥思想，以及 Training-Free 推理期引導，對 Alignment、版權保護、Safe Generation 等方向均有深遠啟示。
+
+---
+
 **[Explorative Modeling — 2026-08-03：Explorative Modeling: Unlocking a Third Pretraining Axis and End-to-End Generation，UIUC & Harvard 提出生成式建模的「第三個預訓練軸」——探索（Exploration），與參數和資料並列，分解訓練迴圈而非生成過程以实現端到端生成，Forward XM 最小化 $\min_{i\in\{1,\ldots,K\}}J(\hat{y}_{i},x)$，Reverse XM 最小化 $\min_{i\in\{1,\dots,K\}}J(\hat{y},x_{i})$，FLOP 效率提升 4.1× / 樣本效率提升 6.2× / 參數效率提升 47%，ImageNet 256×256 無引導 gFID **1.43**，探索增益隨規模成長（資料效益 7%→36%，模型效益 13%→23%），與 Energy-Based Transformers 及 JEPA 世界模型結合有深遠啟示 (arXiv:2607.27372)](papers/2026/2026-08/ExploratveModeling/AI_Daily_Explorative_Modeling.md)**
 
 本文提出 **Explorative Modeling (XM)**（UIUC & Harvard），一個顏覆性的新生成式建模範式。現有可擴展的生成模型（Diffusion、Autoregressive、Flow Matching）均透過分解「生成過程（Generation Procedure）」來處理多眾數分佈，這根本上阻礙了端到端訓練。XM 改為分解「訓練迴圈（Training Loop）」：在每個訓練步驟，模型探索 $K$ 個候選生成與資料的配對，只對最佳匹配進行反向傳播。這一設計使「生成式表達力（Generative Expressivity）」成為第三個可獨立擴展的訓練軸，與參數和資料並列。實驗表明，在最強 RAE 方案上加入探索，可將 FLOP 效率提升 **4.1×**、樣本效率提升 **6.2×**、參數效率提升 **47%**，在 ImageNet 256×256 無引導生成下達到近 SOTA 的 **gFID 1.43**。探索帶來的增益隨規模成長：資料效益從 7% 升至 36%，模型效益從 13% 升至 23%。作為獨立的端到端生成方案，Explorative Policy 匹配 Diffusion Policy 在 Robomimic 上的表現，但推理僅需 **1 次前向傳遞**（NFE: 1）而非 100 次。論文明確指出 XM 與 Energy-Based Transformers 結合、以及與 JEPA 世界模型配對是兩大未來方向，為近期關注這兩個方向的研究者提供了極具啟發性的新規訓練范式。
