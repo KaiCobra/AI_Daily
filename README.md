@@ -2,13 +2,18 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-04**
+**Last Updated: 2026-08-05**
 
-📚 **[完整論文索引(115 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(116 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[SPARE — 2026-08-05：SPARE: Structural Parameter-Free Affinity Regularization for Flow Matching，提出針對 Flow Matching 與 DiT 的免參數結構性親和力正則化方法。透過計算中間層 Token 間的餘弦親和力，並將其與乾淨 VAE 潛在特徵的親和力分佈進行 KL 散度對齊（包含圖像內與跨圖像同位置特徵），在零額外參數與僅增 0.08 GB 內存下，ImageNet 256×256 SiT-XL/2 FID 達 13.86，全面超越 Dispersive Loss，並可與 REPA 疊加使用將 FID 進一步降至 1.90，證明了 VAE 潛在特徵本身即具備強大的幾何結構先驗 (arXiv:2608.01990)](papers/2026/2026-08/SPARE/AI_Daily_SPARE.md)**
+
+本文提出 **SPARE (Structural Parameter-Free Affinity Regularization)**，一種針對 Flow Matching 與 Diffusion Transformers (DiT) 的免參數（Parameter-Free）結構性親和力正則化方法。現有加速 DiT 訓練的表示正則化方法中，Target-based（如 REPA）需引入外部編碼器與投影頭，增加訓練成本；而 Target-free（如 Dispersive Loss）雖免參數但僅透過排斥批次內樣本來增加多樣性，忽略了資料的空間結構。SPARE 的核心洞見在於：**乾淨的資料潛在特徵（Clean Data Latent）本身就蘊含了豐富的空間與語義結構，且可透過 Token 間的「親和力（Affinity）」來表示**。SPARE 計算中間層 Token 的成對親和力，並與乾淨潛在特徵的親和力分佈進行對齊。更重要的是，SPARE 不僅對齊單張圖像內的親和力，還對齊跨圖像同位置（Cross-Image Same-Position）的親和力，打破了過去認為跨圖像特徵應盲目排斥的思維。實驗顯示，在 ImageNet 256×256 上，SPARE 在零額外參數下達到了所有免參數方法中的最佳 FID，且能與 REPA 完美結合，進一步提升生成品質，對未來設計更高效的 Training-Free 訓練框架極具啟發性。
+
+---
 **[Signed Rectified Flow — 2026-08-04：Signed Rectified Flow: Negativity-Controlled Generation，將 Rectified Flow 推廣至帶符號測度 $\pi^{\mathtt{sign}}=(1+\alpha)\pi^+-\alpha\pi^-$，提供數學保證的負向排斥生成框架，State-Aware CFG 在 ImageNet 256×256 以 16 NFE 將 FID 從 2.38 降至 1.82，Data Repulsive Flow 反記憶化 FID 2.03 同時增大訓練集最近鄰距離，SD 3.5 裸露 ASR 從 15.19% 降至 6.33%，UT Austin (arXiv:2607.18516)](papers/2026/2026-08/SignedRF/AI_Daily_SignedRF.md)**
 
 本文提出 **Signed Rectified Flow (Signed RF)**（UT Austin，Qiang Liu 課題組），一個將 Rectified Flow 推廣至**帶符號測度（Signed Measure）**的生成框架。核心思想是定義帶符號目標 $\pi^{\mathtt{sign}}=(1+\alpha)\pi^+-\alpha\pi^-$，雖然帶符號測度不能直接採樣，但 Signed RF 構建了一個有效的 ODE 生成過程，能在數學上**保證**生成樣本集中在 $\pi^+$ 的正區域，同時完全排斥被 $\pi^-$ 主導的區域。理論分析揭示了三個關鍵概念：**可達區域（Reachable Region）**、**負區域（Negative Region）**和**幽靈區域（Ghost Region）**，帶電粒子類比提供了直觀的物理圖像。實踐上，Signed RF 作為 State-Aware CFG 在 ImageNet 256×256 以 16 NFE 將 FID 從 2.38 降至 **1.82**；作為 Data Repulsive Flow 在反記憶化測試中 FID 保持 **2.03**（基礎模型 2.07）同時顯著增大與訓練集的最近鄰距離；在 SD 3.5 安全生成中將對抗性提示詞的裸露 ASR 從 15.19% 降至 **6.33%**。這項工作完美融合了 Flow Matching 理論、Energy-based Model 的負向排斥思想，以及 Training-Free 推理期引導，對 Alignment、版權保護、Safe Generation 等方向均有深遠啟示。

@@ -1,12 +1,13 @@
 # 論文索引(全庫)
 
-共 115 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 116 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-08
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| SPARE: Structural Parameter-Free Affinity Regularization for Flow Matching | [2608.01990](https://arxiv.org/abs/2608.01990) | [SPARE](papers/2026/2026-08/SPARE/AI_Daily_SPARE.md) |
 | Explorative Modeling: Unlocking a Third Pretraining Axis and End-to-End Generation | [2607.27372](https://arxiv.org/abs/2607.27372) | [ExploratveModeling](papers/2026/2026-08/ExploratveModeling/AI_Daily_Explorative_Modeling.md) |
 | Chimera: Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers | [2607.28611](https://arxiv.org/abs/2607.28611) | [Chimera](papers/2026/2026-08/Chimera/AI_Daily_Chimera.md) |
 | FreqForcing: Autoregressive Long Video Generation via Spectral Self-Anchoring | [2607.27110](https://arxiv.org/abs/2607.27110) | [FreqForcing](papers/2026/2026-08/FreqForcing/AI_Daily_FreqForcing.md) |
