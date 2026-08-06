@@ -2,13 +2,18 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-05**
+**Last Updated: 2026-08-06**
 
 📚 **[完整論文索引(116 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[Perceptual Anchoring (PTC) — 2026-08-06：Perceptual Anchoring: Prototype-Guided Text Calibration for Training-free Open-Vocabulary Semantic Segmentation，首次從文本端出發解決 Training-free OVSS 中的語義鴻溝問題，提出 PTC 模組透過「感知錨定」概念，以 Margin-based 可靠性評估從輸入圖像構建 Category-specific Visual Prototype，再以證據驅動的自適應校準將通用文本嵌入錨定至實例特定視覺外觀，無需任何訓練或外部模型，即插即用地在 8 個 benchmark、6 個 baseline 上全面提升 mIoU（NACLIP +2.2%、ProxyCLIP +1.9%、CorrCLIP +0.9%），對 Cross-Attention Modulation 與 Zero-Shot 圖像生成具有重要啟發意義，HUST & Hangzhou Dianzi University (arXiv:2608.03991)](papers/2026/2026-08/PTC/AI_Daily_PTC.md)**
+
+本文提出 **PTC（Prototype-Guided Text Calibration）**（華中科技大學、杭州電子科技大學），一個針對 Training-free 開放詞彙語義分割（OVSS）的即插即用文本校準模組。現有 training-free OVSS 方法大多聚焦於修補視覺特徵（如改進 CLIP 的自注意力機制或引入 SAM/DINO 等外部模型），卻普遍忽略了通用類別文本嵌入（Generic Text Embeddings）與輸入圖像中特定實例視覺外觀（Instance-specific Visual Representations）之間的**語義鴻溝**。PTC 從認知機器人學的「感知錨定（Perceptual Anchoring）」概念汲取靈感，在推理時動態地從輸入圖像中提取可靠的視覺證據，構建類別特定的視覺原型，再以證據驅動的自適應強度校準對應的文本嵌入。具體而言，PTC 以「得分邊距（Score Margin）」$\Delta_i = S_{i,\hat{c}_i} - \max_{c' \neq \hat{c}_i} S_{i,c'}$ 篩選可靠 token，以混合策略 $K_c = \min(N_c, \max(K_{\min}, \lfloor \rho N_c \rfloor))$ 決定證據數量，並以對數自適應校準強度 $\mu_c = \mu \cdot \min(1, \log(1+n_c^{\text{ev}})/\log(1+\lambda K_{\min}))$ 防止語義偏移。最終校準公式 $t_c^{\text{cal}} = (1-\mu_c)t_c + \mu_c V_c^{\text{proto}}$ 在保留通用語義的同時引入實例特定的視覺線索。實驗在 8 個 benchmark（VOC、Context、COCO、Cityscapes、ADE20K）、6 個代表性 baseline 上全面驗證，NACLIP 平均 mIoU 從 39.0% 提升至 41.2%（+2.2%），ProxyCLIP 從 42.3% 提升至 44.2%（+1.9%），即使已整合 SAM 的 CorrCLIP 也從 51.0% 提升至 51.9%（+0.9%）。這種「視覺證據反向調製文本條件」的思路，對 Diffusion Model 的 Cross-Attention Modulation 與 Zero-Shot 圖像生成/編輯方向具有重要啟發意義。
+
+---
 **[SPARE — 2026-08-05：SPARE: Structural Parameter-Free Affinity Regularization for Flow Matching，提出針對 Flow Matching 與 DiT 的免參數結構性親和力正則化方法。透過計算中間層 Token 間的餘弦親和力，並將其與乾淨 VAE 潛在特徵的親和力分佈進行 KL 散度對齊（包含圖像內與跨圖像同位置特徵），在零額外參數與僅增 0.08 GB 內存下，ImageNet 256×256 SiT-XL/2 FID 達 13.86，全面超越 Dispersive Loss，並可與 REPA 疊加使用將 FID 進一步降至 1.90，證明了 VAE 潛在特徵本身即具備強大的幾何結構先驗 (arXiv:2608.01990)](papers/2026/2026-08/SPARE/AI_Daily_SPARE.md)**
 
 本文提出 **SPARE (Structural Parameter-Free Affinity Regularization)**，一種針對 Flow Matching 與 Diffusion Transformers (DiT) 的免參數（Parameter-Free）結構性親和力正則化方法。現有加速 DiT 訓練的表示正則化方法中，Target-based（如 REPA）需引入外部編碼器與投影頭，增加訓練成本；而 Target-free（如 Dispersive Loss）雖免參數但僅透過排斥批次內樣本來增加多樣性，忽略了資料的空間結構。SPARE 的核心洞見在於：**乾淨的資料潛在特徵（Clean Data Latent）本身就蘊含了豐富的空間與語義結構，且可透過 Token 間的「親和力（Affinity）」來表示**。SPARE 計算中間層 Token 的成對親和力，並與乾淨潛在特徵的親和力分佈進行對齊。更重要的是，SPARE 不僅對齊單張圖像內的親和力，還對齊跨圖像同位置（Cross-Image Same-Position）的親和力，打破了過去認為跨圖像特徵應盲目排斥的思維。實驗顯示，在 ImageNet 256×256 上，SPARE 在零額外參數下達到了所有免參數方法中的最佳 FID，且能與 REPA 完美結合，進一步提升生成品質，對未來設計更高效的 Training-Free 訓練框架極具啟發性。
