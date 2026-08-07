@@ -2,13 +2,18 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-06**
+**Last Updated: 2026-08-07**
 
 📚 **[完整論文索引(116 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[RTD — 2026-08-07：Rectify Then Diffuse: Disentangling Concepts Before Denoising Trajectory Unfolds，將多概念生成失敗重新定義為「邊界條件問題」而非「軌跡控制問題」，提出 training-free 的 SOD（Soft-Overlap Disentanglement）以可微 soft IoU 量化初始 attention 的概念空間重疊，搭配 IGR（Isotropic Gradient Rectification）對初始 latent 做一次各向同性的 one-shot 修正，去噪後完全回到原始 sampler，AE-Bench O-O 子集 BLIP-VQA 0.7503（+45.8% vs CO3），推理開銷僅 +6.3%，比 CO3 快 2.3×，UESTC (arXiv:2608.03135)](papers/2026/2026-08/RTD/AI_Daily_RTD.md)**
+
+本文提出 **RTD（Rectify-then-Diffuse）**（電子科技大學），一個針對多概念文本到圖像生成的 training-free 框架。現有方法（Attend-and-Excite、CO3 等）均在去噪過程中反覆干預 attention 或修正 score，屬於「軌跡控制」策略。RTD 的核心洞見是：**生成失敗的根本原因在於去噪開始前，初始 latent 對各概念的空間分配（spatial allocation）就已重疊**——即「早期分配瓶頸（Early Allocation Bottleneck）」。RTD 在高噪聲 pilot timestep（$t_\text{pilot}=980$）做一次 diagnostic forward pass，提取每個概念的 cross-attention map $A^{(k)}$，以 max-min normalization 得 soft occupancy map $M^{(k)}$，再以 soft IoU 定義分離目標 $\mathcal{S}(x_T)=1-\frac{2}{K(K-1)}\sum_{i<j}\mathrm{O}_{ij}$（其中 $\mathrm{O}_{ij}=\langle M^{(i)},M^{(j)}\rangle/(\|M^{(i)}\|_1+\|M^{(j)}\|_1-\langle M^{(i)},M^{(j)}\rangle+\epsilon)$）。最後以 IGR 對初始 latent 做一次各向同性修正：$x_T'=x_T+\rho\|x_T\|_2\hat{g}$（$\hat{g}=g/\max(\|g\|_2,\epsilon)$），之後完全回到原始 sampler 不再干預。在 AE-Bench O-O 子集，RTD 達到 BLIP-VQA **0.7503**（+45.8% vs CO3）、ImageReward **1.2144**（+19.6% vs CO3），early overlap 最低（S-IoU₅ 0.2113），推理開銷僅增 6.3%，比 CO3 快 2.3×。這種「先診斷初始條件、一次性修正邊界、完全信任原始模型」的思路，對 attention modulation、training-free zero-shot 生成，以及 Energy-Based / JEPA 視角下的 latent space shaping 均有深刻啟發。
+
+---
 **[Perceptual Anchoring (PTC) — 2026-08-06：Perceptual Anchoring: Prototype-Guided Text Calibration for Training-free Open-Vocabulary Semantic Segmentation，首次從文本端出發解決 Training-free OVSS 中的語義鴻溝問題，提出 PTC 模組透過「感知錨定」概念，以 Margin-based 可靠性評估從輸入圖像構建 Category-specific Visual Prototype，再以證據驅動的自適應校準將通用文本嵌入錨定至實例特定視覺外觀，無需任何訓練或外部模型，即插即用地在 8 個 benchmark、6 個 baseline 上全面提升 mIoU（NACLIP +2.2%、ProxyCLIP +1.9%、CorrCLIP +0.9%），對 Cross-Attention Modulation 與 Zero-Shot 圖像生成具有重要啟發意義，HUST & Hangzhou Dianzi University (arXiv:2608.03991)](papers/2026/2026-08/PTC/AI_Daily_PTC.md)**
 
 本文提出 **PTC（Prototype-Guided Text Calibration）**（華中科技大學、杭州電子科技大學），一個針對 Training-free 開放詞彙語義分割（OVSS）的即插即用文本校準模組。現有 training-free OVSS 方法大多聚焦於修補視覺特徵（如改進 CLIP 的自注意力機制或引入 SAM/DINO 等外部模型），卻普遍忽略了通用類別文本嵌入（Generic Text Embeddings）與輸入圖像中特定實例視覺外觀（Instance-specific Visual Representations）之間的**語義鴻溝**。PTC 從認知機器人學的「感知錨定（Perceptual Anchoring）」概念汲取靈感，在推理時動態地從輸入圖像中提取可靠的視覺證據，構建類別特定的視覺原型，再以證據驅動的自適應強度校準對應的文本嵌入。具體而言，PTC 以「得分邊距（Score Margin）」$\Delta_i = S_{i,\hat{c}_i} - \max_{c' \neq \hat{c}_i} S_{i,c'}$ 篩選可靠 token，以混合策略 $K_c = \min(N_c, \max(K_{\min}, \lfloor \rho N_c \rfloor))$ 決定證據數量，並以對數自適應校準強度 $\mu_c = \mu \cdot \min(1, \log(1+n_c^{\text{ev}})/\log(1+\lambda K_{\min}))$ 防止語義偏移。最終校準公式 $t_c^{\text{cal}} = (1-\mu_c)t_c + \mu_c V_c^{\text{proto}}$ 在保留通用語義的同時引入實例特定的視覺線索。實驗在 8 個 benchmark（VOC、Context、COCO、Cityscapes、ADE20K）、6 個代表性 baseline 上全面驗證，NACLIP 平均 mIoU 從 39.0% 提升至 41.2%（+2.2%），ProxyCLIP 從 42.3% 提升至 44.2%（+1.9%），即使已整合 SAM 的 CorrCLIP 也從 51.0% 提升至 51.9%（+0.9%）。這種「視覺證據反向調製文本條件」的思路，對 Diffusion Model 的 Cross-Attention Modulation 與 Zero-Shot 圖像生成/編輯方向具有重要啟發意義。
