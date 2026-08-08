@@ -2,13 +2,18 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-07**
+**Last Updated: 2026-08-08**
 
 📚 **[完整論文索引(116 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[UDT — 2026-08-08：UDT: Reconciling U-Nets and Diffusion Transformers with Data-Adaptive Token Reduction，提出以 Training-Free 的 Token Merging（ToMe）取代傳統空間下採樣，在保持 Token 隱藏維度 $D$ 不變的前提下構建 U-Net 式 encoder-decoder 結構，解決 DiT 的 encoder-decoder 不平衡問題，XL 模型 40 epoch 達 FID 7.6（SiT 需 1400 epoch），CFG 下 FID 1.35（VA-VAE），完美相容 REPA 且可作為 T2I/MMDiT 的 Drop-in Backbone，University of Minnesota (arXiv:2608.01298)](papers/2026/2026-08/UDT/AI_Daily_UDT.md)**
+
+本文提出 **UDT（U-Net Diffusion Transformer）**（明尼蘇達大學），一個以 **Data-Adaptive Token Merging** 為核心的 Diffusion Transformer 架構創新。DiT 由等向性 Transformer 區塊組成，其去噪目標迫使深層網路聚焦於高頻細節重建，導致語義表徵品質在中後層達峰後急劇下降，形成「編碼器過長、解碼器過短」的不平衡。現有 U-Net DiTs（U-DiT、SiT↓/UREPA）雖引入多尺度結構，但依賴固定 $2\times2$ 空間網格下採樣，破壞了 Transformer 的全域 token 互動，且因 token 維度不匹配而難以與 REPA 直接結合。UDT 的核心設計原則是：**保持 token 隱藏維度 $D$ 不變，僅在 token 序列長度上做 data-adaptive 縮減**。具體而言，Encoder 階段利用 ToMe 的二分軟匹配（Bipartite Soft Matching）根據 key 相似度逐層合併語義相近 token：$\mathbf{x}_{1,2}^{\text{m}} = (s_1\mathbf{x}_1 + s_2\mathbf{x}_2)/(s_1+s_2)$；自注意力加入比例修正 $\text{softmax}(\mathbf{QK}^T/\sqrt{d}+\log\mathbf{s})$ 以修正合併偏差；Decoder 依據記錄的 merge indices 精確 unmerge，Skip Connection 補充高頻資訊。這種設計使 UDT 能優先壓縮背景等冗餘區域，保留細節豐富的 token，同時完美相容 Cross-Attention（T2I）與 REPA（無需維度轉換模組）。實驗顯示，UDT-XL/2 在 ImageNet 256×256 上無 CFG 僅需 **80 epochs** 達到 FID 7.7（SiT 需 1400 epochs，加速 ~20×），結合 REPA 後 **40 epochs** 達 FID 7.6（加速 ~40×）；使用 CFG 時以 SD-VAE 達 FID **1.38**（320 epochs），VA-VAE 達 FID **1.35**（500 epochs）。UDT 可作為 DiT、SiT、JiT、MMDiT 的 Drop-in Replacement，對 Training-Free 加速、Attention Modulation 及未來 JEPA/Energy-Based 世界模型的階層式 Token 設計均有深遠啟示。
+
+---
 **[RTD — 2026-08-07：Rectify Then Diffuse: Disentangling Concepts Before Denoising Trajectory Unfolds，將多概念生成失敗重新定義為「邊界條件問題」而非「軌跡控制問題」，提出 training-free 的 SOD（Soft-Overlap Disentanglement）以可微 soft IoU 量化初始 attention 的概念空間重疊，搭配 IGR（Isotropic Gradient Rectification）對初始 latent 做一次各向同性的 one-shot 修正，去噪後完全回到原始 sampler，AE-Bench O-O 子集 BLIP-VQA 0.7503（+45.8% vs CO3），推理開銷僅 +6.3%，比 CO3 快 2.3×，UESTC (arXiv:2608.03135)](papers/2026/2026-08/RTD/AI_Daily_RTD.md)**
 
 本文提出 **RTD（Rectify-then-Diffuse）**（電子科技大學），一個針對多概念文本到圖像生成的 training-free 框架。現有方法（Attend-and-Excite、CO3 等）均在去噪過程中反覆干預 attention 或修正 score，屬於「軌跡控制」策略。RTD 的核心洞見是：**生成失敗的根本原因在於去噪開始前，初始 latent 對各概念的空間分配（spatial allocation）就已重疊**——即「早期分配瓶頸（Early Allocation Bottleneck）」。RTD 在高噪聲 pilot timestep（$t_\text{pilot}=980$）做一次 diagnostic forward pass，提取每個概念的 cross-attention map $A^{(k)}$，以 max-min normalization 得 soft occupancy map $M^{(k)}$，再以 soft IoU 定義分離目標 $\mathcal{S}(x_T)=1-\frac{2}{K(K-1)}\sum_{i<j}\mathrm{O}_{ij}$（其中 $\mathrm{O}_{ij}=\langle M^{(i)},M^{(j)}\rangle/(\|M^{(i)}\|_1+\|M^{(j)}\|_1-\langle M^{(i)},M^{(j)}\rangle+\epsilon)$）。最後以 IGR 對初始 latent 做一次各向同性修正：$x_T'=x_T+\rho\|x_T\|_2\hat{g}$（$\hat{g}=g/\max(\|g\|_2,\epsilon)$），之後完全回到原始 sampler 不再干預。在 AE-Bench O-O 子集，RTD 達到 BLIP-VQA **0.7503**（+45.8% vs CO3）、ImageReward **1.2144**（+19.6% vs CO3），early overlap 最低（S-IoU₅ 0.2113），推理開銷僅增 6.3%，比 CO3 快 2.3×。這種「先診斷初始條件、一次性修正邊界、完全信任原始模型」的思路，對 attention modulation、training-free zero-shot 生成，以及 Energy-Based / JEPA 視角下的 latent space shaping 均有深刻啟發。
