@@ -2,13 +2,18 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-08**
+**Last Updated: 2026-08-09**
 
 📚 **[完整論文索引(116 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+**[EG-FM — 2026-08-09：Energy-Guided Flow Matching: 以熱核濾波動態頻譜端點取代固定端點，讓 Flow Matching 生成軌跡顯式遵循 coarse-to-fine 頻率演化，sample-adaptive heat-time scheduling 根據每張圖的頻譜能量自適應釋放高頻訊號，ImageNet 256×256 FID 1.45（4× 訓練加速），512×512 FID 1.58（僅 40 epoch 微調），GenEval 0.85 / DPG-Bench 83.9，即插即用無需修改 backbone，對 Energy-based、Training-Free 軌跡設計與 Zero-shot 生成均有深遠啟示 (CASIA & JD.com, arXiv:2608.05811)](papers/2026/2026-08/EG-FM/AI_Daily_EG-FM.md)**
+
+本文提出 **EG-FM（Energy-Guided Flow Matching）**（中科院自動化研究所 CASIA & 京東），一個從頻譜能量視角重新設計 Flow Matching 生成軌跡的創新框架。標準 Flow Matching 將噪聲插值到一個固定的乾淨圖像端點，頻譜演化完全交由模型隱式學習，增加了優化難度。EG-FM 的核心創新在於：引入一個由 heat-kernel 濾波器生成的**移動頻譜端點（Moving Spectral Endpoint）** $y_t(x) = \mathcal{F}^{-1}(R(h(x,t),\rho)*\hat{x})$，使生成過程顯式地從低頻流形（Low-Pass Manifold）逐步過渡到全頻流形（Full-Image Manifold）。高頻訊號的釋放速度由每張圖像的頻譜能量 $E(\rho)=\|\hat{x}(\rho)\|_2^2$ 決定，透過全域釋放時鐘 $q(t)$ 對齊不同樣本的恢復比例：$G_x(h(x,t))/\tilde{G}_x=q(t)$，確保紋理豐富的圖像更早釋放高頻訊號。由於端點移動，訓練目標速度包含端點運動項：$v_t = y_t(x)-\epsilon + t\partial_t y_t(x)$，整個框架無需修改 backbone 架構，以即插即用方式應用於 PixelDiT、DeCo、HyperDiT 等現有模型。實驗顯示，PixelDiT-XL + EG-FM 在 **200 epochs** 即達 FID **1.55**（原版需 800 epochs），600 epochs 進一步降至 **1.45**，實現近 **4× 訓練加速**；512×512 僅需 40 epoch 微調達 FID **1.58**；Text-to-Image 在 GenEval 達 **0.85**、DPG-Bench 達 **83.9**。這種「把 coarse-to-fine 從直覺變成可解析、可微、可對齊的 spectral schedule」的思路，對 Energy-based Transformer 的能量函數設計、Training-Free 推理期軌跡控制，以及 Zero-shot 複雜語義生成均有深刻啟發。
+
+---
 **[UDT — 2026-08-08：UDT: Reconciling U-Nets and Diffusion Transformers with Data-Adaptive Token Reduction，提出以 Training-Free 的 Token Merging（ToMe）取代傳統空間下採樣，在保持 Token 隱藏維度 $D$ 不變的前提下構建 U-Net 式 encoder-decoder 結構，解決 DiT 的 encoder-decoder 不平衡問題，XL 模型 40 epoch 達 FID 7.6（SiT 需 1400 epoch），CFG 下 FID 1.35（VA-VAE），完美相容 REPA 且可作為 T2I/MMDiT 的 Drop-in Backbone，University of Minnesota (arXiv:2608.01298)](papers/2026/2026-08/UDT/AI_Daily_UDT.md)**
 
 本文提出 **UDT（U-Net Diffusion Transformer）**（明尼蘇達大學），一個以 **Data-Adaptive Token Merging** 為核心的 Diffusion Transformer 架構創新。DiT 由等向性 Transformer 區塊組成，其去噪目標迫使深層網路聚焦於高頻細節重建，導致語義表徵品質在中後層達峰後急劇下降，形成「編碼器過長、解碼器過短」的不平衡。現有 U-Net DiTs（U-DiT、SiT↓/UREPA）雖引入多尺度結構，但依賴固定 $2\times2$ 空間網格下採樣，破壞了 Transformer 的全域 token 互動，且因 token 維度不匹配而難以與 REPA 直接結合。UDT 的核心設計原則是：**保持 token 隱藏維度 $D$ 不變，僅在 token 序列長度上做 data-adaptive 縮減**。具體而言，Encoder 階段利用 ToMe 的二分軟匹配（Bipartite Soft Matching）根據 key 相似度逐層合併語義相近 token：$\mathbf{x}_{1,2}^{\text{m}} = (s_1\mathbf{x}_1 + s_2\mathbf{x}_2)/(s_1+s_2)$；自注意力加入比例修正 $\text{softmax}(\mathbf{QK}^T/\sqrt{d}+\log\mathbf{s})$ 以修正合併偏差；Decoder 依據記錄的 merge indices 精確 unmerge，Skip Connection 補充高頻資訊。這種設計使 UDT 能優先壓縮背景等冗餘區域，保留細節豐富的 token，同時完美相容 Cross-Attention（T2I）與 REPA（無需維度轉換模組）。實驗顯示，UDT-XL/2 在 ImageNet 256×256 上無 CFG 僅需 **80 epochs** 達到 FID 7.7（SiT 需 1400 epochs，加速 ~20×），結合 REPA 後 **40 epochs** 達 FID 7.6（加速 ~40×）；使用 CFG 時以 SD-VAE 達 FID **1.38**（320 epochs），VA-VAE 達 FID **1.35**（500 epochs）。UDT 可作為 DiT、SiT、JiT、MMDiT 的 Drop-in Replacement，對 Training-Free 加速、Attention Modulation 及未來 JEPA/Energy-Based 世界模型的階層式 Token 設計均有深遠啟示。
