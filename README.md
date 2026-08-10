@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-09**
+**Last Updated: 2026-08-10**
 
 📚 **[完整論文索引(116 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[HRDiT — 2026-08-10：免訓練將現成DiT模型擴展至高解析度圖像生成 (ECCV 2026)](papers/2026/2026-08/HRDiT/AI_Daily_HRDiT.md)**
+本文提出 **HRDiT**，一個專為 Diffusion Transformer (DiT) 設計的免訓練（Training-Free）高解析度圖像生成框架。針對現成 DiT 模型（如 FLUX, Stable Diffusion 3）在高解析度下容易出現的「空間混亂」與「生成時間過長」兩大痛點，作者提出了兩個即插即用的模組：(1) **空間位置對齊 (SPA)**：透過 Bundle 和 Slide 操作重新調整位置編碼輸入，解決高解析度下位置信號表達能力不足的問題；(2) **自適應頭部注意力剪枝 (HAP)**：利用泰勒展開式在單次前向傳播中估算各注意力頭的最佳局部窗口大小，大幅削減冗餘計算。實驗證明，HRDiT 在 4K 甚至 8K 解析度下，不僅生成品質顯著超越現有方法，推理速度也提升了近一倍，為 DiT 的高解析度應用提供了極具價值的新思路。
+
+---
 **[EG-FM — 2026-08-09：Energy-Guided Flow Matching: 以熱核濾波動態頻譜端點取代固定端點，讓 Flow Matching 生成軌跡顯式遵循 coarse-to-fine 頻率演化，sample-adaptive heat-time scheduling 根據每張圖的頻譜能量自適應釋放高頻訊號，ImageNet 256×256 FID 1.45（4× 訓練加速），512×512 FID 1.58（僅 40 epoch 微調），GenEval 0.85 / DPG-Bench 83.9，即插即用無需修改 backbone，對 Energy-based、Training-Free 軌跡設計與 Zero-shot 生成均有深遠啟示 (CASIA & JD.com, arXiv:2608.05811)](papers/2026/2026-08/EG-FM/AI_Daily_EG-FM.md)**
 
 本文提出 **EG-FM（Energy-Guided Flow Matching）**（中科院自動化研究所 CASIA & 京東），一個從頻譜能量視角重新設計 Flow Matching 生成軌跡的創新框架。標準 Flow Matching 將噪聲插值到一個固定的乾淨圖像端點，頻譜演化完全交由模型隱式學習，增加了優化難度。EG-FM 的核心創新在於：引入一個由 heat-kernel 濾波器生成的**移動頻譜端點（Moving Spectral Endpoint）** $y_t(x) = \mathcal{F}^{-1}(R(h(x,t),\rho)*\hat{x})$，使生成過程顯式地從低頻流形（Low-Pass Manifold）逐步過渡到全頻流形（Full-Image Manifold）。高頻訊號的釋放速度由每張圖像的頻譜能量 $E(\rho)=\|\hat{x}(\rho)\|_2^2$ 決定，透過全域釋放時鐘 $q(t)$ 對齊不同樣本的恢復比例：$G_x(h(x,t))/\tilde{G}_x=q(t)$，確保紋理豐富的圖像更早釋放高頻訊號。由於端點移動，訓練目標速度包含端點運動項：$v_t = y_t(x)-\epsilon + t\partial_t y_t(x)$，整個框架無需修改 backbone 架構，以即插即用方式應用於 PixelDiT、DeCo、HyperDiT 等現有模型。實驗顯示，PixelDiT-XL + EG-FM 在 **200 epochs** 即達 FID **1.55**（原版需 800 epochs），600 epochs 進一步降至 **1.45**，實現近 **4× 訓練加速**；512×512 僅需 40 epoch 微調達 FID **1.58**；Text-to-Image 在 GenEval 達 **0.85**、DPG-Bench 達 **83.9**。這種「把 coarse-to-fine 從直覺變成可解析、可微、可對齊的 spectral schedule」的思路，對 Energy-based Transformer 的能量函數設計、Training-Free 推理期軌跡控制，以及 Zero-shot 複雜語義生成均有深刻啟發。
