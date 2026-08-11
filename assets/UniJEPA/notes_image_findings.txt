@@ -1,0 +1,41 @@
+UniJEPA 論文關鍵圖片與發現（來源：/home/ubuntu/AI_Daily/assets/UniJEPA/figures）
+
+1. figure_2_1.png
+- 顯示現有 JEPA 生態系割裂：image-only JEPA、video JEPA、action-conditioned JEPA 各自位於分離 latent spaces。
+- UniJEPA 的核心主張是把圖像、影片、行動條件預測統一到同一個 latent space。
+- 適合作為報告的動機圖。
+
+2. figure_6_2.png
+- 顯示詳細架構：shared encoder -> latent space -> shared predictor。
+- predictor 同時接收 photometric transform 或 action 作為 conditioning。
+- Gaussian regularizer 直接作用於 latent space，用來防止 collapse。
+- 適合作為方法總覽圖。
+
+3. figure_7_3.png
+- 顯示完整 workflow：
+  Step 1 Pretrain（photometric + temporal prediction）
+  Step 2 Post-train（action-conditioned predictor）
+  Step 3 Encode（current latent z0 與 goal latent）
+  Step 4 MPC Plan（最小化 latent distance to goal）
+- 適合作為 zero-shot planning 流程示意圖。
+
+4. figure_8_5.png
+- 收斂圖顯示 UniJEPA prediction loss 下降更快；accuracy 在較少 training steps 下提升到接近最終值。
+- 與 generative world models 對比時，UniJEPA 收斂更平滑、步數需求更少。
+
+5. figure_8_6.png
+- 效率-準確率散點圖：UniJEPA 位於 Pareto 優勢區。
+- 相對 training cost 約 0.25，accuracy/success 約 78.1，優於 DINO-WM 與 LeWM，在成本上遠低於 V-JEPA2 / DINOv2。
+- 關鍵訊息：統一 JEPA 在效率與性能間達成極佳平衡。
+
+推薦在 AI Daily 報告中嵌入：
+- 動機圖：figure_2_1.png
+- 方法圖：figure_6_2.png
+- 規劃流程圖：figure_7_3.png
+- 效率圖：figure_8_6.png
+
+不建議主用：
+- 收斂圖 figure_8_5.png 可作輔助說明，但優先級低於前四張。
+
+日期：2026-08-11
+主題：UniJEPA (arXiv:2608.07409)

@@ -1,12 +1,18 @@
 # 論文索引(全庫)
 
-共 116 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 117 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-08
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| UniJEPA: A Unified Joint-Embedding Predictive Architecture for Task-Agnostic Visual World Modeling (ICML 2026) | [2608.07409](https://arxiv.org/abs/2608.07409) | [UniJEPA](papers/2026/2026-08/UniJEPA/AI_Daily_UniJEPA.md) |
+| HRDiT: Training-Free High-Resolution Image Generation with Off-the-Shelf Diffusion Transformer Models (ECCV 2026) | [2608.07003](https://arxiv.org/abs/2608.07003) | [HRDiT](papers/2026/2026-08/HRDiT/AI_Daily_HRDiT.md) |
+| EG-FM: Energy-Guided Flow Matching | [2608.05811](https://arxiv.org/abs/2608.05811) | [EG-FM](papers/2026/2026-08/EG-FM/AI_Daily_EG-FM.md) |
+| UDT: Reconciling U-Nets and Diffusion Transformers with Data-Adaptive Token Reduction | [2608.01298](https://arxiv.org/abs/2608.01298) | [UDT](papers/2026/2026-08/UDT/AI_Daily_UDT.md) |
+| RTD: Rectify Then Diffuse | [2608.03135](https://arxiv.org/abs/2608.03135) | [RTD](papers/2026/2026-08/RTD/AI_Daily_RTD.md) |
+| PTC: Perceptual Anchoring: Prototype-Guided Text Calibration | [2608.03991](https://arxiv.org/abs/2608.03991) | [PTC](papers/2026/2026-08/PTC/AI_Daily_PTC.md) |
 | SPARE: Structural Parameter-Free Affinity Regularization for Flow Matching | [2608.01990](https://arxiv.org/abs/2608.01990) | [SPARE](papers/2026/2026-08/SPARE/AI_Daily_SPARE.md) |
 | Explorative Modeling: Unlocking a Third Pretraining Axis and End-to-End Generation | [2607.27372](https://arxiv.org/abs/2607.27372) | [ExploratveModeling](papers/2026/2026-08/ExploratveModeling/AI_Daily_Explorative_Modeling.md) |
 | Chimera: Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers | [2607.28611](https://arxiv.org/abs/2607.28611) | [Chimera](papers/2026/2026-08/Chimera/AI_Daily_Chimera.md) |
