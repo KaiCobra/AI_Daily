@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-11**
+**Last Updated: 2026-08-12**
 
-📚 **[完整論文索引(116 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(117 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[AdaLN-Zero — 2026-08-12：解開 DiT 條件化的初始化祕密，從零初始化到 Gaussian 初始化與 SE 式殘差門控 (IEEE TPAMI 2026)](papers/2026/2026-08/AdaLN-Zero/AI_Daily_AdaLN_Zero.md)**
+
+本文精選 **Unveiling the Secret of AdaLN-Zero in Diffusion Transformer**（北京大學、UC Berkeley、百度；IEEE TPAMI 2026 已接收）。論文以析因實驗拆解 DiT 的 adaLN-Zero：SE-like 通道調制、零初始化與漸進式更新。核心結論是「良好的初始化位置」比短暫更新順序更關鍵，並據此提出 **adaLN-Gaussian**：將條件調制權重由全零改為零均值高斯。ImageNet-1K 256×256 的 DiT-XL/2 在 400K steps 由 FID **20.02** 降至 **17.86**，800K 由 **14.73** 降至 **13.14**；結合 SE-like 結構後，參數由 **676M** 降至 **582M**，FID 仍降至 **18.76**。這項工作直接啟發 attention modulation、Energy-based Transformer、JEPA predictor 與 VAR 的條件殘差設計：先理解目標分佈，再選擇 gate 的初始化與調制方式。
+
+---
+
 - **[HRDiT — 2026-08-10：免訓練將現成DiT模型擴展至高解析度圖像生成 (ECCV 2026)](papers/2026/2026-08/HRDiT/AI_Daily_HRDiT.md)**
 本文提出 **HRDiT**，一個專為 Diffusion Transformer (DiT) 設計的免訓練（Training-Free）高解析度圖像生成框架。針對現成 DiT 模型（如 FLUX, Stable Diffusion 3）在高解析度下容易出現的「空間混亂」與「生成時間過長」兩大痛點，作者提出了兩個即插即用的模組：(1) **空間位置對齊 (SPA)**：透過 Bundle 和 Slide 操作重新調整位置編碼輸入，解決高解析度下位置信號表達能力不足的問題；(2) **自適應頭部注意力剪枝 (HAP)**：利用泰勒展開式在單次前向傳播中估算各注意力頭的最佳局部窗口大小，大幅削減冗餘計算。實驗證明，HRDiT 在 4K 甚至 8K 解析度下，不僅生成品質顯著超越現有方法，推理速度也提升了近一倍，為 DiT 的高解析度應用提供了極具價值的新思路。
 
