@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-12**
+**Last Updated: 2026-08-13**
 
-📚 **[完整論文索引(117 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(118 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[JoyAI-Video-Edit — 2026-08-13：以自迴歸擴散實現即時、開放式串流影片編輯；SA-DMD 以來源錨定蒸餾抵抗長期漂移，16B 模型單張 B200 達 720p 約 30 FPS (Joy Future Academy, JD; arXiv:2608.03974)](papers/2026/2026-08/JoyAI-Video-Edit/AI_Daily_JoyAI_Video_Edit.md)**
+
+本文精選 **JoyAI-Video-Edit**（Joy Future Academy, JD）的 16B 自迴歸擴散影片編輯系統。它以 chunk 內雙向、chunk 間因果的注意力與 bounded-history KV cache，在不讀取未來畫格、也不預設影片時長的條件下持續輸出編輯結果。核心的 **Source-Anchored Distribution Matching Distillation（SA-DMD）** 把文字遵從與當前來源影片保真度拆為兩條 CFG 軸，將 source-aware 指引蒸餾進兩步 student；再以 **Long-Horizon Autoregressive Distillation** 對長 rollout 做分段反傳，抑制自生成歷史帶來的漂移。LongV2VBench 一分鐘測試中，模型以 **3.30** overall 與 **30.19 FPS** 領先串流基線，對 attention modulation、JEPA latent critic、energy-based source anchoring 與低延遲 video editing 都具有直接啟發。
+
+---
+
 - **[AdaLN-Zero — 2026-08-12：解開 DiT 條件化的初始化祕密，從零初始化到 Gaussian 初始化與 SE 式殘差門控 (IEEE TPAMI 2026)](papers/2026/2026-08/AdaLN-Zero/AI_Daily_AdaLN_Zero.md)**
 
 本文精選 **Unveiling the Secret of AdaLN-Zero in Diffusion Transformer**（北京大學、UC Berkeley、百度；IEEE TPAMI 2026 已接收）。論文以析因實驗拆解 DiT 的 adaLN-Zero：SE-like 通道調制、零初始化與漸進式更新。核心結論是「良好的初始化位置」比短暫更新順序更關鍵，並據此提出 **adaLN-Gaussian**：將條件調制權重由全零改為零均值高斯。ImageNet-1K 256×256 的 DiT-XL/2 在 400K steps 由 FID **20.02** 降至 **17.86**，800K 由 **14.73** 降至 **13.14**；結合 SE-like 結構後，參數由 **676M** 降至 **582M**，FID 仍降至 **18.76**。這項工作直接啟發 attention modulation、Energy-based Transformer、JEPA predictor 與 VAR 的條件殘差設計：先理解目標分佈，再選擇 gate 的初始化與調制方式。
