@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-13**
+**Last Updated: 2026-08-14**
 
-📚 **[完整論文索引(118 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(133 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[V-RAE — 2026-08-14：以凍結視覺基礎模型表徵直接定義影片生成 latent；時間注意力池化保留語義、3D RoPE 解碼連續動態，V-JEPA 2.1 變體 K600 rFVD 2.13、gFVD 19.16，並提出以時間中點插值檢驗生成友善 latent 幾何的 tFVD（NUS & University of Oxford；arXiv:2608.13556）](papers/2026/2026-08/V-RAE/AI_Daily_V-RAE.md)**
+
+本文精選 **V-RAE**（National University of Singapore、University of Oxford），把 frozen DINOv3、SigLIP2、EUPE 與 V-JEPA 2.1 的視覺表徵，透過可學時間 attention pooling 壓縮為可生成的影片狀態，再以 3D RoPE Transformer 解碼。其核心洞見是：重建最優的 latent 不必最適合生成或世界模型 rollout。作者以 **tFVD** 對相鄰 latent 做中點插值，發現其與下游 gFVD 的相關性在 K600 為 **0.919**，顯著高於 rFVD 的 0.473；在固定 conditional DiT 與訓練預算的 Cityscapes 預測中，V-RAE 雖有較高 rFVD，卻將 gFID / gFVD 降至 **11.52 / 111.36**。這為 JEPA latent、Energy-based 平滑度、attention modulation 與影片 VAR 的長期 rollout 提出可實驗化的新問題。
+
+---
+
 - **[JoyAI-Video-Edit — 2026-08-13：以自迴歸擴散實現即時、開放式串流影片編輯；SA-DMD 以來源錨定蒸餾抵抗長期漂移，16B 模型單張 B200 達 720p 約 30 FPS (Joy Future Academy, JD; arXiv:2608.03974)](papers/2026/2026-08/JoyAI-Video-Edit/AI_Daily_JoyAI_Video_Edit.md)**
 
 本文精選 **JoyAI-Video-Edit**（Joy Future Academy, JD）的 16B 自迴歸擴散影片編輯系統。它以 chunk 內雙向、chunk 間因果的注意力與 bounded-history KV cache，在不讀取未來畫格、也不預設影片時長的條件下持續輸出編輯結果。核心的 **Source-Anchored Distribution Matching Distillation（SA-DMD）** 把文字遵從與當前來源影片保真度拆為兩條 CFG 軸，將 source-aware 指引蒸餾進兩步 student；再以 **Long-Horizon Autoregressive Distillation** 對長 rollout 做分段反傳，抑制自生成歷史帶來的漂移。LongV2VBench 一分鐘測試中，模型以 **3.30** overall 與 **30.19 FPS** 領先串流基線，對 attention modulation、JEPA latent critic、energy-based source anchoring 與低延遲 video editing 都具有直接啟發。
