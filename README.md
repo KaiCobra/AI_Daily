@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-14**
+**Last Updated: 2026-08-15**
 
-📚 **[完整論文索引(133 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(134 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[xLARD — 2026-08-15：Self-Corrected Image Generation with Explainable Latent Rewards；以可解釋 counting/color/position reward 訓練輕量 latent corrector，推理時單次 residual 修正，GenEval 0.81、DPG-Bench 86.45（CMU、SMU、William & Mary；CVPR 2026；arXiv:2603.24965）](papers/2026/2026-08/xLARD/AI_Daily_xLARD.md)**
+
+本文精選 **xLARD**，把多模態理解、可解釋 reward 與 latent residual 接成生成—理解閉環。它以 frozen generator 保留原有生成先驗，另訓練 Understanding-Guided Reinforcement Corrector 與 Latent Reward Projection，將數量、顏色、空間關係的 image-level 評估映射成可微的三維 latent reward；OmniGen2 上 GenEval 由 0.77 升至 **0.81**、DPG-Bench 由 83.48 升至 **86.45**，推理不增加 sampling 或 reward evaluation。這篇論文也提醒我們嚴格區分 frozen-backbone 與 training-free：xLARD 不是完全免訓練，而是將大型 backbone 的重訓改成小型、可解釋、可蒸餾的 controller，對 VAR scale-wise guidance、JEPA representation critic 與 Energy-based latent modulation 都提供直接接口。
+
+---
+
 - **[V-RAE — 2026-08-14：以凍結視覺基礎模型表徵直接定義影片生成 latent；時間注意力池化保留語義、3D RoPE 解碼連續動態，V-JEPA 2.1 變體 K600 rFVD 2.13、gFVD 19.16，並提出以時間中點插值檢驗生成友善 latent 幾何的 tFVD（NUS & University of Oxford；arXiv:2608.13556）](papers/2026/2026-08/V-RAE/AI_Daily_V-RAE.md)**
 
 本文精選 **V-RAE**（National University of Singapore、University of Oxford），把 frozen DINOv3、SigLIP2、EUPE 與 V-JEPA 2.1 的視覺表徵，透過可學時間 attention pooling 壓縮為可生成的影片狀態，再以 3D RoPE Transformer 解碼。其核心洞見是：重建最優的 latent 不必最適合生成或世界模型 rollout。作者以 **tFVD** 對相鄰 latent 做中點插值，發現其與下游 gFVD 的相關性在 K600 為 **0.919**，顯著高於 rFVD 的 0.473；在固定 conditional DiT 與訓練預算的 Cityscapes 預測中，V-RAE 雖有較高 rFVD，卻將 gFID / gFVD 降至 **11.52 / 111.36**。這為 JEPA latent、Energy-based 平滑度、attention modulation 與影片 VAR 的長期 rollout 提出可實驗化的新問題。

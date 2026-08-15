@@ -1,12 +1,13 @@
 # 論文索引(全庫)
 
-共 133 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 134 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-08
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| Self-Corrected Image Generation with Explainable Latent Rewards | [2603.24965](https://arxiv.org/abs/2603.24965) | [xLARD](papers/2026/2026-08/xLARD/AI_Daily_xLARD.md) |
 | V-RAE: Rethinking Video Latent Spaces for Generation | [2608.13556](https://arxiv.org/abs/2608.13556) | [V-RAE](papers/2026/2026-08/V-RAE/AI_Daily_V-RAE.md) |
 | JoyAI-Video-Edit: Real-Time Open-Ended Video Editing with Autoregressive Diffusion | [2608.03974](https://arxiv.org/abs/2608.03974) | [JoyAI-Video-Edit](papers/2026/2026-08/JoyAI-Video-Edit/AI_Daily_JoyAI_Video_Edit.md) |
 | Unveiling the Secret of AdaLN-Zero in Diffusion Transformer | [2608.09438](https://arxiv.org/abs/2608.09438) | [AdaLN-Zero](papers/2026/2026-08/AdaLN-Zero/AI_Daily_AdaLN_Zero.md) |
