@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-15**
+**Last Updated: 2026-08-16**
 
-📚 **[完整論文索引(134 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(135 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[Semantic Steering — 2026-08-16：在 MM-DiT 內部以單一語義向量實現 Training-Free Concept Erasure；從中間 block 的 text-branch paired prompts 建構 steering vector，注入連續 early+middle blocks，SDv3.5 celebrity GIPHY/LLaVA 0.020/0.002、FLUX.1 nudity NudeNet 0.023，並標示 Accepted to ACM MM 2026（中國科學院信息工程研究所；arXiv:2608.12829）](papers/2026/2026-08/Semantic-Steering/AI_Daily_Semantic_Steering.md)**
+
+本文精選 **Semantic Steering**，將 MM-DiT 的 concept erasure 從 prompt/latent guidance 推進到模型內部 representation geometry：在中間 block、intermediate timestep 以「目標概念—安全替代概念」paired prompts 的 text-token 差值建立單一向量，再於所有 denoising steps 注入 early+middle blocks。它不更新 frozen backbone，卻能同時處理 celebrity、art style、nudity，並在 FLUX.1 的四類 adversarial prompts 上將 NudeNet 降至 **0.057 / 0.014 / 0.016 / 0.013**。這篇工作對 **Energy-based semantic steering、JEPA predictive-latent safety critic、VAR scale-wise early commitment，以及 selective attention modulation** 都提供了可直接延伸的介面。
+
+---
+
 - **[xLARD — 2026-08-15：Self-Corrected Image Generation with Explainable Latent Rewards；以可解釋 counting/color/position reward 訓練輕量 latent corrector，推理時單次 residual 修正，GenEval 0.81、DPG-Bench 86.45（CMU、SMU、William & Mary；CVPR 2026；arXiv:2603.24965）](papers/2026/2026-08/xLARD/AI_Daily_xLARD.md)**
 
 本文精選 **xLARD**，把多模態理解、可解釋 reward 與 latent residual 接成生成—理解閉環。它以 frozen generator 保留原有生成先驗，另訓練 Understanding-Guided Reinforcement Corrector 與 Latent Reward Projection，將數量、顏色、空間關係的 image-level 評估映射成可微的三維 latent reward；OmniGen2 上 GenEval 由 0.77 升至 **0.81**、DPG-Bench 由 83.48 升至 **86.45**，推理不增加 sampling 或 reward evaluation。這篇論文也提醒我們嚴格區分 frozen-backbone 與 training-free：xLARD 不是完全免訓練，而是將大型 backbone 的重訓改成小型、可解釋、可蒸餾的 controller，對 VAR scale-wise guidance、JEPA representation critic 與 Energy-based latent modulation 都提供直接接口。
