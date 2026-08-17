@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-16**
+**Last Updated: 2026-08-17**
 
-📚 **[完整論文索引(135 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(136 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[EditMod — 2026-08-17：Model the Edit, Not the Image: Visual Autoregressive Editing from a Source-Centric Perspective；以 source token hierarchy 為編輯狀態，在 shared autoregressive context 下用 \(Q_t-Q_s\) 建立 scale-wise residual，training-free、inversion-free、mask-free，Infinity-2B 1K 編輯 1.57 秒，source-preservation CLIP-I 0.9120 / DINO 0.8641 / LPIPS 0.2212（最新 arXiv v2: 2608.09057）](papers/2026/2026-08/EditMod/AI_Daily_EditMod.md)**
+
+本文精選 **EditMod**，將 VAR 圖像編輯從「target generation 加 source constraint」改寫成「保留 source state，只建模 condition-induced change」。它在 coarse scales 直接 prefill source tokens，中間 scales 比較 source／target-conditioned predictions 並在 bitwise probability space 更新，最後於 fine scales 進行 target-conditioned refinement；不需訓練、反演、mask、attention control 或 per-image optimization，並對 Energy-based scale-wise editing、JEPA predictive critic 與 adaptive attention modulation 提供可直接延伸的研究接口。
+
+---
+
 - **[Semantic Steering — 2026-08-16：在 MM-DiT 內部以單一語義向量實現 Training-Free Concept Erasure；從中間 block 的 text-branch paired prompts 建構 steering vector，注入連續 early+middle blocks，SDv3.5 celebrity GIPHY/LLaVA 0.020/0.002、FLUX.1 nudity NudeNet 0.023，並標示 Accepted to ACM MM 2026（中國科學院信息工程研究所；arXiv:2608.12829）](papers/2026/2026-08/Semantic-Steering/AI_Daily_Semantic_Steering.md)**
 
 本文精選 **Semantic Steering**，將 MM-DiT 的 concept erasure 從 prompt/latent guidance 推進到模型內部 representation geometry：在中間 block、intermediate timestep 以「目標概念—安全替代概念」paired prompts 的 text-token 差值建立單一向量，再於所有 denoising steps 注入 early+middle blocks。它不更新 frozen backbone，卻能同時處理 celebrity、art style、nudity，並在 FLUX.1 的四類 adversarial prompts 上將 NudeNet 降至 **0.057 / 0.014 / 0.016 / 0.013**。這篇工作對 **Energy-based semantic steering、JEPA predictive-latent safety critic、VAR scale-wise early commitment，以及 selective attention modulation** 都提供了可直接延伸的介面。

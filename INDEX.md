@@ -1,12 +1,13 @@
 # 論文索引(全庫)
 
-共 135 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 136 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-08
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| Model the Edit, Not the Image: Visual Autoregressive Editing from a Source-Centric Perspective | [2608.09057](https://arxiv.org/abs/2608.09057) | [EditMod](papers/2026/2026-08/EditMod/AI_Daily_EditMod.md) |
 | Semantic Steering for Controllable Generation: Tuning-Free Concept Erasure in Multimodal Diffusion Transformers | [2608.12829](https://arxiv.org/abs/2608.12829) | [Semantic-Steering](papers/2026/2026-08/Semantic-Steering/AI_Daily_Semantic_Steering.md) |
 | Self-Corrected Image Generation with Explainable Latent Rewards | [2603.24965](https://arxiv.org/abs/2603.24965) | [xLARD](papers/2026/2026-08/xLARD/AI_Daily_xLARD.md) |
 | V-RAE: Rethinking Video Latent Spaces for Generation | [2608.13556](https://arxiv.org/abs/2608.13556) | [V-RAE](papers/2026/2026-08/V-RAE/AI_Daily_V-RAE.md) |
