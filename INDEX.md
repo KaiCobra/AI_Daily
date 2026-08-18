@@ -1,30 +1,31 @@
 # 論文索引(全庫)
 
-共 136 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 137 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-08
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
-| Model the Edit, Not the Image: Visual Autoregressive Editing from a Source-Centric Perspective | [2608.09057](https://arxiv.org/abs/2608.09057) | [EditMod](papers/2026/2026-08/EditMod/AI_Daily_EditMod.md) |
-| Semantic Steering for Controllable Generation: Tuning-Free Concept Erasure in Multimodal Diffusion Transformers | [2608.12829](https://arxiv.org/abs/2608.12829) | [Semantic-Steering](papers/2026/2026-08/Semantic-Steering/AI_Daily_Semantic_Steering.md) |
-| Self-Corrected Image Generation with Explainable Latent Rewards | [2603.24965](https://arxiv.org/abs/2603.24965) | [xLARD](papers/2026/2026-08/xLARD/AI_Daily_xLARD.md) |
-| V-RAE: Rethinking Video Latent Spaces for Generation | [2608.13556](https://arxiv.org/abs/2608.13556) | [V-RAE](papers/2026/2026-08/V-RAE/AI_Daily_V-RAE.md) |
-| JoyAI-Video-Edit: Real-Time Open-Ended Video Editing with Autoregressive Diffusion | [2608.03974](https://arxiv.org/abs/2608.03974) | [JoyAI-Video-Edit](papers/2026/2026-08/JoyAI-Video-Edit/AI_Daily_JoyAI_Video_Edit.md) |
 | Unveiling the Secret of AdaLN-Zero in Diffusion Transformer | [2608.09438](https://arxiv.org/abs/2608.09438) | [AdaLN-Zero](papers/2026/2026-08/AdaLN-Zero/AI_Daily_AdaLN_Zero.md) |
 | Chimera - Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers | [2607.28611](https://arxiv.org/abs/2607.28611) | [Chimera](papers/2026/2026-08/Chimera/AI_Daily_Chimera.md) |
 | [Energy-Guided Flow Matching: 動態頻譜端點重塑像素級圖像生成軌跡](https://arxiv.org/abs/2608.05811) | [2608.05811](https://arxiv.org/abs/2608.05811) | [EG-FM](papers/2026/2026-08/EG-FM/AI_Daily_EG-FM.md) |
+| ：EditMod——不要重建整張圖，而是在 VAR source state 上建模「編輯差分」 | [2608.09057](https://arxiv.org/abs/2608.09057) | [EditMod](papers/2026/2026-08/EditMod/AI_Daily_EditMod.md) |
 | Explorative Modeling: Unlocking a Third Pretraining Axis and End-to-End Generation | [2607.27372](https://arxiv.org/abs/2607.27372) | [ExploratveModeling](papers/2026/2026-08/ExploratveModeling/AI_Daily_Explorative_Modeling.md) |
 | FreqForcing: Autoregressive Long Video Generation via Spectral Self-Anchoring | [2607.27110](https://arxiv.org/abs/2607.27110) | [FreqForcing](papers/2026/2026-08/FreqForcing/AI_Daily_FreqForcing.md) |
 | HRDiT: Training-Free High-Resolution Image Generation with Off-the-Shelf Diffusion Tran... | [2608.07003](https://arxiv.org/abs/2608.07003) | [HRDiT](papers/2026/2026-08/HRDiT/AI_Daily_HRDiT.md) |
+| JoyAI-Video-Edit：以自迴歸擴散實現即時、開放式串流影片編輯 | [2608.03974](https://arxiv.org/abs/2608.03974) | [JoyAI-Video-Edit](papers/2026/2026-08/JoyAI-Video-Edit/AI_Daily_JoyAI_Video_Edit.md) |
 | 論文基本資訊 | [2608.03991](https://arxiv.org/abs/2608.03991) | [PTC](papers/2026/2026-08/PTC/AI_Daily_PTC.md) |
 | Rectify Then Diffuse: Disentangling Concepts Before Denoising Trajectory Unfolds | [2608.03135](https://arxiv.org/abs/2608.03135) | [RTD](papers/2026/2026-08/RTD/AI_Daily_RTD.md) |
 | RTD 研究筆記 | [2608.03135](https://arxiv.org/abs/2608.03135) | [RTD](papers/2026/2026-08/RTD/research_notes.md) |
 | 今日閱讀 | [2608.01990](https://arxiv.org/abs/2608.01990) | [SPARE](papers/2026/2026-08/SPARE/AI_Daily_SPARE.md) |
+| Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Gene... | [2510.13872](https://arxiv.org/abs/2510.13872) | [Scalable-EBM](papers/2026/2026-08/Scalable-EBM/AI_Daily_Scalable_EBM.md) |
+| ：Semantic Steering——在 MM-DiT 內部以單一語義向量實現 Training-Free Concept Erasure | [2608.12829](https://arxiv.org/abs/2608.12829) | [Semantic-Steering](papers/2026/2026-08/Semantic-Steering/AI_Daily_Semantic_Steering.md) |
 | Signed Rectified Flow - Negativity-Controlled Generation | [2607.18516](https://arxiv.org/abs/2607.18516) | [SignedRF](papers/2026/2026-08/SignedRF/AI_Daily_SignedRF.md) |
 | UDT - Reconciling U-Nets and Diffusion Transformers with Data-Adaptive Token Reduction | [2608.01298](https://arxiv.org/abs/2608.01298) | [UDT](papers/2026/2026-08/UDT/AI_Daily_UDT.md) |
 | UniJEPA: A Unified Joint-Embedding Predictive Architecture for Task-Agnostic Visual Wor... | [2608.07409](https://arxiv.org/abs/2608.07409) | [UniJEPA](papers/2026/2026-08/UniJEPA/AI_Daily_UniJEPA.md) |
+| V-RAE：以凍結視覺表徵重思影片生成的潛在空間 | [2608.13556](https://arxiv.org/abs/2608.13556) | [V-RAE](papers/2026/2026-08/V-RAE/AI_Daily_V-RAE.md) |
+| ：Self-Corrected Image Generation with Explainable Latent Rewards | [2603.24965](https://arxiv.org/abs/2603.24965) | [xLARD](papers/2026/2026-08/xLARD/AI_Daily_xLARD.md) |
 
 ## 2026-07
 

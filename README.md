@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-17**
+**Last Updated: 2026-08-18**
 
 📚 **[完整論文索引(136 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[Scalable Energy-Based Models — 2026-08-18：以 Dual Adversarial Training（DAT）將 JEM 的 SGLD negative phase 改為 PGD contrastive samples + BCE energy learning，並以 discriminative adversarial training 與 two-stage training 統一分類、robustness、生成與 counterfactual；ImageNet 256×256 的 DAT ConvNeXt-L 達 FID 3.29、robust accuracy 56.40%、198M 參數、36 steps，接近 VAR-d16 的 FID 3.30（MIT／ICLR 2026；arXiv:2510.13872）](papers/2026/2026-08/Scalable-EBM/AI_Daily_Scalable_EBM.md)**
+
+本文精選 **Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Generation**。論文提出 DAT，以 PGD 將 OOD／noise 影像推向低能量區，再用 BCE 學習 real-versus-contrastive energy；分類端同時使用 adversarial cross-entropy，兩者合成 JEM 的 joint objective。它在 ImageNet 256×256 上以 **FID 3.29** 接近 VAR-d16 的 3.30，且以約 36 個 PGD steps 取得比 ADM-G／LDM-4-G 少得多的採樣步數；但不應誤述為勝過所有 diffusion，因同表 DiT-XL/2-G 的 FID 為 2.27。這篇工作對 Energy-based Transformer 的能量地形、VAR 的 scale-wise energy guidance、JEPA 的 latent predictive energy，以及 training-free inference-time steering 都提供了清楚的研究接口。
+
+---
+
 - **[EditMod — 2026-08-17：Model the Edit, Not the Image: Visual Autoregressive Editing from a Source-Centric Perspective；以 source token hierarchy 為編輯狀態，在 shared autoregressive context 下用 \(Q_t-Q_s\) 建立 scale-wise residual，training-free、inversion-free、mask-free，Infinity-2B 1K 編輯 1.57 秒，source-preservation CLIP-I 0.9120 / DINO 0.8641 / LPIPS 0.2212（最新 arXiv v2: 2608.09057）](papers/2026/2026-08/EditMod/AI_Daily_EditMod.md)**
 
 本文精選 **EditMod**，將 VAR 圖像編輯從「target generation 加 source constraint」改寫成「保留 source state，只建模 condition-induced change」。它在 coarse scales 直接 prefill source tokens，中間 scales 比較 source／target-conditioned predictions 並在 bitwise probability space 更新，最後於 fine scales 進行 target-conditioned refinement；不需訓練、反演、mask、attention control 或 per-image optimization，並對 Energy-based scale-wise editing、JEPA predictive critic 與 adaptive attention modulation 提供可直接延伸的研究接口。
