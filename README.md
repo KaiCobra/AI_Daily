@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-18**
+**Last Updated: 2026-08-19**
 
-📚 **[完整論文索引(137 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(138 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[GATO-Vid — 2026-08-19：以 closed-form cross-attention score 與 RMSNorm-aware query injection，實現 training-free、gradient-free 的 spatially-grounded text-to-video；在 Wan2.2 的 Set 1/Set 2 將 IoU 提升至 0.363/0.324、CD 降至 0.059/0.121，額外 runtime 僅 0.4%，但 Dynamic Degree 與 Aesthetic Quality 下降，官方專案頁標示 ECCV 2026（Sorbonne Université、CNRS/ISIR、Obvious Research、Valeo.ai；arXiv:2608.13037）](papers/2026/2026-08/GATO-Vid/AI_Daily_GATO-Vid.md)**
+
+本文精選 **GATO-Vid**，把影片生成中的空間 grounding 從 inference-time backpropagation 重寫成 pre-softmax logit 空間的三項 surrogate score：框內提高目標詞、框內抑制非目標詞、框外抑制目標詞。作者由 prompt key 的幾何差異直接求得 $b^+$/$b^-$，再以 RMSNorm ellipsoid projection、Gaussian spatial modulation 與前期 block injection 保持控制穩定；Wan2.2 上定位大幅改善，但 DD/AQ 下降，清楚呈現「更準確的位置控制」與「影片自然度」的 trade-off。這篇工作對 **Energy-based steering、JEPA predictive latent、VAR scale-wise attention modulation 與 zero-shot visual control** 提供了可直接實驗的閉式控制原語。
+
+---
+
 - **[Scalable Energy-Based Models — 2026-08-18：以 Dual Adversarial Training（DAT）將 JEM 的 SGLD negative phase 改為 PGD contrastive samples + BCE energy learning，並以 discriminative adversarial training 與 two-stage training 統一分類、robustness、生成與 counterfactual；ImageNet 256×256 的 DAT ConvNeXt-L 達 FID 3.29、robust accuracy 56.40%、198M 參數、36 steps，接近 VAR-d16 的 FID 3.30（MIT／ICLR 2026；arXiv:2510.13872）](papers/2026/2026-08/Scalable-EBM/AI_Daily_Scalable_EBM.md)**
 
 本文精選 **Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Generation**。論文提出 DAT，以 PGD 將 OOD／noise 影像推向低能量區，再用 BCE 學習 real-versus-contrastive energy；分類端同時使用 adversarial cross-entropy，兩者合成 JEM 的 joint objective。它在 ImageNet 256×256 上以 **FID 3.29** 接近 VAR-d16 的 3.30，且以約 36 個 PGD steps 取得比 ADM-G／LDM-4-G 少得多的採樣步數；但不應誤述為勝過所有 diffusion，因同表 DiT-XL/2-G 的 FID 為 2.27。這篇工作對 Energy-based Transformer 的能量地形、VAR 的 scale-wise energy guidance、JEPA 的 latent predictive energy，以及 training-free inference-time steering 都提供了清楚的研究接口。
