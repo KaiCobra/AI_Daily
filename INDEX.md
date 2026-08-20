@@ -1,12 +1,13 @@
 # 論文索引(全庫)
 
-共 138 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 139 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-08
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| Partition the Support, Reconstruct the Residual: Training-Free Sparse Attention for Video Generation and World Models | [2608.18484](https://arxiv.org/abs/2608.18484) | [SparsePR](papers/2026/2026-08/SparsePR/AI_Daily_SparsePR.md) |
 | Spatially-Grounded Text-to-Video Generation via Inference-Time Gradient-Free Optimization | [2608.13037](https://arxiv.org/abs/2608.13037) | [GATO-Vid](papers/2026/2026-08/GATO-Vid/AI_Daily_GATO-Vid.md) |
 | Unveiling the Secret of AdaLN-Zero in Diffusion Transformer | [2608.09438](https://arxiv.org/abs/2608.09438) | [AdaLN-Zero](papers/2026/2026-08/AdaLN-Zero/AI_Daily_AdaLN_Zero.md) |
 | Chimera - Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers | [2607.28611](https://arxiv.org/abs/2607.28611) | [Chimera](papers/2026/2026-08/Chimera/AI_Daily_Chimera.md) |

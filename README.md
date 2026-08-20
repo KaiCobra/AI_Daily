@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-19**
+**Last Updated: 2026-08-20**
 
-📚 **[完整論文索引(138 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(139 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[SparsePR — 2026-08-20：Partition the Support, Reconstruct the Residual，將 training-free block-sparse attention 拆成 Response-Coupled Partitioning 與 Probe-Fitted Residual Reconstruction；在 HunyuanVideo、Wan2.2、Cosmos-Predict2.5、Cosmos3-Nano 以 21.92%–25.96% executed-pair density 保持生成品質，端到端加速 1.48×–2.61×，Texas A&M University（arXiv:2608.18484）](papers/2026/2026-08/SparsePR/AI_Daily_SparsePR.md)**
+
+本文精選 **SparsePR**，指出 per-query attention concentration 不等於可執行的 shared-route sparsity：Wan2.2 在 90% attention mass 下單列 median support 為 6.2%，八個 query 共用 route 後擴張至 22.9%。論文以 sampled-query response geometry 建立 paired K/V 與 query groups，再用少量 exact probe rows 擬合 sparse output 到 post-softmax residual 的 affine correction；Wan2.2 latency 由 1650 秒降至 917 秒，probe repair 僅佔 1.1%。這個把 residual risk、attention route 與 online calibration 接在一起的視角，對 Energy-based Transformer、JEPA predictive latent、VAR scale-wise routing 與 zero-shot attention modulation 都提供了直接研究接口。
+
+---
+
 - **[GATO-Vid — 2026-08-19：以 closed-form cross-attention score 與 RMSNorm-aware query injection，實現 training-free、gradient-free 的 spatially-grounded text-to-video；在 Wan2.2 的 Set 1/Set 2 將 IoU 提升至 0.363/0.324、CD 降至 0.059/0.121，額外 runtime 僅 0.4%，但 Dynamic Degree 與 Aesthetic Quality 下降，官方專案頁標示 ECCV 2026（Sorbonne Université、CNRS/ISIR、Obvious Research、Valeo.ai；arXiv:2608.13037）](papers/2026/2026-08/GATO-Vid/AI_Daily_GATO-Vid.md)**
 
 本文精選 **GATO-Vid**，把影片生成中的空間 grounding 從 inference-time backpropagation 重寫成 pre-softmax logit 空間的三項 surrogate score：框內提高目標詞、框內抑制非目標詞、框外抑制目標詞。作者由 prompt key 的幾何差異直接求得 $b^+$/$b^-$，再以 RMSNorm ellipsoid projection、Gaussian spatial modulation 與前期 block injection 保持控制穩定；Wan2.2 上定位大幅改善，但 DD/AQ 下降，清楚呈現「更準確的位置控制」與「影片自然度」的 trade-off。這篇工作對 **Energy-based steering、JEPA predictive latent、VAR scale-wise attention modulation 與 zero-shot visual control** 提供了可直接實驗的閉式控制原語。
