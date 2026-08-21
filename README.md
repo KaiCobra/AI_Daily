@@ -2,13 +2,20 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-20**
+**Last Updated: 2026-08-21**
 
-📚 **[完整論文索引(139 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(140 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Hydra-0 — 2026-08-21：Action Flow for Generalist World Modeling and Control；將 robot command 轉成具備 visibility 的 camera-plane pixel trajectories，統一 human hands、UMI grippers、bimanual/unimanual robots 的視覺動力條件；在 Cosmos 2.5、Wan2.2 上相對 action-conditioned baseline 將 robot-motion error 降低 90.4%、object-motion error 降低 60.2%，RoboLab replayed/reference success rates 達 Pearson $r=0.96$，並由 human-demo object flow 反推 executable robot action；NVIDIA、Brown、Columbia、Harvard（arXiv:2608.18077）](papers/2026/2026-08/Hydra-0/AI_Daily_Hydra-0.md)**
+
+本文精選 **Hydra-0**，把跨 embodiment world modeling 的條件空間從 joint-space command 改寫成 action flow：訓練時由影片追蹤取得 video-derived flow，部署時由 Isaac Lab physics rollout 與 camera projection 取得 kinematically grounded flow，再以 Gaussian feature propagation 建立 motion field 與 presence gate。它同時支援 causal autoregressive rollout、open-loop policy evaluation，以及只給 desired object flow 的 inverse world-action mode；Wan2.2 A14B 的 4-step student 在排除 guidance/VAE decode 的 generation-only 計時達 61.98 FPS、相對 bidirectional teacher 為 16.0×。這篇工作對 **JEPA physical-state grounding、Energy-based action compatibility、VAR scale-wise flow routing、training-free attention modulation 與 zero-shot visual control** 提供了清楚的實驗接口，但報告也特別區分 open-loop 與 closed-loop、generation-only 與 end-to-end latency。
+
+---
+
 - **[SparsePR — 2026-08-20：Partition the Support, Reconstruct the Residual，將 training-free block-sparse attention 拆成 Response-Coupled Partitioning 與 Probe-Fitted Residual Reconstruction；在 HunyuanVideo、Wan2.2、Cosmos-Predict2.5、Cosmos3-Nano 以 21.92%–25.96% executed-pair density 保持生成品質，端到端加速 1.48×–2.61×，Texas A&M University（arXiv:2608.18484）](papers/2026/2026-08/SparsePR/AI_Daily_SparsePR.md)**
 
 本文精選 **SparsePR**，指出 per-query attention concentration 不等於可執行的 shared-route sparsity：Wan2.2 在 90% attention mass 下單列 median support 為 6.2%，八個 query 共用 route 後擴張至 22.9%。論文以 sampled-query response geometry 建立 paired K/V 與 query groups，再用少量 exact probe rows 擬合 sparse output 到 post-softmax residual 的 affine correction；Wan2.2 latency 由 1650 秒降至 917 秒，probe repair 僅佔 1.1%。這個把 residual risk、attention route 與 online calibration 接在一起的視角，對 Energy-based Transformer、JEPA predictive latent、VAR scale-wise routing 與 zero-shot attention modulation 都提供了直接研究接口。
