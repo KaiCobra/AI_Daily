@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-21**
+**Last Updated: 2026-08-22**
 
-📚 **[完整論文索引(140 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(141 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[SASMA — 2026-08-22：MLLM-Guided Semantic Correction for Text-to-Video Generation；以 Semantic Assessment Supervisor 產生 clean intermediate preview，再由 MLLM 輸出診斷、正向修正與負向約束，透過 Semantic Modification Assistant 的 semantic dilution → injection → trajectory resumption 在 diffusion 中途修正語義漂移；CogVideoX1.5 的 VBench Total 0.7457→0.7723、Semantic 0.6419→0.6689，且 78.79% samples 在三次 MLLM 評估內早停，但 runtime 約 254.43s→590.04s；浙江大學、Huawei Cloud（arXiv:2608.16513）](papers/2026/2026-08/SASMA/AI_Daily_SASMA.md)**
+
+本文精選 **SASMA**，把 MLLM 從生成前的 prompt planner 或生成後的 evaluator 改造成 sampling loop 內的語義監督器。方法不更新 T2V backbone 參數，卻以 clean preview、condition residual 與雙向 latent intervention 進行 inference-time correction；報告也特別指出 training-free 不等於低成本，constraint prompt 的可靠度、MLLM bias、理論改善條件與 VRAM 表格的單位疑點仍需審慎看待。這篇工作對 **Energy-based trajectory reranking、JEPA latent critic、VAR scale-wise token correction、training-free attention modulation 與 zero-shot generation controller** 提供了具體研究接口。
+
+---
 
 - **[Hydra-0 — 2026-08-21：Action Flow for Generalist World Modeling and Control；將 robot command 轉成具備 visibility 的 camera-plane pixel trajectories，統一 human hands、UMI grippers、bimanual/unimanual robots 的視覺動力條件；在 Cosmos 2.5、Wan2.2 上相對 action-conditioned baseline 將 robot-motion error 降低 90.4%、object-motion error 降低 60.2%，RoboLab replayed/reference success rates 達 Pearson $r=0.96$，並由 human-demo object flow 反推 executable robot action；NVIDIA、Brown、Columbia、Harvard（arXiv:2608.18077）](papers/2026/2026-08/Hydra-0/AI_Daily_Hydra-0.md)**
 

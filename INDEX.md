@@ -1,12 +1,13 @@
 # 論文索引(全庫)
 
-共 140 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 141 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-08
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| MLLM-Guided Semantic Correction for Text-to-Video Generation | [2608.16513](https://arxiv.org/abs/2608.16513) | [SASMA](papers/2026/2026-08/SASMA/AI_Daily_SASMA.md) |
 | Unveiling the Secret of AdaLN-Zero in Diffusion Transformer | [2608.09438](https://arxiv.org/abs/2608.09438) | [AdaLN-Zero](papers/2026/2026-08/AdaLN-Zero/AI_Daily_AdaLN_Zero.md) |
 | Chimera - Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers | [2607.28611](https://arxiv.org/abs/2607.28611) | [Chimera](papers/2026/2026-08/Chimera/AI_Daily_Chimera.md) |
 | [Energy-Guided Flow Matching: 動態頻譜端點重塑像素級圖像生成軌跡](https://arxiv.org/abs/2608.05811) | [2608.05811](https://arxiv.org/abs/2608.05811) | [EG-FM](papers/2026/2026-08/EG-FM/AI_Daily_EG-FM.md) |
