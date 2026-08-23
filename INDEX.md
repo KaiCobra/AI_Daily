@@ -1,13 +1,12 @@
 # 論文索引(全庫)
 
-共 141 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 142 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-08
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
-| MLLM-Guided Semantic Correction for Text-to-Video Generation | [2608.16513](https://arxiv.org/abs/2608.16513) | [SASMA](papers/2026/2026-08/SASMA/AI_Daily_SASMA.md) |
 | Unveiling the Secret of AdaLN-Zero in Diffusion Transformer | [2608.09438](https://arxiv.org/abs/2608.09438) | [AdaLN-Zero](papers/2026/2026-08/AdaLN-Zero/AI_Daily_AdaLN_Zero.md) |
 | Chimera - Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers | [2607.28611](https://arxiv.org/abs/2607.28611) | [Chimera](papers/2026/2026-08/Chimera/AI_Daily_Chimera.md) |
 | [Energy-Guided Flow Matching: 動態頻譜端點重塑像素級圖像生成軌跡](https://arxiv.org/abs/2608.05811) | [2608.05811](https://arxiv.org/abs/2608.05811) | [EG-FM](papers/2026/2026-08/EG-FM/AI_Daily_EG-FM.md) |
@@ -21,6 +20,7 @@
 | 論文基本資訊 | [2608.03991](https://arxiv.org/abs/2608.03991) | [PTC](papers/2026/2026-08/PTC/AI_Daily_PTC.md) |
 | Rectify Then Diffuse: Disentangling Concepts Before Denoising Trajectory Unfolds | [2608.03135](https://arxiv.org/abs/2608.03135) | [RTD](papers/2026/2026-08/RTD/AI_Daily_RTD.md) |
 | RTD 研究筆記 | [2608.03135](https://arxiv.org/abs/2608.03135) | [RTD](papers/2026/2026-08/RTD/research_notes.md) |
+| MLLM-Guided Semantic Correction for Text-to-Video Generation：讓擴散模型在生成途中自我檢查 | [2608.16513](https://arxiv.org/abs/2608.16513) | [SASMA](papers/2026/2026-08/SASMA/AI_Daily_SASMA.md) |
 | 今日閱讀 | [2608.01990](https://arxiv.org/abs/2608.01990) | [SPARE](papers/2026/2026-08/SPARE/AI_Daily_SPARE.md) |
 | Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Gene... | [2510.13872](https://arxiv.org/abs/2510.13872) | [Scalable-EBM](papers/2026/2026-08/Scalable-EBM/AI_Daily_Scalable_EBM.md) |
 | ：Semantic Steering——在 MM-DiT 內部以單一語義向量實現 Training-Free Concept Erasure | [2608.12829](https://arxiv.org/abs/2608.12829) | [Semantic-Steering](papers/2026/2026-08/Semantic-Steering/AI_Daily_Semantic_Steering.md) |
@@ -29,6 +29,7 @@
 | UDT - Reconciling U-Nets and Diffusion Transformers with Data-Adaptive Token Reduction | [2608.01298](https://arxiv.org/abs/2608.01298) | [UDT](papers/2026/2026-08/UDT/AI_Daily_UDT.md) |
 | UniJEPA: A Unified Joint-Embedding Predictive Architecture for Task-Agnostic Visual Wor... | [2608.07409](https://arxiv.org/abs/2608.07409) | [UniJEPA](papers/2026/2026-08/UniJEPA/AI_Daily_UniJEPA.md) |
 | V-RAE：以凍結視覺表徵重思影片生成的潛在空間 | [2608.13556](https://arxiv.org/abs/2608.13556) | [V-RAE](papers/2026/2026-08/V-RAE/AI_Daily_V-RAE.md) |
+| WithEveryone：把「每個人」變成可尋址的身份—佈局計畫，讓群像生成擴展到十人 | [2608.20336](https://arxiv.org/abs/2608.20336) | [WithEveryone](papers/2026/2026-08/WithEveryone/AI_Daily_WithEveryone.md) |
 | ：Self-Corrected Image Generation with Explainable Latent Rewards | [2603.24965](https://arxiv.org/abs/2603.24965) | [xLARD](papers/2026/2026-08/xLARD/AI_Daily_xLARD.md) |
 
 ## 2026-07

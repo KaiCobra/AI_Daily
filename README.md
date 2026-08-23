@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-22**
+**Last Updated: 2026-08-23**
 
-📚 **[完整論文索引(141 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(142 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[WithEveryone — 2026-08-23：Unified Planning and Identity Grounding for Group Image Generation；以 addressed ID token、identity-aware Layout CoT、ID Representation Forcing 與 Layout-Grounded ID Loss，將五至十人群像中的身份 correspondence 從 noisy face matching 改成空間標註，identity-disjoint benchmark 的 Sim(Tgt) 0.499、Coverage 0.973、Dup 0.028、Copy-Paste 0.055；復旦大學、騰訊 Hunyuan、香港大學（arXiv:2608.20336）](papers/2026/2026-08/WithEveryone/AI_Daily_WithEveryone.md)**
+
+本文精選 **WithEveryone**，把多人身份生成拆成「誰參與、誰位於何處、誰真的被生成」三個可診斷狀態；LG-ID Loss 以 layout annotation 直接固定每個身份的 supervision 區域，避免高噪聲階段的 Hungarian face matching 錯配。報告也延伸討論它與 **Energy-based identity–layout consistency、JEPA critic、VAR coarse prefix、training-free attention modulation** 的研究接口，並區分預印本結果、2K/1K scoring pipeline 與目前尚未釋出的 foundation-model checkpoint。
+
+---
 
 - **[SASMA — 2026-08-22：MLLM-Guided Semantic Correction for Text-to-Video Generation；以 Semantic Assessment Supervisor 產生 clean intermediate preview，再由 MLLM 輸出診斷、正向修正與負向約束，透過 Semantic Modification Assistant 的 semantic dilution → injection → trajectory resumption 在 diffusion 中途修正語義漂移；CogVideoX1.5 的 VBench Total 0.7457→0.7723、Semantic 0.6419→0.6689，且 78.79% samples 在三次 MLLM 評估內早停，但 runtime 約 254.43s→590.04s；浙江大學、Huawei Cloud（arXiv:2608.16513）](papers/2026/2026-08/SASMA/AI_Daily_SASMA.md)**
 
