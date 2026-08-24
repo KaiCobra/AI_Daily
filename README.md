@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-23**
+**Last Updated: 2026-08-24**
 
-📚 **[完整論文索引(142 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(143 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Orthogonal JEPA — 2026-08-24：Factorized Predictive States for Latent World Models；以 learned basis matrices 將 JEPA target state 拆成多個正交 predictive factors，為每個 factor 配置專用 predictor，再以 state synthesis、orthogonality、factor-activity 與 online variance regularization 防止容量競爭與 collapse；在 controlled visual binding、single-cell、health forecasting、MuJoCo planning 與 molecular rollout 上均優於 monolithic JEPA，Walker2d return 4.9→45.1，CUHK（arXiv:2608.20065）](papers/2026/2026-08/Orthogonal-JEPA/AI_Daily_Orthogonal_JEPA.md)**
+
+本文精選 **Orthogonal JEPA**，把 latent state 的學習重新表述成 predictive capacity allocation 問題：不是讓一個 prediction pathway 吸收所有可預測內容，而是以 basis factorization 分離方向、以 factor-specific predictor 保留幅度，再合成可供 readout、planner 或 autoregressive rollout 使用的完整狀態。報告也連結 I-JEPA、V-JEPA、V-JEPA 2 與 Cell-JEPA，並提出與 **Energy-based Transformer、VAR、training-free attention modulation 及 zero-shot frozen transfer** 對接的研究構想。
+
+---
 
 - **[WithEveryone — 2026-08-23：Unified Planning and Identity Grounding for Group Image Generation；以 addressed ID token、identity-aware Layout CoT、ID Representation Forcing 與 Layout-Grounded ID Loss，將五至十人群像中的身份 correspondence 從 noisy face matching 改成空間標註，identity-disjoint benchmark 的 Sim(Tgt) 0.499、Coverage 0.973、Dup 0.028、Copy-Paste 0.055；復旦大學、騰訊 Hunyuan、香港大學（arXiv:2608.20336）](papers/2026/2026-08/WithEveryone/AI_Daily_WithEveryone.md)**
 
