@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 143 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 144 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-08
@@ -17,6 +17,7 @@
 | HRDiT: Training-Free High-Resolution Image Generation with Off-the-Shelf Diffusion Tran... | [2608.07003](https://arxiv.org/abs/2608.07003) | [HRDiT](papers/2026/2026-08/HRDiT/AI_Daily_HRDiT.md) |
 | Hydra-0：Action Flow for Generalist World Modeling and Control | [2608.18077](https://arxiv.org/abs/2608.18077) | [Hydra-0](papers/2026/2026-08/Hydra-0/AI_Daily_Hydra-0.md) |
 | JoyAI-Video-Edit：以自迴歸擴散實現即時、開放式串流影片編輯 | [2608.03974](https://arxiv.org/abs/2608.03974) | [JoyAI-Video-Edit](papers/2026/2026-08/JoyAI-Video-Edit/AI_Daily_JoyAI_Video_Edit.md) |
+| OccluRank: Controllable Occlusion-Aware Layout-to-Image Generation by Adding Just an Ordinal Rank | [2608.20932](https://arxiv.org/abs/2608.20932) | [OccluRank](papers/2026/2026-08/OccluRank/AI_Daily_OccluRank.md) |
 | Orthogonal JEPA: Factorized Predictive States for Latent World Models | [2608.20065](https://arxiv.org/abs/2608.20065) | [Orthogonal-JEPA](papers/2026/2026-08/Orthogonal-JEPA/AI_Daily_Orthogonal_JEPA.md) |
 | 論文基本資訊 | [2608.03991](https://arxiv.org/abs/2608.03991) | [PTC](papers/2026/2026-08/PTC/AI_Daily_PTC.md) |
 | Rectify Then Diffuse: Disentangling Concepts Before Denoising Trajectory Unfolds | [2608.03135](https://arxiv.org/abs/2608.03135) | [RTD](papers/2026/2026-08/RTD/AI_Daily_RTD.md) |

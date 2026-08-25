@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-24**
+**Last Updated: 2026-08-25**
 
-📚 **[完整論文索引(143 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(144 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[OccluRank — 2026-08-25：Controllable Occlusion-Aware Layout-to-Image Generation by Adding Just an Ordinal Rank；以每個 bounding box 一個 ordinal rank 加上 location-wise Order-aware Instance Interaction（OII），在 aggregation 前建模重疊 instance 的前後關係；OccluLayout-Bench 上 occlusion-order F1 0.8577、depth-order WHDR 0.1844，且三個 MLLM evaluator 的 Strict Pair/Strict Image 均優於 IFAdapter；合肥工業大學、中科大、中科院軟件所、ByteDance（arXiv:2608.20932）](papers/2026/2026-08/OccluRank/AI_Daily_OccluRank.md)**
+
+本文精選 **OccluRank**，把 layout-to-image 中原本由生成先驗決定的 visibility order 變成可明確輸入的 relational condition：rank embedding 先加入 instance feature，再由 OII 在同一 latent location 的 instance 維度上做 Transformer interaction，最後聚合為 ISM 注入 SDXL。報告也連結 VODiff、IFAdapter、OcclusionFormer 等相關研究，並延伸提出把 ordinal rank 改寫成 **Energy-based pairwise constraint、JEPA predictive critic、VAR scale-wise causal signal，以及 training-free/zero-shot order steering** 的可驗證研究方向。
+
+---
 
 - **[Orthogonal JEPA — 2026-08-24：Factorized Predictive States for Latent World Models；以 learned basis matrices 將 JEPA target state 拆成多個正交 predictive factors，為每個 factor 配置專用 predictor，再以 state synthesis、orthogonality、factor-activity 與 online variance regularization 防止容量競爭與 collapse；在 controlled visual binding、single-cell、health forecasting、MuJoCo planning 與 molecular rollout 上均優於 monolithic JEPA，Walker2d return 4.9→45.1，CUHK（arXiv:2608.20065）](papers/2026/2026-08/Orthogonal-JEPA/AI_Daily_Orthogonal_JEPA.md)**
 
