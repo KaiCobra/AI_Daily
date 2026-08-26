@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 144 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 145 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-08
@@ -17,8 +17,8 @@
 | HRDiT: Training-Free High-Resolution Image Generation with Off-the-Shelf Diffusion Tran... | [2608.07003](https://arxiv.org/abs/2608.07003) | [HRDiT](papers/2026/2026-08/HRDiT/AI_Daily_HRDiT.md) |
 | Hydra-0：Action Flow for Generalist World Modeling and Control | [2608.18077](https://arxiv.org/abs/2608.18077) | [Hydra-0](papers/2026/2026-08/Hydra-0/AI_Daily_Hydra-0.md) |
 | JoyAI-Video-Edit：以自迴歸擴散實現即時、開放式串流影片編輯 | [2608.03974](https://arxiv.org/abs/2608.03974) | [JoyAI-Video-Edit](papers/2026/2026-08/JoyAI-Video-Edit/AI_Daily_JoyAI_Video_Edit.md) |
-| OccluRank: Controllable Occlusion-Aware Layout-to-Image Generation by Adding Just an Ordinal Rank | [2608.20932](https://arxiv.org/abs/2608.20932) | [OccluRank](papers/2026/2026-08/OccluRank/AI_Daily_OccluRank.md) |
-| Orthogonal JEPA: Factorized Predictive States for Latent World Models | [2608.20065](https://arxiv.org/abs/2608.20065) | [Orthogonal-JEPA](papers/2026/2026-08/Orthogonal-JEPA/AI_Daily_Orthogonal_JEPA.md) |
+| 今日結論 | [2608.20932](https://arxiv.org/abs/2608.20932) | [OccluRank](papers/2026/2026-08/OccluRank/AI_Daily_OccluRank.md) |
+| 今日精選：Orthogonal JEPA | [2608.20065](https://arxiv.org/abs/2608.20065) | [Orthogonal-JEPA](papers/2026/2026-08/Orthogonal-JEPA/AI_Daily_Orthogonal_JEPA.md) |
 | 論文基本資訊 | [2608.03991](https://arxiv.org/abs/2608.03991) | [PTC](papers/2026/2026-08/PTC/AI_Daily_PTC.md) |
 | Rectify Then Diffuse: Disentangling Concepts Before Denoising Trajectory Unfolds | [2608.03135](https://arxiv.org/abs/2608.03135) | [RTD](papers/2026/2026-08/RTD/AI_Daily_RTD.md) |
 | RTD 研究筆記 | [2608.03135](https://arxiv.org/abs/2608.03135) | [RTD](papers/2026/2026-08/RTD/research_notes.md) |
@@ -28,6 +28,7 @@
 | ：Semantic Steering——在 MM-DiT 內部以單一語義向量實現 Training-Free Concept Erasure | [2608.12829](https://arxiv.org/abs/2608.12829) | [Semantic-Steering](papers/2026/2026-08/Semantic-Steering/AI_Daily_Semantic_Steering.md) |
 | Signed Rectified Flow - Negativity-Controlled Generation | [2607.18516](https://arxiv.org/abs/2607.18516) | [SignedRF](papers/2026/2026-08/SignedRF/AI_Daily_SignedRF.md) |
 | ：SparsePR——把「可執行稀疏性」拆成 Support Partition 與 Residual Reconstruction | [2608.18484](https://arxiv.org/abs/2608.18484) | [SparsePR](papers/2026/2026-08/SparsePR/AI_Daily_SparsePR.md) |
+| SynVAR——以空間—語義協同調制，讓 Visual Autoregressive 生成不再累積早期錯誤 | [2608.07948](https://arxiv.org/abs/2608.07948) | [SynVAR](papers/2026/2026-08/SynVAR/AI_Daily_SynVAR.md) |
 | UDT - Reconciling U-Nets and Diffusion Transformers with Data-Adaptive Token Reduction | [2608.01298](https://arxiv.org/abs/2608.01298) | [UDT](papers/2026/2026-08/UDT/AI_Daily_UDT.md) |
 | UniJEPA: A Unified Joint-Embedding Predictive Architecture for Task-Agnostic Visual Wor... | [2608.07409](https://arxiv.org/abs/2608.07409) | [UniJEPA](papers/2026/2026-08/UniJEPA/AI_Daily_UniJEPA.md) |
 | V-RAE：以凍結視覺表徵重思影片生成的潛在空間 | [2608.13556](https://arxiv.org/abs/2608.13556) | [V-RAE](papers/2026/2026-08/V-RAE/AI_Daily_V-RAE.md) |

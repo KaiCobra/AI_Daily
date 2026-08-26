@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-25**
+**Last Updated: 2026-08-26**
 
-📚 **[完整論文索引(144 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(145 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[SynVAR — 2026-08-26：Synergizing Spatial and Semantic Alignment in Visual Autoregressive Model；以 training-free 的 Global Guidance、Receptive Field Constraint 與 High-Frequency Compensation，分別處理 VAR 複雜場景中的早期空間配置、跨區域語義混淆與後期細節衰減；Infinity 的 Geneval Overall 由 55.48 提升至 70.79、Position 由 26.00 提升至 63.00，完整 SynVAR 單圖 3.10 秒且可與 FastVAR 組合至 2.27 秒；南京大學、Western University、JIUTIAN Research（ECCV 2026；arXiv:2608.07948）](papers/2026/2026-08/SynVAR/AI_Daily_SynVAR.md)**
+
+本文精選 **SynVAR**，把 VAR 的 inference-time correction 拆成三個互補介面：cross-attention 透過 concept-specific response 注入空間先驗，self-attention 以 Gaussian receptive-field bias 降低區域耦合，再用 Fourier high-pass gain 補回細節。報告以公式解釋三個模組，對照 VAR、Infinity、Switti、FastVAR 與 training-free layout control，並延伸提出用 **Energy-based concept score、JEPA predictive disagreement、自適應介入尺度、region-graph attention 與 frequency-aware controller** 取代固定 heuristic 的研究方向。
+
+---
 
 - **[OccluRank — 2026-08-25：Controllable Occlusion-Aware Layout-to-Image Generation by Adding Just an Ordinal Rank；以每個 bounding box 一個 ordinal rank 加上 location-wise Order-aware Instance Interaction（OII），在 aggregation 前建模重疊 instance 的前後關係；OccluLayout-Bench 上 occlusion-order F1 0.8577、depth-order WHDR 0.1844，且三個 MLLM evaluator 的 Strict Pair/Strict Image 均優於 IFAdapter；合肥工業大學、中科大、中科院軟件所、ByteDance（arXiv:2608.20932）](papers/2026/2026-08/OccluRank/AI_Daily_OccluRank.md)**
 
