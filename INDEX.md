@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 145 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 146 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-08
@@ -22,6 +22,7 @@
 | 論文基本資訊 | [2608.03991](https://arxiv.org/abs/2608.03991) | [PTC](papers/2026/2026-08/PTC/AI_Daily_PTC.md) |
 | Rectify Then Diffuse: Disentangling Concepts Before Denoising Trajectory Unfolds | [2608.03135](https://arxiv.org/abs/2608.03135) | [RTD](papers/2026/2026-08/RTD/AI_Daily_RTD.md) |
 | RTD 研究筆記 | [2608.03135](https://arxiv.org/abs/2608.03135) | [RTD](papers/2026/2026-08/RTD/research_notes.md) |
+| 今日精選：Scaling Representation Diversity | [2608.12748](https://arxiv.org/abs/2608.12748) | [Representation-Diversity](papers/2026/2026-08/Representation-Diversity/AI_Daily_Representation_Diversity.md) |
 | MLLM-Guided Semantic Correction for Text-to-Video Generation：讓擴散模型在生成途中自我檢查 | [2608.16513](https://arxiv.org/abs/2608.16513) | [SASMA](papers/2026/2026-08/SASMA/AI_Daily_SASMA.md) |
 | 今日閱讀 | [2608.01990](https://arxiv.org/abs/2608.01990) | [SPARE](papers/2026/2026-08/SPARE/AI_Daily_SPARE.md) |
 | Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Gene... | [2510.13872](https://arxiv.org/abs/2510.13872) | [Scalable-EBM](papers/2026/2026-08/Scalable-EBM/AI_Daily_Scalable_EBM.md) |

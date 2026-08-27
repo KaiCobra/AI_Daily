@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-26**
+**Last Updated: 2026-08-27**
 
-📚 **[完整論文索引(145 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(146 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Scaling Representation Diversity — 2026-08-27：以 Modulated Attention-Contrastive Head（mACH）與 text-conditioned JEPA auxiliary stream 保存 unified open-vocabulary visual grounding 的 representation diversity；75M 模型 zero-shot 在 RefCOCO val/testA/testB 達 85.3/89.0/82.5，RefCOCO+ 達 71.8/78.2/62.7，effective rank 由 contrastive 的 36、mACH 的 44 提升至 mACH+JEPA 的 83；清華大學、電子科技大學、中鋁數智、Linsulabs、CNPC（arXiv:2608.12748）](papers/2026/2026-08/Representation-Diversity/AI_Daily_Representation_Diversity.md)**
+
+本文精選 **Scaling Representation Diversity**，把 unified REC 的 scaling bottleneck 拆成模型端 representation degeneration 與資料端語言貧乏：mACH 以共享 visual stream 與 token-level cross-attention 同時處理多個 referring expressions，JEPA 則在訓練期間以 EMA teacher 對 masked visual latents 做 text-conditioned prediction，推理時移除而不增加 deployment cost。報告以 directional alignment capacity、gradient subspace 與 covariance eigenspectrum 解釋為何 representation diversity 會影響 zero-shot 泛化，並連結 **Energy-based Transformer、VAR coarse-scale JEPA、training-free spectrum-aware attention modulation、predictive disagreement uncertainty 與 cross-modal basis reallocation** 等可驗證研究方向。
+
+---
 
 - **[SynVAR — 2026-08-26：Synergizing Spatial and Semantic Alignment in Visual Autoregressive Model；以 training-free 的 Global Guidance、Receptive Field Constraint 與 High-Frequency Compensation，分別處理 VAR 複雜場景中的早期空間配置、跨區域語義混淆與後期細節衰減；Infinity 的 Geneval Overall 由 55.48 提升至 70.79、Position 由 26.00 提升至 63.00，完整 SynVAR 單圖 3.10 秒且可與 FastVAR 組合至 2.27 秒；南京大學、Western University、JIUTIAN Research（ECCV 2026；arXiv:2608.07948）](papers/2026/2026-08/SynVAR/AI_Daily_SynVAR.md)**
 
