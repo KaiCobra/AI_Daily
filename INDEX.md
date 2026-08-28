@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 146 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 147 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-08
@@ -30,6 +30,7 @@
 | Signed Rectified Flow - Negativity-Controlled Generation | [2607.18516](https://arxiv.org/abs/2607.18516) | [SignedRF](papers/2026/2026-08/SignedRF/AI_Daily_SignedRF.md) |
 | ：SparsePR——把「可執行稀疏性」拆成 Support Partition 與 Residual Reconstruction | [2608.18484](https://arxiv.org/abs/2608.18484) | [SparsePR](papers/2026/2026-08/SparsePR/AI_Daily_SparsePR.md) |
 | SynVAR——以空間—語義協同調制，讓 Visual Autoregressive 生成不再累積早期錯誤 | [2608.07948](https://arxiv.org/abs/2608.07948) | [SynVAR](papers/2026/2026-08/SynVAR/AI_Daily_SynVAR.md) |
+| Tether the Subject, Release the Scene: Query-Aware Memory Routing for Long-Horizon Autoregressive Video Generation | [2608.26902](https://arxiv.org/abs/2608.26902) | [TetherMem](papers/2026/2026-08/TetherMem/AI_Daily_TetherMem.md) |
 | UDT - Reconciling U-Nets and Diffusion Transformers with Data-Adaptive Token Reduction | [2608.01298](https://arxiv.org/abs/2608.01298) | [UDT](papers/2026/2026-08/UDT/AI_Daily_UDT.md) |
 | UniJEPA: A Unified Joint-Embedding Predictive Architecture for Task-Agnostic Visual Wor... | [2608.07409](https://arxiv.org/abs/2608.07409) | [UniJEPA](papers/2026/2026-08/UniJEPA/AI_Daily_UniJEPA.md) |
 | V-RAE：以凍結視覺表徵重思影片生成的潛在空間 | [2608.13556](https://arxiv.org/abs/2608.13556) | [V-RAE](papers/2026/2026-08/V-RAE/AI_Daily_V-RAE.md) |

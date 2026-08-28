@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-27**
+**Last Updated: 2026-08-28**
 
-📚 **[完整論文索引(146 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(147 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[TetherMem — 2026-08-28：Tether the Subject, Release the Scene: Query-Aware Memory Routing for Long-Horizon Autoregressive Video Generation；以 training-free、query-aware 的 normalized attention routing 將 subject query 與 scene query 分開，region prior 保留身份歷史、age prior 讓背景偏向近期場景狀態；Wan2.1-T2V-1.3B 上 30 秒人評 Overall EP=0.780、Progression EP=0.769，Deep Forcing host 的 Progression EP 由 0.360 提升至 0.640；華中科技大學、MiLM Plus／小米（arXiv:2608.26902，預印本）](papers/2026/2026-08/TetherMem/AI_Daily_TetherMem.md)**
+
+本文精選 **TetherMem**，把長影片生成的記憶問題重新表述為「同一份歷史是否應由不同 query 以相同政策讀取」：subject query 保留 identity-bearing history，scene query 則降低對 stale background 與 subject history 的依賴。報告推導 Value Reweighting 與 logit-space normalized routing 的差異，並連結 **Energy-based routing energy、JEPA predictive disagreement、VAR scale-wise memory 與 training-free attention modulation**；同時如實整理 SAM 2 prior drift、約 4.15× 完整 pipeline 成本與有限 host family 等限制。
+
+---
 
 - **[Scaling Representation Diversity — 2026-08-27：以 Modulated Attention-Contrastive Head（mACH）與 text-conditioned JEPA auxiliary stream 保存 unified open-vocabulary visual grounding 的 representation diversity；75M 模型 zero-shot 在 RefCOCO val/testA/testB 達 85.3/89.0/82.5，RefCOCO+ 達 71.8/78.2/62.7，effective rank 由 contrastive 的 36、mACH 的 44 提升至 mACH+JEPA 的 83；清華大學、電子科技大學、中鋁數智、Linsulabs、CNPC（arXiv:2608.12748）](papers/2026/2026-08/Representation-Diversity/AI_Daily_Representation_Diversity.md)**
 
