@@ -20,7 +20,6 @@
 
 為了解決這些挑戰，來自波蘭多所頂尖大學及研究機構的團隊提出了 **DIAMOND (Directed Inference for Artifact Mitigation in Flow Matching Models)**，一個**無需訓練 (training-free)** 且**零樣本 (zero-shot)** 的框架。它透過在生成過程的每一步進行**軌跡校正 (trajectory correction)**，主動引導模型遠離會產生偽影的潛在狀態，從而實現高保真、無瑕疵的圖像合成。DIAMOND 不僅適用於 Flow Matching 模型，更能擴展至標準的擴散模型 (Diffusion Models)，展現了其廣泛的適用性。
 
-![DIAMOND 方法概覽](asset/figure3_method_overview.webp)
 *圖 1：DIAMOND 方法概覽。該技術在推論過程中，透過一個可微分的偽影偵測器（Artifact Detector）來計算偽影損失，並利用其梯度來修正生成軌跡，從而主動避免瑕疵的產生。*
 
 ## 技術方法詳解
@@ -59,7 +58,6 @@ $$
 
 這個過程在整個生成軌跡中反覆進行，從而實現了對偽影的漸進式修正。
 
-![DIAMOND 修正效果](asset/figure2_artifact_comparison.webp)
 *圖 2：DIAMOND 在多種主流模型（包括 FLUX.2, FLUX.1, SDXL）上的修正效果。無論是咖啡杯的形狀、船槳的結構，還是人物的手指，DIAMOND 都能在不影響整體畫面的情況下，顯著改善局部偽影。*
 
 ## 實驗結果與性能
@@ -88,7 +86,6 @@ $$
 
 定性比較結果（如下圖）進一步證明了 DIAMOND 的優越性。與其他方法（如 HandsXL）相比，DIAMOND 在修正手部偽影時，能夠更好地保持圖像的原始風格和細節，避免了引入新的不自然紋理。
 
-![定性比較](asset/figure4_qualitative_comparison.webp)
 *圖 3：與其他方法的定性比較。DIAMOND 在修正人物手部等複雜結構時，效果自然，且不會對圖像其他部分造成負面影響。*
 
 ## 個人評價與意義

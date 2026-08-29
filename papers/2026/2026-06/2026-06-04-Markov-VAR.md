@@ -24,7 +24,7 @@
 2.  **持續的誤差累積**：自迴歸的單向因果鏈會導致早期預測誤差不斷傳播與放大。如圖 1(b) 所示，越早注入的擾動對最終生成品質（FID）的破壞越大。VAR 的全上下文機制會反覆利用並放大這些早期誤差。
 3.  **跨尺度干擾（Cross-Scale Interference）**：VAR 要求在每個尺度學習獨特的表徵。然而，全上下文注意力會將所有歷史尺度的資訊混雜在一起，導致不同尺度的梯度與特徵在共享空間中競爭與衝突。如圖 1(c) 的**殘差特徵對齊分數（Residual-Feature Alignment, RFA）**所示，極早期尺度對當前尺度的特徵學習往往具有**負向干擾**。
 
-![Markov-VAR Figure 2](../../assets/MarkovVAR_fig2_challenges.png)
+![Markov-VAR Figure 2](../../../assets/MarkovVAR_fig2_challenges.png)
 > **圖 1：全上下文依賴帶來的挑戰分析** [1]。(a) 記憶體消耗對比；(b) 擾動在不同尺度注入時的誤差積累；(c) 殘差特徵對齊分數（RFA）顯示早期尺度對當前尺度特徵學習的負向干擾。
 
 ---
@@ -67,7 +67,7 @@ Markov-VAR 的核心思想是：**將視覺自迴歸建模為一個馬可夫過�
 
 這個動態狀態 $M_{t-1}$ 既包含了當前尺度的精細局部特徵，又融合了歷史尺度的全局上下文，隨後送入 Markov-VAR Transformer 中進行下一個尺度的預測。
 
-![Markov-VAR Figure 3](../../assets/MarkovVAR_fig3_method.png)
+![Markov-VAR Figure 3](../../../assets/MarkovVAR_fig3_method.png)
 > **圖 2：VAR 與 Markov-VAR 預報模式對比及 Markov-VAR 整體架構圖** [1]。
 
 ---
@@ -135,7 +135,7 @@ Markov-VAR 的核心思想是：**將視覺自迴歸建模為一個馬可夫過�
 
 > **表 3：滑動窗口大小 $N$ 的消融研究** [1]。
 
-![Markov-VAR Figure 5](../../assets/MarkovVAR_fig5_scaling.png)
+![Markov-VAR Figure 5](../../../assets/MarkovVAR_fig5_scaling.png)
 > **圖 3：Markov-VAR 的 Scaling Law 冪律擬合曲線** [1]。
 
 ---

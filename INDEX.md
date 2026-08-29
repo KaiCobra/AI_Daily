@@ -68,7 +68,6 @@
 | SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models | [2602.18993](https://arxiv.org/abs/2602.18993) | [2026-06-08-SeaCache](papers/2026/2026-06/2026-06-08-SeaCache.md) |
 | Breaking the Lock-in: Diversifying Text-to-Image Generation via Representation Modulation | [2606.06813](https://arxiv.org/abs/2606.06813) | [2026-06-09-DAVE](papers/2026/2026-06/2026-06-09-DAVE.md) |
 | HACK++: Towards More Effective Head-Aware Key-Value Compression for Efficient Visual Au... | [2606.08302](https://arxiv.org/abs/2606.08302) | [2026-06-10-HACK-plus-plus](papers/2026/2026-06/2026-06-10-HACK-plus-plus.md) |
-| HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for... | [2603.24043](https://arxiv.org/abs/2603.24043) | [HAM](papers/2026/2026-06/HAM/AI_Daily_HAM.md) |
 | ：IDEAL - 深度對齊打造新一代離散表示自編碼器 | [2606.11096](https://arxiv.org/abs/2606.11096) | [IDEAL](papers/2026/2026-06/IDEAL/AI_Daily_IDEAL.md) |
 | IDEAL 論文研究筆記 | — | [IDEAL](papers/2026/2026-06/IDEAL/research_notes.md) |
 | OmniGen-AR 統一自迴歸多模態生成框架 | [2606.09156](https://arxiv.org/abs/2606.09156) | [OmniGen-AR](papers/2026/2026-06/OmniGen-AR/OmniGen-AR.md) |
@@ -109,7 +108,6 @@
 | 論文研讀報告 | [2603.09657](https://arxiv.org/abs/2603.09657) | [2026-03-12-KV-Lock-and-RAISE](papers/2026/2026-03/2026-03-12-KV-Lock-and-RAISE.md) |
 | A Training-Free Style-aligned Image Generation with Scale-wise Autoregressive Model | [2504.06144](https://arxiv.org/abs/2504.06144) | [2026-03-13-Scale-wise-Autoregressive-Style-Aligned](papers/2026/2026-03/2026-03-13-Scale-wise-Autoregressive-Style-Aligned.md) |
 | 論文基本資訊 | [2603.19157](https://arxiv.org/abs/2603.19157) | [ADAPT](papers/2026/2026-03/ADAPT/AI_Daily_ADAPT.md) |
-| AREdit - 首個基於VAR的免訓練文字引導圖像編輯框架 | [2503.23897](https://arxiv.org/abs/2503.23897) | [AREdit](papers/2026/2026-03/AREdit/AI_Daily_AREdit.md) |
 | Anchor Token Matching (ATM) - 突破自迴歸模型的免訓練圖像編輯瓶頸 | [2504.10434](https://arxiv.org/abs/2504.10434) | [ATM-ISLock](papers/2026/2026-03/ATM-ISLock/AI_Daily_ATM-ISLock.md) |
 | ：AlignVAR - 實現全域一致性的視覺自回歸圖像超解析度 | [2501.18993](https://arxiv.org/abs/2501.18993) | [AlignVAR](papers/2026/2026-03/AlignVAR/AI_Daily_AlignVAR.md) |
 | 論文標題：Guiding Diffusion Models with Semantically Degraded Conditions (CDG) | [2603.10780](https://arxiv.org/abs/2603.10780) | [CDG](papers/2026/2026-03/CDG/AI_Daily_CDG.md) |

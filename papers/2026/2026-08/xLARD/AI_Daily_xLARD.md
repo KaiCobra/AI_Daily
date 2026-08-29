@@ -67,7 +67,7 @@ $$
 
 這使得同一個 latent corrector 可以根據「紅色」「左側」「五個物體」等文字條件，對不同空間 token 施加不同的 modulation。URC 本身不超過約 15M 參數；論文報告整體可訓練模組低於 50M，通常小於 backbone 的 1%。[1]
 
-![xLARD Figure 2：training/inference pipeline。圖中可見 frozen backbone、URC、CMD 與 latent reward projection 的閉環。](../../../asset/xLARD/xlard_figure2_pipeline.png)
+![xLARD Figure 2：training/inference pipeline。圖中可見 frozen backbone、URC、CMD 與 latent reward projection 的閉環。](../../../../asset/xLARD/xlard_figure2_pipeline.png)
 
 ### 2. 三種可解釋的 task-specific reward
 
@@ -181,7 +181,7 @@ $$
 
 訓練使用 AdamW、learning rate \(10^{-4}\)、每 GPU batch size 8、PPO clipping ratio 0.2、gradient clipping 1.0 與 cosine schedule，在 H100 80GB 上進行。作者報告 batch size 8 約 1–2 秒一個 batch、每 epoch 約 7–8 分鐘，15 epochs 約 2 小時。推理時只套用一次 \(\Delta_\theta\)，不需要重新計算 reward，也不需要增加 sampling step，因此維持與 base generator 相同的推理 runtime。[1]
 
-![xLARD Figure 1：counting、position、color 的 qualitative comparison 與 training-data gain plot。](../../../asset/xLARD/xlard_figure1_qualitative_and_gain.png)
+![xLARD Figure 1：counting、position、color 的 qualitative comparison 與 training-data gain plot。](../../../../asset/xLARD/xlard_figure1_qualitative_and_gain.png)
 
 ## 與相關研究的比較
 

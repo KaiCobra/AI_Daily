@@ -34,7 +34,7 @@
 
 Internal Guidance 的核心思想是：**「利用模型自己尚未發育完全的中間層輸出，來引導最終深層輸出的方向」**。其架構與算法流程如下圖所示：
 
-![Internal Guidance Pipeline](./Internal_Guidance/assets/pipeline.png)
+![Internal Guidance Pipeline](./Internal_Guidance/assets/IG_pipeline.png)
 *(註：本圖展示了在訓練階段引入輔助監督，並在採樣階段利用中間層與深層輸出的外推進行引導的完整流程。)*
 
 ### 1. 訓練階段：多尺度輔助監督 (Intermediate Supervision)

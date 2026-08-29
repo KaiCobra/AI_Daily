@@ -48,7 +48,7 @@ $$ Y(r,c) = (\cos\theta(r)\sin\phi(c) + 1)R $$
 $$ \hat{\omega}_i = \text{round}(k_i) \cdot \omega_{\text{fund}}, \quad \alpha_i(c) = c \cdot \hat{\omega}_i $$
 其中 $\omega_{\text{fund}} = 2\pi / W_{\text{tokens}}$ 是水平環繞的基頻。
 
-![RoPE PCA Visualization](../../../assets/SpheRoPE_fig2_rope_pca.png)
+![RoPE PCA Visualization](../../../../assets/SpheRoPE_fig2_rope_pca.png)
 *圖 1：RoPE 的 PCA 可視化。左側為標準線性 RoPE，在邊界處產生接縫且極點不連續；右側為 SpheRoPE，實現了無縫環繞和均勻的極點收斂。*
 
 ### 2. Semantic Distortion CFG
@@ -71,7 +71,7 @@ $$ \hat{\epsilon} = \epsilon_{\text{uncond}} + w_{\text{sem}} \cdot (\epsilon_{\
 **定性結果**：
 SpheRoPE 能夠生成高度一致、無縫的 360° 全景圖，並且在處理 OOD (分佈外) 的風格化提示詞時表現優異，這得益於其零樣本的特性，沒有受到特定訓練數據集的風格偏差影響。
 
-![Qualitative Results](../../../assets/SpheRoPE_fig3_qualitative.png)
+![Qualitative Results](../../../../assets/SpheRoPE_fig3_qualitative.png)
 *圖 2：定性比較。與基於訓練的方法 (如 PanFusion, UniPano, SMGD) 相比，SpheRoPE 展現出更強的全局一致性和對風格提示詞的遵循能力。*
 
 **定量結果**：
@@ -81,7 +81,7 @@ SpheRoPE 能夠生成高度一致、無縫的 360° 全景圖，並且在處理 
 
 在視頻生成任務 (VBench 評估) 中，SpheRoPE (基於 LTX 2.3) 在推理速度 (1.11 秒/幀) 遠快於基於優化的 DynamicScaler (51.56 秒/幀) 的情況下，在成像質量、時間穩定性 (Temporal Flicker, Motion Smoothness) 和主體一致性上均全面領先。
 
-![Quantitative Tables](../../../assets/SpheRoPE_fig_tables_quant.png)
+![Quantitative Tables](../../../../assets/SpheRoPE_fig_tables_quant.png)
 *圖 3：定量評估表格。展示了 SpheRoPE 在圖像和視頻基準測試中與基於訓練和優化方法的比較。*
 
 ---

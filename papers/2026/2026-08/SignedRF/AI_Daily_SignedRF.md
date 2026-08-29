@@ -33,7 +33,7 @@ Signed RF 的動態將空間劃分為三個區域：
 - **負區域（Negative Region, $\Omega_t^-$）**：$\pi_t^{\mathtt{sign}} < 0$ 的區域，採樣軌跡永遠不會進入。
 - **幽靈區域（Ghost Region, $\Omega_t^g$）**：$\pi_t^{\mathtt{sign}} > 0$ 但軌跡無法到達的區域。幽靈區域內的正質量恰好抵消了被排除的負質量。
 
-![Signed RF Region Decomposition](assets/fig_3.png)
+![Signed RF Region Decomposition](assets/figures/fig_3.png)
 *(圖：Signed RF 動態將空間劃分為可達區域、負區域（拒絕）和幽靈區域。採樣法則僅在可達區域內與帶符號密度一致。)*
 
 ### 3. 實用引導公式

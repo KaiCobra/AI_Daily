@@ -32,7 +32,6 @@ $$u_t^i(x^i,z) = \sum_{(x_0,x_1) \in [d]^{N \times N}} u_t^i(x^i,z|x_0,x_1) \fra
 
 $$\dot{p_t}(x) + \text{div}_x(p_t u_t) = 0$$
 
-![decentralized_ar_theory.webp](asset/decentralized_ar_theory.webp)
 *圖一：論文中關於離散流匹配和概率生成速度的理論推導部分截圖。*
 
 ### 2. 自回歸作為離散流匹配的特例

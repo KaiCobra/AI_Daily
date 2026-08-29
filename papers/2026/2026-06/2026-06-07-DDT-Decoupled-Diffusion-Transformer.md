@@ -48,7 +48,7 @@ Decoder 通過 AdaLN-Zero 機制將 $\boldsymbol{z}_t$ 注入到特徵中，並�
 
 $$ \mathcal{L}_{dec} = \mathbb{E} \left[ \int_{0}^{1} \| (\boldsymbol{x}_{data} - \epsilon) - \boldsymbol{v}_t \|^2 \mathrm{d}t \right] $$
 
-![DDT 架構圖](../../assets/DDT_fig1_architecture.png)
+![DDT 架構圖](../../../assets/DDT_fig1_architecture.png)
 *圖 1：DDT 的解耦架構設計，包含 Condition Encoder 和 Velocity Decoder。*
 
 ### 4. 統計動態規劃加速推理
@@ -57,7 +57,7 @@ $$ \mathcal{L}_{dec} = \mathbb{E} \left[ \int_{0}^{1} \| (\boldsymbol{x}_{data} 
 
 他們將尋找最優的重新計算時間步集合 $\Phi$ 轉化為一個經典的最小和路徑問題 (Minimal Sum Path Problem)，並通過統計動態規劃 (Statistic Dynamic Programming) 來求解。這使得模型可以在保持高生成質量的同時，實現顯著的推理加速。
 
-![DDT 相似度矩陣與加速效果](../../assets/DDT_fig5_6_sharing.png)
+![DDT 相似度矩陣與加速效果](../../../assets/DDT_fig5_6_sharing.png)
 *圖 2：左側為相鄰時間步自條件特徵的餘弦相似度矩陣，呈現出強烈的局部一致性；右側展示了不同共享比例下的生成效果，即使加速 2.7 倍視覺質量依然沒有明顯下降。*
 
 ---

@@ -47,7 +47,6 @@ y = 2.0 \cdot \sigma(1.6x) - 1
 
 論文通過大量實驗，驗證了 iFSQ 的有效性，並基於此得出了一些關於生成模型的深刻洞見。
 
-![Table 1 & 2: Results](asset/table1_table2_results.png)
 *圖4：iFSQ 在擴散模型（DiT，左表）和自回歸模型（LlamaGen，右表）上的性能比較。iFSQ 在不同設置下均表現出色。*
 
 **關鍵實驗發現：**

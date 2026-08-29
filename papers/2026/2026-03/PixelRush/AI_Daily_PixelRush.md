@@ -28,7 +28,6 @@ PixelRush 的核心洞見在於：對於一個已經具備基本結構的粗糙�
 
 傳統方法會將粗糙的高解析度圖像（透過插值放大）完全變成高斯噪聲（t=T），然後再從頭開始去噪。PixelRush 則不同，它使用 DDIM Inversion 將粗糙圖像僅反轉到一個 **中間噪聲水平（t=K, K < T）**。這一步保留了圖像的全局結構，並使得後續可以利用高效的 **少步擴散模型（few-step models）**，如 SDXL-Turbo，僅需一步或幾步就能完成高頻細節的精煉。這也是其速度大幅提升的關鍵。
 
-![Training-free high-resolution pipeline synthesize images hierarchically.](asset/PixelRush_partial_inversion_insight.webp)
 *圖：論文指出，逆向擴散過程是分層的，早期（t值大）生成全局結構，晚期（t值小）添加細節。PixelRush 的部分反轉策略正是基於此洞見，跳過了冗餘的全局結構生成階段。*
 
 #### 2. 無縫融合演算法（Seamless Blending Algorithm）
@@ -50,10 +49,8 @@ PixelRush 的整體流程是一個兩階段系統：
     *   **精煉**：應用 PixelRush 的核心精煉流程（部分反轉 -> 少步去噪 -> 融合與噪聲注入），得到高品質的潛在表示（High Quality Latent）。
     *   **解碼**：將精煉後的潛在表示透過 VAE Decoder 轉換回像素空間，得到最終的高解析度圖像。
 
-![An overview of two-stage system with for high-resolution generation with Cascade Upsampling.](asset/PixelRush_pipeline_overview.webp)
 *圖：PixelRush 的兩階段高解析度生成流程。*
 
-![The PixelRush Refinement Stage.](asset/PixelRush_refinement_stage.webp)
 *圖：PixelRush 核心的精煉階段流程圖。*
 
 ### 實驗結果
