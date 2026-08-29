@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-28**
+**Last Updated: 2026-08-29**
 
-📚 **[完整論文索引(147 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(148 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[LeVJEPA — 2026-08-29：LeVJEPA: Efficient & Scalable Video Pretraining without the Heuristics；把 LeJEPA 的 SIGReg 反崩潰目標延伸至影片，移除 EMA teacher、predictor 與 stop-gradient，以單一 encoder + projector、95% uniform token dropping 與 block-causal attention 建立可串流的因果視覺表徵；相同總 FLOPs 下 ImageNet-1K 61.0%、Kinetics-400 44.6%，較最強影片基線高 7.6 個百分點，且以 5.6–20.8× 更低預訓練計算匹敵或超越 V-JEPA 2；German Cancer Research Center、Mila、Brown、NYU、AMI Labs（arXiv:2608.27395，預印本）](papers/2026/2026-08/LeVJEPA/AI_Daily_LeVJEPA.md)**
+
+本文精選 **LeVJEPA**，把影片表徵學習拆成三個可獨立研究的軸：SIGReg 負責防止 representation collapse，global/local invariance 負責語義穩定，block-causal attention 負責把時間順序寫進 encoder。本報告以公式拆解 SIGReg 的隨機投影 normality test、95% token dropping 與 causal state，並連結 **Energy-based Transformer、VAR latent planning、training-free attention modulation 與 zero-shot world modeling**；同時保留它尚未列出頂會接收、motion-centric SSv2 在極端稀疏觀測下仍有損失，以及主要結果來自受控資料與 frozen probing 等限制。
+
+---
 
 - **[TetherMem — 2026-08-28：Tether the Subject, Release the Scene: Query-Aware Memory Routing for Long-Horizon Autoregressive Video Generation；以 training-free、query-aware 的 normalized attention routing 將 subject query 與 scene query 分開，region prior 保留身份歷史、age prior 讓背景偏向近期場景狀態；Wan2.1-T2V-1.3B 上 30 秒人評 Overall EP=0.780、Progression EP=0.769，Deep Forcing host 的 Progression EP 由 0.360 提升至 0.640；華中科技大學、MiLM Plus／小米（arXiv:2608.26902，預印本）](papers/2026/2026-08/TetherMem/AI_Daily_TetherMem.md)**
 
