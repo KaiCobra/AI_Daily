@@ -1,15 +1,15 @@
 # 論文索引(全庫)
 
-共 148 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 147 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-08
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
-| LeVJEPA: Efficient & Scalable Video Pretraining without the Heuristics | [2608.27395](https://arxiv.org/abs/2608.27395) | [LeVJEPA](papers/2026/2026-08/LeVJEPA/AI_Daily_LeVJEPA.md) |
 | Unveiling the Secret of AdaLN-Zero in Diffusion Transformer | [2608.09438](https://arxiv.org/abs/2608.09438) | [AdaLN-Zero](papers/2026/2026-08/AdaLN-Zero/AI_Daily_AdaLN_Zero.md) |
 | Chimera - Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers | [2607.28611](https://arxiv.org/abs/2607.28611) | [Chimera](papers/2026/2026-08/Chimera/AI_Daily_Chimera.md) |
+| On-Policy Self-Distillation in Diffusion Models | [2608.24646](https://arxiv.org/abs/2608.24646) | [DiffusionOPSD](papers/2026/2026-08/DiffusionOPSD/AI_Daily_DiffusionOPSD.md) |
 | [Energy-Guided Flow Matching: 動態頻譜端點重塑像素級圖像生成軌跡](https://arxiv.org/abs/2608.05811) | [2608.05811](https://arxiv.org/abs/2608.05811) | [EG-FM](papers/2026/2026-08/EG-FM/AI_Daily_EG-FM.md) |
 | ：EditMod——不要重建整張圖，而是在 VAR source state 上建模「編輯差分」 | [2608.09057](https://arxiv.org/abs/2608.09057) | [EditMod](papers/2026/2026-08/EditMod/AI_Daily_EditMod.md) |
 | Explorative Modeling: Unlocking a Third Pretraining Axis and End-to-End Generation | [2607.27372](https://arxiv.org/abs/2607.27372) | [ExploratveModeling](papers/2026/2026-08/ExploratveModeling/AI_Daily_Explorative_Modeling.md) |
@@ -18,6 +18,7 @@
 | HRDiT: Training-Free High-Resolution Image Generation with Off-the-Shelf Diffusion Tran... | [2608.07003](https://arxiv.org/abs/2608.07003) | [HRDiT](papers/2026/2026-08/HRDiT/AI_Daily_HRDiT.md) |
 | Hydra-0：Action Flow for Generalist World Modeling and Control | [2608.18077](https://arxiv.org/abs/2608.18077) | [Hydra-0](papers/2026/2026-08/Hydra-0/AI_Daily_Hydra-0.md) |
 | JoyAI-Video-Edit：以自迴歸擴散實現即時、開放式串流影片編輯 | [2608.03974](https://arxiv.org/abs/2608.03974) | [JoyAI-Video-Edit](papers/2026/2026-08/JoyAI-Video-Edit/AI_Daily_JoyAI_Video_Edit.md) |
+| 今日精選：LeVJEPA——把 JEPA 的「反崩潰理論」搬進影片，並讓因果注意力成為編碼器本身的屬性 | [2608.27395](https://arxiv.org/abs/2608.27395) | [LeVJEPA](papers/2026/2026-08/LeVJEPA/AI_Daily_LeVJEPA.md) |
 | 今日結論 | [2608.20932](https://arxiv.org/abs/2608.20932) | [OccluRank](papers/2026/2026-08/OccluRank/AI_Daily_OccluRank.md) |
 | 今日精選：Orthogonal JEPA | [2608.20065](https://arxiv.org/abs/2608.20065) | [Orthogonal-JEPA](papers/2026/2026-08/Orthogonal-JEPA/AI_Daily_Orthogonal_JEPA.md) |
 | 論文基本資訊 | [2608.03991](https://arxiv.org/abs/2608.03991) | [PTC](papers/2026/2026-08/PTC/AI_Daily_PTC.md) |
@@ -31,7 +32,7 @@
 | Signed Rectified Flow - Negativity-Controlled Generation | [2607.18516](https://arxiv.org/abs/2607.18516) | [SignedRF](papers/2026/2026-08/SignedRF/AI_Daily_SignedRF.md) |
 | ：SparsePR——把「可執行稀疏性」拆成 Support Partition 與 Residual Reconstruction | [2608.18484](https://arxiv.org/abs/2608.18484) | [SparsePR](papers/2026/2026-08/SparsePR/AI_Daily_SparsePR.md) |
 | SynVAR——以空間—語義協同調制，讓 Visual Autoregressive 生成不再累積早期錯誤 | [2608.07948](https://arxiv.org/abs/2608.07948) | [SynVAR](papers/2026/2026-08/SynVAR/AI_Daily_SynVAR.md) |
-| Tether the Subject, Release the Scene: Query-Aware Memory Routing for Long-Horizon Autoregressive Video Generation | [2608.26902](https://arxiv.org/abs/2608.26902) | [TetherMem](papers/2026/2026-08/TetherMem/AI_Daily_TetherMem.md) |
+| 今日精選 | [2608.26902](https://arxiv.org/abs/2608.26902) | [TetherMem](papers/2026/2026-08/TetherMem/AI_Daily_TetherMem.md) |
 | UDT - Reconciling U-Nets and Diffusion Transformers with Data-Adaptive Token Reduction | [2608.01298](https://arxiv.org/abs/2608.01298) | [UDT](papers/2026/2026-08/UDT/AI_Daily_UDT.md) |
 | UniJEPA: A Unified Joint-Embedding Predictive Architecture for Task-Agnostic Visual Wor... | [2608.07409](https://arxiv.org/abs/2608.07409) | [UniJEPA](papers/2026/2026-08/UniJEPA/AI_Daily_UniJEPA.md) |
 | V-RAE：以凍結視覺表徵重思影片生成的潛在空間 | [2608.13556](https://arxiv.org/abs/2608.13556) | [V-RAE](papers/2026/2026-08/V-RAE/AI_Daily_V-RAE.md) |

@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-29**
+**Last Updated: 2026-08-30**
 
-📚 **[完整論文索引(148 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(147 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[DiffusionOPSD — 2026-08-30：On-Policy Self-Distillation in Diffusion Models；把 image-level reward guidance 轉成 on-policy 低噪聲 query 的 bounded positive／negative clean-output targets，以 stop-gradient finite fitting 與 behavior-policy EMA 反覆重建 supervision；在 SD3.5-M 與 Z-Image-Turbo 的 20 個 reward-matched 設定中 19 個取得最佳 held-out score，較 DiffusionNFT 少 40%／63% GPU-hours，ByteDance Seed、NUS、UCSD、UMD、UC Berkeley、Oxford 等（arXiv:2608.24646，Technical Report）](papers/2026/2026-08/DiffusionOPSD/AI_Daily_DiffusionOPSD.md)**
+
+本文精選 **DiffusionOPSD**，把 diffusion post-training 拆成 target construction 與 finite realization：前者沿 local reward gradient 建立 trust-region target，後者以 detached branch loss 學回 velocity field；報告以公式拆解 clean-output coordinate、正／負 target、EMA online loop，並連結 **Energy-Based Transformer、JEPA predictive energy、VAR scale-wise target、training-free attention modulation 與 zero-shot multi-reward control**。同時保留重要 caveat：19/20 是 reward-specific checkpoint 比較，Z-Image peak VRAM 較高，且 HPSv2.1 的 target-update reversal 達 62.3%，顯示 target 品質不等於有限更新後的實現品質。
+
+---
 
 - **[LeVJEPA — 2026-08-29：LeVJEPA: Efficient & Scalable Video Pretraining without the Heuristics；把 LeJEPA 的 SIGReg 反崩潰目標延伸至影片，移除 EMA teacher、predictor 與 stop-gradient，以單一 encoder + projector、95% uniform token dropping 與 block-causal attention 建立可串流的因果視覺表徵；相同總 FLOPs 下 ImageNet-1K 61.0%、Kinetics-400 44.6%，較最強影片基線高 7.6 個百分點，且以 5.6–20.8× 更低預訓練計算匹敵或超越 V-JEPA 2；German Cancer Research Center、Mila、Brown、NYU、AMI Labs（arXiv:2608.27395，預印本）](papers/2026/2026-08/LeVJEPA/AI_Daily_LeVJEPA.md)**
 
