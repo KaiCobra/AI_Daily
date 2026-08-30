@@ -14,7 +14,7 @@
 
 ## 為什麼從候選中選它
 
-本次先以 arXiv、Hugging Face Trending Papers 與論文官方 project page 找尋 2026 年 8 月底的候選，再檢查 `KaiCobra/AI_Daily` 的 README 與 `.existing_reports_inventory.txt`。截至 2026-08-29，repository 已有 148 篇文章，最近幾天已經涵蓋 LeVJEPA、TetherMem、SynVAR、Orthogonal JEPA、Scalable Energy-Based Models、Semantic Steering、HRDiT 與其他相鄰方向。[4] [5] 因此本日不再選擇一篇僅以「另一個 training-free attention trick」重述既有內容的論文，而選擇未出現在 inventory、且直接處理 reward-to-target translation 的 DiffusionOPSD。
+本次先以 arXiv、Hugging Face Trending Papers 與論文官方 project page 找尋 2026 年 8 月底的候選，再檢查 `KaiCobra/AI_Daily` 的 README 與 `.existing_reports_inventory.txt`。repository 在 2026-08-29 的 README 曾標示 148 篇；本次以既有索引工具重建後，`INDEX.md` 的實際解析數為 147 篇，並已將本篇納入其中。最近幾天的內容已涵蓋 LeVJEPA、TetherMem、SynVAR、Orthogonal JEPA、Scalable Energy-Based Models、Semantic Steering、HRDiT 與其他相鄰方向。[4] [5] 因此本日不再選擇一篇僅以「另一個 training-free attention trick」重述既有內容的論文，而選擇未出現在 inventory、且直接處理 reward-to-target translation 的 DiffusionOPSD。
 
 | 候選 | 本次判斷 | 與本 repository 的重複風險 |
 |---|---|---|
