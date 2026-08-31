@@ -1,0 +1,20 @@
+flowchart LR
+    I[參考影像 I] --> E[Infinity visual encoder]
+    E --> R[多尺度 residual maps R1...Rn]
+    R --> D[Delta-Mod attention block]
+    Q1[learnable Qgeneral] --> D
+    Q2[learnable Qspecific] --> D
+    D --> DG[d_general]
+    D --> DS[d_specific]
+    DG --> DA[d_attribute = d_general - d_specific]
+    DS --> ID[image-specific identity direction]
+    P[VAR-aligned text tokens] --> X[對應 token position]
+    DA --> X
+    ID --> X
+    X --> C[Cross-attention in frozen VAR]
+    C --> S[coarse-to-fine next-scale generation]
+    S --> O[連續、可組合、跨類別編輯]
+    classDef core fill:#e8f1ff,stroke:#2b5dab,stroke-width:1px;
+    classDef output fill:#e9f7ef,stroke:#2e8b57,stroke-width:1px;
+    class D,DG,DS,DA,ID,C core;
+    class O output;

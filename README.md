@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-30**
+**Last Updated: 2026-08-31**
 
-📚 **[完整論文索引(147 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(148 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Attribute Token Arithmetic — 2026-08-31：在 VAR 的文字條件空間裡做可解耦、可連續的屬性控制；以單張參考影像與輕量 Delta-Mod，從 frozen Infinity 的 VAR-aligned text-token space 分離 general attribute 與 image-specific identity direction，支援連續強度、屬性組合與跨類別 transfer；Monash University，ECCV 2026 Poster，arXiv:2608.28082](papers/2026/2026-08/Attribute-Token-Arithmetic/AI_Daily_ATA.md)**
+
+本文精選 **Attribute Token Arithmetic（ATA）**，將 VAR 圖像編輯從「重新生成一張符合指令的圖片」改寫成「在預訓練 VAR 的條件空間中進行可解釋的 semantic vector arithmetic」。方法凍結 Infinity backbone，只以參考影像 residual maps 與 prompt pair 優化輕量 Delta-Mod；在 Control Dataset 與 GEdit 上，作者報告更高的語義位移、內容保存與 disentanglement，並以 30 人 user study 取得最高的 image-preservation 與 prompt-adherence preference。本文進一步連結 **Energy-based attribute field、JEPA predictive identity critic、scale-adaptive attention modulation 與 zero-shot benchmark**，但也明確區分它不是完全 inference-only：每張參考影像仍需 500 steps／5 epochs 的輕量優化。
+
+---
 
 - **[DiffusionOPSD — 2026-08-30：On-Policy Self-Distillation in Diffusion Models；把 image-level reward guidance 轉成 on-policy 低噪聲 query 的 bounded positive／negative clean-output targets，以 stop-gradient finite fitting 與 behavior-policy EMA 反覆重建 supervision；在 SD3.5-M 與 Z-Image-Turbo 的 20 個 reward-matched 設定中 19 個取得最佳 held-out score，較 DiffusionNFT 少 40%／63% GPU-hours，ByteDance Seed、NUS、UCSD、UMD、UC Berkeley、Oxford 等（arXiv:2608.24646，Technical Report）](papers/2026/2026-08/DiffusionOPSD/AI_Daily_DiffusionOPSD.md)**
 
