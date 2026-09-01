@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-08-31**
+**Last Updated: 2026-09-01**
 
-📚 **[完整論文索引(148 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(149 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[VISTA: Test-Time Compositional Alignment for Visual Autoregressive Generation — 2026-09-01：首個針對 next-scale VAR 的 gradient-based test-time compositional alignment；在凍結 Infinity-2B/8B 上以 differentiable cross-attention、cache-safe optimization、per-token gradient normalization 與 adaptive step budget 修正 attribute binding、2D/3D spatial relation；T2I-CompBench targeted average 2B 由 0.480→0.575、8B 由 0.560→0.593，GenEval position 2B 由 0.250→0.745；Sharif University of Technology，arXiv:2608.22521](papers/2026/2026-09/VISTA/AI_Daily_VISTA.md)**
+
+本文精選 **VISTA**，把 diffusion 時代的 attention steering 重新設計給 stateful、離散、coarse-to-fine 的 VAR 生成。它不更新模型權重、不需額外訓練、reward model 或候選搜尋，卻能在粗尺度中間表示上做可微介入；報告也特別區分 training-free 不等於 zero-cost，因為每張圖仍需額外 forward/backward，Infinity-2B 預設時間由 3.09 秒增至 5.96 秒。這篇工作可直接延伸到 **Energy-based constraint steering、JEPA predictive stability、VAR scale-wise routing 與 uncertainty-aware attention modulation**。
+
+---
 
 - **[Attribute Token Arithmetic — 2026-08-31：在 VAR 的文字條件空間裡做可解耦、可連續的屬性控制；以單張參考影像與輕量 Delta-Mod，從 frozen Infinity 的 VAR-aligned text-token space 分離 general attribute 與 image-specific identity direction，支援連續強度、屬性組合與跨類別 transfer；Monash University，ECCV 2026 Poster，arXiv:2608.28082](papers/2026/2026-08/Attribute-Token-Arithmetic/AI_Daily_ATA.md)**
 
