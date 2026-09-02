@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-01**
+**Last Updated: 2026-09-02**
 
-📚 **[完整論文索引(149 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(150 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[ChebBooster — 2026-09-02：以 Chebyshev-inspired barycentric extrapolation 將 DiT feature caching 改寫成 timestep forecasting；離線預計算權重、線上以 $O(n)$ 線性組合重建被跳過的 feature，在 DiT-XL/2、PixArt-Σ、FLUX.1-dev 上最高達 3.68× latency speedup 與 5.12× FLOPs reduction；Shenzhen University，arXiv:2608.23429，預印本](papers/2026/2026-09/ChebBooster/AI_Daily_ChebBooster.md)**
+
+本文精選 **ChebBooster**，把 training-free diffusion acceleration 從單純 feature reuse 提升為可分析的 latent trajectory extrapolation：用 barycentric formula 控制長距離外推的數值穩定性，並以 refresh ratio 與 history size 調節品質–效率 frontier。它可直接延伸到 **Energy-gated adaptive cache、JEPA latent forecasting、VAR scale-wise prediction 與 uncertainty-aware attention modulation**；報告也明確說明目前是 arXiv preprint，重現完整指標仍需正確模型權重、CUDA 環境與評估資料。
+
+---
 
 - **[VISTA: Test-Time Compositional Alignment for Visual Autoregressive Generation — 2026-09-01：首個針對 next-scale VAR 的 gradient-based test-time compositional alignment；在凍結 Infinity-2B/8B 上以 differentiable cross-attention、cache-safe optimization、per-token gradient normalization 與 adaptive step budget 修正 attribute binding、2D/3D spatial relation；T2I-CompBench targeted average 2B 由 0.480→0.575、8B 由 0.560→0.593，GenEval position 2B 由 0.250→0.745；Sharif University of Technology，arXiv:2608.22521](papers/2026/2026-09/VISTA/AI_Daily_VISTA.md)**
 
