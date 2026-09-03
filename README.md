@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-02**
+**Last Updated: 2026-09-03**
 
-📚 **[完整論文索引(150 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(151 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[FDS — 2026-09-03：Training-Free Refinement of Flow Matching with Divergence-based Sampling；以 Flow Divergence Sampler 在每個重要 flow timestep 做低 divergence 的 zero-order state refinement，將不可觀測的 conditional velocity discrepancy 連到 marginal velocity divergence；ECCV 2026，KAIST，arXiv:2604.04646v2](papers/2026/2026-09/FDS/AI_Daily_FDS.md)**
+
+本文精選 **FDS**，把 Flow Matching 的 inference-time 改善從單純降低 temporal discretization error 推向 spatial trajectory refinement：以 Hutchinson trace estimator 估計速度場 divergence，從局部隨機候選中選出較可靠的中間 state，再交給原本的 Euler、Heun、RK4、UniPC 或 CFG-Zero* solver。作者在 CIFAR-10、ImageNet、SD3、FLUX、MS-COCO zero-shot 與 inverse problems 上均報告改善；報告也特別標出 FDS 不是零成本、CIFAR-10 surrogate agreement 為 82.19%，以及論文正文與官方 code 對早期介入方向的文字歧義。這篇工作可直接延伸至 **Energy-based reliability controller、JEPA predictive consistency、VAR scale-wise branching uncertainty 與 training-free attention modulation**。
+
+---
 
 - **[ChebBooster — 2026-09-02：以 Chebyshev-inspired barycentric extrapolation 將 DiT feature caching 改寫成 timestep forecasting；離線預計算權重、線上以 $O(n)$ 線性組合重建被跳過的 feature，在 DiT-XL/2、PixArt-Σ、FLUX.1-dev 上最高達 3.68× latency speedup 與 5.12× FLOPs reduction；Shenzhen University，arXiv:2608.23429，預印本](papers/2026/2026-09/ChebBooster/AI_Daily_ChebBooster.md)**
 
