@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 151 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 152 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
@@ -9,6 +9,7 @@
 |---|---|---|
 | ChebBooster: Training-Free DiT Inference via Chebyshev-Inspired Extrapolation | [2608.23429](https://arxiv.org/abs/2608.23429) | [ChebBooster](papers/2026/2026-09/ChebBooster/AI_Daily_ChebBooster.md) |
 | Training-Free Refinement of Flow Matching with Divergence-based Sampling | [2604.04646](https://arxiv.org/abs/2604.04646) | [FDS](papers/2026/2026-09/FDS/AI_Daily_FDS.md) |
+| MeRoPE: Metric Rotary Position Embedding for Camera-Controlled Video Generation | [2609.01252](https://arxiv.org/abs/2609.01252) | [MeRoPE](papers/2026/2026-09/MeRoPE/AI_Daily_MeRoPE.md) |
 | VISTA: Test-Time Compositional Alignment for Visual Autoregressive Generation | [2608.22521](https://arxiv.org/abs/2608.22521) | [VISTA](papers/2026/2026-09/VISTA/AI_Daily_VISTA.md) |
 
 ## 2026-08

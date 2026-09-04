@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-03**
+**Last Updated: 2026-09-04**
 
-📚 **[完整論文索引(151 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(152 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[MeRoPE — 2026-09-04：Metric Rotary Position Embedding for Camera-Controlled Video Generation；以 ray-local MinRot、metric translation RoPE 與 disparity-anchored spherical encoding 組成 norm-preserving pairwise attention operator，nuScenes CamMC 2.32、FID 19.82、FVD 134.15，PanShot TransErr 10.99 / CamMC 13.88；HKUST、Zhuoyu Technology（arXiv:2609.01252v1）](papers/2026/2026-09/MeRoPE/AI_Daily_MeRoPE.md)**
+
+本文精選 **MeRoPE**，把 camera-conditioned attention 的問題從「加入更多 pose feature」改寫成「如何保留 metric translation 卻不讓 logit 與 feature norm 隨 baseline 爆炸」。報告以 Theorem 1 的三難命題、正交 rotation blocks、多頻 translation phase 與 disparity anchors 拆解方法，並延伸討論 Energy-based Transformer、JEPA predictive critic、VAR scale-wise control，以及必須嚴格區分的 training-free／zero-shot 假設。
+
+---
 
 - **[FDS — 2026-09-03：Training-Free Refinement of Flow Matching with Divergence-based Sampling；以 Flow Divergence Sampler 在每個重要 flow timestep 做低 divergence 的 zero-order state refinement，將不可觀測的 conditional velocity discrepancy 連到 marginal velocity divergence；ECCV 2026，KAIST，arXiv:2604.04646v2](papers/2026/2026-09/FDS/AI_Daily_FDS.md)**
 
