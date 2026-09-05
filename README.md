@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-04**
+**Last Updated: 2026-09-05**
 
-📚 **[完整論文索引(152 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(153 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[LpWM — 2026-09-05：LpWM: A Case for Sparse Representations in World Models；以 Rectified Distribution Matching Regularization（RDMReg）與 RepReLU 學習非負、exactly sparse 的 JEPA latent，理論上說明高維 one-hot 表示可將 Lipschitz controlled dynamics 近似為 action-conditioned 線性轉移；PushT 中等 predictor capacity 下相較 dense LeWM 提升 24%–57% 規劃成功率，Piecewise support Jaccard 顯示離散 regime 與連續 magnitude 的 mode factorization，Yann LeCun、NYU、Duke、Mila、Brown、AMI Labs（arXiv:2608.22764v1，預印本）](papers/2026/2026-08/LpWM/AI_Daily_LpWM.md)**
+
+本文精選 **LpWM**，把 JEPA 的核心問題從「如何防止 representation collapse」推進到「什麼樣的 latent geometry 讓世界模型更容易控制」。報告拆解 RDMReg、RepReLU、one-hot 線性化命題、CEM/MPC 規劃與 Temporal-Jaccard prior，並延伸討論如何把 sparse support/magnitude 接到 **Energy-based Transformer、VAR next-scale factorization、training-free attention modulation 與嚴格的 zero-shot protocol**；同時明確標註本文是 arXiv 預印本，尚不是 image-generation SOTA。
+
+---
 
 - **[MeRoPE — 2026-09-04：Metric Rotary Position Embedding for Camera-Controlled Video Generation；以 ray-local MinRot、metric translation RoPE 與 disparity-anchored spherical encoding 組成 norm-preserving pairwise attention operator，nuScenes CamMC 2.32、FID 19.82、FVD 134.15，PanShot TransErr 10.99 / CamMC 13.88；HKUST、Zhuoyu Technology（arXiv:2609.01252v1）](papers/2026/2026-09/MeRoPE/AI_Daily_MeRoPE.md)**
 

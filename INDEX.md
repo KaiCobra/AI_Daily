@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 152 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 153 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
@@ -16,6 +16,7 @@
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| LpWM: A Case for Sparse Representations in World Models | [2608.22764](https://arxiv.org/abs/2608.22764) | [LpWM](papers/2026/2026-08/LpWM/AI_Daily_LpWM.md) |
 | Unveiling the Secret of AdaLN-Zero in Diffusion Transformer | [2608.09438](https://arxiv.org/abs/2608.09438) | [AdaLN-Zero](papers/2026/2026-08/AdaLN-Zero/AI_Daily_AdaLN_Zero.md) |
 | Attribute Token Arithmetic：在 VAR 的文字條件空間裡做可解耦、可連續的屬性控制 | [2608.28082](https://arxiv.org/abs/2608.28082) | [Attribute-Token-Arithmetic](papers/2026/2026-08/Attribute-Token-Arithmetic/AI_Daily_ATA.md) |
 | Chimera - Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers | [2607.28611](https://arxiv.org/abs/2607.28611) | [Chimera](papers/2026/2026-08/Chimera/AI_Daily_Chimera.md) |
