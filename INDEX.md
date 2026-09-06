@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 153 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 154 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
@@ -10,13 +10,13 @@
 | ChebBooster: Training-Free DiT Inference via Chebyshev-Inspired Extrapolation | [2608.23429](https://arxiv.org/abs/2608.23429) | [ChebBooster](papers/2026/2026-09/ChebBooster/AI_Daily_ChebBooster.md) |
 | Training-Free Refinement of Flow Matching with Divergence-based Sampling | [2604.04646](https://arxiv.org/abs/2604.04646) | [FDS](papers/2026/2026-09/FDS/AI_Daily_FDS.md) |
 | MeRoPE: Metric Rotary Position Embedding for Camera-Controlled Video Generation | [2609.01252](https://arxiv.org/abs/2609.01252) | [MeRoPE](papers/2026/2026-09/MeRoPE/AI_Daily_MeRoPE.md) |
+| Toward Physically Grounded JEPA World Models for Goal-Conditioned Robotic Planning | [2609.03565](https://arxiv.org/abs/2609.03565) | [PhysicallyGroundedJEPA](papers/2026/2026-09/PhysicallyGroundedJEPA/AI_Daily_PhysicallyGroundedJEPA.md) |
 | VISTA: Test-Time Compositional Alignment for Visual Autoregressive Generation | [2608.22521](https://arxiv.org/abs/2608.22521) | [VISTA](papers/2026/2026-09/VISTA/AI_Daily_VISTA.md) |
 
 ## 2026-08
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
-| LpWM: A Case for Sparse Representations in World Models | [2608.22764](https://arxiv.org/abs/2608.22764) | [LpWM](papers/2026/2026-08/LpWM/AI_Daily_LpWM.md) |
 | Unveiling the Secret of AdaLN-Zero in Diffusion Transformer | [2608.09438](https://arxiv.org/abs/2608.09438) | [AdaLN-Zero](papers/2026/2026-08/AdaLN-Zero/AI_Daily_AdaLN_Zero.md) |
 | Attribute Token Arithmetic：在 VAR 的文字條件空間裡做可解耦、可連續的屬性控制 | [2608.28082](https://arxiv.org/abs/2608.28082) | [Attribute-Token-Arithmetic](papers/2026/2026-08/Attribute-Token-Arithmetic/AI_Daily_ATA.md) |
 | Chimera - Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers | [2607.28611](https://arxiv.org/abs/2607.28611) | [Chimera](papers/2026/2026-08/Chimera/AI_Daily_Chimera.md) |
@@ -30,6 +30,7 @@
 | Hydra-0：Action Flow for Generalist World Modeling and Control | [2608.18077](https://arxiv.org/abs/2608.18077) | [Hydra-0](papers/2026/2026-08/Hydra-0/AI_Daily_Hydra-0.md) |
 | JoyAI-Video-Edit：以自迴歸擴散實現即時、開放式串流影片編輯 | [2608.03974](https://arxiv.org/abs/2608.03974) | [JoyAI-Video-Edit](papers/2026/2026-08/JoyAI-Video-Edit/AI_Daily_JoyAI_Video_Edit.md) |
 | 今日精選：LeVJEPA——把 JEPA 的「反崩潰理論」搬進影片，並讓因果注意力成為編碼器本身的屬性 | [2608.27395](https://arxiv.org/abs/2608.27395) | [LeVJEPA](papers/2026/2026-08/LeVJEPA/AI_Daily_LeVJEPA.md) |
+| 今日精選：LpWM——讓 JEPA 的世界模型學會「稀疏地表示動力學」 | [2608.22764](https://arxiv.org/abs/2608.22764) | [LpWM](papers/2026/2026-08/LpWM/AI_Daily_LpWM.md) |
 | 今日結論 | [2608.20932](https://arxiv.org/abs/2608.20932) | [OccluRank](papers/2026/2026-08/OccluRank/AI_Daily_OccluRank.md) |
 | 今日精選：Orthogonal JEPA | [2608.20065](https://arxiv.org/abs/2608.20065) | [Orthogonal-JEPA](papers/2026/2026-08/Orthogonal-JEPA/AI_Daily_Orthogonal_JEPA.md) |
 | 論文基本資訊 | [2608.03991](https://arxiv.org/abs/2608.03991) | [PTC](papers/2026/2026-08/PTC/AI_Daily_PTC.md) |

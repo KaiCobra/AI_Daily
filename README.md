@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-05**
+**Last Updated: 2026-09-06**
 
-📚 **[完整論文索引(153 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(154 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Physically Grounded JEPA — 2026-09-06：Toward Physically Grounded JEPA World Models for Goal-Conditioned Robotic Planning；以 action-conditioned latent prediction、Inverse Dynamics（IDM）與 State Alignment（SA）把 JEPA latent transition 同時錨定到動作與物理狀態；TwoRoom 100%、PushT 98%、OGBench-Cube 87%，並以 transition-subspace analysis 顯示較高 temporal straightening 不一定代表較佳 planning；GENISOM AI, Beijing（arXiv:2609.03565v1，預印本）](papers/2026/2026-09/PhysicallyGroundedJEPA/AI_Daily_PhysicallyGroundedJEPA.md)**
+
+本文精選 **Physically Grounded JEPA**，把 world model 的 representation quality 拆成 prediction accuracy、action identifiability 與 physical-state grounding。報告特別連結 **Energy-Based Transformer、VAR latent planning、training-free attention modulation 與嚴格 zero-shot protocol**，並標註它不是圖像生成 SOTA，而是可控制 latent geometry 的基礎研究。
+
+---
 
 - **[LpWM — 2026-09-05：LpWM: A Case for Sparse Representations in World Models；以 Rectified Distribution Matching Regularization（RDMReg）與 RepReLU 學習非負、exactly sparse 的 JEPA latent，理論上說明高維 one-hot 表示可將 Lipschitz controlled dynamics 近似為 action-conditioned 線性轉移；PushT 中等 predictor capacity 下相較 dense LeWM 提升 24%–57% 規劃成功率，Piecewise support Jaccard 顯示離散 regime 與連續 magnitude 的 mode factorization，Yann LeCun、NYU、Duke、Mila、Brown、AMI Labs（arXiv:2608.22764v1，預印本）](papers/2026/2026-08/LpWM/AI_Daily_LpWM.md)**
 
