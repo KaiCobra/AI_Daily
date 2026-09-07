@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 154 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 155 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
@@ -11,6 +11,7 @@
 | Training-Free Refinement of Flow Matching with Divergence-based Sampling | [2604.04646](https://arxiv.org/abs/2604.04646) | [FDS](papers/2026/2026-09/FDS/AI_Daily_FDS.md) |
 | MeRoPE: Metric Rotary Position Embedding for Camera-Controlled Video Generation | [2609.01252](https://arxiv.org/abs/2609.01252) | [MeRoPE](papers/2026/2026-09/MeRoPE/AI_Daily_MeRoPE.md) |
 | Toward Physically Grounded JEPA World Models for Goal-Conditioned Robotic Planning | [2609.03565](https://arxiv.org/abs/2609.03565) | [PhysicallyGroundedJEPA](papers/2026/2026-09/PhysicallyGroundedJEPA/AI_Daily_PhysicallyGroundedJEPA.md) |
+| PredErase——以 I-JEPA 預測先驗與 Flow-Matching Latent Guidance 實現免訓練物體及其陰影移除 | [2609.00956](https://arxiv.org/abs/2609.00956) | [PredErase](papers/2026/2026-09/PredErase/AI_Daily_PredErase.md) |
 | VISTA: Test-Time Compositional Alignment for Visual Autoregressive Generation | [2608.22521](https://arxiv.org/abs/2608.22521) | [VISTA](papers/2026/2026-09/VISTA/AI_Daily_VISTA.md) |
 
 ## 2026-08

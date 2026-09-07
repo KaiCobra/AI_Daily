@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-06**
+**Last Updated: 2026-09-07**
 
-📚 **[完整論文索引(154 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(155 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[PredErase — 2026-09-07：Training-Free Object-and-Effect Removal with Predictive Latent Guidance；以 contact-band 擴張 FLUX.2 的可編輯支援，並用 frozen I-JEPA 預測遮罩洞內 latent target，再以 sparse projected-gradient guidance 清除物體、cast shadow 與 contact shading；RemovalBench CMMD 0.496→0.108、PSNR 22.70→24.36，The University of Hong Kong & Sun Yat-sen University（arXiv:2609.00956v1，預印本）](papers/2026/2026-09/PredErase/AI_Daily_PredErase.md)**
+
+本文精選 **PredErase**，把 training-free image editing 分解為「where：哪些 latent 可以被改寫」與「what：洞內應出現什麼結構」。報告以公式拆解 I-JEPA masked prediction、contact-band support、projected latent update 與 flow-matching trajectory intervention，並連結 **Energy-based Transformer、JEPA predictive critic、VAR scale-wise control、training-free attention modulation 與 zero-shot editing**；同時保留它對直立接觸幾何、大面積遮罩、推理延遲與 frozen Fill bias 的限制。
+
+---
 
 - **[Physically Grounded JEPA — 2026-09-06：Toward Physically Grounded JEPA World Models for Goal-Conditioned Robotic Planning；以 action-conditioned latent prediction、Inverse Dynamics（IDM）與 State Alignment（SA）把 JEPA latent transition 同時錨定到動作與物理狀態；TwoRoom 100%、PushT 98%、OGBench-Cube 87%，並以 transition-subspace analysis 顯示較高 temporal straightening 不一定代表較佳 planning；GENISOM AI, Beijing（arXiv:2609.03565v1，預印本）](papers/2026/2026-09/PhysicallyGroundedJEPA/AI_Daily_PhysicallyGroundedJEPA.md)**
 
