@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-07**
+**Last Updated: 2026-09-08**
 
-📚 **[完整論文索引(155 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(156 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[ReaDiT Guidance — 2026-09-08：Control for Image and Video Generation using Diffusion Transformer Features；以凍結 DiT 單一中間 block 的 53M readout 讀出 depth、pose、edge 與 optical flow，並透過 inference-time latent-gradient guidance 統一影像空間控制、影片空間控制及 camera/motion control；SD3 影像控制大多數指標優於 RG，CogVideoX 空間影片控制的 depth/pose/edge 指標全面優於 RG，但 motion EPE 29.644 落後 Tora 16.100 與 DiTFlow 18.576；University of Illinois Urbana-Champaign、Alexander Schwing 目前任職 Google（arXiv:2609.04649v1，預印本）](papers/2026/2026-09/ReaDiT/AI_Daily_ReaDiT.md)**
+
+本文精選 **ReaDiT Guidance**，把 DiT 的中間特徵視為可讀出的空間表徵，再將 readout target mismatch 寫成推理時 latent energy。報告以公式拆解 time-conditioned AdaLN、多尺度 readout、optical-flow correspondence 與 latent optimization，並連結 **Energy-based Transformer、JEPA predictive critic、VAR scale-wise control、training-free attention modulation 與 zero-shot target control**；同時明確區分「凍結 backbone 的推理時免訓練」與「readout 仍需任務訓練」，以及統一性／低參數和推理成本／快速運動品質之間的 trade-off。
+
+---
 
 - **[PredErase — 2026-09-07：Training-Free Object-and-Effect Removal with Predictive Latent Guidance；以 contact-band 擴張 FLUX.2 的可編輯支援，並用 frozen I-JEPA 預測遮罩洞內 latent target，再以 sparse projected-gradient guidance 清除物體、cast shadow 與 contact shading；RemovalBench CMMD 0.496→0.108、PSNR 22.70→24.36，The University of Hong Kong & Sun Yat-sen University（arXiv:2609.00956v1，預印本）](papers/2026/2026-09/PredErase/AI_Daily_PredErase.md)**
 
