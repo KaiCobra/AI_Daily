@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 156 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 157 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
@@ -13,6 +13,7 @@
 | Toward Physically Grounded JEPA World Models for Goal-Conditioned Robotic Planning | [2609.03565](https://arxiv.org/abs/2609.03565) | [PhysicallyGroundedJEPA](papers/2026/2026-09/PhysicallyGroundedJEPA/AI_Daily_PhysicallyGroundedJEPA.md) |
 | PredErase——以 I-JEPA 預測先驗與 Flow-Matching Latent Guidance 實現免訓練物體及其陰影移除 | [2609.00956](https://arxiv.org/abs/2609.00956) | [PredErase](papers/2026/2026-09/PredErase/AI_Daily_PredErase.md) |
 | ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Fea... | [2609.04649](https://arxiv.org/abs/2609.04649) | [ReaDiT](papers/2026/2026-09/ReaDiT/AI_Daily_ReaDiT.md) |
+| RelightFormer：以生成式 Transformer 直接完成多視角物件重新打光 | [2609.07414](https://arxiv.org/abs/2609.07414) | [RelightFormer](papers/2026/2026-09/RelightFormer/AI_Daily_RelightFormer.md) |
 | VISTA: Test-Time Compositional Alignment for Visual Autoregressive Generation | [2608.22521](https://arxiv.org/abs/2608.22521) | [VISTA](papers/2026/2026-09/VISTA/AI_Daily_VISTA.md) |
 
 ## 2026-08

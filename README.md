@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-08**
+**Last Updated: 2026-09-09**
 
-📚 **[完整論文索引(156 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(157 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[RelightFormer — 2026-09-09：Feed-forward Generative Transformer for Multiview Object Relighting；以 Wan2.1 latent flow-matching DiT 結合 Plücker ray embedding、GTA 幾何感知 self-attention、PRoPE permutation-invariant camera encoding 與 latent illumination cross-attention，LOD 90,545 物件／39,008 環境光，OLATverse environment-map relighting sPSNR/PSNR/SSIM/LPIPS 20.48/17.23/0.964/0.047，SIGGRAPH Asia 2026 Conference Papers；Shenzhen Research Institute、The Hong Kong Polytechnic University（arXiv:2609.07414v1）](papers/2026/2026-09/RelightFormer/AI_Daily_RelightFormer.md)**
+
+本文精選 **RelightFormer**，把多視角物件重新打光從顯式 inverse rendering 改寫成 geometry-conditioned generative interface。報告以公式拆解 rectified flow、HDR/LDR tone mapping、Plücker rays、照明 cross-attention 與 PRoPE/GTA，並連結 **Energy-based reliability controller、JEPA view-permutation predictive critic、VAR 式多尺度 incident-light prefix，以及 training-free attention modulation**；同時明確區分原始模型的 OOD relighting、RelightFormer-Post 的 novel-view post-training、3DGS 路徑與真正 inference-only 的限制。論文 PDF 端點在本次環境回傳 404，因此報告使用 arXiv HTML 的方法、OLATverse、單視角與消融圖像資產。
+
+---
 
 - **[ReaDiT Guidance — 2026-09-08：Control for Image and Video Generation using Diffusion Transformer Features；以凍結 DiT 單一中間 block 的 53M readout 讀出 depth、pose、edge 與 optical flow，並透過 inference-time latent-gradient guidance 統一影像空間控制、影片空間控制及 camera/motion control；SD3 影像控制大多數指標優於 RG，CogVideoX 空間影片控制的 depth/pose/edge 指標全面優於 RG，但 motion EPE 29.644 落後 Tora 16.100 與 DiTFlow 18.576；University of Illinois Urbana-Champaign、Alexander Schwing 目前任職 Google（arXiv:2609.04649v1，預印本）](papers/2026/2026-09/ReaDiT/AI_Daily_ReaDiT.md)**
 
