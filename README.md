@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-09**
+**Last Updated: 2026-09-10**
 
-📚 **[完整論文索引(157 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(158 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Causal-JEPA — 2026-09-10：Learning World Models through Object-Level Latent Masking；以物件級 history latent masking、identity anchor 與 joint masked-history／future prediction，讓 interaction-dependent prediction 成為降低 JEPA loss 的必要條件；CLEVRER SAVi 平均 VQA 77.28%→83.88%、counterfactual 41.10%→60.19%，Push-T 以 1.02% patch latent features 達 88.67%；Heejeong Nam、Quentin Le Lidec、Lucas Maes、Yann LeCun、Randall Balestriero，ICML 2026 / PMLR 306（arXiv:2602.11389）](papers/2026/2026-09/Causal-JEPA/AI_Daily_Causal_JEPA.md)**
+
+本文精選 **Causal-JEPA**，把 JEPA 的 masked prediction 從 image/video patch 推進到 object-centric trajectory，並以 influence neighborhood 形式化「哪些其他 entities 對恢復被遮蔽物件不可或缺」。報告同時連結 **Energy-based compatibility、VAR 的 entity–scale factorization、training-free attention modulation 與嚴格 zero-shot protocol**，並納入 2026-08 獨立 reproduction audit 對 counterfactual VQA、Push-T success 與 planning timing 的保留意見；因此清楚區分理論定理、原始 benchmark 數字與尚待 protocol-level replication 的 empirical claims。
+
+---
 
 - **[RelightFormer — 2026-09-09：Feed-forward Generative Transformer for Multiview Object Relighting；以 Wan2.1 latent flow-matching DiT 結合 Plücker ray embedding、GTA 幾何感知 self-attention、PRoPE permutation-invariant camera encoding 與 latent illumination cross-attention，LOD 90,545 物件／39,008 環境光，OLATverse environment-map relighting sPSNR/PSNR/SSIM/LPIPS 20.48/17.23/0.964/0.047，SIGGRAPH Asia 2026 Conference Papers；Shenzhen Research Institute、The Hong Kong Polytechnic University（arXiv:2609.07414v1）](papers/2026/2026-09/RelightFormer/AI_Daily_RelightFormer.md)**
 
