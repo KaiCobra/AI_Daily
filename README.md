@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-10**
+**Last Updated: 2026-09-11**
 
-📚 **[完整論文索引(158 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(159 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[OAVC — 2026-09-11：Object-Aware Background-Controlled Editing via Weighted Velocity Guidance；以 background-anchored reference interface、object-localized safe semantic injection、source-flow-orthogonal projection、boundary ring 與 confidence gate，將 training-free flow editing 的「where」與「how」拆開；PIE-Bench FLUX Structure Distance 18.87→4.07、背景 PSNR 24.99→33.30 dB，SD3.5 14.19→4.11、26.66→32.64 dB，DAVIS BG-PSNR 27.53、TW-BG-PSNR 29.65；Wuji Wang、Yue Wu、Chenhao Yi、Shuhui Wang，arXiv:2609.06288v1（預印本）](papers/2026/2026-09/OAVC/AI_Daily_OAVC.md)**
+
+本文精選 **OAVC（Object-Aware Velocity Control）**，把局部編輯的背景漂移重新寫成「非目標 velocity residual 在多步 solver integration 中累積」的動力學問題。報告以公式拆解 rectified-flow proxy、Stage-1 source anchoring、Stage-2 offset-aligned target evaluation、flow-orthogonal projection、boundary high-pass 與 confidence gate，並連結 **Energy-based compatibility energy、JEPA predictive critic、VAR scale-wise token support、training-free attention modulation 與嚴格 zero-shot protocol**；同時明確標註 SAM3 support、DAVIS ground-truth masks、FlowEdit-SD3 transfer 退化與 training-free 不等於零成本等限制。
+
+---
 
 - **[Causal-JEPA — 2026-09-10：Learning World Models through Object-Level Latent Masking；以物件級 history latent masking、identity anchor 與 joint masked-history／future prediction，讓 interaction-dependent prediction 成為降低 JEPA loss 的必要條件；CLEVRER SAVi 平均 VQA 77.28%→83.88%、counterfactual 41.10%→60.19%，Push-T 以 1.02% patch latent features 達 88.67%；Heejeong Nam、Quentin Le Lidec、Lucas Maes、Yann LeCun、Randall Balestriero，ICML 2026 / PMLR 306（arXiv:2602.11389）](papers/2026/2026-09/Causal-JEPA/AI_Daily_Causal_JEPA.md)**
 
