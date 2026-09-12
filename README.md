@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-11**
+**Last Updated: 2026-09-12**
 
-📚 **[完整論文索引(159 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(160 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Logit Refiner — 2026-09-12：以同尺度 joint sampling 修正 Visual Autoregressive Models 的 mean-field 解碼瓶頸；在 frozen VAR hidden states 上加入約 10% 參數的 causal refiner，ImageNet 256×256 的 VAR-d24 由 FID 2.09 改善至 1.83，以 1.1B 超越 2.0B VAR-d30 的 1.92，Infinity-2B 的 HPSv3 由 9.79 提升至 9.91；Meimingwei Li、Stefan Andreas Baumann、Felix Krause、Björn Ommer，ECCV 2026 / arXiv:2609.11804](papers/2026/2026-09/Logit-Refiner/AI_Daily_Logit_Refiner.md)**
+
+本文精選 **Logit Refiner**，把 VAR 的局部空間不一致重新定位為「正確 marginal 被獨立 sampling 拼成錯誤 joint sample」：它保留跨尺度平行的 VAR backbone，只在尺度內用兩層 causal Transformer 依序補回被 mean-field-style factorization 捨棄的 token dependency。報告拆解 $p(\mathbf r_{1:K})$、同尺度 joint factorization、teacher forcing、identity initialization、KV cache 與 early-scale quality–latency trade-off，並連結 **Energy-based compatibility energy、JEPA predictive consistency、training-free/zero-shot 的嚴格定義，以及 attention modulation 的 scale-adaptive controller**；同時明確標註它需要訓練 refiner、不是完全 training-free，且同尺度 sequential sampling 仍帶來推理延遲。
+
+---
 
 - **[OAVC — 2026-09-11：Object-Aware Background-Controlled Editing via Weighted Velocity Guidance；以 background-anchored reference interface、object-localized safe semantic injection、source-flow-orthogonal projection、boundary ring 與 confidence gate，將 training-free flow editing 的「where」與「how」拆開；PIE-Bench FLUX Structure Distance 18.87→4.07、背景 PSNR 24.99→33.30 dB，SD3.5 14.19→4.11、26.66→32.64 dB，DAVIS BG-PSNR 27.53、TW-BG-PSNR 29.65；Wuji Wang、Yue Wu、Chenhao Yi、Shuhui Wang，arXiv:2609.06288v1（預印本）](papers/2026/2026-09/OAVC/AI_Daily_OAVC.md)**
 
