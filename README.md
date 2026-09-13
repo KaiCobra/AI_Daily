@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-12**
+**Last Updated: 2026-09-13**
 
-📚 **[完整論文索引(160 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(161 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[DIAL — 2026-09-10：Harnessing Intrinsic Subject-Aware Attention for Controllable Multi-Subject Video Generation；從 DiT privileged block 提取 Intrinsic Spatial Grounding Map，以主體級局部 logit bias 實現推理期 fidelity control，並以 ISGM–mask 對齊自動建立多步 DPO 偏好對；Kaleido FaceSim 31.81→60.64、NexusScore 38.62→43.02，NaturalScore 79.77→75.23；Alibaba Group、Peking University，arXiv:2609.11507v1](papers/2026/2026-09/DIAL/AI_Daily_DIAL.md)**
+
+本文精選 **DIAL**，把多主體 Subject-to-Video 的身份漂移重新定位為「去噪過程中參考 token 與影片 token 的 attention grounding 失配」。報告拆解 ISGM 的 token-level attention aggregation、privileged block 的 peaking score、Phase I 的 spatially localized log-scale bias，以及 Phase II 的 dual-seed preference construction 與 multi-step DPO；同時明確區分 **Phase I 才是 inference-time training-free，完整 DIAL 仍需要 14K Phantom-Data、SAM3 偽 mask 與 LoRA-DPO**。這篇工作可直接啟發 **Energy-based compatibility controller、JEPA entity-grounding prediction、VAR privileged scale，以及 state-dependent attention modulation**，但論文本身沒有直接驗證 EBT、JEPA 或 VAR。
+
+---
 
 - **[Logit Refiner — 2026-09-12：以同尺度 joint sampling 修正 Visual Autoregressive Models 的 mean-field 解碼瓶頸；在 frozen VAR hidden states 上加入約 10% 參數的 causal refiner，ImageNet 256×256 的 VAR-d24 由 FID 2.09 改善至 1.83，以 1.1B 超越 2.0B VAR-d30 的 1.92，Infinity-2B 的 HPSv3 由 9.79 提升至 9.91；Meimingwei Li、Stefan Andreas Baumann、Felix Krause、Björn Ommer，ECCV 2026 / arXiv:2609.11804](papers/2026/2026-09/Logit-Refiner/AI_Daily_Logit_Refiner.md)**
 
