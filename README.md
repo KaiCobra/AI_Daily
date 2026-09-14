@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-13**
+**Last Updated: 2026-09-14**
 
-📚 **[完整論文索引(161 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(162 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[VL-JEPA — 2026-09-14：Joint Embedding Predictive Architecture for Vision-language；ICLR 2026 將 vision-language learning 從 token prediction 改寫為 query-conditioned semantic embedding prediction，以雙向 InfoNCE 支援 zero-shot 分類、影片檢索、判別式 VQA 與 selective decoding；在嚴格對照下 15M samples 的 caption CIDEr 14.8 對 token VLM 7.1、分類 Top-5 41.0% 對 27.2%，EgoExo4D 以約 2.85 倍較少 decoder operations 維持相近品質；Meta FAIR、HKUST、Sorbonne Université、NYU，arXiv:2512.10942](papers/2026/2026-09/VL-JEPA/AI_Daily_VL_JEPA.md)**
+
+本文精選 **VL-JEPA**，把多模態模型的中間狀態從「待生成的文字 token」改成「可供多任務消費的語義 embedding」。報告以 $X_V\mapsto S_V$、$(S_V,X_Q)\mapsto\hat S_Y$、$Y\mapsto S_Y$ 的四組件架構為主軸，拆解雙向 InfoNCE、V-JEPA 2 visual encoder、Y-Encoder、candidate matching 與 embedding-guided selective decoding；同時明確區分 **本文不是 training-free、Energy-based Transformer、VAR 或完整 action-conditioned world model**。文章進一步提出將 compatibility energy、temporal disagreement 與 attention modulation 結合，作為 Energy-Gated JEPA、VAR scale-wise semantic prediction 與 causal selective decoding 的研究起點。
+
+---
 
 - **[DIAL — 2026-09-10：Harnessing Intrinsic Subject-Aware Attention for Controllable Multi-Subject Video Generation；從 DiT privileged block 提取 Intrinsic Spatial Grounding Map，以主體級局部 logit bias 實現推理期 fidelity control，並以 ISGM–mask 對齊自動建立多步 DPO 偏好對；Kaleido FaceSim 31.81→60.64、NexusScore 38.62→43.02，NaturalScore 79.77→75.23；Alibaba Group、Peking University，arXiv:2609.11507v1](papers/2026/2026-09/DIAL/AI_Daily_DIAL.md)**
 
