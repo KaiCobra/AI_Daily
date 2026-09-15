@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-14**
+**Last Updated: 2026-09-15**
 
-📚 **[完整論文索引(162 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(163 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[AcFlow — 2026-09-15：Controlling Text-to-Image Diffusion Transformers via Learned Conditional Activation Flow；以 concept-conditioned velocity field 搬運 frozen DiT 的 image-token activations，讓 flow horizon $T$ 成為連續 style／concept suppression 控制軸；FLUX.1-dev held-in style/content 0.537/0.286、held-out style/content 0.442/0.281，並以 token-varying off-axis energy 分析證明它不是固定 steering vector；South China University of Technology、Georgia Institute of Technology，arXiv:2609.10723v1（預印本）](papers/2026/2026-09/AcFlow/AI_Daily_AcFlow.md)**
+
+本文精選 **AcFlow**，把生成控制從 prompt wording 或 per-concept LoRA 改寫成 frozen DiT 中間表徵的可積分動力系統。報告拆解 activation-flow ODE、forward Euler、backbone-matched FlowBlock、velocity distillation 與 image-token-only intervention，並嚴格區分 **frozen-backbone + learned controller** 與真正 training-free、區分 within-family zero-shot 與跨 backbone transfer。文章進一步提出把 AcFlow 接上 **Energy-Based Transformer 的 compatibility energy、JEPA predictive consistency、VAR scale-wise token state，以及 inference-only attention modulation**，形成可驗證的 adaptive controller 研究方向。
+
+---
 
 - **[VL-JEPA — 2026-09-14：Joint Embedding Predictive Architecture for Vision-language；ICLR 2026 將 vision-language learning 從 token prediction 改寫為 query-conditioned semantic embedding prediction，以雙向 InfoNCE 支援 zero-shot 分類、影片檢索、判別式 VQA 與 selective decoding；在嚴格對照下 15M samples 的 caption CIDEr 14.8 對 token VLM 7.1、分類 Top-5 41.0% 對 27.2%，EgoExo4D 以約 2.85 倍較少 decoder operations 維持相近品質；Meta FAIR、HKUST、Sorbonne Université、NYU，arXiv:2512.10942](papers/2026/2026-09/VL-JEPA/AI_Daily_VL_JEPA.md)**
 

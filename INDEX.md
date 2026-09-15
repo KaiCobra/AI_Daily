@@ -1,16 +1,16 @@
 # 論文索引(全庫)
 
-共 162 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 163 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
-| VL-JEPA: Joint Embedding Predictive Architecture for Vision-language | [2512.10942](https://arxiv.org/abs/2512.10942) | [VL-JEPA](papers/2026/2026-09/VL-JEPA/AI_Daily_VL_JEPA.md) |
+| AcFlow：把文字條件變成可積分的 activation flow，讓 frozen DiT 具有連續、可泛化的控制軸 | [2609.10723](https://arxiv.org/abs/2609.10723) | [AcFlow](papers/2026/2026-09/AcFlow/AI_Daily_AcFlow.md) |
 | Causal-JEPA：用物件級 latent masking 迫使世界模型學會互動 | [2602.11389](https://arxiv.org/abs/2602.11389) | [Causal-JEPA](papers/2026/2026-09/Causal-JEPA/AI_Daily_Causal_JEPA.md) |
 | ChebBooster: Training-Free DiT Inference via Chebyshev-Inspired Extrapolation | [2608.23429](https://arxiv.org/abs/2608.23429) | [ChebBooster](papers/2026/2026-09/ChebBooster/AI_Daily_ChebBooster.md) |
-| Harnessing Intrinsic Subject-Aware Attention for Controllable Multi-Subject Video Generation | [2609.11507](https://arxiv.org/abs/2609.11507) | [DIAL](papers/2026/2026-09/DIAL/AI_Daily_DIAL.md) |
+| ｜DIAL：讓 DiT 內生注意力成為可控的多主體影片生成介面 | [2609.11507](https://arxiv.org/abs/2609.11507) | [DIAL](papers/2026/2026-09/DIAL/AI_Daily_DIAL.md) |
 | Training-Free Refinement of Flow Matching with Divergence-based Sampling | [2604.04646](https://arxiv.org/abs/2604.04646) | [FDS](papers/2026/2026-09/FDS/AI_Daily_FDS.md) |
 | Logit Refiner：修正 Visual Autoregressive Model 的同尺度獨立採樣 | [2609.11804](https://arxiv.org/abs/2609.11804) | [Logit-Refiner](papers/2026/2026-09/Logit-Refiner/AI_Daily_Logit_Refiner.md) |
 | MeRoPE: Metric Rotary Position Embedding for Camera-Controlled Video Generation | [2609.01252](https://arxiv.org/abs/2609.01252) | [MeRoPE](papers/2026/2026-09/MeRoPE/AI_Daily_MeRoPE.md) |
@@ -20,6 +20,7 @@
 | ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Fea... | [2609.04649](https://arxiv.org/abs/2609.04649) | [ReaDiT](papers/2026/2026-09/ReaDiT/AI_Daily_ReaDiT.md) |
 | RelightFormer：以生成式 Transformer 直接完成多視角物件重新打光 | [2609.07414](https://arxiv.org/abs/2609.07414) | [RelightFormer](papers/2026/2026-09/RelightFormer/AI_Daily_RelightFormer.md) |
 | VISTA: Test-Time Compositional Alignment for Visual Autoregressive Generation | [2608.22521](https://arxiv.org/abs/2608.22521) | [VISTA](papers/2026/2026-09/VISTA/AI_Daily_VISTA.md) |
+| VL-JEPA：以語義嵌入預測取代 token 生成，讓 Vision-Language 模型具備選擇性解碼能力 | [2512.10942](https://arxiv.org/abs/2512.10942) | [VL-JEPA](papers/2026/2026-09/VL-JEPA/AI_Daily_VL_JEPA.md) |
 
 ## 2026-08
 
