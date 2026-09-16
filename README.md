@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-15**
+**Last Updated: 2026-09-16**
 
-📚 **[完整論文索引(163 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(164 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[FlowInOne — 2026-09-16：Unifying Multimodal Generation as Image-in, Image-out Flow Matching；把文字、版面、編輯指令、箭頭與來源圖像先轉成視覺提示畫布，再以單一 flow-matching 模型完成生成與編輯；VisPrompt-5M 約 500 萬組資料、VP-Bench 在 Gemini 3／GPT-5.2／Qwen3.5／Human 的總通過率為 54.0%／39.2%／50.3%／44.9%，並在 spatial precision 與 DINOv3 Similarity 展現開源優勢；Junchao Yi 等，ECCV 2026 accepted，arXiv:2604.06757v3](papers/2026/2026-09/FlowInOne/AI_Daily_FlowInOne.md)**
+
+本文精選 **FlowInOne**，將多模態條件融合重新寫成視覺提示 latent 到目標圖像 latent 的連續運輸。報告拆解 flow-matching path、Text-Image VAE、Dual-Path Spatially-Adaptive Modulation、token-level adaptive gate、KL/CLIP 輔助損失與 VP-Bench 評估，並明確標註它不是 training-free：1.2B 模型仍需 240K steps 與約 240 A100 GPU-hours。文章進一步提出把視覺 flow 接上 **Energy-Based Transformer compatibility energy、JEPA predictive critic、VAR scale-wise flow 與 inference-time attention modulation** 的研究方向。
+
+---
 
 - **[AcFlow — 2026-09-15：Controlling Text-to-Image Diffusion Transformers via Learned Conditional Activation Flow；以 concept-conditioned velocity field 搬運 frozen DiT 的 image-token activations，讓 flow horizon $T$ 成為連續 style／concept suppression 控制軸；FLUX.1-dev held-in style/content 0.537/0.286、held-out style/content 0.442/0.281，並以 token-varying off-axis energy 分析證明它不是固定 steering vector；South China University of Technology、Georgia Institute of Technology，arXiv:2609.10723v1（預印本）](papers/2026/2026-09/AcFlow/AI_Daily_AcFlow.md)**
 
