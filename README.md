@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-16**
+**Last Updated: 2026-09-17**
 
-📚 **[完整論文索引(164 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(165 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[WISER — 2026-09-17：Wider Search, Deeper Thinking, and Adaptive Fusion for Training-Free Zero-Shot Composed Image Retrieval；CVPR 2026，將 ZS-CIR 改寫成 retrieve–verify–refine 閉環：以 T2I／I2I 雙路徑擴大候選池，用 Qwen2.5-VL verifier 的 yes/no confidence 做 branch-level uncertainty gate 與 candidate-level adaptive fusion，再由 GPT-4o refiner 對失敗的 attribute／entity 修改提出下一輪建議；CIRCO ViT-B/32 mAP@5 32.23、CIRR Recall@1 49.45、Fashion-IQ 平均 R@10/R@50 41.99/58.74；Tianyue Wang 等，中國科學院自動化研究所、國科大、NUS 等，arXiv:2602.23029v4](papers/2026/2026-09/WISER/AI_Daily_WISER.md)**
+
+本文精選 **WISER**，重點不是再訓練一個融合器，而是讓 training-free zero-shot 檢索先平行搜尋，再判斷候選是否可信；不確定時只針對缺失的語義或視覺修改做 self-reflection 與 refinement。報告明確區分 **training-free 不等於 zero-cost**，整理 $c_p^k$ verifier confidence、$\tau=0.7$ gate、$c_{\mathrm{fused}}^k$ 多層融合、三個 benchmark、消融與 failure cases，並提出將 WISER 接上 **Energy-based compatibility energy、JEPA predictive consistency、VAR scale-wise candidate generation 與 inference-time attention modulation** 的研究方向。
 
 - **[FlowInOne — 2026-09-16：Unifying Multimodal Generation as Image-in, Image-out Flow Matching；把文字、版面、編輯指令、箭頭與來源圖像先轉成視覺提示畫布，再以單一 flow-matching 模型完成生成與編輯；VisPrompt-5M 約 500 萬組資料、VP-Bench 在 Gemini 3／GPT-5.2／Qwen3.5／Human 的總通過率為 54.0%／39.2%／50.3%／44.9%，並在 spatial precision 與 DINOv3 Similarity 展現開源優勢；Junchao Yi 等，ECCV 2026 accepted，arXiv:2604.06757v3](papers/2026/2026-09/FlowInOne/AI_Daily_FlowInOne.md)**
 
