@@ -2,13 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-17**
+**Last Updated: 2026-09-18**
 
-📚 **[完整論文索引(165 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(166 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[GEAR — 2026-09-18：Guided End-to-End AutoRegression for Image Synthesis；以 hard/soft dual read-out 解耦離散 tokenizer 與 AR generator 的梯度路徑，讓 tokenizer 學習更容易被預測的 code 分布，並把語義與局部空間對齊更多交給 AR hidden states；ImageNet 256×256 的 CFG gFID 在 B/L/XL 為 6.00/3.15/2.68→4.95/2.95/2.52，IS 為 145.0/208.1/232.2→166.1/239.8/262.9；GEAR 可泛化至 VQVAE、LFQ、IBQ 與 GPIC text-to-image，但「10×、2.5×、11.1×」是 convergence-step claims，不是 wall-clock 或能源加速；Bin Lin 等，Peking University、Tencent Hunyuan，arXiv:2606.32039](papers/2026/2026-09/GEAR/AI_Daily_GEAR.md)**
+
+本文精選 **GEAR**，核心不是把 VAR tokenizer 強行變成更 semantic 的 latent，而是以 hard branch 保持 inference 時真正使用的 discrete token，以 soft branch 將 representation alignment 安全地傳回 tokenizer，避免 naive straight-through end-to-end training 造成 codebook collapse。報告拆解 VQ assignment、hard/soft read-out、解耦更新公式、ImageNet/GPIC 結果與 patch-level representation analysis，並明確標註 GEAR **不是 training-free、Energy-Based Transformer、JEPA 或 zero-shot inference**；同時提出以 token predictability、JEPA predictive disagreement 與 compatibility energy 延伸的研究問題。
+
+---
 
 - **[WISER — 2026-09-17：Wider Search, Deeper Thinking, and Adaptive Fusion for Training-Free Zero-Shot Composed Image Retrieval；CVPR 2026，將 ZS-CIR 改寫成 retrieve–verify–refine 閉環：以 T2I／I2I 雙路徑擴大候選池，用 Qwen2.5-VL verifier 的 yes/no confidence 做 branch-level uncertainty gate 與 candidate-level adaptive fusion，再由 GPT-4o refiner 對失敗的 attribute／entity 修改提出下一輪建議；CIRCO ViT-B/32 mAP@5 32.23、CIRR Recall@1 49.45、Fashion-IQ 平均 R@10/R@50 41.99/58.74；Tianyue Wang 等，中國科學院自動化研究所、國科大、NUS 等，arXiv:2602.23029v4](papers/2026/2026-09/WISER/AI_Daily_WISER.md)**
 

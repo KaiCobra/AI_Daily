@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 165 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 166 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
@@ -13,6 +13,7 @@
 | ｜DIAL：讓 DiT 內生注意力成為可控的多主體影片生成介面 | [2609.11507](https://arxiv.org/abs/2609.11507) | [DIAL](papers/2026/2026-09/DIAL/AI_Daily_DIAL.md) |
 | Training-Free Refinement of Flow Matching with Divergence-based Sampling | [2604.04646](https://arxiv.org/abs/2604.04646) | [FDS](papers/2026/2026-09/FDS/AI_Daily_FDS.md) |
 | FlowInOne：把多模態生成改寫成視覺提示到圖像的單一 Flow | [2604.06757](https://arxiv.org/abs/2604.06757) | [FlowInOne](papers/2026/2026-09/FlowInOne/AI_Daily_FlowInOne.md) |
+| GEAR：以 hard/soft dual read-out 重新分工離散 tokenizer 與自回歸生成器 | [2606.32039](https://arxiv.org/abs/2606.32039) | [GEAR](papers/2026/2026-09/GEAR/AI_Daily_GEAR.md) |
 | Logit Refiner：修正 Visual Autoregressive Model 的同尺度獨立採樣 | [2609.11804](https://arxiv.org/abs/2609.11804) | [Logit-Refiner](papers/2026/2026-09/Logit-Refiner/AI_Daily_Logit_Refiner.md) |
 | MeRoPE: Metric Rotary Position Embedding for Camera-Controlled Video Generation | [2609.01252](https://arxiv.org/abs/2609.01252) | [MeRoPE](papers/2026/2026-09/MeRoPE/AI_Daily_MeRoPE.md) |
 | OAVC：把「在哪裡改」與「如何改」拆開的免訓練 Flow Editing | [2609.06288](https://arxiv.org/abs/2609.06288) | [OAVC](papers/2026/2026-09/OAVC/AI_Daily_OAVC.md) |
