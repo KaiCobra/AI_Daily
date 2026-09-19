@@ -2,14 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-18**
+**Last Updated: 2026-09-19**
 
-📚 **[完整論文索引(166 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(167 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
 
+- **[UVR — 2026-09-19：Unified Safe In-context Image Generation in Multimodal Diffusion Transformers via Restricting Unsafe Information Flows；ICML 2026，提出不修改模型權重的 training-free MM-DiT 安全調制：先以 unsafe output-space anchors 定位危險 patch，再限制文字／參考圖像到輸出圖像的有害資訊流；FLUX.1-dev 的 T2I I2P unsafe count 207→40、Unsafe-1K 449→97，FLUX.1-Kontext 的 I2I I2P 175→46、Unsafe-1K 402→151，額外顯存約 3.12 MB；Xiang Yang 等，復旦大學、華東理工大學、上海電力大學，arXiv:2606.06875](papers/2026/2026-09/UVR/AI_Daily_UVR.md)**
+
+本文精選 **UVR**，把安全控制從 prompt filter 或 model-level concept erasure 移到 MM-Attn 的 output-patch representation 與資訊流。報告拆解 T2I/I2I 的 attention dynamics、unsafe anchor、connected mask、adaptive attention modulation 與早期 feature bottleneck，並嚴格區分 **training-free inference 不等於 strict zero-shot 或 zero-data**；同時提出把 UVR 接上 Energy-based compatibility energy、JEPA predictive safety critic 與 VAR scale-wise regulation 的研究方向。
+
+- **[GEAR — 2026-09-18：Guided End-to-End AutoRegression for Image Synthesis；以 hard/soft dual read-out 解耦離散 tokenizer 與 AR generator 的梯度路徑，讓 tokenizer 學習更容易被預測的 code 分布，並把語義與局部空間對齊更多交給 AR hidden states；ImageNet 256×256 的 CFG gFID 在 B/L/XL 為 6.00/3.15/2.68→4.95/2.95/2.52，IS 為 145.0/208.1/232.2→166.1/239.8/262.9；GEAR 可泛化至 VQVAE、LFQ、IBQ 與 GPIC text-to-image，但「10×、2.5×、11.1×」是 convergence-step claims，不是 wall-clock 或能源加速；Bin Lin 等，Peking University、Tencent Hunyuan，arXiv:2606.32039](papers/2026/2026-09/GEAR/AI_Daily_GEAR.md)**
 - **[GEAR — 2026-09-18：Guided End-to-End AutoRegression for Image Synthesis；以 hard/soft dual read-out 解耦離散 tokenizer 與 AR generator 的梯度路徑，讓 tokenizer 學習更容易被預測的 code 分布，並把語義與局部空間對齊更多交給 AR hidden states；ImageNet 256×256 的 CFG gFID 在 B/L/XL 為 6.00/3.15/2.68→4.95/2.95/2.52，IS 為 145.0/208.1/232.2→166.1/239.8/262.9；GEAR 可泛化至 VQVAE、LFQ、IBQ 與 GPIC text-to-image，但「10×、2.5×、11.1×」是 convergence-step claims，不是 wall-clock 或能源加速；Bin Lin 等，Peking University、Tencent Hunyuan，arXiv:2606.32039](papers/2026/2026-09/GEAR/AI_Daily_GEAR.md)**
 
 本文精選 **GEAR**，核心不是把 VAR tokenizer 強行變成更 semantic 的 latent，而是以 hard branch 保持 inference 時真正使用的 discrete token，以 soft branch 將 representation alignment 安全地傳回 tokenizer，避免 naive straight-through end-to-end training 造成 codebook collapse。報告拆解 VQ assignment、hard/soft read-out、解耦更新公式、ImageNet/GPIC 結果與 patch-level representation analysis，並明確標註 GEAR **不是 training-free、Energy-Based Transformer、JEPA 或 zero-shot inference**；同時提出以 token predictability、JEPA predictive disagreement 與 compatibility energy 延伸的研究問題。
