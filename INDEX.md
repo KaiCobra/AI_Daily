@@ -1,20 +1,19 @@
 # 論文索引(全庫)
 
-共 167 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 168 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
-| UVR：在多模態 Diffusion Transformer 內限制有害資訊流 | [2606.06875](https://arxiv.org/abs/2606.06875) | [UVR](papers/2026/2026-09/UVR/AI_Daily_UVR.md) |
 | AcFlow：把文字條件變成可積分的 activation flow，讓 frozen DiT 具有連續、可泛化的控制軸 | [2609.10723](https://arxiv.org/abs/2609.10723) | [AcFlow](papers/2026/2026-09/AcFlow/AI_Daily_AcFlow.md) |
 | Causal-JEPA：用物件級 latent masking 迫使世界模型學會互動 | [2602.11389](https://arxiv.org/abs/2602.11389) | [Causal-JEPA](papers/2026/2026-09/Causal-JEPA/AI_Daily_Causal_JEPA.md) |
 | ChebBooster: Training-Free DiT Inference via Chebyshev-Inspired Extrapolation | [2608.23429](https://arxiv.org/abs/2608.23429) | [ChebBooster](papers/2026/2026-09/ChebBooster/AI_Daily_ChebBooster.md) |
 | ｜DIAL：讓 DiT 內生注意力成為可控的多主體影片生成介面 | [2609.11507](https://arxiv.org/abs/2609.11507) | [DIAL](papers/2026/2026-09/DIAL/AI_Daily_DIAL.md) |
 | Training-Free Refinement of Flow Matching with Divergence-based Sampling | [2604.04646](https://arxiv.org/abs/2604.04646) | [FDS](papers/2026/2026-09/FDS/AI_Daily_FDS.md) |
 | FlowInOne：把多模態生成改寫成視覺提示到圖像的單一 Flow | [2604.06757](https://arxiv.org/abs/2604.06757) | [FlowInOne](papers/2026/2026-09/FlowInOne/AI_Daily_FlowInOne.md) |
-| GEAR：以 hard/soft dual read-out 重新分工離散 tokenizer 與自回歸生成器 | [2606.32039](https://arxiv.org/abs/2606.32039) | [GEAR](papers/2026/2026-09/GEAR/AI_Daily_GEAR.md) |
+| ：GEAR——讓 AR hidden state 承擔語義，重新分工離散 tokenizer 與生成器 | [2606.32039](https://arxiv.org/abs/2606.32039) | [GEAR](papers/2026/2026-09/GEAR/AI_Daily_GEAR.md) |
 | Logit Refiner：修正 Visual Autoregressive Model 的同尺度獨立採樣 | [2609.11804](https://arxiv.org/abs/2609.11804) | [Logit-Refiner](papers/2026/2026-09/Logit-Refiner/AI_Daily_Logit_Refiner.md) |
 | MeRoPE: Metric Rotary Position Embedding for Camera-Controlled Video Generation | [2609.01252](https://arxiv.org/abs/2609.01252) | [MeRoPE](papers/2026/2026-09/MeRoPE/AI_Daily_MeRoPE.md) |
 | OAVC：把「在哪裡改」與「如何改」拆開的免訓練 Flow Editing | [2609.06288](https://arxiv.org/abs/2609.06288) | [OAVC](papers/2026/2026-09/OAVC/AI_Daily_OAVC.md) |
@@ -22,8 +21,10 @@
 | PredErase——以 I-JEPA 預測先驗與 Flow-Matching Latent Guidance 實現免訓練物體及其陰影移除 | [2609.00956](https://arxiv.org/abs/2609.00956) | [PredErase](papers/2026/2026-09/PredErase/AI_Daily_PredErase.md) |
 | ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Fea... | [2609.04649](https://arxiv.org/abs/2609.04649) | [ReaDiT](papers/2026/2026-09/ReaDiT/AI_Daily_ReaDiT.md) |
 | RelightFormer：以生成式 Transformer 直接完成多視角物件重新打光 | [2609.07414](https://arxiv.org/abs/2609.07414) | [RelightFormer](papers/2026/2026-09/RelightFormer/AI_Daily_RelightFormer.md) |
+| Unified Visual Safety Regulator：在 MM-DiT 內部限制有害資訊流 | [2606.06875](https://arxiv.org/abs/2606.06875) | [UVR](papers/2026/2026-09/UVR/AI_Daily_UVR.md) |
 | VISTA: Test-Time Compositional Alignment for Visual Autoregressive Generation | [2608.22521](https://arxiv.org/abs/2608.22521) | [VISTA](papers/2026/2026-09/VISTA/AI_Daily_VISTA.md) |
 | VL-JEPA：以語義嵌入預測取代 token 生成，讓 Vision-Language 模型具備選擇性解碼能力 | [2512.10942](https://arxiv.org/abs/2512.10942) | [VL-JEPA](papers/2026/2026-09/VL-JEPA/AI_Daily_VL_JEPA.md) |
+| VibeToken：把解析度與 AR token budget 解耦的動態解析度視覺自回歸 | [2604.24885](https://arxiv.org/abs/2604.24885) | [VibeToken](papers/2026/2026-09/VibeToken/AI_Daily_VibeToken.md) |
 | WISER：把零樣本圖像檢索改寫成「搜尋、驗證、反思」閉環 | [2602.23029](https://arxiv.org/abs/2602.23029) | [WISER](papers/2026/2026-09/WISER/AI_Daily_WISER.md) |
 
 ## 2026-08

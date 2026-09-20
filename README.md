@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-19**
+**Last Updated: 2026-09-20**
 
-📚 **[完整論文索引(167 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(168 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[VibeToken — 2026-09-20：Scaling 1D Image Tokenizers and Autoregressive Models for Dynamic Resolution Generations；CVPR 2026，將解析度與 AR token budget 解耦：以 dynamic grid、adaptive patch、adaptive decoder 與 32–256 可變 latent token，讓 VibeToken-Gen 用 64 tokens 支援 1024×1024 與多種長寬比；正文 Table 3/5 的 1024² gFID 為 3.54，摘要與官方展示頁另報 3.94，報告保留此版本差異；Maitreya Patel 等，Sony AI、Arizona State University，arXiv:2604.24885](papers/2026/2026-09/VibeToken/AI_Daily_VibeToken.md)**
+
+本文精選 **VibeToken**，從 tokenizer–generator interface 重新處理 visual AR 的解析度擴展問題。報告推導 $T=(H/f)(W/f)$ 與 AR attention 成本，拆解 dynamic grid positional embedding、adaptive patch kernel、adaptive decoder、MVQ 與 $(H,W)$ conditioning，並比較 TiTok、FlexTok、LlamaGen、VAR 與 diffusion baselines。文章也明確標註 VibeToken **不是** Energy-Based Transformer、JEPA、training-free 或 zero-shot 方法；同時提出以 energy-based token budget、JEPA predictive disagreement 與 inference-time attention modulation 延伸的研究問題。
 
 - **[UVR — 2026-09-19：Unified Safe In-context Image Generation in Multimodal Diffusion Transformers via Restricting Unsafe Information Flows；ICML 2026，提出不修改模型權重的 training-free MM-DiT 安全調制：先以 unsafe output-space anchors 定位危險 patch，再限制文字／參考圖像到輸出圖像的有害資訊流；FLUX.1-dev 的 T2I I2P unsafe count 207→40、Unsafe-1K 449→97，FLUX.1-Kontext 的 I2I I2P 175→46、Unsafe-1K 402→151，額外顯存約 3.12 MB；Xiang Yang 等，復旦大學、華東理工大學、上海電力大學，arXiv:2606.06875](papers/2026/2026-09/UVR/AI_Daily_UVR.md)**
 
