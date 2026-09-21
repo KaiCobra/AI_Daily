@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 168 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 169 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
@@ -11,6 +11,7 @@
 | Causal-JEPA：用物件級 latent masking 迫使世界模型學會互動 | [2602.11389](https://arxiv.org/abs/2602.11389) | [Causal-JEPA](papers/2026/2026-09/Causal-JEPA/AI_Daily_Causal_JEPA.md) |
 | ChebBooster: Training-Free DiT Inference via Chebyshev-Inspired Extrapolation | [2608.23429](https://arxiv.org/abs/2608.23429) | [ChebBooster](papers/2026/2026-09/ChebBooster/AI_Daily_ChebBooster.md) |
 | ｜DIAL：讓 DiT 內生注意力成為可控的多主體影片生成介面 | [2609.11507](https://arxiv.org/abs/2609.11507) | [DIAL](papers/2026/2026-09/DIAL/AI_Daily_DIAL.md) |
+| Diagonal Attention：利用視覺 token 的對角稀疏加速 Visual Autoregressive Generation | [2609.19702](https://arxiv.org/abs/2609.19702) | [DiagonalAttention](papers/2026/2026-09/DiagonalAttention/AI_Daily_DiagonalAttention.md) |
 | Training-Free Refinement of Flow Matching with Divergence-based Sampling | [2604.04646](https://arxiv.org/abs/2604.04646) | [FDS](papers/2026/2026-09/FDS/AI_Daily_FDS.md) |
 | FlowInOne：把多模態生成改寫成視覺提示到圖像的單一 Flow | [2604.06757](https://arxiv.org/abs/2604.06757) | [FlowInOne](papers/2026/2026-09/FlowInOne/AI_Daily_FlowInOne.md) |
 | ：GEAR——讓 AR hidden state 承擔語義，重新分工離散 tokenizer 與生成器 | [2606.32039](https://arxiv.org/abs/2606.32039) | [GEAR](papers/2026/2026-09/GEAR/AI_Daily_GEAR.md) |

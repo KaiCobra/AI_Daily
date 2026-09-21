@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-20**
+**Last Updated: 2026-09-21**
 
-📚 **[完整論文索引(168 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(169 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Diagonal Attention — 2026-09-21：Understanding and Exploiting Diagonal Attention Sparsity in Autoregressive Image Generation；IISWC 2026 accepted，發現 visual AR 的 attention 具有由空間局部性造成的 diagonal sparsity，並以 diagonal-aware KV selection 在 95% decode-KV sparsity 下維持接近 dense 的品質；Janus-Pro-7B / Lumina-mGPT 的 end-to-end latency speedup 為 1.18× / 1.19×，最大可行 batch throughput 最高為 2.3× / 3.1×；Daeun Kim 等，KAIST、Agency for Defense Development、Seoul National University，arXiv:2609.19702](papers/2026/2026-09/DiagonalAttention/AI_Daily_DiagonalAttention.md)**
+
+本文精選 **Diagonal Attention**，從 prompt/local/middle attention 分布與 vertical/diagonal similarity 出發，說明文字 LLM 的 heavy-hitter 假設為何不能直接套用到 visual AR。報告拆解 recent window、prompt KV 保留、per-head diagonal skip set、shift-and-evict 演算法與 Triton kernel，並分開解讀固定 batch latency 和最大 batch throughput；同時把它與 HACK、ADSA、ZipAR 對照，提出 Energy-based routing、JEPA predictive fallback、VAR scale-wise 2D routing 與嚴格 training-free/zero-shot protocol。
 
 - **[VibeToken — 2026-09-20：Scaling 1D Image Tokenizers and Autoregressive Models for Dynamic Resolution Generations；CVPR 2026，將解析度與 AR token budget 解耦：以 dynamic grid、adaptive patch、adaptive decoder 與 32–256 可變 latent token，讓 VibeToken-Gen 用 64 tokens 支援 1024×1024 與多種長寬比；正文 Table 3/5 的 1024² gFID 為 3.54，摘要與官方展示頁另報 3.94，報告保留此版本差異；Maitreya Patel 等，Sony AI、Arizona State University，arXiv:2604.24885](papers/2026/2026-09/VibeToken/AI_Daily_VibeToken.md)**
 
