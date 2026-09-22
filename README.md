@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-21**
+**Last Updated: 2026-09-22**
 
-📚 **[完整論文索引(169 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(170 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[AlignMorph — 2026-09-22：Tuning-Free Diffusion Image Morphing via Explicit Semantic Transport；ECCV 2026 accepted，先以 DINOv2+FeatUp 與熵正則 Sinkhorn OT 建立稠密語義對應，再用可靠度感知的多頻帶 latent transport 對齊低頻結構、保留高頻噪聲，最後以雙階段 attention handoff 在一致座標系內去噪；MorphBench/Morph4Data Overall LPIPS/FID/PPL 153.78/140.12/3896.93，較 reproduced FreeMorph 約降低 6.6%/9.3%/5.8%；Wuyi Liu 等，華中科技大學、北京交通大學、北京航空航天大學（arXiv:2609.24330）](papers/2026/2026-09/AlignMorph/AI_Daily_AlignMorph.md)**
+
+本文精選 **AlignMorph**，將免訓練 diffusion morphing 拆成「先搬運、後去噪」：OT correspondence、cycle-confidence gate 與 multiband latent warp 先解決大布局差異，再由 coordinate-aligned generation 控制 UNet 的 query/KV 座標。報告詳解最優傳輸、頻率分解、Slerp 路徑、midpoint handoff、消融與 flower-to-monkey 失敗案例，並提出與 **Energy-based routing、JEPA predictive fallback、VAR scale-wise transport** 對接的研究方向。
 
 - **[Diagonal Attention — 2026-09-21：Understanding and Exploiting Diagonal Attention Sparsity in Autoregressive Image Generation；IISWC 2026 accepted，發現 visual AR 的 attention 具有由空間局部性造成的 diagonal sparsity，並以 diagonal-aware KV selection 在 95% decode-KV sparsity 下維持接近 dense 的品質；Janus-Pro-7B / Lumina-mGPT 的 end-to-end latency speedup 為 1.18× / 1.19×，最大可行 batch throughput 最高為 2.3× / 3.1×；Daeun Kim 等，KAIST、Agency for Defense Development、Seoul National University，arXiv:2609.19702](papers/2026/2026-09/DiagonalAttention/AI_Daily_DiagonalAttention.md)**
 

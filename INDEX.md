@@ -1,12 +1,13 @@
 # 論文索引(全庫)
 
-共 169 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 170 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| AlignMorph：以顯式語義傳輸解決免訓練 Diffusion Image Morphing 的重影問題 | [2609.24330](https://arxiv.org/abs/2609.24330) | [AlignMorph](papers/2026/2026-09/AlignMorph/AI_Daily_AlignMorph.md) |
 | AcFlow：把文字條件變成可積分的 activation flow，讓 frozen DiT 具有連續、可泛化的控制軸 | [2609.10723](https://arxiv.org/abs/2609.10723) | [AcFlow](papers/2026/2026-09/AcFlow/AI_Daily_AcFlow.md) |
 | Causal-JEPA：用物件級 latent masking 迫使世界模型學會互動 | [2602.11389](https://arxiv.org/abs/2602.11389) | [Causal-JEPA](papers/2026/2026-09/Causal-JEPA/AI_Daily_Causal_JEPA.md) |
 | ChebBooster: Training-Free DiT Inference via Chebyshev-Inspired Extrapolation | [2608.23429](https://arxiv.org/abs/2608.23429) | [ChebBooster](papers/2026/2026-09/ChebBooster/AI_Daily_ChebBooster.md) |
