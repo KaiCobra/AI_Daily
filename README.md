@@ -4,11 +4,15 @@
 
 **Last Updated: 2026-09-22**
 
-📚 **[完整論文索引(170 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(171 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Into the Rabbit Hull — 2026-09-22：From Task-Relevant Concepts in DINO to Minkowski Geometry；ICLR 2026，使用 DINOv2-B、32,000 個 stable SAE concept atoms 與 task-aligned probes，發現分類的 Elsewhere concepts、分割的 border concepts、深度的三類 monocular cues，以及 register-only 的全局場景特徵；再以多頭 attention 的凸組合、token 局部幾何與 Archetypal Analysis 提出 Minkowski Representation Hypothesis（MRH），將概念從無界線性方向重新理解為 convex tiles 的 Minkowski sum；MRH 仍是 preliminary、observational、model-specific working hypothesis；Thomas Fel、Binxu Wang、Michael A. Lepori 等（arXiv:2510.08638）](papers/2026/2026-09/Into-the-Rabbit-Hull/AI_Daily_Into_the_Rabbit_Hull.md)**
+
+本文精選 **Into the Rabbit Hull**，把視覺可解釋性從「哪個 neuron 或方向代表概念」推向「任務如何取用概念區域，以及 token 是否由多個凸區域組合而成」。報告整理 LRH、stable SAE、`R^2>88%` reconstruction、`r=0.28/R^2=0.08` 的 co-activation/geometry 關聯、Figure 17 的三組 MRH 初步證據與 non-identifiability 限制，並以心智圖連接 DINOv2、concept manifolds、block-sparse featurizers 與 manifold steering。
 
 - **[AlignMorph — 2026-09-22：Tuning-Free Diffusion Image Morphing via Explicit Semantic Transport；ECCV 2026 accepted，先以 DINOv2+FeatUp 與熵正則 Sinkhorn OT 建立稠密語義對應，再用可靠度感知的多頻帶 latent transport 對齊低頻結構、保留高頻噪聲，最後以雙階段 attention handoff 在一致座標系內去噪；MorphBench/Morph4Data Overall LPIPS/FID/PPL 153.78/140.12/3896.93，較 reproduced FreeMorph 約降低 6.6%/9.3%/5.8%；Wuyi Liu 等，華中科技大學、北京交通大學、北京航空航天大學（arXiv:2609.24330）](papers/2026/2026-09/AlignMorph/AI_Daily_AlignMorph.md)**
 
