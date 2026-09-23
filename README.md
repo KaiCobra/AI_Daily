@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-22**
+**Last Updated: 2026-09-23**
 
-📚 **[完整論文索引(171 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(172 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[UltraTex — 2026-09-23：Unleashing 2K Multi-View Diffusion for 3D Texturing；SIGGRAPH Asia 2026 Conference Paper，以 Background Token Dropping 刪除幾何背景 token，再以 Block-Sparse Attention 的 Top-K block routing 處理前景 interaction，並用 Foreground-Aware VAE Decoding 修復 foreground-only denoising 的 decoder 分布偏移；2K 六視角 unified sequence 達 212,992 tokens，報告 20.6×–91.1× 訓練加速與 22.3×–74.6× 端到端推理加速；Yibo Zhang 等，Jilin University、Shanghai Innovation Institute、The University of Hong Kong、Tongji University、Fudan University、VAST（arXiv:2609.23169）](papers/2026/2026-09/UltraTex/AI_Daily_UltraTex.md)**
+
+本文精選 **UltraTex**，把高解析多視角 diffusion 的瓶頸拆成 sequence redundancy、attention redundancy 與 decoder distribution shift 三層問題。報告推導 flow-matching、foreground-restricted loss、Top-K block-sparse attention 與 foreground-aware VAE decoding，並明確標註 UltraTex **不是** Energy-Based Transformer、JEPA、VAR、training-free 或 zero-shot 方法；同時以 UniTEX、MVPaint、SyncMVD、Paint3D 為相關背景，提出 Energy-Gated BSA、JEPA support predictor、scale-wise VAR texture generation 與 inference-only sparse routing 等延伸方向。
 
 - **[Into the Rabbit Hull — 2026-09-22：From Task-Relevant Concepts in DINO to Minkowski Geometry；ICLR 2026，使用 DINOv2-B、32,000 個 stable SAE concept atoms 與 task-aligned probes，發現分類的 Elsewhere concepts、分割的 border concepts、深度的三類 monocular cues，以及 register-only 的全局場景特徵；再以多頭 attention 的凸組合、token 局部幾何與 Archetypal Analysis 提出 Minkowski Representation Hypothesis（MRH），將概念從無界線性方向重新理解為 convex tiles 的 Minkowski sum；MRH 仍是 preliminary、observational、model-specific working hypothesis；Thomas Fel、Binxu Wang、Michael A. Lepori 等（arXiv:2510.08638）](papers/2026/2026-09/Into-the-Rabbit-Hull/AI_Daily_Into_the_Rabbit_Hull.md)**
 

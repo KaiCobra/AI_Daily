@@ -1,12 +1,13 @@
 # 論文索引(全庫)
 
-共 171 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 172 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| UltraTex：以 2K 多視角 Diffusion 與稀疏注意力完成高解析 3D 貼圖 | [2609.23169](https://arxiv.org/abs/2609.23169) | [UltraTex](papers/2026/2026-09/UltraTex/AI_Daily_UltraTex.md) |
 | Into the Rabbit Hull：從 DINO 的任務相關概念走向 Minkowski 幾何 | [2510.08638](https://arxiv.org/abs/2510.08638) | [Into-the-Rabbit-Hull](papers/2026/2026-09/Into-the-Rabbit-Hull/AI_Daily_Into_the_Rabbit_Hull.md) |
 | AlignMorph：以顯式語義傳輸解決免訓練 Diffusion Image Morphing 的重影問題 | [2609.24330](https://arxiv.org/abs/2609.24330) | [AlignMorph](papers/2026/2026-09/AlignMorph/AI_Daily_AlignMorph.md) |
 | AcFlow：把文字條件變成可積分的 activation flow，讓 frozen DiT 具有連續、可泛化的控制軸 | [2609.10723](https://arxiv.org/abs/2609.10723) | [AcFlow](papers/2026/2026-09/AcFlow/AI_Daily_AcFlow.md) |
