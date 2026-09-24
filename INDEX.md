@@ -1,16 +1,14 @@
 # 論文索引(全庫)
 
-共 172 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 173 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
-| UltraTex：以 2K 多視角 Diffusion 與稀疏注意力完成高解析 3D 貼圖 | [2609.23169](https://arxiv.org/abs/2609.23169) | [UltraTex](papers/2026/2026-09/UltraTex/AI_Daily_UltraTex.md) |
-| Into the Rabbit Hull：從 DINO 的任務相關概念走向 Minkowski 幾何 | [2510.08638](https://arxiv.org/abs/2510.08638) | [Into-the-Rabbit-Hull](papers/2026/2026-09/Into-the-Rabbit-Hull/AI_Daily_Into_the_Rabbit_Hull.md) |
-| AlignMorph：以顯式語義傳輸解決免訓練 Diffusion Image Morphing 的重影問題 | [2609.24330](https://arxiv.org/abs/2609.24330) | [AlignMorph](papers/2026/2026-09/AlignMorph/AI_Daily_AlignMorph.md) |
 | AcFlow：把文字條件變成可積分的 activation flow，讓 frozen DiT 具有連續、可泛化的控制軸 | [2609.10723](https://arxiv.org/abs/2609.10723) | [AcFlow](papers/2026/2026-09/AcFlow/AI_Daily_AcFlow.md) |
+| AlignMorph：用顯式語義傳輸解決 Diffusion Image Morphing 的重影問題 | [2609.24330](https://arxiv.org/abs/2609.24330) | [AlignMorph](papers/2026/2026-09/AlignMorph/AI_Daily_AlignMorph.md) |
 | Causal-JEPA：用物件級 latent masking 迫使世界模型學會互動 | [2602.11389](https://arxiv.org/abs/2602.11389) | [Causal-JEPA](papers/2026/2026-09/Causal-JEPA/AI_Daily_Causal_JEPA.md) |
 | ChebBooster: Training-Free DiT Inference via Chebyshev-Inspired Extrapolation | [2608.23429](https://arxiv.org/abs/2608.23429) | [ChebBooster](papers/2026/2026-09/ChebBooster/AI_Daily_ChebBooster.md) |
 | ｜DIAL：讓 DiT 內生注意力成為可控的多主體影片生成介面 | [2609.11507](https://arxiv.org/abs/2609.11507) | [DIAL](papers/2026/2026-09/DIAL/AI_Daily_DIAL.md) |
@@ -18,14 +16,17 @@
 | Training-Free Refinement of Flow Matching with Divergence-based Sampling | [2604.04646](https://arxiv.org/abs/2604.04646) | [FDS](papers/2026/2026-09/FDS/AI_Daily_FDS.md) |
 | FlowInOne：把多模態生成改寫成視覺提示到圖像的單一 Flow | [2604.06757](https://arxiv.org/abs/2604.06757) | [FlowInOne](papers/2026/2026-09/FlowInOne/AI_Daily_FlowInOne.md) |
 | ：GEAR——讓 AR hidden state 承擔語義，重新分工離散 tokenizer 與生成器 | [2606.32039](https://arxiv.org/abs/2606.32039) | [GEAR](papers/2026/2026-09/GEAR/AI_Daily_GEAR.md) |
+| ：Into the Rabbit Hull——DINO 的概念，為什麼可能不是一條線？ | [2510.08638](https://arxiv.org/abs/2510.08638) | [Into-the-Rabbit-Hull](papers/2026/2026-09/Into-the-Rabbit-Hull/AI_Daily_Into_the_Rabbit_Hull.md) |
 | Logit Refiner：修正 Visual Autoregressive Model 的同尺度獨立採樣 | [2609.11804](https://arxiv.org/abs/2609.11804) | [Logit-Refiner](papers/2026/2026-09/Logit-Refiner/AI_Daily_Logit_Refiner.md) |
 | MeRoPE: Metric Rotary Position Embedding for Camera-Controlled Video Generation | [2609.01252](https://arxiv.org/abs/2609.01252) | [MeRoPE](papers/2026/2026-09/MeRoPE/AI_Daily_MeRoPE.md) |
 | OAVC：把「在哪裡改」與「如何改」拆開的免訓練 Flow Editing | [2609.06288](https://arxiv.org/abs/2609.06288) | [OAVC](papers/2026/2026-09/OAVC/AI_Daily_OAVC.md) |
 | Toward Physically Grounded JEPA World Models for Goal-Conditioned Robotic Planning | [2609.03565](https://arxiv.org/abs/2609.03565) | [PhysicallyGroundedJEPA](papers/2026/2026-09/PhysicallyGroundedJEPA/AI_Daily_PhysicallyGroundedJEPA.md) |
 | PredErase——以 I-JEPA 預測先驗與 Flow-Matching Latent Guidance 實現免訓練物體及其陰影移除 | [2609.00956](https://arxiv.org/abs/2609.00956) | [PredErase](papers/2026/2026-09/PredErase/AI_Daily_PredErase.md) |
+| QuantWM——KV Cache 壓縮其實是 Attention-Energy Fidelity 問題 | [2609.26425](https://arxiv.org/abs/2609.26425) | [QuantWM](papers/2026/2026-09/QuantWM/AI_Daily_QuantWM.md) |
 | ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Fea... | [2609.04649](https://arxiv.org/abs/2609.04649) | [ReaDiT](papers/2026/2026-09/ReaDiT/AI_Daily_ReaDiT.md) |
 | RelightFormer：以生成式 Transformer 直接完成多視角物件重新打光 | [2609.07414](https://arxiv.org/abs/2609.07414) | [RelightFormer](papers/2026/2026-09/RelightFormer/AI_Daily_RelightFormer.md) |
 | Unified Visual Safety Regulator：在 MM-DiT 內部限制有害資訊流 | [2606.06875](https://arxiv.org/abs/2606.06875) | [UVR](papers/2026/2026-09/UVR/AI_Daily_UVR.md) |
+| 論文基本資訊 | [2609.23169](https://arxiv.org/abs/2609.23169) | [UltraTex](papers/2026/2026-09/UltraTex/AI_Daily_UltraTex.md) |
 | VISTA: Test-Time Compositional Alignment for Visual Autoregressive Generation | [2608.22521](https://arxiv.org/abs/2608.22521) | [VISTA](papers/2026/2026-09/VISTA/AI_Daily_VISTA.md) |
 | VL-JEPA：以語義嵌入預測取代 token 生成，讓 Vision-Language 模型具備選擇性解碼能力 | [2512.10942](https://arxiv.org/abs/2512.10942) | [VL-JEPA](papers/2026/2026-09/VL-JEPA/AI_Daily_VL_JEPA.md) |
 | VibeToken：把解析度與 AR token budget 解耦的動態解析度視覺自回歸 | [2604.24885](https://arxiv.org/abs/2604.24885) | [VibeToken](papers/2026/2026-09/VibeToken/AI_Daily_VibeToken.md) |

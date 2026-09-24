@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-23**
+**Last Updated: 2026-09-24**
 
-📚 **[完整論文索引(172 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(173 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[QuantWM — 2026-09-24：QuantWM: Temporally Consistent 2-Bit KV Cache Quantization for World Models and Video Generation；arXiv 預印本 v2，將 2-bit KV cache 的瓶頸從 Key reconstruction MSE 改寫成 attention-energy fidelity：QSAC 以歷史 Query 敏感度與 residual range 選擇 INT2-friendly centroid，PSAC 以低秩 Query 主子空間補回剩餘 Key error；在 Causal-Forcing、LingBot-World-v2、HY-World 1.5、Matrix-Game-2、LongCat-Video 五個模型上最高達 6.20× cache compression，並將 top-1 temporal-spatial token shift 降至 10.19%–22.25%；Jiaqi Zhao 等，Harbin Institute of Technology (Shenzhen)、National University of Singapore（arXiv:2609.26425）](papers/2026/2026-09/QuantWM/AI_Daily_QuantWM.md)**
+
+本文精選 **QuantWM**，指出 Key 的元素級量化誤差小，不代表 attention 行為穩定；真正需要保存的是 Query 所感知的 $QK^{\top}$ logit 與 temporal-spatial token ranking。報告拆解嚴格 causal 的 QSAC、PSAC、Query moment matrix、低秩 compensation、480p/720p 與 1-minute 結果，並比較 QVG、KIVI、SQuat 與 Jensen-bias correction。文章也明確提醒：training-free 不等於 zero-cost，6.20× 是 KV cache memory compression，不是普遍端到端加速；同時提出 Energy-based KV routing、JEPA predictive disagreement、VAR scale-wise cache fidelity 與兩層 attention stabilizer 等後續方向。
 
 - **[UltraTex — 2026-09-23：Unleashing 2K Multi-View Diffusion for 3D Texturing；SIGGRAPH Asia 2026 Conference Paper，以 Background Token Dropping 刪除幾何背景 token，再以 Block-Sparse Attention 的 Top-K block routing 處理前景 interaction，並用 Foreground-Aware VAE Decoding 修復 foreground-only denoising 的 decoder 分布偏移；2K 六視角 unified sequence 達 212,992 tokens，報告 20.6×–91.1× 訓練加速與 22.3×–74.6× 端到端推理加速；Yibo Zhang 等，Jilin University、Shanghai Innovation Institute、The University of Hong Kong、Tongji University、Fudan University、VAST（arXiv:2609.23169）](papers/2026/2026-09/UltraTex/AI_Daily_UltraTex.md)**
 
