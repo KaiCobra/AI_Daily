@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-24**
+**Last Updated: 2026-09-25**
 
-📚 **[完整論文索引(173 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(174 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Parallel Decoding Distillation — 2026-09-25：Parallel Decoding Distillation for Fast Image and Video Generation；NVIDIA Research 與 Weizmann Institute 的 trajectory-based 蒸餾方法，不把多個 teacher denoising step 合成一個黑盒跳躍，而是在一次 forward 中並行預測多個 interval 的 mean velocity；以 on-policy PD loss 取代 VSD、GAN、JVP 與 finite-difference derivative regression，並以 fused linear heads 支援可變 NFE；Qwen-Image 在 4/8 NFE 的 OneIG overall 為 0.538/0.541，Euler diversity 為 0.192/0.198，Wan2.1 14B 在 4 NFE 的 VBench overall 為 84.92；Neta Shaul、Chao Liu、Arash Vahdat、Julius Berner（arXiv:2607.26004）](papers/2026/2026-09/Parallel-Decoding-Distillation/AI_Daily_PDD.md)**
+
+本文精選 **PDD**，因為它把少步生成的核心重新定位成「共享 backbone 加上多個局部 transition head」的表示與計算問題。報告推導 interval mean velocity、parallel decoder、on-policy PD loss、variable block size 與 layer fusion，並比較 DMD2、Pi-Flow、AnyFlow 與 Flow Matching；同時明確指出 PDD 仍需蒸餾訓練，不是 training-free 或 zero-shot，且 variable NFE 仍受訓練時 grid 與 block-size range 限制。文章也提出以 Energy-based block selection、JEPA predictive disagreement 與 VAR scale-wise parallel prediction 延伸的研究問題。
 
 - **[QuantWM — 2026-09-24：QuantWM: Temporally Consistent 2-Bit KV Cache Quantization for World Models and Video Generation；arXiv 預印本 v2，將 2-bit KV cache 的瓶頸從 Key reconstruction MSE 改寫成 attention-energy fidelity：QSAC 以歷史 Query 敏感度與 residual range 選擇 INT2-friendly centroid，PSAC 以低秩 Query 主子空間補回剩餘 Key error；在 Causal-Forcing、LingBot-World-v2、HY-World 1.5、Matrix-Game-2、LongCat-Video 五個模型上最高達 6.20× cache compression，並將 top-1 temporal-spatial token shift 降至 10.19%–22.25%；Jiaqi Zhao 等，Harbin Institute of Technology (Shenzhen)、National University of Singapore（arXiv:2609.26425）](papers/2026/2026-09/QuantWM/AI_Daily_QuantWM.md)**
 

@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 173 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 174 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
@@ -20,6 +20,7 @@
 | Logit Refiner：修正 Visual Autoregressive Model 的同尺度獨立採樣 | [2609.11804](https://arxiv.org/abs/2609.11804) | [Logit-Refiner](papers/2026/2026-09/Logit-Refiner/AI_Daily_Logit_Refiner.md) |
 | MeRoPE: Metric Rotary Position Embedding for Camera-Controlled Video Generation | [2609.01252](https://arxiv.org/abs/2609.01252) | [MeRoPE](papers/2026/2026-09/MeRoPE/AI_Daily_MeRoPE.md) |
 | OAVC：把「在哪裡改」與「如何改」拆開的免訓練 Flow Editing | [2609.06288](https://arxiv.org/abs/2609.06288) | [OAVC](papers/2026/2026-09/OAVC/AI_Daily_OAVC.md) |
+| Parallel Decoding Distillation：不要把多步生成壓成一個黑盒，而是一次預測多個平均速度 | [2607.26004](https://arxiv.org/abs/2607.26004) | [Parallel-Decoding-Distillation](papers/2026/2026-09/Parallel-Decoding-Distillation/AI_Daily_PDD.md) |
 | Toward Physically Grounded JEPA World Models for Goal-Conditioned Robotic Planning | [2609.03565](https://arxiv.org/abs/2609.03565) | [PhysicallyGroundedJEPA](papers/2026/2026-09/PhysicallyGroundedJEPA/AI_Daily_PhysicallyGroundedJEPA.md) |
 | PredErase——以 I-JEPA 預測先驗與 Flow-Matching Latent Guidance 實現免訓練物體及其陰影移除 | [2609.00956](https://arxiv.org/abs/2609.00956) | [PredErase](papers/2026/2026-09/PredErase/AI_Daily_PredErase.md) |
 | QuantWM——KV Cache 壓縮其實是 Attention-Energy Fidelity 問題 | [2609.26425](https://arxiv.org/abs/2609.26425) | [QuantWM](papers/2026/2026-09/QuantWM/AI_Daily_QuantWM.md) |
