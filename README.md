@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-25**
+**Last Updated: 2026-09-26**
 
-📚 **[完整論文索引(174 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(175 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[AD-WM — 2026-09-26：Action-Discriminative World Models for Counterfactual Model Predictive Control；Nanjing University 的 JEPA latent world model，指出低 factual prediction error 不等於能分辨同一狀態下的 counterfactual actions；以 residual latent dynamics、predictor-level inverse dynamics 與 conditional-MI-inspired normalized recovery 保留 action-dependent transition，並以 CEM elite regret 評估真正與 closed-loop success 對齊的 candidate selection；matched LeWM 的 OGBench-Cube hard-start success 由 3.7% 提升至 52.0%，五個 simulation environments 中四個提升，frozen V-JEPA 2 + matched DROID post-training 的 Franka basic pick-and-place 由 42.2% 提升至 71.1%；arXiv:2609.30264v1](papers/2026/2026-09/AD-WM/AI_Daily_AD-WM.md)**
+
+本文精選 **AD-WM**，把 JEPA world model 的品質拆成 factual prediction、action identifiability 與 planning alignment 三層；報告推導 residual predictor、inverse recovery、normalized mutual-information objective、CAD 與 elite regret，並對照 LeWM、Delta-JEPA、V-JEPA 2 與 DINO-WM。文章明確標註 AD-WM 不是 Energy-Based Transformer、VAR、training-free 或 inference-only attention modulation；同時提出把 action-recovery disagreement 轉成 Energy-Gated JEPA–VAR 與 adaptive attention modulation 的研究方向。
 
 - **[Parallel Decoding Distillation — 2026-09-25：Parallel Decoding Distillation for Fast Image and Video Generation；NVIDIA Research 與 Weizmann Institute 的 trajectory-based 蒸餾方法，不把多個 teacher denoising step 合成一個黑盒跳躍，而是在一次 forward 中並行預測多個 interval 的 mean velocity；以 on-policy PD loss 取代 VSD、GAN、JVP 與 finite-difference derivative regression，並以 fused linear heads 支援可變 NFE；Qwen-Image 在 4/8 NFE 的 OneIG overall 為 0.538/0.541，Euler diversity 為 0.192/0.198，Wan2.1 14B 在 4 NFE 的 VBench overall 為 84.92；Neta Shaul、Chao Liu、Arash Vahdat、Julius Berner（arXiv:2607.26004）](papers/2026/2026-09/Parallel-Decoding-Distillation/AI_Daily_PDD.md)**
 
