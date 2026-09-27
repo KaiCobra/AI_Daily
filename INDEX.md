@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 175 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 176 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
@@ -26,6 +26,7 @@
 | PredErase——以 I-JEPA 預測先驗與 Flow-Matching Latent Guidance 實現免訓練物體及其陰影移除 | [2609.00956](https://arxiv.org/abs/2609.00956) | [PredErase](papers/2026/2026-09/PredErase/AI_Daily_PredErase.md) |
 | QuantWM——KV Cache 壓縮其實是 Attention-Energy Fidelity 問題 | [2609.26425](https://arxiv.org/abs/2609.26425) | [QuantWM](papers/2026/2026-09/QuantWM/AI_Daily_QuantWM.md) |
 | ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Fea... | [2609.04649](https://arxiv.org/abs/2609.04649) | [ReaDiT](papers/2026/2026-09/ReaDiT/AI_Daily_ReaDiT.md) |
+| RefineEdit：讓 Generative Refinement Network 在生成過程中自己找出可編輯區域 | [2609.20633](https://arxiv.org/abs/2609.20633) | [RefineEdit](papers/2026/2026-09/RefineEdit/AI_Daily_RefineEdit.md) |
 | RelightFormer：以生成式 Transformer 直接完成多視角物件重新打光 | [2609.07414](https://arxiv.org/abs/2609.07414) | [RelightFormer](papers/2026/2026-09/RelightFormer/AI_Daily_RelightFormer.md) |
 | Unified Visual Safety Regulator：在 MM-DiT 內部限制有害資訊流 | [2606.06875](https://arxiv.org/abs/2606.06875) | [UVR](papers/2026/2026-09/UVR/AI_Daily_UVR.md) |
 | 論文基本資訊 | [2609.23169](https://arxiv.org/abs/2609.23169) | [UltraTex](papers/2026/2026-09/UltraTex/AI_Daily_UltraTex.md) |
