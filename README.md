@@ -2,15 +2,19 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-27**
+**Last Updated: 2026-09-28**
 
-📚 **[完整論文索引(176 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(177 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
 
-- **[RefineEdit — 2026-09-27：Refinement Is Inherently Editable，以 GRN 的 global binary refinement trajectory 實現 training-free prompt-to-prompt image editing；從 source 中間 state 分支 editing branch，比較兩 branch 對 source-sampled bit 的 signed probability difference，以 source-anchored bit routing 決定可編輯位置與 bit，再用 Adaptive Spatial Freezing（AdaSF）抑制 mask 擴張、Finite Bit Locking（FBL）維持編輯連續性；PIE-Bench 九類編輯的 PSNR/LPIPS/MSE/SSIM 為 30.36/0.032/0.0045/0.950，whole/edited CLIP 為 26.59/23.44，A100 1024² runtime 26.77 秒；Yulong Chen 等，City University of Hong Kong 等，arXiv:2609.20633v3](papers/2026/2026-09/RefineEdit/AI_Daily_RefineEdit.md)**
+- **[A-JEPA — 2026-09-28：I Act Therefore I Am，研究 action-conditioning 何時足以讓 JEPA 學到可遷移的因果機制；以 information-theoretic objective 與 action-modulated Gaussian transition 建立 component-wise identifiability，RoboNet 未見 Franka/Sawyer 的 h=20 rollout $R^2$ 為 0.9099/0.9028；Yuhang Liu、Zhuo Huang、Javen Qinfeng Shi，Adelaide University，arXiv:2609.31161v1](papers/2026/2026-09/A-JEPA/AI_Daily_A-JEPA.md)**
+
+本文精選 **A-JEPA**，把 JEPA 的目標從「預測得準」推進到「coordinate 不任意混合」：在 smooth invertible observation mapping 與足夠 action-induced variation 下，learned representation 只剩 permutation 加逐維 invertible transform；報告詳解 theorem、Gaussian NLL、entropy contrastive surrogate、synthetic MCC、visual control 與 held-out robot transfer，並明確標註它不是 Energy-Based Transformer、VAR、training-free、attention modulation 或 zero-shot generation。
+
+- **[RefineEdit — 2026-09-27：Refinement Is Inherently Editable，以 GRN 的 global binary refinement trajectory 實現 training-free prompt-to-prompt image editing；從 source 中間 state 分支 editing branch，比較兩 branch 對 source-sampled bit 的 signed probability difference，以 source-anchored bit routing 決定可編輯位置與 bit，再用 Adaptive Spatial Freezing（AdaSF）抑制 mask 擴張、Finite Bit Locking（FBL）維持編輯連續性；PIE-Bench 九類編輯的 PSNR/LPIPS/MSE/SSIM 為 30.36/0.032/0.0045/0.950，whole/edited CLIP 為 26.59/23.44，A100 1024² runtime 26.77 秒；Yulong Chen 等，City University of Hong Kong 等，arXiv:2609.20633v3](papers/2026/2026-09/RefineEdit/AI_Daily_RefineEdit.md)
 
 本文精選 **RefineEdit**，將編輯 mask 從一次性 segmentation 改寫成由 model probability、refinement state 與 source anchoring 持續更新的 routing policy。報告推導 GRN binary refinement、signed probability difference、spatial/bitwise mask、AdaSF 與 FBL，並比較 AREdit、diffusion/flow editors；同時明確標註它雖然 training-free，卻不是任意 real-image editor，也不是 Energy-Based Transformer 或 JEPA。文章進一步提出以 energy routing、JEPA-style switch uncertainty、attention disagreement 與 adaptive compute 延伸的研究方向。
 

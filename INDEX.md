@@ -1,12 +1,13 @@
 # 論文索引(全庫)
 
-共 176 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 177 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| ｜I Act Therefore I Am：動作條件何時足以讓 JEPA 學到因果機制？ | [2609.31161](https://arxiv.org/abs/2609.31161) | [A-JEPA](papers/2026/2026-09/A-JEPA/AI_Daily_A-JEPA.md) |
 | AD-WM：讓 JEPA 世界模型真正分辨「不同動作會造成什麼」 | [2609.30264](https://arxiv.org/abs/2609.30264) | [AD-WM](papers/2026/2026-09/AD-WM/AI_Daily_AD-WM.md) |
 | AcFlow：把文字條件變成可積分的 activation flow，讓 frozen DiT 具有連續、可泛化的控制軸 | [2609.10723](https://arxiv.org/abs/2609.10723) | [AcFlow](papers/2026/2026-09/AcFlow/AI_Daily_AcFlow.md) |
 | AlignMorph：用顯式語義傳輸解決 Diffusion Image Morphing 的重影問題 | [2609.24330](https://arxiv.org/abs/2609.24330) | [AlignMorph](papers/2026/2026-09/AlignMorph/AI_Daily_AlignMorph.md) |
