@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-28**
+**Last Updated: 2026-09-29**
 
-📚 **[完整論文索引(177 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(178 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Frame Guidance — 2026-09-29：以 latent slicing 將 selected frame 的 guidance 計算局部化，再以 Video Latent Optimization（VLO）在早期 deterministic、後期 stochastic 的 latent 更新，讓 frozen video diffusion model 支援 keyframe、style、loop、depth、sketch、color block 與多條件控制；latent slicing 最高約降低 15× guidance memory，搭配 2× 空間下採樣最高約降低 60×，CogX-Interp. 在 DAVIS 的 FID/FVD 為 37.95/420.3、Pexels 為 47.86/723.26；Sangwon Jang、Taekyung Ki、Jaehyeong Jo、Jaehong Yoon、Soo Ye Kim、Zhe Lin、Sung Ju Hwang，KAIST、NTU Singapore、Adobe Research、DeepAuto.ai，ICLR 2026，arXiv:2506.07177](papers/2026/2026-09/Frame-Guidance/AI_Daily_Frame_Guidance.md)**
+
+本文精選 **Frame Guidance**，將 training-free video control 拆成 frame-level condition、denoising-network gradient propagation、latent slicing 與 stage-aware VLO。報告詳解 clean latent estimate、3-length temporal slice、deterministic/stochastic update、keyframe/style/loop/depth/sketch loss，以及 DAVIS、Pexels、stylized video、VLO ablation 與 memory 結果；同時明確標註 training-free 不等於 zero-cost，並提出 **Energy-Gated JEPA–VAR / Video Controller** 作為後續研究方向。
 
 - **[A-JEPA — 2026-09-28：I Act Therefore I Am，研究 action-conditioning 何時足以讓 JEPA 學到可遷移的因果機制；以 information-theoretic objective 與 action-modulated Gaussian transition 建立 component-wise identifiability，RoboNet 未見 Franka/Sawyer 的 h=20 rollout $R^2$ 為 0.9099/0.9028；Yuhang Liu、Zhuo Huang、Javen Qinfeng Shi，Adelaide University，arXiv:2609.31161v1](papers/2026/2026-09/A-JEPA/AI_Daily_A-JEPA.md)**
 
