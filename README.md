@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-29**
+**Last Updated: 2026-09-30**
 
-📚 **[完整論文索引(178 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(179 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Edit-VAR — 2026-09-30：以 InfinityStar 的多尺度離散 token 取代影片 inversion，透過 source-to-edit probability drop、attention-guided token-wise $\gamma$、Scale-Decoupled Generation 與 residual-guided pruning，實現 training-free、inversion-free 的 VAR 影片編輯；160 個影片案例中 full/edit CLIP-S 為 0.972/0.976，PSNR/SSIM/LPIPS 為 22.58/0.821/0.176，81 frames 在單張 A800 為 64 秒；Chongbo Zhao 等，Sun Yat-sen University、Tsinghua University 等，arXiv:2609.21268v1](papers/2026/2026-09/Edit-VAR/AI_Daily_Edit_VAR.md)**
+
+本文精選 **Edit-VAR**，把影片編輯重寫成「在 VAR 多尺度 token 上決定保留或替換」：attention 決定哪裡放開 preservation，scale schedule 決定何時放開，residual 決定哪裡值得計算。報告詳解 VAR factorization、probability-guided replacement、spatial $\gamma$、$S_{\mathrm{stop}}=25$、50% residual pruning、主實驗與消融；同時明確標註它是 training-free inference，但不是 EBT/JEPA，也尚未以獨立 protocol 證明跨領域 zero-shot 泛化，並記錄論文「自動 anchor」與官方 CLI `--target-word` 的可重現性落差。
 
 - **[Frame Guidance — 2026-09-29：以 latent slicing 將 selected frame 的 guidance 計算局部化，再以 Video Latent Optimization（VLO）在早期 deterministic、後期 stochastic 的 latent 更新，讓 frozen video diffusion model 支援 keyframe、style、loop、depth、sketch、color block 與多條件控制；latent slicing 最高約降低 15× guidance memory，搭配 2× 空間下採樣最高約降低 60×，CogX-Interp. 在 DAVIS 的 FID/FVD 為 37.95/420.3、Pexels 為 47.86/723.26；Sangwon Jang、Taekyung Ki、Jaehyeong Jo、Jaehong Yoon、Soo Ye Kim、Zhe Lin、Sung Ju Hwang，KAIST、NTU Singapore、Adobe Research、DeepAuto.ai，ICLR 2026，arXiv:2506.07177](papers/2026/2026-09/Frame-Guidance/AI_Daily_Frame_Guidance.md)**
 

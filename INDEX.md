@@ -1,13 +1,12 @@
 # 論文索引(全庫)
 
-共 178 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 179 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-09
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
-| Frame Guidance：不用重新訓練，讓少數關鍵影格控制整段影片 | [2506.07177](https://arxiv.org/abs/2506.07177) | [Frame-Guidance](papers/2026/2026-09/Frame-Guidance/AI_Daily_Frame_Guidance.md) |
 | ｜I Act Therefore I Am：動作條件何時足以讓 JEPA 學到因果機制？ | [2609.31161](https://arxiv.org/abs/2609.31161) | [A-JEPA](papers/2026/2026-09/A-JEPA/AI_Daily_A-JEPA.md) |
 | AD-WM：讓 JEPA 世界模型真正分辨「不同動作會造成什麼」 | [2609.30264](https://arxiv.org/abs/2609.30264) | [AD-WM](papers/2026/2026-09/AD-WM/AI_Daily_AD-WM.md) |
 | AcFlow：把文字條件變成可積分的 activation flow，讓 frozen DiT 具有連續、可泛化的控制軸 | [2609.10723](https://arxiv.org/abs/2609.10723) | [AcFlow](papers/2026/2026-09/AcFlow/AI_Daily_AcFlow.md) |
@@ -16,8 +15,10 @@
 | ChebBooster: Training-Free DiT Inference via Chebyshev-Inspired Extrapolation | [2608.23429](https://arxiv.org/abs/2608.23429) | [ChebBooster](papers/2026/2026-09/ChebBooster/AI_Daily_ChebBooster.md) |
 | ｜DIAL：讓 DiT 內生注意力成為可控的多主體影片生成介面 | [2609.11507](https://arxiv.org/abs/2609.11507) | [DIAL](papers/2026/2026-09/DIAL/AI_Daily_DIAL.md) |
 | Diagonal Attention：利用視覺 token 的對角稀疏加速 Visual Autoregressive Generation | [2609.19702](https://arxiv.org/abs/2609.19702) | [DiagonalAttention](papers/2026/2026-09/DiagonalAttention/AI_Daily_DiagonalAttention.md) |
+| 今日精選：Edit-VAR — Taming Visual Autoregressive Model for Precise Video Editing | [2609.21268](https://arxiv.org/abs/2609.21268) | [Edit-VAR](papers/2026/2026-09/Edit-VAR/AI_Daily_Edit_VAR.md) |
 | Training-Free Refinement of Flow Matching with Divergence-based Sampling | [2604.04646](https://arxiv.org/abs/2604.04646) | [FDS](papers/2026/2026-09/FDS/AI_Daily_FDS.md) |
 | FlowInOne：把多模態生成改寫成視覺提示到圖像的單一 Flow | [2604.06757](https://arxiv.org/abs/2604.06757) | [FlowInOne](papers/2026/2026-09/FlowInOne/AI_Daily_FlowInOne.md) |
+| Frame Guidance：不用重新訓練，讓少數關鍵影格控制整段影片 | [2506.07177](https://arxiv.org/abs/2506.07177) | [Frame-Guidance](papers/2026/2026-09/Frame-Guidance/AI_Daily_Frame_Guidance.md) |
 | ：GEAR——讓 AR hidden state 承擔語義，重新分工離散 tokenizer 與生成器 | [2606.32039](https://arxiv.org/abs/2606.32039) | [GEAR](papers/2026/2026-09/GEAR/AI_Daily_GEAR.md) |
 | ：Into the Rabbit Hull——DINO 的概念，為什麼可能不是一條線？ | [2510.08638](https://arxiv.org/abs/2510.08638) | [Into-the-Rabbit-Hull](papers/2026/2026-09/Into-the-Rabbit-Hull/AI_Daily_Into_the_Rabbit_Hull.md) |
 | Logit Refiner：修正 Visual Autoregressive Model 的同尺度獨立採樣 | [2609.11804](https://arxiv.org/abs/2609.11804) | [Logit-Refiner](papers/2026/2026-09/Logit-Refiner/AI_Daily_Logit_Refiner.md) |
