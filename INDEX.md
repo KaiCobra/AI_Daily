@@ -1,7 +1,13 @@
 # 論文索引(全庫)
 
-共 179 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 180 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
+
+## 2026-10
+
+| 論文 | arXiv | 解析 |
+|---|---|---|
+| SJD-SV: Speculative Jacobi Decoding with Semantics Verification for Autoregressive Imag... | [2609.13245](https://arxiv.org/abs/2609.13245) | [SJD-SV](papers/2026/2026-10/SJD-SV/AI_Daily_SJD_SV.md) |
 
 ## 2026-09
 

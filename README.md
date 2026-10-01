@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-09-30**
+**Last Updated: 2026-10-01**
 
-📚 **[完整論文索引(179 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(180 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[SJD-SV — 2026-10-01：以 training-free、plug-in 的 semantic-aware token subsequence verification 取代逐 token speculative verification，透過 probability non-decreasing partition、adaptive high-confidence suffix 與 progressive fallback 降低 visual AR 的 token ambiguity；Parti-prompt 上 SJD-SV 為 30.48 秒/826.32 NFE、2.60× latency 與 2.89× NFE acceleration，COCO 上為 32.92 秒/866.80 NFE、2.63×/2.74×，並可疊加 GSD/LANTERN；Baoquan Zhang、Bingqi Shan、Shihao Fang、Kenghong Lin、Xutao Li、Yunming Ye，Harbin Institute of Technology Shenzhen、Pengcheng Laboratory，ICML 2026 / PMLR 306，arXiv:2609.13245](papers/2026/2026-10/SJD-SV/AI_Daily_SJD_SV.md)**
+
+本文精選 **SJD-SV**，指出視覺 token 太細，每個 token 只描述小而不明確的局部 patch，因而在 SJD verification 中造成 false rejection。報告詳解 autoregressive factorization、SJD 的 draft/verify、semantic-aware subsequence partition、adaptive joint probability、fallback、$P_{\mathrm{SV}}\ge P_{\mathrm{SJD}}$ 的理論、Parti-prompt/COCO 指標，以及與 SJD、LANTERN、GSD、SJD-VP 的差異；同時嚴格標明它是 training-free inference plug-in，不是新的 VAR backbone，也尚未在原始 VAR/Infinity 上驗證，並延伸 Energy-based verifier、JEPA predictive consistency 與 scale-adaptive joint verification。
 
 - **[Edit-VAR — 2026-09-30：以 InfinityStar 的多尺度離散 token 取代影片 inversion，透過 source-to-edit probability drop、attention-guided token-wise $\gamma$、Scale-Decoupled Generation 與 residual-guided pruning，實現 training-free、inversion-free 的 VAR 影片編輯；160 個影片案例中 full/edit CLIP-S 為 0.972/0.976，PSNR/SSIM/LPIPS 為 22.58/0.821/0.176，81 frames 在單張 A800 為 64 秒；Chongbo Zhao 等，Sun Yat-sen University、Tsinghua University 等，arXiv:2609.21268v1](papers/2026/2026-09/Edit-VAR/AI_Daily_Edit_VAR.md)**
 
