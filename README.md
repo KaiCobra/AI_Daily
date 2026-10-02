@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-01**
+**Last Updated: 2026-10-02**
 
-📚 **[完整論文索引(180 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(181 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[REPI — 2026-10-02：Scaffold Then Internalize: Representation Injection for Diffusion Transformers；將預訓練視覺 encoder 的 K/V 暫時注入 DiT/SiT attention，先作為 scaffold、再用 internalization loss 讓 native K/V 內化；SiT-XL/2 在 ImageNet 256² 上 REPA+REPI 以 160K steps 達 FID 8.22，對照 vanilla SiT 7M steps 的 8.30，43.5× 是 training-step efficiency 而非 wall-clock；Han Fu 等，Sun Yat-sen University、Video Rebirth、The Hong Kong Polytechnic University，arXiv:2609.35292](papers/2026/2026-10/REPI/AI_Daily_REPI.md)**
+
+本文精選 **REPI**，把 representation alignment 從「讓 DiT hidden state 靠近外部 encoder」推進到「讓外部表徵直接參與 denoising，再被生成器內化」。報告詳解 flow matching、K/V injection、native Query 保留、scaffold removal、internalization loss、ImageNet/COCO 結果與實際 H200 訓練成本，並延伸到 **Energy-Gated REPI、JEPA predictive scaffold、VAR scale-wise injection 與 training-free attention modulation**。
 
 - **[SJD-SV — 2026-10-01：以 training-free、plug-in 的 semantic-aware token subsequence verification 取代逐 token speculative verification，透過 probability non-decreasing partition、adaptive high-confidence suffix 與 progressive fallback 降低 visual AR 的 token ambiguity；Parti-prompt 上 SJD-SV 為 30.48 秒/826.32 NFE、2.60× latency 與 2.89× NFE acceleration，COCO 上為 32.92 秒/866.80 NFE、2.63×/2.74×，並可疊加 GSD/LANTERN；Baoquan Zhang、Bingqi Shan、Shihao Fang、Kenghong Lin、Xutao Li、Yunming Ye，Harbin Institute of Technology Shenzhen、Pengcheng Laboratory，ICML 2026 / PMLR 306，arXiv:2609.13245](papers/2026/2026-10/SJD-SV/AI_Daily_SJD_SV.md)**
 
