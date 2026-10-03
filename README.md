@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-02**
+**Last Updated: 2026-10-03**
 
-📚 **[完整論文索引(181 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(182 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[NEPA-DiT — 2026-10-03：Embedding Prediction Helps Image Generation；以 Multi-Embedding Prediction（MEP）從類別條件與當前 noisy image 一次預測 clean-image embeddings，再以 Embedding Conditioned Generation（ECG）在每個 denoising step 動態條件化 DiT；NEPA-DiT-XL + REPA 在 ImageNet 256×256、SDE-250、interval guidance 下 FID 1.32，但論文仍是 arXiv v1 預印本；Sihan Xu、Ji Xie、Zilin Wang、Hui Shen、Stella X. Yu，University of Michigan、Carnegie Mellon University，arXiv:2610.02203](papers/2026/2026-10/NEPA-DiT/AI_Daily_NEPA_DiT.md)**
+
+本文精選 **NEPA-DiT**，把生成模型的條件介面從固定 class/text embedding 改成依 noisy state 更新的 predictive representation。報告詳解 MEP、InfoNCE 對角配對、ECG、flow matching、prefix KV cache、refresh-rate ablation 與 REPA 歸因限制，並延伸到 **Energy-Gated ECG、JEPA uncertainty refresh、VAR scale-wise prediction、training-free attention modulation 與 text-to-image zero-shot condition**。
 
 - **[REPI — 2026-10-02：Scaffold Then Internalize: Representation Injection for Diffusion Transformers；將預訓練視覺 encoder 的 K/V 暫時注入 DiT/SiT attention，先作為 scaffold、再用 internalization loss 讓 native K/V 內化；SiT-XL/2 在 ImageNet 256² 上 REPA+REPI 以 160K steps 達 FID 8.22，對照 vanilla SiT 7M steps 的 8.30，43.5× 是 training-step efficiency 而非 wall-clock；Han Fu 等，Sun Yat-sen University、Video Rebirth、The Hong Kong Polytechnic University，arXiv:2609.35292](papers/2026/2026-10/REPI/AI_Daily_REPI.md)**
 
