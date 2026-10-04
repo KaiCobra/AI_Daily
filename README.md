@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-03**
+**Last Updated: 2026-10-04**
 
-📚 **[完整論文索引(182 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(183 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[PixelUMM — 2026-10-04：Encoder-Free Unified Image and Video Understanding and Generation；NVIDIA 與 University of Waterloo 以 raw-pixel $16\times16$ image patches、$4\times16\times16$ video tubelets、共享 multimodal self-attention 與 Mixture-of-Transformers，同時支援 image/video understanding、T2I 與 T2V；原始 GenEval overall 0.77、DPG-Bench overall 85.74，PixelUMM† 使用 GenEval prompt rewriter 後為 0.83，VBench Part 1/2 Total Score 為 83.24；Cong Wei 等，arXiv:2609.38597v1](papers/2026/2026-10/PixelUMM/AI_Daily_PixelUMM.md)**
+
+本文精選 **PixelUMM**，把理解與生成從 ViT+VAE 雙視覺介面改寫成 clean pixels 與 noisy pixels 共用的 raw-pixel multimodal backbone。報告詳解 MoT expert routing、generalized causal attention、pixel-space flow matching、六階段訓練、patch/tubelet 壓縮、decoder artifact 與 image/video benchmark，並延伸到 **Energy-based verifier、JEPA predictive critic、VAR coarse scaffold、training-free attention modulation 與嚴格 zero-shot protocol**。
 
 - **[NEPA-DiT — 2026-10-03：Embedding Prediction Helps Image Generation；以 Multi-Embedding Prediction（MEP）從類別條件與當前 noisy image 一次預測 clean-image embeddings，再以 Embedding Conditioned Generation（ECG）在每個 denoising step 動態條件化 DiT；NEPA-DiT-XL + REPA 在 ImageNet 256×256、SDE-250、interval guidance 下 FID 1.32，但論文仍是 arXiv v1 預印本；Sihan Xu、Ji Xie、Zilin Wang、Hui Shen、Stella X. Yu，University of Michigan、Carnegie Mellon University，arXiv:2610.02203](papers/2026/2026-10/NEPA-DiT/AI_Daily_NEPA_DiT.md)**
 
