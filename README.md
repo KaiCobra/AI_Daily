@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-04**
+**Last Updated: 2026-10-05**
 
-📚 **[完整論文索引(183 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(184 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[WA-JEPA — 2026-10-05：Rethinking the Video JEPA Paradigm for World-Action Modeling in Autonomous Driving；以 hybrid future masking 將 V-JEPA 從隨機遮罩補全改成因果未來預測，再用 clean-latent conditional flow matching 與不對稱 gradient routing 的 joint future-action predictor，把 scene representation 和 ego trajectory 放進同一個 predictive space；NAVSIM-v2 corrected EPDMS 91.7、NAVSIM-v1 PDMS 91.8，並在沒有 HUGSIM-specific fine-tuning 的 436 個 closed-loop scenarios 上取得 HD-Score 0.4462；Xinlin Wang 等，Afari Intelligent Drive、UESTC、Southeast University 等，arXiv:2608.20974v2](papers/2026/2026-10/WA-JEPA/AI_Daily_WA_JEPA.md)**
+本文精選 **WA-JEPA**，詳解 V-JEPA 2.1 encoder、full/patch future mask、latent flow matching、joint scene-action tokens、stop-gradient 路由與 NAVSIM/HUGSIM 評估；同時明確區分它不是 Energy-Based Transformer、canonical VAR、完全 training-free 或顯式 attention modulation，並延伸提出 **Energy-Gated JEPA、uncertainty-adaptive flow steps、VAR scale-wise world-action modeling 與 training-free attention modulation**。
 
 - **[PixelUMM — 2026-10-04：Encoder-Free Unified Image and Video Understanding and Generation；NVIDIA 與 University of Waterloo 以 raw-pixel $16\times16$ image patches、$4\times16\times16$ video tubelets、共享 multimodal self-attention 與 Mixture-of-Transformers，同時支援 image/video understanding、T2I 與 T2V；原始 GenEval overall 0.77、DPG-Bench overall 85.74，PixelUMM† 使用 GenEval prompt rewriter 後為 0.83，VBench Part 1/2 Total Score 為 83.24；Cong Wei 等，arXiv:2609.38597v1](papers/2026/2026-10/PixelUMM/AI_Daily_PixelUMM.md)**
 

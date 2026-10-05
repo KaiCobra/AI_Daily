@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 183 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 184 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-10
@@ -11,6 +11,7 @@
 | PixelUMM：把理解與生成放進同一條 raw-pixel backbone | [2609.38597](https://arxiv.org/abs/2609.38597) | [PixelUMM](papers/2026/2026-10/PixelUMM/AI_Daily_PixelUMM.md) |
 | Scaffold Then Internalize: Representation Injection for Diffusion Transformers | [2609.35292](https://arxiv.org/abs/2609.35292) | [REPI](papers/2026/2026-10/REPI/AI_Daily_REPI.md) |
 | SJD-SV: Speculative Jacobi Decoding with Semantics Verification for Autoregressive Imag... | [2609.13245](https://arxiv.org/abs/2609.13245) | [SJD-SV](papers/2026/2026-10/SJD-SV/AI_Daily_SJD_SV.md) |
+| ｜WA-JEPA：把 V-JEPA 改造成能預測未來、理解動作的 World-Action Model | [2608.20974](https://arxiv.org/abs/2608.20974) | [WA-JEPA](papers/2026/2026-10/WA-JEPA/AI_Daily_WA_JEPA.md) |
 
 ## 2026-09
 
