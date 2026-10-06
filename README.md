@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-05**
+**Last Updated: 2026-10-06**
 
-📚 **[完整論文索引(184 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(185 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Custom Forcing — 2026-10-06：Training-Free Subject Customization for Autoregressive Video Generation；把五張 reference images 與一張場景化 custom anchor 寫進 frozen autoregressive video model 的 persistent KV cache，再以 drift-adaptive value amplification（DVA）與 anchor contrast guidance（ACG）抑制長程 identity drift；30 秒 DINO-I 由 Custom K/V only 的 0.541 提升至 0.635，2 分鐘 last-window 由 0.415 提升至 0.578，且 1.3B backbone 相對 image/reference-to-video baseline 具 9.4–28.5× 較低的每幀生成時間；Yunseung Ok、Hyunsoo Kim、Minseo Kim、Suhyun Kim，Kyung Hee University、The University of Texas at Austin，arXiv:2610.02914v2](papers/2026/2026-10/CustomForcing/AI_Daily_CustomForcing.md)**
+本文精選 **Custom Forcing**，詳解 persistent attention sink、DINOv2 drift sensor、SAM subject-token mask、DVA 的 adaptive value gain 與 ACG 的 anchor-on／anchor-off self-attention contrast；同時明確區分它不是 Energy-Based Transformer、JEPA 或 canonical VAR，並延伸提出 **Energy-Gated KV control、JEPA predictive drift sensor、VAR scale-wise identity memory、multi-subject local DVA 與 strict zero-shot protocol**。
 
 - **[WA-JEPA — 2026-10-05：Rethinking the Video JEPA Paradigm for World-Action Modeling in Autonomous Driving；以 hybrid future masking 將 V-JEPA 從隨機遮罩補全改成因果未來預測，再用 clean-latent conditional flow matching 與不對稱 gradient routing 的 joint future-action predictor，把 scene representation 和 ego trajectory 放進同一個 predictive space；NAVSIM-v2 corrected EPDMS 91.7、NAVSIM-v1 PDMS 91.8，並在沒有 HUGSIM-specific fine-tuning 的 436 個 closed-loop scenarios 上取得 HD-Score 0.4462；Xinlin Wang 等，Afari Intelligent Drive、UESTC、Southeast University 等，arXiv:2608.20974v2](papers/2026/2026-10/WA-JEPA/AI_Daily_WA_JEPA.md)**
 本文精選 **WA-JEPA**，詳解 V-JEPA 2.1 encoder、full/patch future mask、latent flow matching、joint scene-action tokens、stop-gradient 路由與 NAVSIM/HUGSIM 評估；同時明確區分它不是 Energy-Based Transformer、canonical VAR、完全 training-free 或顯式 attention modulation，並延伸提出 **Energy-Gated JEPA、uncertainty-adaptive flow steps、VAR scale-wise world-action modeling 與 training-free attention modulation**。
