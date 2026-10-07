@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-06**
+**Last Updated: 2026-10-07**
 
-📚 **[完整論文索引(185 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(186 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Attention-Scoped Guidance — 2026-10-07：Training-Free Spatial Control for Image Editing；將 instruction-guided image editing 的 dual CFG 全域 scalar 改成由 instruction cross-attention 驅動的 spatial soft support，在 support 低的地方壓低 text-edit direction、在 support 高的地方加強 source-image anchor；MagicBrush-I 的 CLIP-I/L1 為 0.9296/0.0624，MagicBrush-T 的 L1 為 0.0901，PIE-Bench++ background PSNR 為 82.173，且 dose-matched per-image mean control 最多損失 0.73 CLIP；Zeyan Li、Wei Zhou、Hadi Amirpour、Minghao Zou、Panqi Yang、Jianfeng Xu，arXiv:2609.37492v1](papers/2026/2026-10/ASG/AI_Daily_ASG.md)**
+本文精選 **Attention-Scoped Guidance (ASG)**，詳解 attention-derived support、peak-to-mean bypass、dual-CFG spatial gates、dose sweep 與 spatial-placement control；同時明確標註它是 arXiv 預印本，不是已接收頂會，也不是 Energy-Based Transformer、JEPA 或 VAR，並延伸提出 **Energy-Gated ASG、JEPA predictive support、VAR scale-wise logit modulation 與 strict zero-shot protocol**。
 
 - **[Custom Forcing — 2026-10-06：Training-Free Subject Customization for Autoregressive Video Generation；把五張 reference images 與一張場景化 custom anchor 寫進 frozen autoregressive video model 的 persistent KV cache，再以 drift-adaptive value amplification（DVA）與 anchor contrast guidance（ACG）抑制長程 identity drift；30 秒 DINO-I 由 Custom K/V only 的 0.541 提升至 0.635，2 分鐘 last-window 由 0.415 提升至 0.578，且 1.3B backbone 相對 image/reference-to-video baseline 具 9.4–28.5× 較低的每幀生成時間；Yunseung Ok、Hyunsoo Kim、Minseo Kim、Suhyun Kim，Kyung Hee University、The University of Texas at Austin，arXiv:2610.02914v2](papers/2026/2026-10/CustomForcing/AI_Daily_CustomForcing.md)**
 本文精選 **Custom Forcing**，詳解 persistent attention sink、DINOv2 drift sensor、SAM subject-token mask、DVA 的 adaptive value gain 與 ACG 的 anchor-on／anchor-off self-attention contrast；同時明確區分它不是 Energy-Based Transformer、JEPA 或 canonical VAR，並延伸提出 **Energy-Gated KV control、JEPA predictive drift sensor、VAR scale-wise identity memory、multi-subject local DVA 與 strict zero-shot protocol**。
