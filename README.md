@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-07**
+**Last Updated: 2026-10-08**
 
-📚 **[完整論文索引(186 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(187 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[JEPA-TTT — 2026-10-08：讓 Latent World Model 在部署期間持續適應 Dynamics Shift；只更新 action-conditioned JEPA 的 latent dynamics predictor，固定 visual encoder 與 offline reward head，並將 predictor、optimizer state 與 dense replay buffer 跨 episode 保留；在 PushT、Two-Room、Reacher、OGBench-Cube 的 8 個 dynamics shifts 上，best held-out score 為 0.678（Frozen JEPA 0.267），mean AUC 為 0.571（0.267），latent prediction MSE 平均下降 83%；Zheyuan Zhang、Suyu Ye、Nakul Agarwal、Hossein Nourkhiz Mahjoub、Ehsan Moradi Pari、Daniel Khashabi、Tianmin Shu、Vaishnav Tadiparthi，arXiv:2610.00722，World Models in Physical AI Workshop @ NeurIPS 2026（non-archival）](papers/2026/2026-10/JEPA-TTT/AI_Daily_JEPA_TTT.md)**
+本文精選 **JEPA-TTT**，詳解 frozen representation、CEM/MPC、stop-gradient latent target、persistent optimizer/replay state、dense temporal coverage 與 8 個 dynamics-shift 實驗；同時明確標註它是 online self-supervised test-time adaptation，不是 strict training-free 或 zero-shot inference，並延伸提出 **Energy-based JEPA–MPC、predictive disagreement adaptive compute、VAR-style scale-wise world model 與 training-free controller/TTT 分界 protocol**。
 
 - **[Attention-Scoped Guidance — 2026-10-07：Training-Free Spatial Control for Image Editing；將 instruction-guided image editing 的 dual CFG 全域 scalar 改成由 instruction cross-attention 驅動的 spatial soft support，在 support 低的地方壓低 text-edit direction、在 support 高的地方加強 source-image anchor；MagicBrush-I 的 CLIP-I/L1 為 0.9296/0.0624，MagicBrush-T 的 L1 為 0.0901，PIE-Bench++ background PSNR 為 82.173，且 dose-matched per-image mean control 最多損失 0.73 CLIP；Zeyan Li、Wei Zhou、Hadi Amirpour、Minghao Zou、Panqi Yang、Jianfeng Xu，arXiv:2609.37492v1](papers/2026/2026-10/ASG/AI_Daily_ASG.md)**
 本文精選 **Attention-Scoped Guidance (ASG)**，詳解 attention-derived support、peak-to-mean bypass、dual-CFG spatial gates、dose sweep 與 spatial-placement control；同時明確標註它是 arXiv 預印本，不是已接收頂會，也不是 Energy-Based Transformer、JEPA 或 VAR，並延伸提出 **Energy-Gated ASG、JEPA predictive support、VAR scale-wise logit modulation 與 strict zero-shot protocol**。
