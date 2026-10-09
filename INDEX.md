@@ -1,17 +1,18 @@
 # 論文索引(全庫)
 
-共 187 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 188 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-10
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
-| JEPA-TTT：讓 Latent World Model 在部署期間持續適應 Dynamics Shift | [2610.00722](https://arxiv.org/abs/2610.00722) | [JEPA-TTT](papers/2026/2026-10/JEPA-TTT/AI_Daily_JEPA_TTT.md) |
 | ｜Attention-Scoped Guidance：把雙 CFG 的全域權重改成空間化，讓免訓練圖像編輯更少誤傷背景 | [2609.37492](https://arxiv.org/abs/2609.37492) | [ASG](papers/2026/2026-10/ASG/AI_Daily_ASG.md) |
 | ｜Custom Forcing：把主體身份寫進自回歸影片的 Persistent KV Cache | [2610.02914](https://arxiv.org/abs/2610.02914) | [CustomForcing](papers/2026/2026-10/CustomForcing/AI_Daily_CustomForcing.md) |
+| ｜JEPA-TTT：讓 Latent World Model 在部署期間持續適應 Dynamics Shift | [2610.00722](https://arxiv.org/abs/2610.00722) | [JEPA-TTT](papers/2026/2026-10/JEPA-TTT/AI_Daily_JEPA_TTT.md) |
 | Embedding Prediction Helps Image Generation | [2610.02203](https://arxiv.org/abs/2610.02203) | [NEPA-DiT](papers/2026/2026-10/NEPA-DiT/AI_Daily_NEPA_DiT.md) |
 | PixelUMM：把理解與生成放進同一條 raw-pixel backbone | [2609.38597](https://arxiv.org/abs/2609.38597) | [PixelUMM](papers/2026/2026-10/PixelUMM/AI_Daily_PixelUMM.md) |
+| ｜QuadTok：讓空間複雜度決定 Visual AR 的 token budget | [2610.10497](https://arxiv.org/abs/2610.10497) | [QuadTok](papers/2026/2026-10/QuadTok/AI_Daily_QuadTok.md) |
 | Scaffold Then Internalize: Representation Injection for Diffusion Transformers | [2609.35292](https://arxiv.org/abs/2609.35292) | [REPI](papers/2026/2026-10/REPI/AI_Daily_REPI.md) |
 | SJD-SV: Speculative Jacobi Decoding with Semantics Verification for Autoregressive Imag... | [2609.13245](https://arxiv.org/abs/2609.13245) | [SJD-SV](papers/2026/2026-10/SJD-SV/AI_Daily_SJD_SV.md) |
 | ｜WA-JEPA：把 V-JEPA 改造成能預測未來、理解動作的 World-Action Model | [2608.20974](https://arxiv.org/abs/2608.20974) | [WA-JEPA](papers/2026/2026-10/WA-JEPA/AI_Daily_WA_JEPA.md) |

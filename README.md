@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-08**
+**Last Updated: 2026-10-09**
 
-📚 **[完整論文索引(187 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(188 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[QuadTok — 2026-10-09：讓空間複雜度決定 Visual AR 的 token budget；以 quadtree、Region-Wise Complexity Guidance 與 Kinship Causal Mask 將固定 256-token grid 改成 content-adaptive、具 spatial correspondence 的 BFS token sequence；ImageNet 256² 平均 230 tokens、rFID/PSNR 為 1.46/20.37，COCO zero-shot 232 tokens、rFID 7.88，947M generator 的 gFID 為 2.08，並以 supplied topology 實現 ImageNet class-conditional zero-shot spatial control；Yucheng Mao、Zeyuan Chen、Xiaojun Shan、Xiang Zhang、Divyansh Srivastava、Bingnan Li、Zhuowen Tu，University of California, San Diego，arXiv:2610.10497v1（預印本）](papers/2026/2026-10/QuadTok/AI_Daily_QuadTok.md)**
+本文精選 **QuadTok**，把 visual AR 的 token allocation 從固定網格改寫成由區域 reconstruction benefit 驅動的 quadtree；報告詳解 BFS topology、vector quantization、Kinship parent–child–sibling mask、Region-Wise Complexity Guidance 與 class-conditional AR factorization，並嚴格區分 **training-free、zero-shot tokenizer transfer、topology-conditioned spatial control 與真正 open-vocabulary text-to-image**。文章進一步提出 **Energy-Gated topology、JEPA predictive refinement、VAR-style region-wise scale schedule 與 inference-time attention modulation**，同時記錄官方 release 目前不包含 image-generation models 的可重現性限制。
 
 - **[JEPA-TTT — 2026-10-08：讓 Latent World Model 在部署期間持續適應 Dynamics Shift；只更新 action-conditioned JEPA 的 latent dynamics predictor，固定 visual encoder 與 offline reward head，並將 predictor、optimizer state 與 dense replay buffer 跨 episode 保留；在 PushT、Two-Room、Reacher、OGBench-Cube 的 8 個 dynamics shifts 上，best held-out score 為 0.678（Frozen JEPA 0.267），mean AUC 為 0.571（0.267），latent prediction MSE 平均下降 83%；Zheyuan Zhang、Suyu Ye、Nakul Agarwal、Hossein Nourkhiz Mahjoub、Ehsan Moradi Pari、Daniel Khashabi、Tianmin Shu、Vaishnav Tadiparthi，arXiv:2610.00722，World Models in Physical AI Workshop @ NeurIPS 2026（non-archival）](papers/2026/2026-10/JEPA-TTT/AI_Daily_JEPA_TTT.md)**
 本文精選 **JEPA-TTT**，詳解 frozen representation、CEM/MPC、stop-gradient latent target、persistent optimizer/replay state、dense temporal coverage 與 8 個 dynamics-shift 實驗；同時明確標註它是 online self-supervised test-time adaptation，不是 strict training-free 或 zero-shot inference，並延伸提出 **Energy-based JEPA–MPC、predictive disagreement adaptive compute、VAR-style scale-wise world model 與 training-free controller/TTT 分界 protocol**。
