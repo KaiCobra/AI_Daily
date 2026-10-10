@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-09**
+**Last Updated: 2026-10-10**
 
-📚 **[完整論文索引(188 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(189 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Efficient and Training-Free Single-Image Diffusion Models — 2026-10-10：以單張圖像的多尺度 patch dataset 建立 closed-form denoiser，免除 per-image neural training；CVPR 2026 Highlight 在 308 MP 輸入上生成約 1 GP 影像，RTX A6000 PRO 需 13.9 分鐘，並以 fused attention、latent diffusion 與 ANN 將 denoiser 從 quadratic brute force 推進到可用的高解析度生成；Haojun Qiu、Kiriakos N. Kutulakos、David B. Lindell，University of Toronto、Vector Institute，arXiv:2606.04299](papers/2026/2026-10/Efficient-SID/AI_Daily_Efficient_SID.md)**
+本文精選 **Efficient and Training-Free Single-Image Diffusion Models**，詳解 empirical patch prior、Gaussian-kernel posterior mean、patch reconstruction、coarse-to-fine blend，以及把 closed-form denoising 精確重寫成 attention 的加速路徑。報告同時比較 SinDDM、GPNN、Closed-Form Diffusion 與 PaDIS，並連結 **Energy-based compatibility energy、JEPA predictive disagreement、VAR next-scale planning、training-free attention modulation 與嚴格 zero-shot 定義**。
 
 - **[QuadTok — 2026-10-09：讓空間複雜度決定 Visual AR 的 token budget；以 quadtree、Region-Wise Complexity Guidance 與 Kinship Causal Mask 將固定 256-token grid 改成 content-adaptive、具 spatial correspondence 的 BFS token sequence；ImageNet 256² 平均 230 tokens、rFID/PSNR 為 1.46/20.37，COCO zero-shot 232 tokens、rFID 7.88，947M generator 的 gFID 為 2.08，並以 supplied topology 實現 ImageNet class-conditional zero-shot spatial control；Yucheng Mao、Zeyuan Chen、Xiaojun Shan、Xiang Zhang、Divyansh Srivastava、Bingnan Li、Zhuowen Tu，University of California, San Diego，arXiv:2610.10497v1（預印本）](papers/2026/2026-10/QuadTok/AI_Daily_QuadTok.md)**
 本文精選 **QuadTok**，把 visual AR 的 token allocation 從固定網格改寫成由區域 reconstruction benefit 驅動的 quadtree；報告詳解 BFS topology、vector quantization、Kinship parent–child–sibling mask、Region-Wise Complexity Guidance 與 class-conditional AR factorization，並嚴格區分 **training-free、zero-shot tokenizer transfer、topology-conditioned spatial control 與真正 open-vocabulary text-to-image**。文章進一步提出 **Energy-Gated topology、JEPA predictive refinement、VAR-style region-wise scale schedule 與 inference-time attention modulation**，同時記錄官方 release 目前不包含 image-generation models 的可重現性限制。
