@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-10**
+**Last Updated: 2026-10-11**
 
-📚 **[完整論文索引(189 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(190 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[SGF+ — 2026-10-11：把自回歸影片生成的 context writing 與 denoising 拆成兩組參數；在 Attention 與 FFN 中觀察到平均 104.2°／106.3° 的角色梯度夾角，60 秒與 240 秒 rollout 的大多數一致性指標優於 Self Forcing 與 SGF，5 秒訓練視窗可延伸到 24 小時連續生成；Zihan Su、Junhao Zhuang 等，Tsinghua University、Joy Future Academy/JD、The Chinese University of Hong Kong，arXiv:2610.10429v2（預印本）](papers/2026/2026-10/SGF-Plus/AI_Daily_SGF_Plus.md)**
+本文精選 **SGF+**，詳解 historical context-gradient gap、兩階段 self-gradient replay、context-writing／denoising 的負 cosine similarity、role-specific parameterization，以及 2.8B generator 的記憶體與訓練成本。報告同時比較 Self Forcing、CausVid 與 SGF，並延伸到 **Energy-gated context routing、JEPA-KV predictive critic、VAR scale-wise role separation、training-free attention modulation 與 strict zero-shot protocol**。
 
 - **[Efficient and Training-Free Single-Image Diffusion Models — 2026-10-10：以單張圖像的多尺度 patch dataset 建立 closed-form denoiser，免除 per-image neural training；CVPR 2026 Highlight 在 308 MP 輸入上生成約 1 GP 影像，RTX A6000 PRO 需 13.9 分鐘，並以 fused attention、latent diffusion 與 ANN 將 denoiser 從 quadratic brute force 推進到可用的高解析度生成；Haojun Qiu、Kiriakos N. Kutulakos、David B. Lindell，University of Toronto、Vector Institute，arXiv:2606.04299](papers/2026/2026-10/Efficient-SID/AI_Daily_Efficient_SID.md)**
 本文精選 **Efficient and Training-Free Single-Image Diffusion Models**，詳解 empirical patch prior、Gaussian-kernel posterior mean、patch reconstruction、coarse-to-fine blend，以及把 closed-form denoising 精確重寫成 attention 的加速路徑。報告同時比較 SinDDM、GPNN、Closed-Form Diffusion 與 PaDIS，並連結 **Energy-based compatibility energy、JEPA predictive disagreement、VAR next-scale planning、training-free attention modulation 與嚴格 zero-shot 定義**。
