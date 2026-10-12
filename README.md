@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-11**
+**Last Updated: 2026-10-12**
 
-📚 **[完整論文索引(190 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(191 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[TempoControl — 2026-10-12：以 inference-time cross-attention guidance 控制 text-to-video 概念何時出現；在不更新模型權重、不使用額外時間標註的條件下，以 Pearson temporal correlation、attention magnitude 與 spatial entropy 對 Wan2.1 的 latent 做最佳化；Wan2.1-S 1.3B 的 one-object Temporal Accuracy 由 63.94% 提升至 83.56%，two-object 由 37.50% 提升至 53.17%，movement 由 19.00% 提升至 54.00%；Shira Schiber、Ofir Lindenbaum、Idan Schwartz，Bar-Ilan University，CVPR 2026 / arXiv:2510.02226v3](papers/2026/2026-10/TempoControl/AI_Daily_TempoControl.md)**
+本文精選 **TempoControl**，詳解如何從 DiT cross-attention 讀出 token-level temporal grounding，並以 correlation 對齊時序形狀、magnitude 恢復可見性、entropy 維持空間語義。報告同時區分正式版本的 **magnitude** 與早期版本／專案頁的 energy 命名，整理 Temporal Accuracy、消融、人評和與 Prompt-to-Prompt、Attend-and-Excite、MinT、FreeLong 的差異，並延伸到 **Energy-based temporal compatibility、JEPA predictive early stopping、VAR scale-wise control 與嚴格 zero-shot protocol**。
 
 - **[SGF+ — 2026-10-11：把自回歸影片生成的 context writing 與 denoising 拆成兩組參數；在 Attention 與 FFN 中觀察到平均 104.2°／106.3° 的角色梯度夾角，60 秒與 240 秒 rollout 的大多數一致性指標優於 Self Forcing 與 SGF，5 秒訓練視窗可延伸到 24 小時連續生成；Zihan Su、Junhao Zhuang 等，Tsinghua University、Joy Future Academy/JD、The Chinese University of Hong Kong，arXiv:2610.10429v2（預印本）](papers/2026/2026-10/SGF-Plus/AI_Daily_SGF_Plus.md)**
 本文精選 **SGF+**，詳解 historical context-gradient gap、兩階段 self-gradient replay、context-writing／denoising 的負 cosine similarity、role-specific parameterization，以及 2.8B generator 的記憶體與訓練成本。報告同時比較 Self Forcing、CausVid 與 SGF，並延伸到 **Energy-gated context routing、JEPA-KV predictive critic、VAR scale-wise role separation、training-free attention modulation 與 strict zero-shot protocol**。
