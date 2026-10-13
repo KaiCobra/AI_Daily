@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 191 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 192 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-10
@@ -8,6 +8,7 @@
 | 論文 | arXiv | 解析 |
 |---|---|---|
 | ｜Attention-Scoped Guidance：把雙 CFG 的全域權重改成空間化，讓免訓練圖像編輯更少誤傷背景 | [2609.37492](https://arxiv.org/abs/2609.37492) | [ASG](papers/2026/2026-10/ASG/AI_Daily_ASG.md) |
+| ｜Exploring Attention Sinks in Text-to-Image Transformers：圖像生成 Transformer 的注意力匯，究竟是語義錨點... | [2610.13337](https://arxiv.org/abs/2610.13337) | [AttentionSinks](papers/2026/2026-10/AttentionSinks/AI_Daily_AttentionSinks.md) |
 | ｜Custom Forcing：把主體身份寫進自回歸影片的 Persistent KV Cache | [2610.02914](https://arxiv.org/abs/2610.02914) | [CustomForcing](papers/2026/2026-10/CustomForcing/AI_Daily_CustomForcing.md) |
 | Efficient and Training-Free Single-Image Diffusion Models | [2606.04299](https://arxiv.org/abs/2606.04299) | [Efficient-SID](papers/2026/2026-10/Efficient-SID/AI_Daily_Efficient_SID.md) |
 | ｜JEPA-TTT：讓 Latent World Model 在部署期間持續適應 Dynamics Shift | [2610.00722](https://arxiv.org/abs/2610.00722) | [JEPA-TTT](papers/2026/2026-10/JEPA-TTT/AI_Daily_JEPA_TTT.md) |

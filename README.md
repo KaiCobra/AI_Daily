@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-12**
+**Last Updated: 2026-10-13**
 
-📚 **[完整論文索引(191 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(192 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Exploring Attention Sinks in Text-to-Image Transformers — 2026-10-13：跨 FLUX.1、Z-Image 與 Infinity-2B 系統分析 T2I Transformer 的 attention sink；diffusion sinks 出現在 modality boundary、文字區域與圖像角落，Infinity-2B 則集中於第一個 global token；sink heads 僅約 3%–5%，但跨 GenEval/DPG-Bench 的 head identity correlation 達 0.983–0.999；移除 top sink heads 的退化大於 random/bottom heads，FLUX.1 插入 register token 後 GenEval 67.14→68.85、DPG 83.67→84.01；Binglei Li 等，Fudan University、Shanghai Innovation Institute、Shanghai Academy of AI for Science，arXiv:2610.13337v1](papers/2026/2026-10/AttentionSinks/AI_Daily_AttentionSinks.md)**
+本文精選 **Exploring Attention Sinks in Text-to-Image Transformers**，把「attention mass 集中」和「生成功能必要」拆成兩個可干預的問題：logit penalty 幾乎不傷 FLUX.1/Z-Image，但 value substitution 與 head pruning 會造成更大影響；Infinity-2B 的早期 global token 則接近不可替代。報告詳解 incoming mass、sink concentration $\kappa$、position-wise ratio $\rho_k$、三種 inference-time intervention 與 register token，並連結 **Energy-Based verification、JEPA predictive sink、VAR scale-wise routing 與嚴格 training-free/zero-shot protocol**。
 
 - **[TempoControl — 2026-10-12：以 inference-time cross-attention guidance 控制 text-to-video 概念何時出現；在不更新模型權重、不使用額外時間標註的條件下，以 Pearson temporal correlation、attention magnitude 與 spatial entropy 對 Wan2.1 的 latent 做最佳化；Wan2.1-S 1.3B 的 one-object Temporal Accuracy 由 63.94% 提升至 83.56%，two-object 由 37.50% 提升至 53.17%，movement 由 19.00% 提升至 54.00%；Shira Schiber、Ofir Lindenbaum、Idan Schwartz，Bar-Ilan University，CVPR 2026 / arXiv:2510.02226v3](papers/2026/2026-10/TempoControl/AI_Daily_TempoControl.md)**
 本文精選 **TempoControl**，詳解如何從 DiT cross-attention 讀出 token-level temporal grounding，並以 correlation 對齊時序形狀、magnitude 恢復可見性、entropy 維持空間語義。報告同時區分正式版本的 **magnitude** 與早期版本／專案頁的 energy 命名，整理 Temporal Accuracy、消融、人評和與 Prompt-to-Prompt、Attend-and-Excite、MinT、FreeLong 的差異，並延伸到 **Energy-based temporal compatibility、JEPA predictive early stopping、VAR scale-wise control 與嚴格 zero-shot protocol**。
