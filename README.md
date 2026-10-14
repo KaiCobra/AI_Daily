@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-13**
+**Last Updated: 2026-10-14**
 
-📚 **[完整論文索引(192 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(193 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[NAMVIS — 2026-10-14：把 Visual Autoregression 推進到幾何條件的多視角生成；以 Multi-scale Projective Pose Encoding 將 source/target camera geometry 注入 target self-attention 與 source-to-target cross-attention，再以 block-causal next-scale mask 讓多個 target views 在同一尺度互相溝通；Objaverse/GSO/OO3D 的 PSNR/SSIM/LPIPS 為 22.485/0.861/0.091、21.715/0.843/0.111、21.098/0.845/0.104，1-to-1 每 target view 0.6 秒，約為最快 diffusion baseline 的 3.3×；Ramil Khafizov、Ilya Statsenko、Ruslan Rakhimov、Artem Komarichev、Peter Wonka、Evgeny Burnaev，官方專案頁標示 NeurIPS 2026、arXiv:2610.04722v1](papers/2026/2026-10/NAMVIS/AI_Daily_NAMVIS.md)**
+本文精選 **NAMVIS**，將 sparse-view novel view synthesis 改寫成 geometry-conditioned next-scale autoregression：frozen VQ-VAE 提供多尺度 residual tokens，global `[SOS]` + AdaLN 保留 source 語義，dense geometry-aware cross-attention 保留局部細節，target-target self-attention 則維持跨視角一致性。報告詳解 VAR factorization、multi-view block-causal masking、ProPE 的 $M_q(P)=P^\top$／$M_{kv}(P)=P^{-1}$／$M_o(P)=P$、KV/ProPE caching、COLMAP reconstructability 與消融，並連結 **Energy-Gated VAR、JEPA predictive critic、scale-local attention、training-free pose modulation 與更嚴格 zero-shot protocol**。
 
 - **[Exploring Attention Sinks in Text-to-Image Transformers — 2026-10-13：跨 FLUX.1、Z-Image 與 Infinity-2B 系統分析 T2I Transformer 的 attention sink；diffusion sinks 出現在 modality boundary、文字區域與圖像角落，Infinity-2B 則集中於第一個 global token；sink heads 僅約 3%–5%，但跨 GenEval/DPG-Bench 的 head identity correlation 達 0.983–0.999；移除 top sink heads 的退化大於 random/bottom heads，FLUX.1 插入 register token 後 GenEval 67.14→68.85、DPG 83.67→84.01；Binglei Li 等，Fudan University、Shanghai Innovation Institute、Shanghai Academy of AI for Science，arXiv:2610.13337v1](papers/2026/2026-10/AttentionSinks/AI_Daily_AttentionSinks.md)**
 本文精選 **Exploring Attention Sinks in Text-to-Image Transformers**，把「attention mass 集中」和「生成功能必要」拆成兩個可干預的問題：logit penalty 幾乎不傷 FLUX.1/Z-Image，但 value substitution 與 head pruning 會造成更大影響；Infinity-2B 的早期 global token 則接近不可替代。報告詳解 incoming mass、sink concentration $\kappa$、position-wise ratio $\rho_k$、三種 inference-time intervention 與 register token，並連結 **Energy-Based verification、JEPA predictive sink、VAR scale-wise routing 與嚴格 training-free/zero-shot protocol**。

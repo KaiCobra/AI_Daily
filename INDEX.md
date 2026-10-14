@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 192 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 193 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-10
@@ -12,6 +12,7 @@
 | ｜Custom Forcing：把主體身份寫進自回歸影片的 Persistent KV Cache | [2610.02914](https://arxiv.org/abs/2610.02914) | [CustomForcing](papers/2026/2026-10/CustomForcing/AI_Daily_CustomForcing.md) |
 | Efficient and Training-Free Single-Image Diffusion Models | [2606.04299](https://arxiv.org/abs/2606.04299) | [Efficient-SID](papers/2026/2026-10/Efficient-SID/AI_Daily_Efficient_SID.md) |
 | ｜JEPA-TTT：讓 Latent World Model 在部署期間持續適應 Dynamics Shift | [2610.00722](https://arxiv.org/abs/2610.00722) | [JEPA-TTT](papers/2026/2026-10/JEPA-TTT/AI_Daily_JEPA_TTT.md) |
+| ｜NAMVIS：把 Visual Autoregression 推進到幾何條件的多視角生成 | [2610.04722](https://arxiv.org/abs/2610.04722) | [NAMVIS](papers/2026/2026-10/NAMVIS/AI_Daily_NAMVIS.md) |
 | Embedding Prediction Helps Image Generation | [2610.02203](https://arxiv.org/abs/2610.02203) | [NEPA-DiT](papers/2026/2026-10/NEPA-DiT/AI_Daily_NEPA_DiT.md) |
 | PixelUMM：把理解與生成放進同一條 raw-pixel backbone | [2609.38597](https://arxiv.org/abs/2609.38597) | [PixelUMM](papers/2026/2026-10/PixelUMM/AI_Daily_PixelUMM.md) |
 | ｜QuadTok：讓空間複雜度決定 Visual AR 的 token budget | [2610.10497](https://arxiv.org/abs/2610.10497) | [QuadTok](papers/2026/2026-10/QuadTok/AI_Daily_QuadTok.md) |
