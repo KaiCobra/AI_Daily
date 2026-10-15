@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-14**
+**Last Updated: 2026-10-15**
 
-📚 **[完整論文索引(193 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(194 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[AReA — 2026-10-15：免訓練調整 Diffusion Transformer receptive field，早期以跨尺度 pooled K/V 建立全局構圖，後期採逐步收縮的 adaptive windows 與 DWT split；在 FLUX.1 4096² 將 latency 314→151 秒，Qwen-Image 902→487 秒，並改善 ImageReward、FIDp；Javad Rajabi 等，University of Toronto、Vector Institute，arXiv:2610.17227v1（預印本，under review）](papers/2026/2026-10/AReA/AI_Daily_AReA.md)**
+本文詳解 AReA 的兩階段 receptive-field schedule、window cost、DWT split、Halo 與 global-KV bridge，對照 SEGA、DyPE 和 AAAI 2025 的 DiffuseHigh；並提出 Energy-based bridge routing、JEPA uncertainty gating、VAR scale-wise attention 等研究方向。
 
 - **[NAMVIS — 2026-10-14：把 Visual Autoregression 推進到幾何條件的多視角生成；以 Multi-scale Projective Pose Encoding 將 source/target camera geometry 注入 target self-attention 與 source-to-target cross-attention，再以 block-causal next-scale mask 讓多個 target views 在同一尺度互相溝通；Objaverse/GSO/OO3D 的 PSNR/SSIM/LPIPS 為 22.485/0.861/0.091、21.715/0.843/0.111、21.098/0.845/0.104，1-to-1 每 target view 0.6 秒，約為最快 diffusion baseline 的 3.3×；Ramil Khafizov、Ilya Statsenko、Ruslan Rakhimov、Artem Komarichev、Peter Wonka、Evgeny Burnaev，官方專案頁標示 NeurIPS 2026、arXiv:2610.04722v1](papers/2026/2026-10/NAMVIS/AI_Daily_NAMVIS.md)**
 本文精選 **NAMVIS**，將 sparse-view novel view synthesis 改寫成 geometry-conditioned next-scale autoregression：frozen VQ-VAE 提供多尺度 residual tokens，global `[SOS]` + AdaLN 保留 source 語義，dense geometry-aware cross-attention 保留局部細節，target-target self-attention 則維持跨視角一致性。報告詳解 VAR factorization、multi-view block-causal masking、ProPE 的 $M_q(P)=P^\top$／$M_{kv}(P)=P^{-1}$／$M_o(P)=P$、KV/ProPE caching、COLMAP reconstructability 與消融，並連結 **Energy-Gated VAR、JEPA predictive critic、scale-local attention、training-free pose modulation 與更嚴格 zero-shot protocol**。
