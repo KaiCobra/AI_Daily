@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-15**
+**Last Updated: 2026-10-16**
 
-📚 **[完整論文索引(194 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(195 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Images Talk Back — 2026-10-16：抑制 MMDiT 的 Image-to-Text Feedback，提出免訓練 SFG/iSFG；FLUX + CFG 的 GenEval 由 0.6661 升至 0.7479，SD3.5M 的零額外 NFE iSFG 將 HPSv2.1 提升 1.33；Yucheng Yang 等，Stanford、清華、NYU，arXiv:2610.13941v1（預印本）](papers/2026/2026-10/Images-Talk-Back/AI_Daily_SFG.md)**
+本文詳解 MMDiT 的 I2T/T2I 資訊回路、以成功／失敗軌跡移植訊息確認回饋效應、SFG 的 negative-branch extrapolation 與零額外 NFE iSFG，並比較 TACA、Attend-and-Excite。另提出以 Energy compatibility、JEPA predictive uncertainty、VAR scale index 延伸研究；同時標明預印本狀態、自動化評分、NFE 開銷及早期介入時段的限制。
 
 - **[AReA — 2026-10-15：免訓練調整 Diffusion Transformer receptive field，早期以跨尺度 pooled K/V 建立全局構圖，後期採逐步收縮的 adaptive windows 與 DWT split；在 FLUX.1 4096² 將 latency 314→151 秒，Qwen-Image 902→487 秒，並改善 ImageReward、FIDp；Javad Rajabi 等，University of Toronto、Vector Institute，arXiv:2610.17227v1（預印本，under review）](papers/2026/2026-10/AReA/AI_Daily_AReA.md)**
 本文詳解 AReA 的兩階段 receptive-field schedule、window cost、DWT split、Halo 與 global-KV bridge，對照 SEGA、DyPE 和 AAAI 2025 的 DiffuseHigh；並提出 Energy-based bridge routing、JEPA uncertainty gating、VAR scale-wise attention 等研究方向。
