@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-17**
+**Last Updated: 2026-10-18**
 
-📚 **[完整論文索引(196 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(197 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Speculative Forcing — 2026-10-18：把 autoregressive video diffusion 的固定步數拆成 token-wise draft–verify–commit；已收斂 token 提前固定並保留 K/V，LongLive 5 秒/30 秒與 Lingbot-World 2.0 分別達約 1.58×/1.54×/1.35× throughput；training-free verifier 仍需 threshold calibration，learned verifier 訓練 4.11M head；Hyunwook Choi 等，KAIST AI、NAVER AI Lab，arXiv:2610.22347v1（10-15 預印本，尚無正式 venue 紀錄）](papers/2026/2026-10/Speculative-Forcing/AI_Daily_Speculative_Forcing.md)**
+本文詳解 token-wise convergence gap、training-free/learned verifier、K/V retention 與 FPS/VBench 結果；明確區分免訓練版本和另訓 4.11M verifier，並提出 EBT、JEPA、VAR 與 attention modulation 延伸方向，不將它們誤寫成原論文貢獻。
 
 - **[DaTMe — 2026-10-17：以 Tweedie 時間變化與空間高頻殘差，判斷擴散生成中哪些 token 可安全合併；NeurIPS 2026，PixArt-α 移除 50% token 時延遲約降 13%，但 FID 仍由 42.10 升至 43.42；SeungJu Cha 等，Hanyang University，arXiv:2610.22370v1](papers/2026/2026-10/DaTMe/AI_Daily_DaTMe.md)**
 本文拆解 Tweedie clean estimate、去噪步間變化、結構殘差、錨點／來源分派與局部 token merging；比較 ToMeSD、CFG importance 與 ToMA，並明確記錄高壓縮下的品質損失。另提出 Energy-based merge gate、JEPA 預測不確定度與 VAR scale-wise token budget 的可驗證延伸方向。
