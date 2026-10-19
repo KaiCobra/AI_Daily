@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-18**
+**Last Updated: 2026-10-19**
 
-📚 **[完整論文索引(197 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(198 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[DetNO — 2026-10-19：以行列式最大化 Tweedie 預測的 RKHS 體積，做免訓練的整批初始噪聲多樣化；作者報告 SD1.5、SDXL、SD3 的 Vendi Score／MSS 均優於基線，且部分 low-shot 分類設定有顯著增益；Kwanyoung Lee 等，Hanyang University，arXiv:2610.22267v1，arXiv 註記標示 ACCV 2026 Oral](papers/2026/2026-10/DetNO/AI_Daily_DetNO.md)**
+本文精選 **DetNO**，以集合 log-determinant 取代逐對 repulsion，在 frozen diffusion 的初始噪聲上控制多樣性；報告拆解 Tweedie 特徵、RBF Gram matrix、品質取捨與 CNO／GDPP 脈絡，並提出 EBT、JEPA、VAR、attention modulation 的可驗證延伸方向。
 
 - **[Speculative Forcing — 2026-10-18：把 autoregressive video diffusion 的固定步數拆成 token-wise draft–verify–commit；已收斂 token 提前固定並保留 K/V，LongLive 5 秒/30 秒與 Lingbot-World 2.0 分別達約 1.58×/1.54×/1.35× throughput；training-free verifier 仍需 threshold calibration，learned verifier 訓練 4.11M head；Hyunwook Choi 等，KAIST AI、NAVER AI Lab，arXiv:2610.22347v1（10-15 預印本，尚無正式 venue 紀錄）](papers/2026/2026-10/Speculative-Forcing/AI_Daily_Speculative_Forcing.md)**
 本文詳解 token-wise convergence gap、training-free/learned verifier、K/V retention 與 FPS/VBench 結果；明確區分免訓練版本和另訓 4.11M verifier，並提出 EBT、JEPA、VAR 與 attention modulation 延伸方向，不將它們誤寫成原論文貢獻。
