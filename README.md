@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-19**
+**Last Updated: 2026-10-20**
 
-📚 **[完整論文索引(198 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(199 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[PoSTCache — 2026-10-20：把 diffusion／flow-matching cache 從單向 forecasting 改成可由後續 full-computation anchor 回頭修正；在 FLUX.1-dev、Qwen-Image-2512、Wan 2.1、CogVideoX 2B 與 OpenSora 1.2 測試，代表設定約達 2.23×–2.90× speedup；Liwei Lan 等，Tsinghua University，arXiv:2610.25664v1（Preprint. Under review）](papers/2026/2026-10/PoSTCache/AI_Daily_PoSTCache.md)**
+本文精選 **PoSTCache**，以後續完整步的 innovation 修正先前 cache prediction，並以 Posterior Variance Reduction 選擇對整條生成軌跡最有用的 anchor。報告推導 conditional smoothing 與 PVR，整理影像／影片生成的品質與延遲結果，並提出 EBT、JEPA、VAR 與 attention modulation 的可驗證延伸；同時區分 training-free 和免校準的 strict zero-shot。
 
 - **[DetNO — 2026-10-19：以行列式最大化 Tweedie 預測的 RKHS 體積，做免訓練的整批初始噪聲多樣化；作者報告 SD1.5、SDXL、SD3 的 Vendi Score／MSS 均優於基線，且部分 low-shot 分類設定有顯著增益；Kwanyoung Lee 等，Hanyang University，arXiv:2610.22267v1，arXiv 註記標示 ACCV 2026 Oral](papers/2026/2026-10/DetNO/AI_Daily_DetNO.md)**
 本文精選 **DetNO**，以集合 log-determinant 取代逐對 repulsion，在 frozen diffusion 的初始噪聲上控制多樣性；報告拆解 Tweedie 特徵、RBF Gram matrix、品質取捨與 CNO／GDPP 脈絡，並提出 EBT、JEPA、VAR、attention modulation 的可驗證延伸方向。
