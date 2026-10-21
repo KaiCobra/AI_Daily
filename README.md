@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-20**
+**Last Updated: 2026-10-21**
 
-📚 **[完整論文索引(199 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(200 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[SpecKCast — 2026-10-21：以分頻 DCT 與 Kalman forecast 預測 diffusion denoiser output，依協方差不確定度決定何時重算完整 DiT；FLUX.1-dev 約 5.54×、Qwen-Image 約 6.00×、Wan2.1-14B 約 3.52×，額外顯存低於 0.05 GiB；方法不更新權重但需要模型／scheduler 校準；Javad Rajabi 等，University of Toronto、Vector Institute、Samsung Electronics，arXiv:2610.26837v1（預印本）](papers/2026/2026-10/SpecKCast/AI_Daily_SpecKCast.md)**
+本文拆解頻帶 DCT、scheduler-aware time warp、二階 Kalman state、covariance risk gate 與 CFG caveat，並比較 TaylorSeer、Spectrum、SeaCache、MeanCache；延伸提出 EBT energy gate、JEPA predictive disagreement、VAR scale-wise risk 與 attention modulation，且不把 training-free 誤稱 strict zero-shot。
 
 - **[PoSTCache — 2026-10-20：把 diffusion／flow-matching cache 從單向 forecasting 改成可由後續 full-computation anchor 回頭修正；在 FLUX.1-dev、Qwen-Image-2512、Wan 2.1、CogVideoX 2B 與 OpenSora 1.2 測試，代表設定約達 2.23×–2.90× speedup；Liwei Lan 等，Tsinghua University，arXiv:2610.25664v1（Preprint. Under review）](papers/2026/2026-10/PoSTCache/AI_Daily_PoSTCache.md)**
 本文精選 **PoSTCache**，以後續完整步的 innovation 修正先前 cache prediction，並以 Posterior Variance Reduction 選擇對整條生成軌跡最有用的 anchor。報告推導 conditional smoothing 與 PVR，整理影像／影片生成的品質與延遲結果，並提出 EBT、JEPA、VAR 與 attention modulation 的可驗證延伸；同時區分 training-free 和免校準的 strict zero-shot。
