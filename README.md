@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-21**
+**Last Updated: 2026-10-22**
 
-📚 **[完整論文索引(200 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(201 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[MOSS-Image — 2026-10-22：以 5B Diffusion Transformer 結合意圖感知版面規劃，強化中英長文渲染；LLTB 96.3 Mean-6，RLA 排名第二；MOSI.AI，arXiv:2610.23374v1（Technical Report，未列正式會議）](papers/2026/2026-10/MOSS-Image/AI_Daily_MOSS-Image.md)**
+本文拆解單流 DiT、4D RoPE、結構化文字／bbox 監督與 GPT-6 Layout PE，並整理 LLTB、7Bench、RLA 的指標和可比性限制；延伸提出 Energy-based layout verifier、JEPA 結構穩定檢查，以及 VAR 跨尺度 attention modulation 的研究方向。
 
 - **[SpecKCast — 2026-10-21：以分頻 DCT 與 Kalman forecast 預測 diffusion denoiser output，依協方差不確定度決定何時重算完整 DiT；FLUX.1-dev 約 5.54×、Qwen-Image 約 6.00×、Wan2.1-14B 約 3.52×，額外顯存低於 0.05 GiB；方法不更新權重但需要模型／scheduler 校準；Javad Rajabi 等，University of Toronto、Vector Institute、Samsung Electronics，arXiv:2610.26837v1（預印本）](papers/2026/2026-10/SpecKCast/AI_Daily_SpecKCast.md)**
 本文拆解頻帶 DCT、scheduler-aware time warp、二階 Kalman state、covariance risk gate 與 CFG caveat，並比較 TaylorSeer、Spectrum、SeaCache、MeanCache；延伸提出 EBT energy gate、JEPA predictive disagreement、VAR scale-wise risk 與 attention modulation，且不把 training-free 誤稱 strict zero-shot。
