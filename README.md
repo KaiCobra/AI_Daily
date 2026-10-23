@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-22**
+**Last Updated: 2026-10-23**
 
-📚 **[完整論文索引(201 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(202 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[LaLa-World — 2026-10-23：用自然語言把異質控制資料與影像／影片轉換合併進 JEPA 式 latent world model；五項模擬規劃平均 72.1%（JEPA-WMs 64.6%）、RoboCasa 未見領域 Reach/Place 40.6/46.9%；matched RAEv2 約少 6× 訓練成本、規劃快 2.9×／13.9×；Junha Song 等，NAVER AI Lab 主導，arXiv:2610.27851v2（預印本，未見正式 venue）](papers/2026/2026-10/LaLa-World/AI_Daily_LaLa_World.md)**
+本文拆解 frozen DINO 表徵、Qwen3.5-0.8B predictor、latent MSE 與 CEM/MPC，並整理 LaLa-Policy、matched RAEv2 比較及官方程式／權重尚未釋出的限制；明確區分 RoboCasa zero-shot transfer 與 training-free，延伸提出 Energy-based MPC、JEPA uncertainty、attention modulation 與 VAR coarse-to-fine planning。
 
 - **[MOSS-Image — 2026-10-22：以 5B Diffusion Transformer 結合意圖感知版面規劃，強化中英長文渲染；LLTB 96.3 Mean-6，RLA 排名第二；MOSI.AI，arXiv:2610.23374v1（Technical Report，未列正式會議）](papers/2026/2026-10/MOSS-Image/AI_Daily_MOSS-Image.md)**
 本文拆解單流 DiT、4D RoPE、結構化文字／bbox 監督與 GPT-6 Layout PE，並整理 LLTB、7Bench、RLA 的指標和可比性限制；延伸提出 Energy-based layout verifier、JEPA 結構穩定檢查，以及 VAR 跨尺度 attention modulation 的研究方向。
