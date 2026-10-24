@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 202 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 203 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-10
@@ -17,6 +17,7 @@
 | ｜Images Talk Back：抑制圖像生成 Transformer 的 Image-to-Text Feedback | [2610.13941](https://arxiv.org/abs/2610.13941) | [Images-Talk-Back](papers/2026/2026-10/Images-Talk-Back/AI_Daily_SFG.md) |
 | ｜JEPA-TTT：讓 Latent World Model 在部署期間持續適應 Dynamics Shift | [2610.00722](https://arxiv.org/abs/2610.00722) | [JEPA-TTT](papers/2026/2026-10/JEPA-TTT/AI_Daily_JEPA_TTT.md) |
 | ｜LaLa-World：用自然語言統一異質動作與視覺轉換的 JEPA 式世界模型 | [2610.27851](https://arxiv.org/abs/2610.27851) | [LaLa-World](papers/2026/2026-10/LaLa-World/AI_Daily_LaLa_World.md) |
+| LocaLeJEPA：幾何先驗下的最大熵表徵學習 | [2610.28458](https://arxiv.org/abs/2610.28458) | [LocaLeJEPA](papers/2026/2026-10/LocaLeJEPA/AI_Daily_LocaLeJEPA.md) |
 | MOSS-Image——讓開放式 Diffusion Transformer 讀懂長文本與版面 | [2610.23374](https://arxiv.org/abs/2610.23374) | [MOSS-Image](papers/2026/2026-10/MOSS-Image/AI_Daily_MOSS-Image.md) |
 | ｜NAMVIS：把 Visual Autoregression 推進到幾何條件的多視角生成 | [2610.04722](https://arxiv.org/abs/2610.04722) | [NAMVIS](papers/2026/2026-10/NAMVIS/AI_Daily_NAMVIS.md) |
 | Embedding Prediction Helps Image Generation | [2610.02203](https://arxiv.org/abs/2610.02203) | [NEPA-DiT](papers/2026/2026-10/NEPA-DiT/AI_Daily_NEPA_DiT.md) |

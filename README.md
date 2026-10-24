@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-23**
+**Last Updated: 2026-10-24**
 
-📚 **[完整論文索引(202 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(203 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[LocaLeJEPA — 2026-10-24：把 JEPA 全域高斯正則改為局部分群與均勻球匹配；matched ImageNet-1K ViT-S/8 top-1/k-NN/七資料集平均為 62.1/50.1/72.3%（LeJEPA 51.6/38.9/64.3%）；Kartik Tandon、Alessio Borgi 等，arXiv:2610.28458v1（預印本，未列正式 venue）](papers/2026/2026-10/LocaLeJEPA/AI_Daily_LocaLeJEPA.md)**
+本文詳解 LocaLeReg 的局部 k-means、群內置中與均勻球特徵函數匹配，整理 Euclidean、雙曲及 D4 等變 backbone 結果與 batch-dependent locality 的限制，並提出 Energy-JEPA、VAR 尺度正則的可驗證延伸。
 
 - **[LaLa-World — 2026-10-23：用自然語言把異質控制資料與影像／影片轉換合併進 JEPA 式 latent world model；五項模擬規劃平均 72.1%（JEPA-WMs 64.6%）、RoboCasa 未見領域 Reach/Place 40.6/46.9%；matched RAEv2 約少 6× 訓練成本、規劃快 2.9×／13.9×；Junha Song 等，NAVER AI Lab 主導，arXiv:2610.27851v2（預印本，未見正式 venue）](papers/2026/2026-10/LaLa-World/AI_Daily_LaLa_World.md)**
 本文拆解 frozen DINO 表徵、Qwen3.5-0.8B predictor、latent MSE 與 CEM/MPC，並整理 LaLa-Policy、matched RAEv2 比較及官方程式／權重尚未釋出的限制；明確區分 RoboCasa zero-shot transfer 與 training-free，延伸提出 Energy-based MPC、JEPA uncertainty、attention modulation 與 VAR coarse-to-fine planning。
