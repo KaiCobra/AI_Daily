@@ -2,13 +2,15 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-24**
+**Last Updated: 2026-10-25**
 
-📚 **[完整論文索引(203 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(204 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[Exploring Temporal Context-Aware Physical Grounding in Latent World Models — 2026-10-25：以 causal S4D physical grounding、appearance invariance 與 diffusion action prior + mixed CEM 強化 JEPA latent planning；PushT-Ada 87.11±1.17%，PushT-Distance 75-step 55.21±0.90%（LeWM 16.54±0.60%）；Yilei Man、Yang Chen、Jingcai Guo，香港理工大學，arXiv:2610.28483v1（預印本，未列正式 venue）](papers/2026/2026-10/G-JEPA/AI_Daily_G_JEPA.md)**
+本文詳解時間物理 grounding、predicted-state loss、S4D recurrence、diffusion action proposal 與 shared-elite CEM；整理 PushT-Ada、Cube、TwoRooms、長距離 PushT 的 matched 結果與 seed 限制，並延伸提出 Energy-based planning、multi-horizon JEPA、training-free proposals、attention modulation、VAR 式 action hierarchy 與 zero-shot stress test。
 
 - **[LocaLeJEPA — 2026-10-24：把 JEPA 全域高斯正則改為局部分群與均勻球匹配；matched ImageNet-1K ViT-S/8 top-1/k-NN/七資料集平均為 62.1/50.1/72.3%（LeJEPA 51.6/38.9/64.3%）；Kartik Tandon、Alessio Borgi 等，arXiv:2610.28458v1（預印本，未列正式 venue）](papers/2026/2026-10/LocaLeJEPA/AI_Daily_LocaLeJEPA.md)**
 本文詳解 LocaLeReg 的局部 k-means、群內置中與均勻球特徵函數匹配，整理 Euclidean、雙曲及 D4 等變 backbone 結果與 batch-dependent locality 的限制，並提出 Energy-JEPA、VAR 尺度正則的可驗證延伸。

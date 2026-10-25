@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 203 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 204 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-10
@@ -14,6 +14,7 @@
 | Which Tokens to Merge? Diffusion Dynamics for Efficient Image Generation | [2610.22370](https://arxiv.org/abs/2610.22370) | [DaTMe](papers/2026/2026-10/DaTMe/AI_Daily_DaTMe.md) |
 | DetNO——以行列式最大化做「整批多樣性」最佳化 | [2610.22267](https://arxiv.org/abs/2610.22267) | [DetNO](papers/2026/2026-10/DetNO/AI_Daily_DetNO.md) |
 | Efficient and Training-Free Single-Image Diffusion Models | [2606.04299](https://arxiv.org/abs/2606.04299) | [Efficient-SID](papers/2026/2026-10/Efficient-SID/AI_Daily_Efficient_SID.md) |
+| Exploring Temporal Context-Aware Physical Grounding in Latent World Models | [2610.28483](https://arxiv.org/abs/2610.28483) | [G-JEPA](papers/2026/2026-10/G-JEPA/AI_Daily_G_JEPA.md) |
 | ｜Images Talk Back：抑制圖像生成 Transformer 的 Image-to-Text Feedback | [2610.13941](https://arxiv.org/abs/2610.13941) | [Images-Talk-Back](papers/2026/2026-10/Images-Talk-Back/AI_Daily_SFG.md) |
 | ｜JEPA-TTT：讓 Latent World Model 在部署期間持續適應 Dynamics Shift | [2610.00722](https://arxiv.org/abs/2610.00722) | [JEPA-TTT](papers/2026/2026-10/JEPA-TTT/AI_Daily_JEPA_TTT.md) |
 | ｜LaLa-World：用自然語言統一異質動作與視覺轉換的 JEPA 式世界模型 | [2610.27851](https://arxiv.org/abs/2610.27851) | [LaLa-World](papers/2026/2026-10/LaLa-World/AI_Daily_LaLa_World.md) |
