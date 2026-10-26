@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-25**
+**Last Updated: 2026-10-26**
 
-📚 **[完整論文索引(204 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(205 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[Prism — 2026-10-26：依視覺方向變異與音訊耦合動態選擇稀疏 block，支援 native 2K joint video-audio generation；每步訓練 26.5→10.6 分鐘、inference memory 72.8→38.0G；Shuyuan Tu、Qi Tian 等，Fudan／Tencent Hunyuan／Zhejiang，arXiv:2610.05416v1（預印本，未核實正式 venue）](papers/2026/2026-10/Prism/AI_Daily_Prism.md)**
+本文拆解視覺／音訊引導、C64/C128/C256 動態 block shapes、hybrid Top-k/Top-p 與 Flow Matching，整理 2K-Bench、效率比較、消融及重現限制；並提出 Energy-based、JEPA-predictive、VAR 式 training-free zero-shot routing 延伸。
+
 - **[Exploring Temporal Context-Aware Physical Grounding in Latent World Models — 2026-10-25：以 causal S4D physical grounding、appearance invariance 與 diffusion action prior + mixed CEM 強化 JEPA latent planning；PushT-Ada 87.11±1.17%，PushT-Distance 75-step 55.21±0.90%（LeWM 16.54±0.60%）；Yilei Man、Yang Chen、Jingcai Guo，香港理工大學，arXiv:2610.28483v1（預印本，未列正式 venue）](papers/2026/2026-10/G-JEPA/AI_Daily_G_JEPA.md)**
 本文詳解時間物理 grounding、predicted-state loss、S4D recurrence、diffusion action proposal 與 shared-elite CEM；整理 PushT-Ada、Cube、TwoRooms、長距離 PushT 的 matched 結果與 seed 限制，並延伸提出 Energy-based planning、multi-horizon JEPA、training-free proposals、attention modulation、VAR 式 action hierarchy 與 zero-shot stress test。
 

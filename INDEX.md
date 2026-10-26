@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 204 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 205 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-10
@@ -24,6 +24,7 @@
 | Embedding Prediction Helps Image Generation | [2610.02203](https://arxiv.org/abs/2610.02203) | [NEPA-DiT](papers/2026/2026-10/NEPA-DiT/AI_Daily_NEPA_DiT.md) |
 | PixelUMM：把理解與生成放進同一條 raw-pixel backbone | [2609.38597](https://arxiv.org/abs/2609.38597) | [PixelUMM](papers/2026/2026-10/PixelUMM/AI_Daily_PixelUMM.md) |
 | PoSTCache——讓 Diffusion Cache 從「預測」變成「可回頭修正」 | [2610.25664](https://arxiv.org/abs/2610.25664) | [PoSTCache](papers/2026/2026-10/PoSTCache/AI_Daily_PoSTCache.md) |
+| Prism：原生 2K 聯合視聽生成的 Dynamic Sparse Attention | [2610.05416](https://arxiv.org/abs/2610.05416) | [Prism](papers/2026/2026-10/Prism/AI_Daily_Prism.md) |
 | ｜QuadTok：讓空間複雜度決定 Visual AR 的 token budget | [2610.10497](https://arxiv.org/abs/2610.10497) | [QuadTok](papers/2026/2026-10/QuadTok/AI_Daily_QuadTok.md) |
 | Scaffold Then Internalize: Representation Injection for Diffusion Transformers | [2609.35292](https://arxiv.org/abs/2609.35292) | [REPI](papers/2026/2026-10/REPI/AI_Daily_REPI.md) |
 | ｜SGF+：把自回歸影片生成的兩種角色拆成兩組梯度 | [2610.10429](https://arxiv.org/abs/2610.10429) | [SGF-Plus](papers/2026/2026-10/SGF-Plus/AI_Daily_SGF_Plus.md) |
