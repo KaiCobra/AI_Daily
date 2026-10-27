@@ -1,12 +1,13 @@
 # 論文索引(全庫)
 
-共 205 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 206 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-10
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| Scaling Transformer Energy-based Models For High Quality Image Synthesis | [2610.31889](https://arxiv.org/abs/2610.31889) | [TEM](papers/2026/2026-10/TEM/AI_Daily_TEM.md) |
 | AReA：讓 Diffusion Transformer 的注意力視野隨去噪由全局收縮至局部 | [2610.17227](https://arxiv.org/abs/2610.17227) | [AReA](papers/2026/2026-10/AReA/AI_Daily_AReA.md) |
 | ｜Attention-Scoped Guidance：把雙 CFG 的全域權重改成空間化，讓免訓練圖像編輯更少誤傷背景 | [2609.37492](https://arxiv.org/abs/2609.37492) | [ASG](papers/2026/2026-10/ASG/AI_Daily_ASG.md) |
 | ｜Exploring Attention Sinks in Text-to-Image Transformers：圖像生成 Transformer 的注意力匯，究竟是語義錨點... | [2610.13337](https://arxiv.org/abs/2610.13337) | [AttentionSinks](papers/2026/2026-10/AttentionSinks/AI_Daily_AttentionSinks.md) |

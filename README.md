@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-26**
+**Last Updated: 2026-10-27**
 
-📚 **[完整論文索引(205 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(206 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[Scaling Transformer Energy-based Models For High Quality Image Synthesis — 2026-10-27：以 latent-space 多層能量頭、positive-only PRA 與 sampler matching，讓對比式 EBM 從雜訊生成 ImageNet 256²/512²；FID-50K 3.82/8.24（無 CFG、60 NFE）；Jungsoo Lee（MIT）、Alexi Gladstone（UIUC）、Yilun Du（Harvard），arXiv:2610.31889v1（預印本，未列正式 venue）](papers/2026/2026-10/TEM/AI_Daily_TEM.md)**
+本文拆解 latent-space contrastive EBM、三層能量頭、PRA 與 sampler-matching 損失，整理 ImageNet 指標、消融、組合生成與 OOD 結果；延伸提出 Energy-Gated VAR、JEPA-PRA 與 energy-driven attention modulation，並標明預印本狀態與取樣成本。
+
 - **[Prism — 2026-10-26：依視覺方向變異與音訊耦合動態選擇稀疏 block，支援 native 2K joint video-audio generation；每步訓練 26.5→10.6 分鐘、inference memory 72.8→38.0G；Shuyuan Tu、Qi Tian 等，Fudan／Tencent Hunyuan／Zhejiang，arXiv:2610.05416v1（預印本，未核實正式 venue）](papers/2026/2026-10/Prism/AI_Daily_Prism.md)**
 本文拆解視覺／音訊引導、C64/C128/C256 動態 block shapes、hybrid Top-k/Top-p 與 Flow Matching，整理 2K-Bench、效率比較、消融及重現限制；並提出 Energy-based、JEPA-predictive、VAR 式 training-free zero-shot routing 延伸。
 
