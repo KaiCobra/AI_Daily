@@ -1,13 +1,12 @@
 # 論文索引(全庫)
 
-共 206 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 207 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-10
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
-| Scaling Transformer Energy-based Models For High Quality Image Synthesis | [2610.31889](https://arxiv.org/abs/2610.31889) | [TEM](papers/2026/2026-10/TEM/AI_Daily_TEM.md) |
 | AReA：讓 Diffusion Transformer 的注意力視野隨去噪由全局收縮至局部 | [2610.17227](https://arxiv.org/abs/2610.17227) | [AReA](papers/2026/2026-10/AReA/AI_Daily_AReA.md) |
 | ｜Attention-Scoped Guidance：把雙 CFG 的全域權重改成空間化，讓免訓練圖像編輯更少誤傷背景 | [2609.37492](https://arxiv.org/abs/2609.37492) | [ASG](papers/2026/2026-10/ASG/AI_Daily_ASG.md) |
 | ｜Exploring Attention Sinks in Text-to-Image Transformers：圖像生成 Transformer 的注意力匯，究竟是語義錨點... | [2610.13337](https://arxiv.org/abs/2610.13337) | [AttentionSinks](papers/2026/2026-10/AttentionSinks/AI_Daily_AttentionSinks.md) |
@@ -15,23 +14,25 @@
 | Which Tokens to Merge? Diffusion Dynamics for Efficient Image Generation | [2610.22370](https://arxiv.org/abs/2610.22370) | [DaTMe](papers/2026/2026-10/DaTMe/AI_Daily_DaTMe.md) |
 | DetNO——以行列式最大化做「整批多樣性」最佳化 | [2610.22267](https://arxiv.org/abs/2610.22267) | [DetNO](papers/2026/2026-10/DetNO/AI_Daily_DetNO.md) |
 | Efficient and Training-Free Single-Image Diffusion Models | [2606.04299](https://arxiv.org/abs/2606.04299) | [Efficient-SID](papers/2026/2026-10/Efficient-SID/AI_Daily_Efficient_SID.md) |
-| Exploring Temporal Context-Aware Physical Grounding in Latent World Models | [2610.28483](https://arxiv.org/abs/2610.28483) | [G-JEPA](papers/2026/2026-10/G-JEPA/AI_Daily_G_JEPA.md) |
+| 今日唯一深讀 | [2610.28483](https://arxiv.org/abs/2610.28483) | [G-JEPA](papers/2026/2026-10/G-JEPA/AI_Daily_G_JEPA.md) |
 | ｜Images Talk Back：抑制圖像生成 Transformer 的 Image-to-Text Feedback | [2610.13941](https://arxiv.org/abs/2610.13941) | [Images-Talk-Back](papers/2026/2026-10/Images-Talk-Back/AI_Daily_SFG.md) |
 | ｜JEPA-TTT：讓 Latent World Model 在部署期間持續適應 Dynamics Shift | [2610.00722](https://arxiv.org/abs/2610.00722) | [JEPA-TTT](papers/2026/2026-10/JEPA-TTT/AI_Daily_JEPA_TTT.md) |
 | ｜LaLa-World：用自然語言統一異質動作與視覺轉換的 JEPA 式世界模型 | [2610.27851](https://arxiv.org/abs/2610.27851) | [LaLa-World](papers/2026/2026-10/LaLa-World/AI_Daily_LaLa_World.md) |
-| LocaLeJEPA：幾何先驗下的最大熵表徵學習 | [2610.28458](https://arxiv.org/abs/2610.28458) | [LocaLeJEPA](papers/2026/2026-10/LocaLeJEPA/AI_Daily_LocaLeJEPA.md) |
+| 今日候選與選擇 | [2610.26837](https://arxiv.org/abs/2610.26837) | [LocaLeJEPA](papers/2026/2026-10/LocaLeJEPA/AI_Daily_LocaLeJEPA.md) |
 | MOSS-Image——讓開放式 Diffusion Transformer 讀懂長文本與版面 | [2610.23374](https://arxiv.org/abs/2610.23374) | [MOSS-Image](papers/2026/2026-10/MOSS-Image/AI_Daily_MOSS-Image.md) |
 | ｜NAMVIS：把 Visual Autoregression 推進到幾何條件的多視角生成 | [2610.04722](https://arxiv.org/abs/2610.04722) | [NAMVIS](papers/2026/2026-10/NAMVIS/AI_Daily_NAMVIS.md) |
 | Embedding Prediction Helps Image Generation | [2610.02203](https://arxiv.org/abs/2610.02203) | [NEPA-DiT](papers/2026/2026-10/NEPA-DiT/AI_Daily_NEPA_DiT.md) |
 | PixelUMM：把理解與生成放進同一條 raw-pixel backbone | [2609.38597](https://arxiv.org/abs/2609.38597) | [PixelUMM](papers/2026/2026-10/PixelUMM/AI_Daily_PixelUMM.md) |
 | PoSTCache——讓 Diffusion Cache 從「預測」變成「可回頭修正」 | [2610.25664](https://arxiv.org/abs/2610.25664) | [PoSTCache](papers/2026/2026-10/PoSTCache/AI_Daily_PoSTCache.md) |
-| Prism：原生 2K 聯合視聽生成的 Dynamic Sparse Attention | [2610.05416](https://arxiv.org/abs/2610.05416) | [Prism](papers/2026/2026-10/Prism/AI_Daily_Prism.md) |
+| Prism：以音視覺內容自適應稀疏注意力支援原生 2K 聯合影片—音訊生成 | [2610.05416](https://arxiv.org/abs/2610.05416) | [Prism](papers/2026/2026-10/Prism/AI_Daily_Prism.md) |
 | ｜QuadTok：讓空間複雜度決定 Visual AR 的 token budget | [2610.10497](https://arxiv.org/abs/2610.10497) | [QuadTok](papers/2026/2026-10/QuadTok/AI_Daily_QuadTok.md) |
 | Scaffold Then Internalize: Representation Injection for Diffusion Transformers | [2609.35292](https://arxiv.org/abs/2609.35292) | [REPI](papers/2026/2026-10/REPI/AI_Daily_REPI.md) |
+| Read It Back: Pretrained MLLMs Are Zero-Shot Reward Models for Text-to-Image Generation | [2607.11886](https://arxiv.org/abs/2607.11886) | [Read-It-Back](papers/2026/2026-10/Read-It-Back/AI_Daily_Read_It_Back.md) |
 | ｜SGF+：把自回歸影片生成的兩種角色拆成兩組梯度 | [2610.10429](https://arxiv.org/abs/2610.10429) | [SGF-Plus](papers/2026/2026-10/SGF-Plus/AI_Daily_SGF_Plus.md) |
 | SJD-SV: Speculative Jacobi Decoding with Semantics Verification for Autoregressive Imag... | [2609.13245](https://arxiv.org/abs/2609.13245) | [SJD-SV](papers/2026/2026-10/SJD-SV/AI_Daily_SJD_SV.md) |
 | SpecKCast——用頻譜 Kalman 預測替擴散模型分配計算 | [2610.26837](https://arxiv.org/abs/2610.26837) | [SpecKCast](papers/2026/2026-10/SpecKCast/AI_Daily_SpecKCast.md) |
 | Speculative Forcing for Efficient Autoregressive Video Generation | [2610.22347](https://arxiv.org/abs/2610.22347) | [Speculative-Forcing](papers/2026/2026-10/Speculative-Forcing/AI_Daily_Speculative_Forcing.md) |
+| Scaling Transformer Energy-based Models For High Quality Image Synthesis | [2610.31889](https://arxiv.org/abs/2610.31889) | [TEM](papers/2026/2026-10/TEM/AI_Daily_TEM.md) |
 | 今日精選：TempoControl | [2510.02226](https://arxiv.org/abs/2510.02226) | [TempoControl](papers/2026/2026-10/TempoControl/AI_Daily_TempoControl.md) |
 | ｜WA-JEPA：把 V-JEPA 改造成能預測未來、理解動作的 World-Action Model | [2608.20974](https://arxiv.org/abs/2608.20974) | [WA-JEPA](papers/2026/2026-10/WA-JEPA/AI_Daily_WA_JEPA.md) |
 

@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-27**
+**Last Updated: 2026-10-28**
 
-📚 **[完整論文索引(206 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(207 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[Read It Back: Pretrained MLLMs Are Zero-Shot Reward Models for Text-to-Image Generation — 2026-10-28：以 image-conditioned prompt likelihood 建立 zero-shot reward；BAGEL + Self-SpectraReward 的 GenEval 84.0→89.5、TIIF-Short 75.2→85.1；Runhui Huang 等，香港大學／北京大學／ByteDance Seed，NeurIPS 2026 / arXiv:2607.11886v1](papers/2026/2026-10/Read-It-Back/AI_Daily_Read_It_Back.md)**
+本文推導 semantic spectrum 與 Self-SpectraReward，整理 reward 消融、PromptEcho 相關性及顯式語意 reward 的限制；並明確區分 reward training-free 與生成器仍需 RL 微調，延伸 Energy-based、JEPA、VAR attention modulation 構想。
+
 - **[Scaling Transformer Energy-based Models For High Quality Image Synthesis — 2026-10-27：以 latent-space 多層能量頭、positive-only PRA 與 sampler matching，讓對比式 EBM 從雜訊生成 ImageNet 256²/512²；FID-50K 3.82/8.24（無 CFG、60 NFE）；Jungsoo Lee（MIT）、Alexi Gladstone（UIUC）、Yilun Du（Harvard），arXiv:2610.31889v1（預印本，未列正式 venue）](papers/2026/2026-10/TEM/AI_Daily_TEM.md)**
 本文拆解 latent-space contrastive EBM、三層能量頭、PRA 與 sampler-matching 損失，整理 ImageNet 指標、消融、組合生成與 OOD 結果；延伸提出 Energy-Gated VAR、JEPA-PRA 與 energy-driven attention modulation，並標明預印本狀態與取樣成本。
 
