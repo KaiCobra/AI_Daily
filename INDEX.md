@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 207 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 208 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-10
@@ -22,6 +22,7 @@
 | MOSS-Image——讓開放式 Diffusion Transformer 讀懂長文本與版面 | [2610.23374](https://arxiv.org/abs/2610.23374) | [MOSS-Image](papers/2026/2026-10/MOSS-Image/AI_Daily_MOSS-Image.md) |
 | ｜NAMVIS：把 Visual Autoregression 推進到幾何條件的多視角生成 | [2610.04722](https://arxiv.org/abs/2610.04722) | [NAMVIS](papers/2026/2026-10/NAMVIS/AI_Daily_NAMVIS.md) |
 | Embedding Prediction Helps Image Generation | [2610.02203](https://arxiv.org/abs/2610.02203) | [NEPA-DiT](papers/2026/2026-10/NEPA-DiT/AI_Daily_NEPA_DiT.md) |
+| Visual Autoregressive Generation with Next Token Imagination | [2610.36793](https://arxiv.org/abs/2610.36793) | [NTI](papers/2026/2026-10/NTI/AI_Daily_NTI.md) |
 | PixelUMM：把理解與生成放進同一條 raw-pixel backbone | [2609.38597](https://arxiv.org/abs/2609.38597) | [PixelUMM](papers/2026/2026-10/PixelUMM/AI_Daily_PixelUMM.md) |
 | PoSTCache——讓 Diffusion Cache 從「預測」變成「可回頭修正」 | [2610.25664](https://arxiv.org/abs/2610.25664) | [PoSTCache](papers/2026/2026-10/PoSTCache/AI_Daily_PoSTCache.md) |
 | Prism：以音視覺內容自適應稀疏注意力支援原生 2K 聯合影片—音訊生成 | [2610.05416](https://arxiv.org/abs/2610.05416) | [Prism](papers/2026/2026-10/Prism/AI_Daily_Prism.md) |

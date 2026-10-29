@@ -2,13 +2,17 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-28**
+**Last Updated: 2026-10-29**
 
-📚 **[完整論文索引(207 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(208 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Visual Autoregressive Generation with Next Token Imagination — 2026-10-29：以 context-regulated next-token imagination 擴展 raster-AR 訓練目標；同一 461M backbone 的 FID 3.02→1.67、IS 256.20→312.72，8×A100 訓練約多 10%；Ruihang Jiang 等，University of Hong Kong／University of Surrey，arXiv:2610.36793v1；ICLR 2027 投稿審查中，尚未錄取](papers/2026/2026-10/NTI/AI_Daily_NTI.md)**
+本文推導 Snapshot-based Context Approximation 與 Context-Regulated Imagination，說明 token 相似度、前綴分布一致性與熵信心如何形成軟標籤；同時標明它不是 training-free 或 zero-shot，亦未證明 tokenizer 邊界外的新語義泛化，並延伸到 Energy-based verifier、JEPA predictive gate、VAR 尺度想像與 inference-time attention modulation。
+
 - **[Read It Back: Pretrained MLLMs Are Zero-Shot Reward Models for Text-to-Image Generation — 2026-10-28：以 image-conditioned prompt likelihood 建立 zero-shot reward；BAGEL + Self-SpectraReward 的 GenEval 84.0→89.5、TIIF-Short 75.2→85.1；Runhui Huang 等，香港大學／北京大學／ByteDance Seed，NeurIPS 2026 / arXiv:2607.11886v1](papers/2026/2026-10/Read-It-Back/AI_Daily_Read_It_Back.md)**
 本文推導 semantic spectrum 與 Self-SpectraReward，整理 reward 消融、PromptEcho 相關性及顯式語意 reward 的限制；並明確區分 reward training-free 與生成器仍需 RL 微調，延伸 Energy-based、JEPA、VAR attention modulation 構想。
 
