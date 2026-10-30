@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 208 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 209 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-10
@@ -9,6 +9,7 @@
 |---|---|---|
 | AReA：讓 Diffusion Transformer 的注意力視野隨去噪由全局收縮至局部 | [2610.17227](https://arxiv.org/abs/2610.17227) | [AReA](papers/2026/2026-10/AReA/AI_Daily_AReA.md) |
 | ｜Attention-Scoped Guidance：把雙 CFG 的全域權重改成空間化，讓免訓練圖像編輯更少誤傷背景 | [2609.37492](https://arxiv.org/abs/2609.37492) | [ASG](papers/2026/2026-10/ASG/AI_Daily_ASG.md) |
+| ATLAS: Attention-Guided Test-Time Latent Selection for Compositional Visual Autoregress... | [2610.25390](https://arxiv.org/abs/2610.25390) | [ATLAS](papers/2026/2026-10/ATLAS/AI_Daily_ATLAS.md) |
 | ｜Exploring Attention Sinks in Text-to-Image Transformers：圖像生成 Transformer 的注意力匯，究竟是語義錨點... | [2610.13337](https://arxiv.org/abs/2610.13337) | [AttentionSinks](papers/2026/2026-10/AttentionSinks/AI_Daily_AttentionSinks.md) |
 | ｜Custom Forcing：把主體身份寫進自回歸影片的 Persistent KV Cache | [2610.02914](https://arxiv.org/abs/2610.02914) | [CustomForcing](papers/2026/2026-10/CustomForcing/AI_Daily_CustomForcing.md) |
 | Which Tokens to Merge? Diffusion Dynamics for Efficient Image Generation | [2610.22370](https://arxiv.org/abs/2610.22370) | [DaTMe](papers/2026/2026-10/DaTMe/AI_Daily_DaTMe.md) |

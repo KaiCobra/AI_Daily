@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-29**
+**Last Updated: 2026-10-30**
 
-📚 **[完整論文索引(208 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(209 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[ATLAS: Attention-Guided Test-Time Latent Selection for Compositional Visual Autoregressive Generation — 2026-10-30：凍結 VAR，以 cross-attention 損失逐尺度淘汰候選，再用 ImageReward 完成少量路徑；搜尋預算 N=8 時，T2I-CompBench Avg.6 相對 Infinity／Switti 基線提升 10.5%／10.6%；Hossein Shahabadi 等，Sharif University of Technology，arXiv:2610.25390v1（預印本，未列正式 venue）](papers/2026/2026-10/ATLAS/AI_Daily_ATLAS.md)**
+本文拆解注意力評分、逐尺度分支剪枝與部分解碼後 reranking，整理 Infinity／Switti 的組合生成與 A100 成本結果，並提出將 EBT 相容性 energy、JEPA 預測一致性與 VAR 動態分支預算結合的可驗證方向。
 
 - **[Visual Autoregressive Generation with Next Token Imagination — 2026-10-29：以 context-regulated next-token imagination 擴展 raster-AR 訓練目標；同一 461M backbone 的 FID 3.02→1.67、IS 256.20→312.72，8×A100 訓練約多 10%；Ruihang Jiang 等，University of Hong Kong／University of Surrey，arXiv:2610.36793v1；ICLR 2027 投稿審查中，尚未錄取](papers/2026/2026-10/NTI/AI_Daily_NTI.md)**
 本文推導 Snapshot-based Context Approximation 與 Context-Regulated Imagination，說明 token 相似度、前綴分布一致性與熵信心如何形成軟標籤；同時標明它不是 training-free 或 zero-shot，亦未證明 tokenizer 邊界外的新語義泛化，並延伸到 Energy-based verifier、JEPA predictive gate、VAR 尺度想像與 inference-time attention modulation。
