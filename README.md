@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-10-30**
+**Last Updated: 2026-10-31**
 
-📚 **[完整論文索引(209 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(210 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[O2MAG — 2026-10-31：以 Tri-branch Attention Grafting、AGO 與 DAE，在一張異常參考影像下免更新 diffusion 權重合成遮罩指定的缺陷；MVTec-AD pixel AP/F1 86.3/80.8、Real-IAD pixel AP/F1 37.3/41.9；CVPR 2026 Highlight，Haoxiang Rao 等，南京大學／中國移動紫金創新研究院／山東科技大學，arXiv:2603.18093](papers/2026/2026-10/O2MAG/AI_Daily_O2MAG.md)**
+本文詳解三分支 masked attention、reference-conditioned prompt embedding optimization 與 dual attention；明確區分 frozen backbone 與 training-free，記錄 one-reference mask／28 秒每張成本、VisA baseline 口徑與小／邏輯異常限制，並延伸 energy-based JEPA、VAR next-scale routing 與嚴格 zero-shot 測試。
 
 - **[ATLAS: Attention-Guided Test-Time Latent Selection for Compositional Visual Autoregressive Generation — 2026-10-30：凍結 VAR，以 cross-attention 損失逐尺度淘汰候選，再用 ImageReward 完成少量路徑；搜尋預算 N=8 時，T2I-CompBench Avg.6 相對 Infinity／Switti 基線提升 10.5%／10.6%；Hossein Shahabadi 等，Sharif University of Technology，arXiv:2610.25390v1（預印本，未列正式 venue）](papers/2026/2026-10/ATLAS/AI_Daily_ATLAS.md)**
 本文拆解注意力評分、逐尺度分支剪枝與部分解碼後 reranking，整理 Infinity／Switti 的組合生成與 A100 成本結果，並提出將 EBT 相容性 energy、JEPA 預測一致性與 VAR 動態分支預算結合的可驗證方向。
