@@ -1,7 +1,13 @@
 # 論文索引(全庫)
 
-共 210 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 211 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
+
+## 2026-11
+
+| 論文 | arXiv | 解析 |
+|---|---|---|
+| Focused Forcing: Content-Aware Per-Frame KV Selection for Efficient Autoregressive Vide... | [2605.18346](https://arxiv.org/abs/2605.18346) | [Focused-Forcing](papers/2026/2026-11/Focused-Forcing/AI_Daily_Focused_Forcing.md) |
 
 ## 2026-10
 
