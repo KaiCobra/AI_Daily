@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-01**
+**Last Updated: 2026-11-02**
 
-📚 **[完整論文索引(211 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(212 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Unlocking Any-Order Generation in Pretrained Autoregressive Image Models — 2026-11-02：以 future-aware target-position embedding 與 raster-to-random ordering curriculum，將 LlamaGen/RAR 預訓練模型適配成任意順序 AR；ImageNet inpainting/outpainting FID 6.21/5.84，LlamaGen-XL 追加約 25% 訓練成本；Rishav Pramanik、Marco Pedersoli、Zhaozheng Yin，NeurIPS 2026，arXiv:2610.39293v1](papers/2026/2026-11/Any-Order-AR/AI_Daily_AnyOrder_AR.md)**
+本文推導目標位置可識別性與排序課程，整理 LlamaGen/RAR 品質取捨、MaskGIT/MAR 比較及「task-level zero-shot ≠ training-free」邊界，並延伸 Energy-Gated VAR、JEPA consistency scoring 與 attention target routing。
 
 - **[Focused Forcing — 2026-11-01：依 query frame 與 attention head 選擇歷史 KV，VBench-Long 對四種自回歸影片 backbone 端到端加速 1.31×–1.48×；Peiliang Cai 等，上海交通大學等，NeurIPS 2026 官方 poster / arXiv:2605.18346v2](papers/2026/2026-11/Focused-Forcing/AI_Daily_Focused_Forcing.md)**
 本文詳解 per-frame attention＋key diversity 選擇、DM-loss head budgeting 與 variable-length FlashAttention；同時記錄一次性 32-prompt profiling、品質取捨及 EBT／JEPA／VAR 的延伸假說。
