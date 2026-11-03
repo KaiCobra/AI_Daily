@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-02**
+**Last Updated: 2026-11-03**
 
-📚 **[完整論文索引(212 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(213 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Frequency-Aware Flow Matching for High-Quality Image Generation（FreqFlow）— 2026-11-03：以 Fourier 低／高頻雙分支、自適應頻帶融合與空間／頻域聯合監督改善圖像細節；ImageNet-256 FID-50K 1.38（1.08B，CFG）；Sucheng Ren 等，Johns Hopkins University、ByteDance，CVPR 2026 / arXiv:2604.15521](papers/2026/2026-11/FreqFlow/AI_Daily_FreqFlow.md)**
+本文詳解 flow matching 速度場、FFT 頻率分離與時間 gate，整理 ImageNet-256／512 數值與消融；並與 SiT、DiT、後續 WaiT 比較，區分 CFG 與無 CFG 的 FID 口徑，也說明 FreqFlow 需訓練而非 training-free。
 
 - **[Unlocking Any-Order Generation in Pretrained Autoregressive Image Models — 2026-11-02：以 future-aware target-position embedding 與 raster-to-random ordering curriculum，將 LlamaGen/RAR 預訓練模型適配成任意順序 AR；ImageNet inpainting/outpainting FID 6.21/5.84，LlamaGen-XL 追加約 25% 訓練成本；Rishav Pramanik、Marco Pedersoli、Zhaozheng Yin，NeurIPS 2026，arXiv:2610.39293v1](papers/2026/2026-11/Any-Order-AR/AI_Daily_AnyOrder_AR.md)**
 本文推導目標位置可識別性與排序課程，整理 LlamaGen/RAR 品質取捨、MaskGIT/MAR 比較及「task-level zero-shot ≠ training-free」邊界，並延伸 Energy-Gated VAR、JEPA consistency scoring 與 attention target routing。
