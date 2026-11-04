@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-03**
+**Last Updated: 2026-11-04**
 
-📚 **[完整論文索引(213 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(214 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context Rewriting — 2026-11-04：以 representation-guided context selection、時間邊界覆蓋與 compact RoPE，對 AR video 歷史做免訓練重寫；VBench-Long 七個 backbone family 平均 Total Score +1.41／+1.94（30／60 秒），H200 block latency 在三個 backbone 下降、一個上升；Lixuan He 等，Stanford University，NeurIPS 2026 / arXiv:2611.04164v1](papers/2026/2026-11/ReCR/AI_Daily_ReCR.md)**
+本文詳解 ReCR 的表徵 utility、early/recent coverage、redundancy penalty 與 compact RoPE，整理 30／60 秒 VBench-Long、drift、prompt-switch 與 latency 證據；明確區分 visible-context compression 與 KV storage reduction，並延伸提出 Energy-based selector、JEPA future embedding 與 VAR 分層重寫。
 
 - **[Frequency-Aware Flow Matching for High-Quality Image Generation（FreqFlow）— 2026-11-03：以 Fourier 低／高頻雙分支、自適應頻帶融合與空間／頻域聯合監督改善圖像細節；ImageNet-256 FID-50K 1.38（1.08B，CFG）；Sucheng Ren 等，Johns Hopkins University、ByteDance，CVPR 2026 / arXiv:2604.15521](papers/2026/2026-11/FreqFlow/AI_Daily_FreqFlow.md)**
 本文詳解 flow matching 速度場、FFT 頻率分離與時間 gate，整理 ImageNet-256／512 數值與消融；並與 SiT、DiT、後續 WaiT 比較，區分 CFG 與無 CFG 的 FID 口徑，也說明 FreqFlow 需訓練而非 training-free。
