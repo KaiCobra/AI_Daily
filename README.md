@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-04**
+**Last Updated: 2026-11-05**
 
-📚 **[完整論文索引(214 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(215 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[V-JEPA 2.1 — 2026-11-05：以距離加權的 context loss 監督所有 token，提升 dense 時空特徵；2B ViT-G 的 NYUv2 RMSE 0.307、Ego4D mAP 7.71、EK100 Recall@5 40.8；Meta FAIR，ECCV 2026 poster / arXiv:2603.14482](papers/2026/2026-11/V-JEPA-2.1/AI_Daily_V-JEPA_2_1.md)**
+本文詳解 masked 與 context token 的 JEPA 預測損失、多層 self-supervision 及 data/model scaling；整理 dense/global trade-off、DINOv3 比較和 Franka 主表與摘要「20 點」說法不一致，並延伸到 Energy-based、VAR 與 training-free attention modulation。
 
 - **[What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context Rewriting — 2026-11-04：以 representation-guided context selection、時間邊界覆蓋與 compact RoPE，對 AR video 歷史做免訓練重寫；VBench-Long 七個 backbone family 平均 Total Score +1.41／+1.94（30／60 秒），H200 block latency 在三個 backbone 下降、一個上升；Lixuan He 等，Stanford University，NeurIPS 2026 / arXiv:2611.04164v1](papers/2026/2026-11/ReCR/AI_Daily_ReCR.md)**
 本文詳解 ReCR 的表徵 utility、early/recent coverage、redundancy penalty 與 compact RoPE，整理 30／60 秒 VBench-Long、drift、prompt-switch 與 latency 證據；明確區分 visible-context compression 與 KV storage reduction，並延伸提出 Energy-based selector、JEPA future embedding 與 VAR 分層重寫。

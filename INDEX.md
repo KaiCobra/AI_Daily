@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 214 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 215 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-11
@@ -11,6 +11,7 @@
 | Focused Forcing: Content-Aware Per-Frame KV Selection for Efficient Autoregressive Vide... | [2605.18346](https://arxiv.org/abs/2605.18346) | [Focused-Forcing](papers/2026/2026-11/Focused-Forcing/AI_Daily_Focused_Forcing.md) |
 | Frequency-Aware Flow Matching for High-Quality Image Generation | [2604.15521](https://arxiv.org/abs/2604.15521) | [FreqFlow](papers/2026/2026-11/FreqFlow/AI_Daily_FreqFlow.md) |
 | What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context R... | [2611.04164](https://arxiv.org/abs/2611.04164) | [ReCR](papers/2026/2026-11/ReCR/AI_Daily_ReCR.md) |
+| V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning | [2603.14482](https://arxiv.org/abs/2603.14482) | [V-JEPA-2.1](papers/2026/2026-11/V-JEPA-2.1/AI_Daily_V-JEPA_2_1.md) |
 
 ## 2026-10
 
