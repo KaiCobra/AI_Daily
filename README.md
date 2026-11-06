@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-05**
+**Last Updated: 2026-11-06**
 
-📚 **[完整論文索引(215 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(216 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+
+- **[Context-Aware Autoregressive Image Generation for Emerging Reasoning Properties — 2026-11-06：以條件 anchor 動態重排 patch／scale-wise AR 生成順序；NeurIPS 2026 poster；GenEval MaskGen-XL 56.22%→59.99%、Infinity-8B 80.63%→81.34%；Jixuan Ying 等，Johns Hopkins／UC Berkeley／UC Santa Cruz，arXiv:2611.06838](papers/2026/2026-11/Saccades-AR/AI_Daily_Saccades_AR.md)**
+本文解析 SAR 如何在不更換生成 backbone 的前提下，於推理時決定先生成哪些視覺 token；整理 GenEval、DPG、FID、受控 MaskGIT 與延遲結果，並區分純推理時重排與含重新訓練的 ImageNet VAR 實驗，提出 Energy／JEPA 導向的後續研究問題。
 
 - **[V-JEPA 2.1 — 2026-11-05：以距離加權的 context loss 監督所有 token，提升 dense 時空特徵；2B ViT-G 的 NYUv2 RMSE 0.307、Ego4D mAP 7.71、EK100 Recall@5 40.8；Meta FAIR，ECCV 2026 poster / arXiv:2603.14482](papers/2026/2026-11/V-JEPA-2.1/AI_Daily_V-JEPA_2_1.md)**
 本文詳解 masked 與 context token 的 JEPA 預測損失、多層 self-supervision 及 data/model scaling；整理 dense/global trade-off、DINOv3 比較和 Franka 主表與摘要「20 點」說法不一致，並延伸到 Energy-based、VAR 與 training-free attention modulation。
