@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-06**
+**Last Updated: 2026-11-07**
 
-📚 **[完整論文索引(216 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(217 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[Z-Cache: Accelerating Diffusion Transformers via Self-Reflection — 2026-11-07：以原排程中的下一個 full-computation anchor 反射並重播暫存窗口，training-free 修復特徵快取造成的生成軌跡誤差；NeurIPS 2026 poster，arXiv:2611.01846](papers/2026/2026-11/Z-Cache/AI_Daily_Z_Cache.md)**
+本文拆解 cache-then-check、雙錨點線性融合與 active-window replay，並整理 ImageNet、FLUX.1-dev、HunyuanVideo、Qwen-Image-Lightning 與 FLUX-Kontext-dev 的數據口徑。報告特別區分 6.22× FLOPs speedup 與 wall-clock latency、cache interval 與 NFE，並提出 Energy/JEPA/VAR/attention modulation/zero-shot 的可驗證延伸。
+---
 
 - **[Context-Aware Autoregressive Image Generation for Emerging Reasoning Properties — 2026-11-06：以條件 anchor 動態重排 patch／scale-wise AR 生成順序；NeurIPS 2026 poster；GenEval MaskGen-XL 56.22%→59.99%、Infinity-8B 80.63%→81.34%；Jixuan Ying 等，Johns Hopkins／UC Berkeley／UC Santa Cruz，arXiv:2611.06838](papers/2026/2026-11/Saccades-AR/AI_Daily_Saccades_AR.md)**
 本文解析 SAR 如何在不更換生成 backbone 的前提下，於推理時決定先生成哪些視覺 token；整理 GenEval、DPG、FID、受控 MaskGIT 與延遲結果，並區分純推理時重排與含重新訓練的 ImageNet VAR 實驗，提出 Energy／JEPA 導向的後續研究問題。

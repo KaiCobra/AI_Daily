@@ -7,6 +7,7 @@
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| Z-Cache: Accelerating Diffusion Transformers via Self-Reflection | [2611.01846](https://arxiv.org/abs/2611.01846) | [Z-Cache](papers/2026/2026-11/Z-Cache/AI_Daily_Z_Cache.md) |
 | Context-Aware Autoregressive Image Generation for Emerging Reasoning Properties | [2611.06838](https://arxiv.org/abs/2611.06838) | [Saccades-AR](papers/2026/2026-11/Saccades-AR/AI_Daily_Saccades_AR.md) |
 | Unlocking Any-Order Generation in Pretrained Autoregressive Image Models | [2610.39293](https://arxiv.org/abs/2610.39293) | [Any-Order-AR](papers/2026/2026-11/Any-Order-AR/AI_Daily_AnyOrder_AR.md) |
 | Focused Forcing: Content-Aware Per-Frame KV Selection for Efficient Autoregressive Vide... | [2605.18346](https://arxiv.org/abs/2605.18346) | [Focused-Forcing](papers/2026/2026-11/Focused-Forcing/AI_Daily_Focused_Forcing.md) |
