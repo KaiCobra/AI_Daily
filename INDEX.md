@@ -1,19 +1,20 @@
 # 論文索引(全庫)
 
-共 216 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 218 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-11
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
-| Z-Cache: Accelerating Diffusion Transformers via Self-Reflection | [2611.01846](https://arxiv.org/abs/2611.01846) | [Z-Cache](papers/2026/2026-11/Z-Cache/AI_Daily_Z_Cache.md) |
-| Context-Aware Autoregressive Image Generation for Emerging Reasoning Properties | [2611.06838](https://arxiv.org/abs/2611.06838) | [Saccades-AR](papers/2026/2026-11/Saccades-AR/AI_Daily_Saccades_AR.md) |
 | Unlocking Any-Order Generation in Pretrained Autoregressive Image Models | [2610.39293](https://arxiv.org/abs/2610.39293) | [Any-Order-AR](papers/2026/2026-11/Any-Order-AR/AI_Daily_AnyOrder_AR.md) |
 | Focused Forcing: Content-Aware Per-Frame KV Selection for Efficient Autoregressive Vide... | [2605.18346](https://arxiv.org/abs/2605.18346) | [Focused-Forcing](papers/2026/2026-11/Focused-Forcing/AI_Daily_Focused_Forcing.md) |
 | Frequency-Aware Flow Matching for High-Quality Image Generation | [2604.15521](https://arxiv.org/abs/2604.15521) | [FreqFlow](papers/2026/2026-11/FreqFlow/AI_Daily_FreqFlow.md) |
+| Training-Free Predictive Spatio-Temporal Token Pruning for Few-Step Autoregressive Vide... | [2611.07551](https://arxiv.org/abs/2611.07551) | [PreSTP](papers/2026/2026-11/PreSTP/AI_Daily_PreSTP.md) |
 | What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context R... | [2611.04164](https://arxiv.org/abs/2611.04164) | [ReCR](papers/2026/2026-11/ReCR/AI_Daily_ReCR.md) |
+| 精選論文 | [2611.06838](https://arxiv.org/abs/2611.06838) | [Saccades-AR](papers/2026/2026-11/Saccades-AR/AI_Daily_Saccades_AR.md) |
 | V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning | [2603.14482](https://arxiv.org/abs/2603.14482) | [V-JEPA-2.1](papers/2026/2026-11/V-JEPA-2.1/AI_Daily_V-JEPA_2_1.md) |
+| 今日選讀：把快取誤差變成可回看的生成軌跡 | [2611.01846](https://arxiv.org/abs/2611.01846) | [Z-Cache](papers/2026/2026-11/Z-Cache/AI_Daily_Z_Cache.md) |
 
 ## 2026-10
 

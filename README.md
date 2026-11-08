@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-07**
+**Last Updated: 2026-11-08**
 
-📚 **[完整論文索引(217 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(218 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[Training-Free Predictive Spatio-Temporal Token Pruning for Few-Step Autoregressive Video Diffusion — 2026-11-08：以 early clean estimate 同時利用跨影格靜態冗餘與跨去噪步收斂 token；四步模型最高報告 3.20× diffusion-latency speedup、30 秒測試最高 1.96×；Jia Li 等，香港大學／ByteDance Seed，arXiv:2611.07551v1（預印本，未列正式 venue）](papers/2026/2026-11/PreSTP/AI_Daily_PreSTP.md)**
+本文詳解時空 token mask、last-computed-value restoration、5 秒／30 秒與 one-step 實驗，並區分 diffusion latency 與端到端時間；提出 EBT 風險門控、JEPA 預測 refresh、VAR 尺度剪枝與嚴格 zero-shot 評估等可驗證延伸。
+
 - **[Z-Cache: Accelerating Diffusion Transformers via Self-Reflection — 2026-11-07：以原排程中的下一個 full-computation anchor 反射並重播暫存窗口，training-free 修復特徵快取造成的生成軌跡誤差；NeurIPS 2026 poster，arXiv:2611.01846](papers/2026/2026-11/Z-Cache/AI_Daily_Z_Cache.md)**
 本文拆解 cache-then-check、雙錨點線性融合與 active-window replay，並整理 ImageNet、FLUX.1-dev、HunyuanVideo、Qwen-Image-Lightning 與 FLUX-Kontext-dev 的數據口徑。報告特別區分 6.22× FLOPs speedup 與 wall-clock latency、cache interval 與 NFE，並提出 Energy/JEPA/VAR/attention modulation/zero-shot 的可驗證延伸。
 ---
