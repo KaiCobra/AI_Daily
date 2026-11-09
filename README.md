@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-08**
+**Last Updated: 2026-11-09**
 
-📚 **[完整論文索引(218 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(219 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[TD-JEPA — 2026-11-09：以離線、無 reward transition 的多步 TD-JEPA 學 policy-conditioned successor features，支援測試時 reward 對應 zero-shot policy；ICLR 2026 Oral，arXiv:2510.00739；DMC RGB 平均 628.8±5.5，OGBench RGB 41.34±0.45；Marco Bagatella 等，FAIR at Meta／ETH Zürich／MPI-IS](papers/2026/2026-11/TD-JEPA/AI_Daily_TD_JEPA.md)**
+本文精選 **TD-JEPA**，將 JEPA latent prediction 與 successor-feature 零樣本控制連成同一訓練目標。報告拆解 policy-conditioned TD loss、reward latent 回歸與理想化理論條件；同時指出它需離線訓練及少量 reward-labelled 樣本，且 OGBench 平均並非全面勝過所有基線。
+---
 - **[Training-Free Predictive Spatio-Temporal Token Pruning for Few-Step Autoregressive Video Diffusion — 2026-11-08：以 early clean estimate 同時利用跨影格靜態冗餘與跨去噪步收斂 token；四步模型最高報告 3.20× diffusion-latency speedup、30 秒測試最高 1.96×；Jia Li 等，香港大學／ByteDance Seed，arXiv:2611.07551v1（預印本，未列正式 venue）](papers/2026/2026-11/PreSTP/AI_Daily_PreSTP.md)**
 本文詳解時空 token mask、last-computed-value restoration、5 秒／30 秒與 one-step 實驗，並區分 diffusion latency 與端到端時間；提出 EBT 風險門控、JEPA 預測 refresh、VAR 尺度剪枝與嚴格 zero-shot 評估等可驗證延伸。
 
