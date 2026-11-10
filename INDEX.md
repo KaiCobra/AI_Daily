@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 219 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 220 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-11
@@ -10,6 +10,7 @@
 | Unlocking Any-Order Generation in Pretrained Autoregressive Image Models | [2610.39293](https://arxiv.org/abs/2610.39293) | [Any-Order-AR](papers/2026/2026-11/Any-Order-AR/AI_Daily_AnyOrder_AR.md) |
 | Focused Forcing: Content-Aware Per-Frame KV Selection for Efficient Autoregressive Vide... | [2605.18346](https://arxiv.org/abs/2605.18346) | [Focused-Forcing](papers/2026/2026-11/Focused-Forcing/AI_Daily_Focused_Forcing.md) |
 | Frequency-Aware Flow Matching for High-Quality Image Generation | [2604.15521](https://arxiv.org/abs/2604.15521) | [FreqFlow](papers/2026/2026-11/FreqFlow/AI_Daily_FreqFlow.md) |
+| La-JEPA: Compact Robot Policies with Latent World Modeling | [2611.08156](https://arxiv.org/abs/2611.08156) | [La-JEPA](papers/2026/2026-11/La-JEPA/AI_Daily_La-JEPA.md) |
 | Training-Free Predictive Spatio-Temporal Token Pruning for Few-Step Autoregressive Vide... | [2611.07551](https://arxiv.org/abs/2611.07551) | [PreSTP](papers/2026/2026-11/PreSTP/AI_Daily_PreSTP.md) |
 | What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context R... | [2611.04164](https://arxiv.org/abs/2611.04164) | [ReCR](papers/2026/2026-11/ReCR/AI_Daily_ReCR.md) |
 | 精選論文 | [2611.06838](https://arxiv.org/abs/2611.06838) | [Saccades-AR](papers/2026/2026-11/Saccades-AR/AI_Daily_Saccades_AR.md) |
