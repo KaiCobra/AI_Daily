@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-10**
+**Last Updated: 2026-11-11**
 
-📚 **[完整論文索引(220 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(221 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[LEF-JEPA: Denoising-Trained Latent Energy Fields for Spatial Representation Learning — 2026-11-11：以 multi-level 目標引導被擾動 latent 的局部復原，再用單邊相對能量約束把結構訊號送進 encoder；能量模組只在預訓練存在、推理零額外開銷，另有接實體 CIM 的條件 Ising 變體（`K=1`、前向 45–47 ms）。CIFAR-10 凍結 encoder 轉移 ViT-B 92.27% Acc / 72.11% Fg IoU / 86% SR，相對重訓的 V-JEPA2.1 為 +3.40／+3.97／+7 pt；Zhiyuan Liu 等，Qinous Technology（清啟量元）／清華大學，arXiv:2611.08989v1（預印本，未列正式 venue）](papers/2026/2026-11/LEF-JEPA/AI_Daily_LEF-JEPA.md)**
+本文推導 contrast-preserving normalization、reachable-displacement 的能量場損失、softplus 單邊能量約束與 Ising soft-min 聚合，並整理 `K`、`lambda_enc` 消融；同時標明結論僅限 CIFAR-10 小規模統一協議、EB-JEPA 重訓結果低於其原文、標準差與 `K=1` 數值有排印疑慮、查無官方 code。延伸提出把 `N_s` 當 training-free 特徵修飾器、留能量頭做 inference verifier、單邊約束替代 CFG 對稱外插，以及嚴格 zero-shot 測試。
+---
 - **[La-JEPA: Compact Robot Policies with Latent World Modeling — 2026-11-10：以 V-JEPA 2.1 稠密特徵訓練從零初始化的 world/action DiT，future-feature flow matching 僅在訓練期參與；RoboTwin 2.0 clean/randomized 86.2/35.4%、LIBERO-Plus corrected 88.0%、實機平均 17.50/20、policy-call latency 25.16 ms；Huawei／Toronto／McGill／Mila，arXiv:2611.08156v1（預印本）](papers/2026/2026-11/La-JEPA/AI_Daily_La-JEPA.md)**
 本文拆解雙 DiT 與 joint flow-matching 目標，並比較 V-JEPA、Fast-WAM、Faster-WAM、JEPA-WAM 與 LeapBot-WA。報告特別區分 LIBERO-Plus 修正／釋出指令分數，並指出本方法需要目標任務示範，非 zero-shot／training-free；程式碼連結查核時仍為空倉庫。
 ---
