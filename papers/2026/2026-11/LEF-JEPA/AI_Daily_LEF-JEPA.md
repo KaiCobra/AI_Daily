@@ -95,6 +95,8 @@ $$u_{ij}=\bigl[v_{i}+v_{j},\ |v_{i}-v_{j}|,\ v_{i}\odot v_{j}\bigr]$$
 
 保證（$u_{ij}=u_{ji}$ 因此 $J_{ij}=J_{ji}$，對角線設零）。更關鍵的成本設計是：每條 $K$ 步復原軌跡**只在初始擾動態 $q_0$ 查一次物理硬體**，回傳的池給所有 $K$ 步重用，因此實體呼叫次數對 $K$ 是 $\mathcal{O}(1)$。
 
+硬體那一端的具體接口值得記一筆：每個 16-spin Hamiltonian 會再加一個 reference spin，係數乘上一個 detached 的正純量後量化為 $[-127, 127]$ 的整數，最多把 58 個 17-spin 子問題打包成 block-diagonal 任務，以符合 1000-spin 的硬體上限；取樣模式回 10 次完整 readout，經 reference-spin 解碼、依提交的量化 Hamiltonian 排序並去重後，至多得到 8 個低能態組成池。作者強調表中所有 CIM 結果都出自實體求解器而非模擬，但前向延遲的計時明確不含網路傳輸、服務排隊與結果回傳。[1]
+
 ![LEF-JEPA Figure 2：整體架構與兩種能量實現](../../../../asset/2026-11-11-LEF-JEPA/LEFJEPA_fig2_framework_overview.png)
 
 *圖：論文 Figure 2（擷取自 PDF）。(a) 可見 token 分成 disjoint 的 candidate／anchor 兩組；錨點條件化被擾動候選表徵上的 latent energy landscape；multi-level 目標同時監督 $K$ 步能量梯度造成的位移（$\mathcal{L}_{\mathrm{field}}$）並提供 encoder 監督的目標能量參考（$\mathcal{L}_{\mathrm{enc}}$），再加上 masked prediction（$\mathcal{L}_{\mathrm{pred}}$）。(b) 連續 neural 能量實現。(c) 條件 Ising 實現：預測 $(h,J)$ → 物理 Ising solver 搜尋低能 spin → 可微 rescore。[1]*
