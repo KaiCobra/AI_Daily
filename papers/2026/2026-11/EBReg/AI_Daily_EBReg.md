@@ -66,6 +66,8 @@ $$\nabla_{\theta,\phi}H_\sigma(h)=-\,\mathbb E\bigl[J_{\theta,\phi}(h)^{\top}s_\
 
 ![EBReg 式(6)：implicit 分佈的熵梯度恆等式](../../../../asset/2026-11-12-EBReg/EBReg_eq6_entropy_gradient_identity.png)
 
+*圖：論文式 (6) 與其鋪陳句，原文在此直接標明出處為 Li & Turner（2018）與 Shi et al.（2018），也就是「不做密度估計、只用 score 取熵梯度」這條正當性來源。[1]*
+
 **Score 怎麼學：標準 DSM 加 Tweedie。** 每個 minibatch 先把兩條 view 的表徵 pooling 起來並**截斷梯度**，$\bar h=\operatorname{stopgrad}(h)$，然後在 encoder 凍結的情況下對去噪網路 $\hat\epsilon_\psi$ 做 $K_{\mathrm{score}}$ 步更新：
 
 $$\mathcal L_{\mathrm{DSM}}(\psi)=\mathbb E_{\bar h,\epsilon}\bigl\lVert\hat\epsilon_\psi(\bar h+\sigma\epsilon)-\epsilon\bigr\rVert_2^{2},\qquad s_{\psi,\sigma}(z)=-\frac{\hat\epsilon_\psi(z)}{\sigma}$$
@@ -108,6 +110,8 @@ $$\gamma\,\mathbb E\bigl[a_q\,q^{\top}s_\sigma(\tilde h)\bigr]=-\frac{\gamma}{2(
 $$\mathcal L_{\mathrm{TTA}}(\alpha)=-\,\mathbb E\Bigl[\operatorname{stopgrad}\bigl(s_{\psi,\sigma}(h_\alpha)\bigr)^{\top}h_\alpha\Bigr]$$
 
 ![EBReg 式(8)：score-guided test-time adaptation 目標](../../../../asset/2026-11-12-EBReg/EBReg_eq8_tta_objective.png)
+
+*圖：論文 §3.3 與其式 (8)。段落末句明確寫著「We keep the score model, classifier, and remaining encoder parameters fixed, and adapt only $lpha$, following (Wang et al., 2021)」，正是 TENT 那一系「只動 normalization 參數」慣例的來源。[1] [8]*
 
 對比式 (5) 就能看出那個對偶性：預訓練是 $+\gamma\,\mathbb E[\operatorname{sg}(s)^{\top}\tilde h]$（**逆 score**、散開、增熵），測試時是 $-\,\mathbb E[\operatorname{sg}(s)^{\top}h_\alpha]$（**順 score**、靠攏高密度區、投影回 learned latent manifold）。附錄 Algorithm 2 也寫了每個 test minibatch 都要先把 $\alpha$ 重設回預訓練值、再跑 $K_{\mathrm{tta}}$ 步，以避免跨 batch 累積狀態。
 
