@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-11**
+**Last Updated: 2026-11-12**
 
-📚 **[完整論文索引(221 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(222 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[Self-Supervised Collapse Prevention with Score-Based Entropy Maximization（EBReg）— 2026-11-12：把 latent score 當成反崩潰正則器，從 Barber–Agakov 互資訊下界推出 alignment–entropy 目標，熵項只靠 `stopgrad(s)ᵀh̃` 的梯度代理、不需負樣本也不估密度；ImageNet-1K ViT-L linear probe 75.57%（100 epoch，SIGReg 75.32%、ℓ-DAE 1600 epoch 75.00%），effective rank 648→759，ViT-H 上 rank 527→957；score 網路僅 5.21M 參數、每 epoch 440→500 s；Adarsh Kappiyath、Xiatian Zhu 等，University of Surrey／NYU／AMI Labs／SUAT／Imperial，arXiv:2611.11379v1（預印本，未列正式 venue）](papers/2026/2026-11/EBReg/AI_Daily_EBReg.md)**
+本文推導 Gaussian 平滑的邊際熵、Tweedie 參數化的 DSM 分數場，以及 Theorem 1 的「乾淨 score 對崩潰方向是盲的、帶噪 score 造成 `γ/σ²` 變異數上升」；同時整理 Table 1 的「scale 約束→最大熵目標→SIGReg／contrastive／SwAV／Rectified LpJEPA」族譜、`K_score=32` 掉到 58.32 的非單調消融，並標明 accuracy 僅 +0.25 pt 且無 seed／std、ImageNet-C 表體是按增益挑的 7 種子集、σ 在正文與 Figure 2 口徑不一致、StoP 被使用卻未列入參考文獻、查無 code 與公開討論。延伸提出把 score 熵正則搬到 DiT／VAR 的條件路徑、用 `±s` 符號翻轉取代 CFG 的推理時算子、以 normalization 幾何互換做約束旋鈕、用同週 arXiv:2611.12137 反例做 nuisance 測試台，並把它與 EBT／TEM／LEF-JEPA 拼成 energy–inference–learning 三元座標；TTA 屬 label-free 自適應，不是 training-free 或 strict zero-shot。
+---
 - **[LEF-JEPA: Denoising-Trained Latent Energy Fields for Spatial Representation Learning — 2026-11-11：以 multi-level 目標引導被擾動 latent 的局部復原，再用單邊相對能量約束把結構訊號送進 encoder；能量模組只在預訓練存在、推理零額外開銷，另有接實體 CIM 的條件 Ising 變體（`K=1`、前向 45–47 ms）。CIFAR-10 凍結 encoder 轉移 ViT-B 92.27% Acc / 72.11% Fg IoU / 86% SR，相對重訓的 V-JEPA2.1 為 +3.40／+3.97／+7 pt；Zhiyuan Liu 等，Qinous Technology（清啟量元）／清華大學，arXiv:2611.08989v1（預印本，未列正式 venue）](papers/2026/2026-11/LEF-JEPA/AI_Daily_LEF-JEPA.md)**
 本文推導 contrast-preserving normalization、reachable-displacement 的能量場損失、softplus 單邊能量約束與 Ising soft-min 聚合，並整理 `K`、`lambda_enc` 消融；同時標明結論僅限 CIFAR-10 小規模統一協議、EB-JEPA 重訓結果低於其原文、標準差與 `K=1` 數值有排印疑慮、查無官方 code。延伸提出把 `N_s` 當 training-free 特徵修飾器、留能量頭做 inference verifier、單邊約束替代 CFG 對稱外插，以及嚴格 zero-shot 測試。
 ---
