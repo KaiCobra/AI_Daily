@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-12**
+**Last Updated: 2026-11-13**
 
-📚 **[完整論文索引(222 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(223 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[Scale as a Modality: Multi-Scale Pixel-Space Diffusion Transformers（MS-pDiT）— 2026-11-13：把 spatial scale 當成一條 modality，用 $a=16$ 的 compacted joint attention 讓 1×1／4×4／16×16 像素流在同一次 forward 內雙向往返，被注意的序列長度固定在 $|P|M$ 而與最細 patch 數無關；等參數消融顯示「多加一個中間尺度」遠比把深度全給粗流有效（FID 3.63／3.74 → 2.31），尺度數本身成為 scaling 維度（2→5 尺度：4.39→2.31→2.26→2.19）；ImageNet-256 FID 1.43（1.4B／360ep）、512 FID 1.44、GenEval 0.86、DPG 83.9，全程免 VAE；Ruibo Chen 等，TikTok（ByteDance，internship）／University of Maryland, College Park，arXiv:2611.08802v1（預印本，未列正式 venue，查無 code）](papers/2026/2026-11/MS-pDiT/AI_Daily_MS-pDiT.md)**
+本文推導 rectified-flow 速度場 $v=x-\varepsilon$ 的像素空間參數化、$f_p=\big(\sum_{\text{concat}}^{(a/p)^2}X_p\big)W_p^c$ 的有損 compaction（$1\times1$ 是 $4096\to1152$）、共享 2D RoPE 加 per-block／per-stream scale-identity embedding、以及只準細看粗的 scale-causal mask 為何把 FID 從 2.31 推到 3.47；同時整理 $4\times4$ 中間尺度最優（2.31 vs $8\times8$ 2.42、$2\times2$ 2.54）、細流右對齊最後幾層、REPA 移除即 5.30、DeCo 的頻域 loss 在此架構下反而無益（2.40）等證據，並明確區分 80-epoch 消融與 600-epoch 主表的不同 CFG 工作點、1.43 仍未勝過 latent 陣營的 REPA 1.42／RAE 1.13、全部數字沒有 seed 與標準差。延伸提出跨尺度共识能量 $\mathcal{E}_{\text{cross}}$ 的 training-free Langevin 修正、以跨尺度預測取代 DINOv2 對齊的 JEPA 化變體、把已生成尺度併成 parallel conditioning streams 的 VAR 合題、以 $a$ 為免訓練算力旋鈕的 attention modulation，以及「跨解析度 fine-tune ≠ zero-shot」的嚴格邊界。
+---
 - **[Self-Supervised Collapse Prevention with Score-Based Entropy Maximization（EBReg）— 2026-11-12：把 latent score 當成反崩潰正則器，從 Barber–Agakov 互資訊下界推出 alignment–entropy 目標，熵項只靠 `stopgrad(s)ᵀh̃` 的梯度代理、不需負樣本也不估密度；ImageNet-1K ViT-L linear probe 75.57%（100 epoch，SIGReg 75.32%、ℓ-DAE 1600 epoch 75.00%），effective rank 648→759，ViT-H 上 rank 527→957；score 網路僅 5.21M 參數、每 epoch 440→500 s；Adarsh Kappiyath、Xiatian Zhu 等，University of Surrey／NYU／AMI Labs／SUAT／Imperial，arXiv:2611.11379v1（預印本，未列正式 venue）](papers/2026/2026-11/EBReg/AI_Daily_EBReg.md)**
 本文推導 Gaussian 平滑的邊際熵、Tweedie 參數化的 DSM 分數場，以及 Theorem 1 的「乾淨 score 對崩潰方向是盲的、帶噪 score 造成 `γ/σ²` 變異數上升」；同時整理 Table 1 的「scale 約束→最大熵目標→SIGReg／contrastive／SwAV／Rectified LpJEPA」族譜、`K_score=32` 掉到 58.32 的非單調消融，並標明 accuracy 僅 +0.25 pt 且無 seed／std、ImageNet-C 表體是按增益挑的 7 種子集、σ 在正文與 Figure 2 口徑不一致、StoP 被使用卻未列入參考文獻、查無 code 與公開討論。延伸提出把 score 熵正則搬到 DiT／VAR 的條件路徑、用 `±s` 符號翻轉取代 CFG 的推理時算子、以 normalization 幾何互換做約束旋鈕、用同週 arXiv:2611.12137 反例做 nuisance 測試台，並把它與 EBT／TEM／LEF-JEPA 拼成 energy–inference–learning 三元座標；TTA 屬 label-free 自適應，不是 training-free 或 strict zero-shot。
 ---
