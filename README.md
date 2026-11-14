@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-13**
+**Last Updated: 2026-11-14**
 
-📚 **[完整論文索引(223 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(224 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[Expanding the Quality–Coverage Frontier with Competitive Flow Matching（CFM）— 2026-11-14：把 flow matching「同一個帶噪狀態只能預測一個速度」的隱性假設拆掉，用低維高斯碼 $z\in\mathbb{R}^{8}$ 讓同一個 $x_t$ 產生 $K$ 個候選速度，只讓 $\min_k\|\hat u_k-u_t\|^2$ 的贏家回傳梯度；推理時因此多出一根零額外 NFE 的輔助條件縮放 $\lambda$（$\lambda=0$ 就是高保真基模型），與 AutoGuidance 的 $\gamma$ 正交疊加。ImageNet-256 上鎖定 Recall ≈ 67% 時 FD_r,6 從 SiT 的 19.22 降到 5.91，套在 RAEv2 上於 Recall ≈ 70% 從 16.83 降到 3.18，而 post-training 只花原始 SiT-XL/2 預訓練約 2.63% 的模型核心算力（$K=8$、10 個 epoch、實測 wall-clock 2.43×）；Wenxuan Peng 等，Cornell University／Adobe Research，arXiv:2611.07055v1（預印本，未列正式 venue，查無 code）](papers/2026/2026-11/CFM/AI_Daily_CFM.md)**
+本文推導條件平均最優解 $v^{*}=\mathbb{E}[u_t\mid x_t,t,y]$ 留下的不可約變異數、說明 WTA 為何把目標空間切成 Voronoi 指派後各自學子集平均（結構上就是 hard-EM／Lloyd），並讀成自由能的零溫度極限；同時整理四種 testbed（SiT、JiT、RAE、RAEv2）在 Table 1 與 Table 2 的評估口徑差異、$K$ 掃描與三組對照實驗（容量對齊的 $K=1$、標準 FM 多訓 50 epoch、放大 batch），並標明最佳工作點上 4.44 與 SiT+AG 的 4.53 其實接近、ADM FID 反而較差、Recall 只是 kNN 代理、「<3% 算力」未含指導模型與大量 50K 評估、碼簽名實驗的 $K=512$ 屬分析用而非主結果。延伸提出 soft-min 溫度旋鈕 $\tau$、對 $z$ 做 Langevin 的免訓練 verifier、把競爭搬到 JEPA latent 預測與 VAR next-scale、用隨機低範數條件方向檢驗 $\lambda$ 能否不 post-train 複現、以 $z$ 調製注意力逆溫度與 head 路由，以及「碼可在 held-out 類別被辨識（約 10× chance）」暗示的零樣本風格控制與其嚴格邊界。
+---
 - **[Scale as a Modality: Multi-Scale Pixel-Space Diffusion Transformers（MS-pDiT）— 2026-11-13：把 spatial scale 當成一條 modality，用 $a=16$ 的 compacted joint attention 讓 1×1／4×4／16×16 像素流在同一次 forward 內雙向往返，被注意的序列長度固定在 $|P|M$ 而與最細 patch 數無關；等參數消融顯示「多加一個中間尺度」遠比把深度全給粗流有效（FID 3.63／3.74 → 2.31），尺度數本身成為 scaling 維度（2→5 尺度：4.39→2.31→2.26→2.19）；ImageNet-256 FID 1.43（1.4B／360ep）、512 FID 1.44、GenEval 0.86、DPG 83.9，全程免 VAE；Ruibo Chen 等，TikTok（ByteDance，internship）／University of Maryland, College Park，arXiv:2611.08802v1（預印本，未列正式 venue，查無 code）](papers/2026/2026-11/MS-pDiT/AI_Daily_MS-pDiT.md)**
 本文推導 rectified-flow 速度場 $v=x-\varepsilon$ 的像素空間參數化、$f_p=\big(\sum_{\text{concat}}^{(a/p)^2}X_p\big)W_p^c$ 的有損 compaction（$1\times1$ 是 $4096\to1152$）、共享 2D RoPE 加 per-block／per-stream scale-identity embedding、以及只準細看粗的 scale-causal mask 為何把 FID 從 2.31 推到 3.47；同時整理 $4\times4$ 中間尺度最優（2.31 vs $8\times8$ 2.42、$2\times2$ 2.54）、細流右對齊最後幾層、REPA 移除即 5.30、DeCo 的頻域 loss 在此架構下反而無益（2.40）等證據，並明確區分 80-epoch 消融與 600-epoch 主表的不同 CFG 工作點、1.43 仍未勝過 latent 陣營的 REPA 1.42／RAE 1.13、全部數字沒有 seed 與標準差。延伸提出跨尺度共识能量 $\mathcal{E}_{\text{cross}}$ 的 training-free Langevin 修正、以跨尺度預測取代 DINOv2 對齊的 JEPA 化變體、把已生成尺度併成 parallel conditioning streams 的 VAR 合題、以 $a$ 為免訓練算力旋鈕的 attention modulation，以及「跨解析度 fine-tune ≠ zero-shot」的嚴格邊界。
 ---
