@@ -2,13 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-14**
+**Last Updated: 2026-11-15**
 
-📚 **[完整論文索引(224 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(225 篇,按月份)](INDEX.md)**
 
 ---
 
 ## 今日閱讀
+- **[G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation — 2026-11-15：把離散 AR 的「容量」從每個 token 搬到每個空間位置，用 $B_{\text{total}}=\frac{HW}{s^{2}}\,G\log_{2}K$ 這條代數律買下 $(s,G)\to(\alpha s,\alpha^{2}G)$ 的 4× backbone 加速；lossless 2×2 packing 把 32× tokenizer 變成 effective 64×，再用借自投機解碼的 semi-autoregressive head（parallel trunk 加單層 causal）把 $G$ 變大的串行稅壓掉 47%（6.44 s 到 3.41 s，GenEval 只掉 0.0133）。GSTAR-Pro-8B 在 1024² 拿 GenEval 0.84／DPG 83.38／PRISM 6.98／LongText 0.935／Qwen-Image-Bench 50.07，整條加速鏈端到端 8.90×、單張 2.5 秒，對 BitDance 與 Janus-Pro 各是 21.04× 與 21.57×；Xu Huang、Ye Huang、Xiaotong Li 等，北京大學 DA Group／美團 Longcat／上海交通大學／華中科技大學／中文大學／清華／MBZUAI，arXiv:2611.13004v1（純預印本，Comments 空白；code 與 Pro-8B 權重已開、Flash-1.7B 查無）](papers/2026/2026-11/G-STAR/AI_Daily_G-STAR.md)**
+本文推導 product quantization 的 $K^{G_q}$ 配置容量、五項損失的 $\mathcal{L}_{\mathrm{tok}}$（Qwen-ViT 初始化、語義保持、Gram），以及 $p_{\mathrm{AR}}$／$p_{\mathrm{PAR}}$／$p_{\mathrm{SAR}}$ 三種分解，並把全平行 head 的失效讀成 mean-field 近似、其代價恰是群組內多重資訊 $I(y_{t,1};\dots;y_{t,G}\mid\mathbf{h}_t)$（Logit Refiner 對 VAR intra-scale 的批評是同一件事）；同時算出論文未列的 bit 表：Pro 的 f32g16 是 229,376 bit、Flash 的 f64g32 只有 114,688 bit，兩者不是同一預算點，所以 Table 1 的落差混了參數規模與位元預算。同時標明 Table 2 的 $G=1$ gFID 2.11 仍勝 $G=16$ 的 5.74 而 Figure 4 只畫 $G=8$／16、唯一乾淨的 co-scaling 對照（Table 8）其實品質下降（GenEval −0.0175、DPG −2.05、PRISM −0.17）、2.5 秒是否含 52 步 refiner 未交代、官方 `inference_config.json` 的 CFG 2.4／top-$k$ 4096／temp 0.7 與附錄 C.1 的 1.8／1024／0.5 不一致、PRISM 在 Table 1（6.8 到 7.5）與 Table 4（4.7 到 5.5）同名同量綱卻差一截、DPG 83.38 落後 Emu3.5 與 BitDance 約 4.9 分。延伸提出替 semi-AR head 補一個 discrete verifier 做成視覺版投機解碼、以群組內互資訊為能量做 block Gibbs 或 winner-take-all、把 $\alpha^{2}$ 律搬到 VAR 的 scale ladder、用 dNaViT 的 $G_{16}\to G_{64}$ PSNR 曲線（28.93 到 32.90 dB，空間維不動）檢驗容量的邊際收益、把尾部碼丟棄變成推理時的 rate-quality 旋鈕、對 parallel trunk 的 $G$ 個 slot 做逆溫度調製從而在 AR 與 PAR 之間連續插值，並用 Table 7 的 64.7／64.6 離散對連續對照提議一個嚴格 zero-shot 的詞彙遷移測試；本篇既不是 training-free 也不是 strict zero-shot（tokenizer 重訓 200k steps，SFT 還混入 Seedream 與 Nano Banana 2 的再生成圖）。
+---
 - **[Expanding the Quality–Coverage Frontier with Competitive Flow Matching（CFM）— 2026-11-14：把 flow matching「同一個帶噪狀態只能預測一個速度」的隱性假設拆掉，用低維高斯碼 $z\in\mathbb{R}^{8}$ 讓同一個 $x_t$ 產生 $K$ 個候選速度，只讓 $\min_k\|\hat u_k-u_t\|^2$ 的贏家回傳梯度；推理時因此多出一根零額外 NFE 的輔助條件縮放 $\lambda$（$\lambda=0$ 就是高保真基模型），與 AutoGuidance 的 $\gamma$ 正交疊加。ImageNet-256 上鎖定 Recall ≈ 67% 時 FD_r,6 從 SiT 的 19.22 降到 5.91，套在 RAEv2 上於 Recall ≈ 70% 從 16.83 降到 3.18，而 post-training 只花原始 SiT-XL/2 預訓練約 2.63% 的模型核心算力（$K=8$、10 個 epoch、實測 wall-clock 2.43×）；Wenxuan Peng 等，Cornell University／Adobe Research，arXiv:2611.07055v1（預印本，未列正式 venue，查無 code）](papers/2026/2026-11/CFM/AI_Daily_CFM.md)**
 本文推導條件平均最優解 $v^{*}=\mathbb{E}[u_t\mid x_t,t,y]$ 留下的不可約變異數、說明 WTA 為何把目標空間切成 Voronoi 指派後各自學子集平均（結構上就是 hard-EM／Lloyd），並讀成自由能的零溫度極限；同時整理四種 testbed（SiT、JiT、RAE、RAEv2）在 Table 1 與 Table 2 的評估口徑差異、$K$ 掃描與三組對照實驗（容量對齊的 $K=1$、標準 FM 多訓 50 epoch、放大 batch），並標明最佳工作點上 4.44 與 SiT+AG 的 4.53 其實接近、ADM FID 反而較差、Recall 只是 kNN 代理、「<3% 算力」未含指導模型與大量 50K 評估、碼簽名實驗的 $K=512$ 屬分析用而非主結果。延伸提出 soft-min 溫度旋鈕 $\tau$、對 $z$ 做 Langevin 的免訓練 verifier、把競爭搬到 JEPA latent 預測與 VAR next-scale、用隨機低範數條件方向檢驗 $\lambda$ 能否不 post-train 複現、以 $z$ 調製注意力逆溫度與 head 路由，以及「碼可在 held-out 類別被辨識（約 10× chance）」暗示的零樣本風格控制與其嚴格邊界。
 ---
