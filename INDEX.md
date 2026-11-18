@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 227 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 228 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-11
@@ -21,6 +21,7 @@
 | What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context R... | [2611.04164](https://arxiv.org/abs/2611.04164) | [ReCR](papers/2026/2026-11/ReCR/AI_Daily_ReCR.md) |
 | 精選論文 | [2611.06838](https://arxiv.org/abs/2611.06838) | [Saccades-AR](papers/2026/2026-11/Saccades-AR/AI_Daily_Saccades_AR.md) |
 | TD-JEPA: Latent-predictive Representations for Zero-Shot Reinforcement Learning | [2510.00739](https://arxiv.org/abs/2510.00739) | [TD-JEPA](papers/2026/2026-11/TD-JEPA/AI_Daily_TD_JEPA.md) |
+| UMM-JEPA: Generative Pretraining via Masked Next-Scale Representation Prediction for Un... | [2611.18668](https://arxiv.org/abs/2611.18668) | [UMM-JEPA](papers/2026/2026-11/UMM-JEPA/AI_Daily_UMM_JEPA.md) |
 | V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning | [2603.14482](https://arxiv.org/abs/2603.14482) | [V-JEPA-2.1](papers/2026/2026-11/V-JEPA-2.1/AI_Daily_V-JEPA_2_1.md) |
 | ｜What kills v-prediction? A Patch-wise PCA Perspective on Pixel-Space Flow Matching（RiT） | [2611.12852](https://arxiv.org/abs/2611.12852) | [VPred-PCA](papers/2026/2026-11/VPred-PCA/AI_Daily_VPred_PCA.md) |
 | 今日選讀：把快取誤差變成可回看的生成軌跡 | [2611.01846](https://arxiv.org/abs/2611.01846) | [Z-Cache](papers/2026/2026-11/Z-Cache/AI_Daily_Z_Cache.md) |
