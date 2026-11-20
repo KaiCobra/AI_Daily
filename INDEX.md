@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 229 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 230 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-11
@@ -9,6 +9,7 @@
 |---|---|---|
 | Unlocking Any-Order Generation in Pretrained Autoregressive Image Models | [2610.39293](https://arxiv.org/abs/2610.39293) | [Any-Order-AR](papers/2026/2026-11/Any-Order-AR/AI_Daily_AnyOrder_AR.md) |
 | ｜Expanding the Quality–Coverage Frontier with Competitive Flow Matching（CFM） | [2611.07055](https://arxiv.org/abs/2611.07055) | [CFM](papers/2026/2026-11/CFM/AI_Daily_CFM.md) |
+| ｜Counterfactual World Models: JEPAs That Reason About "What If" | [2611.24778](https://arxiv.org/abs/2611.24778) | [CWM](papers/2026/2026-11/CWM/AI_Daily_CWM.md) |
 | ｜Energy-Based Reasoners: Your Recurrent Reasoner Should Be an Energy-Based Model（EBR） | [2611.08977](https://arxiv.org/abs/2611.08977) | [EBR](papers/2026/2026-11/EBR/AI_Daily_EBR.md) |
 | ｜Self-Supervised Collapse Prevention with Score-Based Entropy Maximization（EBReg） | [2611.11379](https://arxiv.org/abs/2611.11379) | [EBReg](papers/2026/2026-11/EBReg/AI_Daily_EBReg.md) |
 | Focused Forcing: Content-Aware Per-Frame KV Selection for Efficient Autoregressive Vide... | [2605.18346](https://arxiv.org/abs/2605.18346) | [Focused-Forcing](papers/2026/2026-11/Focused-Forcing/AI_Daily_Focused_Forcing.md) |
