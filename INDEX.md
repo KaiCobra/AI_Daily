@@ -1,12 +1,13 @@
 # 論文索引(全庫)
 
-共 230 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 231 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-11
 
 | 論文 | arXiv | 解析 |
 |---|---|---|
+| ｜RL Post-Training in Diffusion Transformers Is Activation Steering | [2611.26627](https://arxiv.org/abs/2611.26627) | [ActivSteer](papers/2026/2026-11/ActivSteer/AI_Daily_ActivSteer.md) |
 | Unlocking Any-Order Generation in Pretrained Autoregressive Image Models | [2610.39293](https://arxiv.org/abs/2610.39293) | [Any-Order-AR](papers/2026/2026-11/Any-Order-AR/AI_Daily_AnyOrder_AR.md) |
 | ｜Expanding the Quality–Coverage Frontier with Competitive Flow Matching（CFM） | [2611.07055](https://arxiv.org/abs/2611.07055) | [CFM](papers/2026/2026-11/CFM/AI_Daily_CFM.md) |
 | ｜Counterfactual World Models: JEPAs That Reason About "What If" | [2611.24778](https://arxiv.org/abs/2611.24778) | [CWM](papers/2026/2026-11/CWM/AI_Daily_CWM.md) |

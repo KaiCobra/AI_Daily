@@ -1,9 +1,9 @@
 # Existing AI Daily inventory
 ## Git status
-M INDEX.md
- M README.md
-?? asset/2026-11-20-CWM/
-?? papers/2026/2026-11/CWM/
+ [31mM[m INDEX.md
+ [31mM[m README.md
+[31m??[m asset/2026-11-21-ActivSteer/
+[31m??[m papers/2026/2026-11/ActivSteer/
 ## Markdown reports
 ./INDEX.md	論文索引(全庫)
 ./README.md	AI Daily
@@ -219,6 +219,7 @@ M INDEX.md
 ./papers/2026/2026-10/TEM/AI_Daily_TEM.md	AI Daily
 ./papers/2026/2026-10/TempoControl/AI_Daily_TempoControl.md	AI Daily
 ./papers/2026/2026-10/WA-JEPA/AI_Daily_WA_JEPA.md	AI Daily
+./papers/2026/2026-11/ActivSteer/AI_Daily_ActivSteer.md	AI Daily
 ./papers/2026/2026-11/Any-Order-AR/AI_Daily_AnyOrder_AR.md	AI Daily
 ./papers/2026/2026-11/CFM/AI_Daily_CFM.md	AI Daily
 ./papers/2026/2026-11/CWM/AI_Daily_CWM.md	AI Daily
@@ -241,6 +242,7 @@ M INDEX.md
 ./papers/2026/2026-11/Z-Cache/AI_Daily_Z_Cache.md	AI Daily
 ./skills/pdf-image-extractor/SKILL.md	PDF Image Extractor
 ## Recent commits
+105a439 2026-11-20 Add CWM AI Daily report (2026-11-20)
 7cb6976 2026-11-19 Add EBR AI Daily report (2026-11-19)
 5382855 2026-11-18 Add UMM-JEPA AI Daily report (2026-11-18)
 a32ca0d 2026-11-17 Add v-prediction PCA (RiT) AI Daily report (2026-11-17)
@@ -260,4 +262,3 @@ b5a7f29 2026-11-06 AI Daily 2026-11-06: SAR context-aware autoregressive generat
 00e473b 2026-11-05 Add AI Daily report for 2026-11-05
 35ffbeb 2026-11-04 Add AI Daily report for 2026-11-04
 e30db26 2026-11-03 AI Daily: Add FreqFlow review for 2026-11-03
-23a0cf5 2026-11-02 Add AI Daily report on any-order autoregressive generation
