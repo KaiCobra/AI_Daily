@@ -2,9 +2,14 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-22**
+**Last Updated: 2026-11-24**
 
-📚 **[完整論文索引(232 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(233 篇,按月份)](INDEX.md)**
+
+## 已發布文章（2026-11-24）
+- **[Plan Big, Paint Small: Semantic-Aware Computation Allocation for Efficient Autoregressive Video Generation — 2026-11-24：將大型模型用於自回歸影片的開場與內容變化，小型模型延續其餘片段；在指定單卡 VBench 設定下報告 3.02× DiT 加速、語意差 +0.01（95% CI −0.22 至 +0.26）。計時不含 VAE，端到端加速為 2.34×；BigSmall-Fast 達 3.77×，但動態光流下降 9.8%。作者 Yixuan Luo、Yanjing Li；arXiv 預印本 v1，未列正式 venue，arXiv:2611.28402。](papers/2026/2026-11/plan-big-paint-small/AI_Daily_Plan_Big_Paint_Small.md)**
+
+本文解析免訓練的 planner–renderer 分工、特徵變化觸發與跨模型 KV cache，並連結 Self Forcing、SRDiffusion、SDVG。延伸提出以 JEPA 預測誤差觸發規劃器、將分工搬到 VAR 尺度生成，以及用 EBT 能量做推論時算力門控。
 
 ---
 

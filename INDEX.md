@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 232 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 233 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-11
@@ -20,6 +20,7 @@
 | ｜LEF-JEPA: Denoising-Trained Latent Energy Fields for Spatial Representation Learning | [2611.08989](https://arxiv.org/abs/2611.08989) | [LEF-JEPA](papers/2026/2026-11/LEF-JEPA/AI_Daily_LEF-JEPA.md) |
 | ｜La-JEPA: Compact Robot Policies with Latent World Modeling | [2611.08156](https://arxiv.org/abs/2611.08156) | [La-JEPA](papers/2026/2026-11/La-JEPA/AI_Daily_La-JEPA.md) |
 | ｜Scale as a Modality: Multi-Scale Pixel-Space Diffusion Transformers（MS-pDiT） | [2611.08802](https://arxiv.org/abs/2611.08802) | [MS-pDiT](papers/2026/2026-11/MS-pDiT/AI_Daily_MS-pDiT.md) |
+| Plan Big, Paint Small: Semantic-Aware Computation Allocation for Efficient Autoregressive Video Generation | [2611.28402](https://arxiv.org/abs/2611.28402) | [plan-big-paint-small](papers/2026/2026-11/plan-big-paint-small/AI_Daily_Plan_Big_Paint_Small.md) |
 | ｜Proving and Improving the Platonic Representation Hypothesis with JEPAs（PRH-JEPA） | [2610.39302](https://arxiv.org/abs/2610.39302) | [PRH-JEPA](papers/2026/2026-11/PRH-JEPA/AI_Daily_PRH_JEPA.md) |
 | Training-Free Predictive Spatio-Temporal Token Pruning for Few-Step Autoregressive Vide... | [2611.07551](https://arxiv.org/abs/2611.07551) | [PreSTP](papers/2026/2026-11/PreSTP/AI_Daily_PreSTP.md) |
 | What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context R... | [2611.04164](https://arxiv.org/abs/2611.04164) | [ReCR](papers/2026/2026-11/ReCR/AI_Daily_ReCR.md) |
