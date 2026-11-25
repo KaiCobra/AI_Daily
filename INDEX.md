@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 233 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 234 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-11
@@ -16,6 +16,7 @@
 | Focused Forcing: Content-Aware Per-Frame KV Selection for Efficient Autoregressive Vide... | [2605.18346](https://arxiv.org/abs/2605.18346) | [Focused-Forcing](papers/2026/2026-11/Focused-Forcing/AI_Daily_Focused_Forcing.md) |
 | Frequency-Aware Flow Matching for High-Quality Image Generation | [2604.15521](https://arxiv.org/abs/2604.15521) | [FreqFlow](papers/2026/2026-11/FreqFlow/AI_Daily_FreqFlow.md) |
 | ｜G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation | [2611.13004](https://arxiv.org/abs/2611.13004) | [G-STAR](papers/2026/2026-11/G-STAR/AI_Daily_G-STAR.md) |
+| Graph2Scene: Relation-Aware Text-to-Image Generation with Graph-Guided Diffusion Model | [2611.30964](https://arxiv.org/abs/2611.30964) | [Graph2Scene](papers/2026/2026-11/Graph2Scene/AI_Daily_Graph2Scene.md) |
 | Jeveration: System One Models Now Generate | [2611.24738](https://arxiv.org/abs/2611.24738) | [Jeveration](papers/2026/2026-11/Jeveration/AI_Daily_Jeveration.md) |
 | ｜LEF-JEPA: Denoising-Trained Latent Energy Fields for Spatial Representation Learning | [2611.08989](https://arxiv.org/abs/2611.08989) | [LEF-JEPA](papers/2026/2026-11/LEF-JEPA/AI_Daily_LEF-JEPA.md) |
 | ｜La-JEPA: Compact Robot Policies with Latent World Modeling | [2611.08156](https://arxiv.org/abs/2611.08156) | [La-JEPA](papers/2026/2026-11/La-JEPA/AI_Daily_La-JEPA.md) |

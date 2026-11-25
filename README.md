@@ -2,11 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-24**
+**Last Updated: 2026-11-25**
 
-📚 **[完整論文索引(233 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(234 篇,按月份)](INDEX.md)**
 
-## 已發布文章（2026-11-24）
+## 已發布文章（2026-11-25）
+- **[Graph2Scene: Relation-Aware Text-to-Image Generation with Graph-Guided Diffusion Model — 2026-11-25：以 Qwen3-VL 建圖，將物件節點和關係邊轉成凍結 FLUX.1 的 cross/self-attention masks，免訓練強化複雜互動；ConceptMix 關係準確率 0.84 vs Regional Prompt 0.59，但 1024² 推論 101.28 秒，較基線 75.17 秒；Peizheng Li 等，arXiv:2611.30964v1，尚未核實正式 venue。](papers/2026/2026-11/Graph2Scene/AI_Daily_Graph2Scene.md)**
+
+本文推導圖遮罩與自適應控制時長，檢視 VLM evaluator、結果變異與 warm-up 成本；並連結 Regional Prompting，提出 EBT 能量、JEPA 互動預測與 VAR 尺度調度的研究延伸。
+
+### 前一篇（2026-11-24）
 - **[Plan Big, Paint Small: Semantic-Aware Computation Allocation for Efficient Autoregressive Video Generation — 2026-11-24：將大型模型用於自回歸影片的開場與內容變化，小型模型延續其餘片段；在指定單卡 VBench 設定下報告 3.02× DiT 加速、語意差 +0.01（95% CI −0.22 至 +0.26）。計時不含 VAE，端到端加速為 2.34×；BigSmall-Fast 達 3.77×，但動態光流下降 9.8%。作者 Yixuan Luo、Yanjing Li；arXiv 預印本 v1，未列正式 venue，arXiv:2611.28402。](papers/2026/2026-11/plan-big-paint-small/AI_Daily_Plan_Big_Paint_Small.md)**
 
 本文解析免訓練的 planner–renderer 分工、特徵變化觸發與跨模型 KV cache，並連結 Self Forcing、SRDiffusion、SDVG。延伸提出以 JEPA 預測誤差觸發規劃器、將分工搬到 VAR 尺度生成，以及用 EBT 能量做推論時算力門控。
