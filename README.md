@@ -2,11 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-25**
+**Last Updated: 2026-11-26**
 
-📚 **[完整論文索引(234 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(235 篇,按月份)](INDEX.md)**
 
-## 已發布文章（2026-11-25）
+## 已發布文章（2026-11-26）
+- **[Qwen-Image-HD: Autoregressive Diffusion for High Definition Image Generation — 2026-11-26：以 Qwen-Image 2.0 做 1K 局部 Rectified Flow，結合高解析鄰接邊界、全畫布歷史縮圖與共享 RoPE 座標；4K Qwen-Image-Bench Overall 59.44，高於同骨幹 SFT 的 58.27，估計訓練 FLOPs 少 68%。四 GPU Wavefront 延遲由 166 秒降至 139 秒，但 Overall 同時降至 58.52；Zihao Liu 等共 28 位作者，arXiv:2611.32736v1，未列正式 venue。](papers/2026/2026-11/Qwen-Image-HD/AI_Daily_Qwen_Image_HD.md)**
+
+本文推導局部流匹配、雙尺度歷史與跨尺度畫布座標，對照 Wavefront 的延遲—品質折衷，並檢視消融、重複紋理指標、預印本狀態與復現限制。
+
+### 前一篇（2026-11-25）
 - **[Graph2Scene: Relation-Aware Text-to-Image Generation with Graph-Guided Diffusion Model — 2026-11-25：以 Qwen3-VL 建圖，將物件節點和關係邊轉成凍結 FLUX.1 的 cross/self-attention masks，免訓練強化複雜互動；ConceptMix 關係準確率 0.84 vs Regional Prompt 0.59，但 1024² 推論 101.28 秒，較基線 75.17 秒；Peizheng Li 等，arXiv:2611.30964v1，尚未核實正式 venue。](papers/2026/2026-11/Graph2Scene/AI_Daily_Graph2Scene.md)**
 
 本文推導圖遮罩與自適應控制時長，檢視 VLM evaluator、結果變異與 warm-up 成本；並連結 Regional Prompting，提出 EBT 能量、JEPA 互動預測與 VAR 尺度調度的研究延伸。
