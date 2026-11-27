@@ -2,11 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-26**
+**Last Updated: 2026-11-27**
 
-📚 **[完整論文索引(235 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(236 篇,按月份)](INDEX.md)**
 
-## 已發布文章（2026-11-26）
+## 已發布文章（2026-11-27）
+- **[Residual Guidance for Real-Time Interactive Video Generation — 2026-11-27：以新提示在無快取分支重建前一 chunk，將 residual 注入下一 chunk 的早期去噪步驟；七種串流影片基線的提示切換平均 Achievement 約由 21% 升至 58%，每個受引導 chunk 額外一次 forward pass（arXiv:2611.32820；預印本，正式 venue／錄用狀態未核實）。](papers/2026/2026-11/Residual-Guidance/AI_Daily_Residual_Guidance.md)**
+
+本文推導 context inertia ratio 與 residual 注入，拆解主表、長時切換結果及約 6% 吞吐量代價；並區分 training-free inference 與零計算，提出 JEPA、attention modulation、VAR 的可驗證延伸。
+
+### 前一篇（2026-11-26）
 - **[Qwen-Image-HD: Autoregressive Diffusion for High Definition Image Generation — 2026-11-26：以 Qwen-Image 2.0 做 1K 局部 Rectified Flow，結合高解析鄰接邊界、全畫布歷史縮圖與共享 RoPE 座標；4K Qwen-Image-Bench Overall 59.44，高於同骨幹 SFT 的 58.27，估計訓練 FLOPs 少 68%。四 GPU Wavefront 延遲由 166 秒降至 139 秒，但 Overall 同時降至 58.52；Zihao Liu 等共 28 位作者，arXiv:2611.32736v1，未列正式 venue。](papers/2026/2026-11/Qwen-Image-HD/AI_Daily_Qwen_Image_HD.md)**
 
 本文推導局部流匹配、雙尺度歷史與跨尺度畫布座標，對照 Wavefront 的延遲—品質折衷，並檢視消融、重複紋理指標、預印本狀態與復現限制。

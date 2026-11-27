@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 235 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 236 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-11
@@ -26,6 +26,7 @@
 | Qwen-Image-HD: Autoregressive Diffusion for High Definition Image Generation | [2611.32736](https://arxiv.org/abs/2611.32736) | [Qwen-Image-HD](papers/2026/2026-11/Qwen-Image-HD/AI_Daily_Qwen_Image_HD.md) |
 | Training-Free Predictive Spatio-Temporal Token Pruning for Few-Step Autoregressive Vide... | [2611.07551](https://arxiv.org/abs/2611.07551) | [PreSTP](papers/2026/2026-11/PreSTP/AI_Daily_PreSTP.md) |
 | What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context R... | [2611.04164](https://arxiv.org/abs/2611.04164) | [ReCR](papers/2026/2026-11/ReCR/AI_Daily_ReCR.md) |
+| Residual Guidance for Real-Time Interactive Video Generation | [2611.32820](https://arxiv.org/abs/2611.32820) | [Residual-Guidance](papers/2026/2026-11/Residual-Guidance/AI_Daily_Residual_Guidance.md) |
 | 精選論文 | [2611.06838](https://arxiv.org/abs/2611.06838) | [Saccades-AR](papers/2026/2026-11/Saccades-AR/AI_Daily_Saccades_AR.md) |
 | TD-JEPA: Latent-predictive Representations for Zero-Shot Reinforcement Learning | [2510.00739](https://arxiv.org/abs/2510.00739) | [TD-JEPA](papers/2026/2026-11/TD-JEPA/AI_Daily_TD_JEPA.md) |
 | UMM-JEPA: Generative Pretraining via Masked Next-Scale Representation Prediction for Un... | [2611.18668](https://arxiv.org/abs/2611.18668) | [UMM-JEPA](papers/2026/2026-11/UMM-JEPA/AI_Daily_UMM_JEPA.md) |
