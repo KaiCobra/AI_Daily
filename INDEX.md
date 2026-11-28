@@ -1,6 +1,6 @@
 # 論文索引(全庫)
 
-共 236 篇解析,按月份倒序;同一論文多次研讀會出現多列。
+共 237 篇解析,按月份倒序;同一論文多次研讀會出現多列。
 重建方式:`python3 tools_build_index.py`。
 
 ## 2026-11
@@ -16,23 +16,24 @@
 | Focused Forcing: Content-Aware Per-Frame KV Selection for Efficient Autoregressive Vide... | [2605.18346](https://arxiv.org/abs/2605.18346) | [Focused-Forcing](papers/2026/2026-11/Focused-Forcing/AI_Daily_Focused_Forcing.md) |
 | Frequency-Aware Flow Matching for High-Quality Image Generation | [2604.15521](https://arxiv.org/abs/2604.15521) | [FreqFlow](papers/2026/2026-11/FreqFlow/AI_Daily_FreqFlow.md) |
 | ｜G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation | [2611.13004](https://arxiv.org/abs/2611.13004) | [G-STAR](papers/2026/2026-11/G-STAR/AI_Daily_G-STAR.md) |
-| Graph2Scene: Relation-Aware Text-to-Image Generation with Graph-Guided Diffusion Model | [2611.30964](https://arxiv.org/abs/2611.30964) | [Graph2Scene](papers/2026/2026-11/Graph2Scene/AI_Daily_Graph2Scene.md) |
+| 論文基本資料 | [2611.30964](https://arxiv.org/abs/2611.30964) | [Graph2Scene](papers/2026/2026-11/Graph2Scene/AI_Daily_Graph2Scene.md) |
 | Jeveration: System One Models Now Generate | [2611.24738](https://arxiv.org/abs/2611.24738) | [Jeveration](papers/2026/2026-11/Jeveration/AI_Daily_Jeveration.md) |
 | ｜LEF-JEPA: Denoising-Trained Latent Energy Fields for Spatial Representation Learning | [2611.08989](https://arxiv.org/abs/2611.08989) | [LEF-JEPA](papers/2026/2026-11/LEF-JEPA/AI_Daily_LEF-JEPA.md) |
 | ｜La-JEPA: Compact Robot Policies with Latent World Modeling | [2611.08156](https://arxiv.org/abs/2611.08156) | [La-JEPA](papers/2026/2026-11/La-JEPA/AI_Daily_La-JEPA.md) |
 | ｜Scale as a Modality: Multi-Scale Pixel-Space Diffusion Transformers（MS-pDiT） | [2611.08802](https://arxiv.org/abs/2611.08802) | [MS-pDiT](papers/2026/2026-11/MS-pDiT/AI_Daily_MS-pDiT.md) |
-| Plan Big, Paint Small: Semantic-Aware Computation Allocation for Efficient Autoregressive Video Generation | [2611.28402](https://arxiv.org/abs/2611.28402) | [plan-big-paint-small](papers/2026/2026-11/plan-big-paint-small/AI_Daily_Plan_Big_Paint_Small.md) |
 | ｜Proving and Improving the Platonic Representation Hypothesis with JEPAs（PRH-JEPA） | [2610.39302](https://arxiv.org/abs/2610.39302) | [PRH-JEPA](papers/2026/2026-11/PRH-JEPA/AI_Daily_PRH_JEPA.md) |
-| Qwen-Image-HD: Autoregressive Diffusion for High Definition Image Generation | [2611.32736](https://arxiv.org/abs/2611.32736) | [Qwen-Image-HD](papers/2026/2026-11/Qwen-Image-HD/AI_Daily_Qwen_Image_HD.md) |
 | Training-Free Predictive Spatio-Temporal Token Pruning for Few-Step Autoregressive Vide... | [2611.07551](https://arxiv.org/abs/2611.07551) | [PreSTP](papers/2026/2026-11/PreSTP/AI_Daily_PreSTP.md) |
+| 論文基本資料 | [2611.32736](https://arxiv.org/abs/2611.32736) | [Qwen-Image-HD](papers/2026/2026-11/Qwen-Image-HD/AI_Daily_Qwen_Image_HD.md) |
 | What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context R... | [2611.04164](https://arxiv.org/abs/2611.04164) | [ReCR](papers/2026/2026-11/ReCR/AI_Daily_ReCR.md) |
 | Residual Guidance for Real-Time Interactive Video Generation | [2611.32820](https://arxiv.org/abs/2611.32820) | [Residual-Guidance](papers/2026/2026-11/Residual-Guidance/AI_Daily_Residual_Guidance.md) |
 | 精選論文 | [2611.06838](https://arxiv.org/abs/2611.06838) | [Saccades-AR](papers/2026/2026-11/Saccades-AR/AI_Daily_Saccades_AR.md) |
 | TD-JEPA: Latent-predictive Representations for Zero-Shot Reinforcement Learning | [2510.00739](https://arxiv.org/abs/2510.00739) | [TD-JEPA](papers/2026/2026-11/TD-JEPA/AI_Daily_TD_JEPA.md) |
 | UMM-JEPA: Generative Pretraining via Masked Next-Scale Representation Prediction for Un... | [2611.18668](https://arxiv.org/abs/2611.18668) | [UMM-JEPA](papers/2026/2026-11/UMM-JEPA/AI_Daily_UMM_JEPA.md) |
 | V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning | [2603.14482](https://arxiv.org/abs/2603.14482) | [V-JEPA-2.1](papers/2026/2026-11/V-JEPA-2.1/AI_Daily_V-JEPA_2_1.md) |
+| Guidance as Variance Matching | [2611.34801](https://arxiv.org/abs/2611.34801) | [VMG](papers/2026/2026-11/VMG/AI_Daily_VMG.md) |
 | ｜What kills v-prediction? A Patch-wise PCA Perspective on Pixel-Space Flow Matching（RiT） | [2611.12852](https://arxiv.org/abs/2611.12852) | [VPred-PCA](papers/2026/2026-11/VPred-PCA/AI_Daily_VPred_PCA.md) |
 | 今日選讀：把快取誤差變成可回看的生成軌跡 | [2611.01846](https://arxiv.org/abs/2611.01846) | [Z-Cache](papers/2026/2026-11/Z-Cache/AI_Daily_Z_Cache.md) |
+| 論文資料 | [2611.28402](https://arxiv.org/abs/2611.28402) | [plan-big-paint-small](papers/2026/2026-11/plan-big-paint-small/AI_Daily_Plan_Big_Paint_Small.md) |
 
 ## 2026-10
 

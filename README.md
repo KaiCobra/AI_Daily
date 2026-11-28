@@ -2,11 +2,16 @@
 
 每日精選 AI 前沿論文閱讀與深度解析。聚焦深度學習、圖像生成、表徵學習、擴散模型等前沿方向。
 
-**Last Updated: 2026-11-27**
+**Last Updated: 2026-11-28**
 
-📚 **[完整論文索引(236 篇,按月份)](INDEX.md)**
+📚 **[完整論文索引(237 篇,按月份)](INDEX.md)**
 
-## 已發布文章（2026-11-27）
+## 已發布文章（2026-11-28）
+- **[Guidance as Variance Matching — 2026-11-25：把引導尺度 $w$ 從超參數改寫成「後驗變異數缺口」的估計量——後驗均值的分布必然比資料窄（全變異數定律），而兩個獨立去噪器的誤差差額其協方差正比於後驗協方差；令 $w^2/m_1+(1-w)^2/m_0=1$ 得閉式解 $w^\star=(b\pm\sqrt{b^2-ac})/a$，不需取樣、不需掃描即在 11 個模型上重現已發布尺度（SD 1.5 為 7.44 對 7.5，Spearman 0.96、中位誤差 12%）。兩根異號預測「引導可雙向」，SD 1.5／CommonCanvas 四個方向同時改善 FID 與 $\mathrm{FD}_{\mathrm{DINOv2}}$；checkpoint 共享樣本使差值變異數變小、故需更大 $w$；但 ImageNet-512 的 EDM2 上常數給出約 5 倍於 NVIDIA 掃描值的尺度，FID 由 4.83 崩到 11.98（autoguidance 4.41→30.20），作者以「FID 非人眼偏好」解釋而未診斷。Ali Backour、Artem Lukoianov 等，MIT CSAIL／Toyota Research Institute，arXiv:2611.34801v1（預印本，CVPR 模板、附錄為 review 模式，未列正式 venue；程式碼與實驗腳本已開源 MIT）。](papers/2026/2026-11/VMG/AI_Daily_VMG.md)**
+
+本文推導全變異數定律下的變異數缺口 $\operatorname{Cov}(\mathbb{E}[x_0|x_t])=\operatorname{Cov}(x_0)-\mathbb{E}[\Sigma(x_t)]$、$1/m$ 誤差模型，以及 $aw^2-2bw+c=\operatorname{Var}[D_w]-\operatorname{Var}[x_0]$ 的恆等式（並用隨機變數自行驗算）；說明「補變異數必須補在 $\Delta=D_1-D_0$ 的方向上」的消融（同量變異數的等向／資料形狀噪音反而把 FID 由 21.20 推到 31.68／36.64）、$w^\star_{\mathrm{MSE}}\le1$ 與實務 $w$ 的落差、checkpoint 的 $\operatorname{Cov}(\Delta_{\mathrm{cp}})\prec\operatorname{Cov}(\Delta_{\mathrm{id}})$ 與 EMA 記憶長度 $L=0.69T$；同時標明 11 組數字的實際誤差分布（SVD −25%、Cosmos 為平凡解）、人眼研究為 41 人的非正式實驗、以及 ImageNet-512 失效與其未解釋之處。延伸提出六條可證偽線索：以能量 Hessian 的 Laplace 近似取代 $\Sigma$ 的 EBT 版、把 online–EMA predictor 讀成 checkpoint 情形並與 VICReg variance 項對照、VAR 的逐尺度 $w_s$、以逐 head 增益做 training-free attention modulation、負根方向的模型合併、以及用變異數缺口 $g(t)$ 自動決定 interval guidance 的區間。
+
+### 前一篇（2026-11-27）
 - **[Residual Guidance for Real-Time Interactive Video Generation — 2026-11-27：以新提示在無快取分支重建前一 chunk，將 residual 注入下一 chunk 的早期去噪步驟；七種串流影片基線的提示切換平均 Achievement 約由 21% 升至 58%，每個受引導 chunk 額外一次 forward pass（arXiv:2611.32820；預印本，正式 venue／錄用狀態未核實）。](papers/2026/2026-11/Residual-Guidance/AI_Daily_Residual_Guidance.md)**
 
 本文推導 context inertia ratio 與 residual 注入，拆解主表、長時切換結果及約 6% 吞吐量代價；並區分 training-free inference 與零計算，提出 JEPA、attention modulation、VAR 的可驗證延伸。
@@ -21,14 +26,14 @@
 
 本文推導圖遮罩與自適應控制時長，檢視 VLM evaluator、結果變異與 warm-up 成本；並連結 Regional Prompting，提出 EBT 能量、JEPA 互動預測與 VAR 尺度調度的研究延伸。
 
-### 前一篇（2026-11-24）
+---
+
+## 今日閱讀
 - **[Plan Big, Paint Small: Semantic-Aware Computation Allocation for Efficient Autoregressive Video Generation — 2026-11-24：將大型模型用於自回歸影片的開場與內容變化，小型模型延續其餘片段；在指定單卡 VBench 設定下報告 3.02× DiT 加速、語意差 +0.01（95% CI −0.22 至 +0.26）。計時不含 VAE，端到端加速為 2.34×；BigSmall-Fast 達 3.77×，但動態光流下降 9.8%。作者 Yixuan Luo、Yanjing Li；arXiv 預印本 v1，未列正式 venue，arXiv:2611.28402。](papers/2026/2026-11/plan-big-paint-small/AI_Daily_Plan_Big_Paint_Small.md)**
 
 本文解析免訓練的 planner–renderer 分工、特徵變化觸發與跨模型 KV cache，並連結 Self Forcing、SRDiffusion、SDVG。延伸提出以 JEPA 預測誤差觸發規劃器、將分工搬到 VAR 尺度生成，以及用 EBT 能量做推論時算力門控。
 
 ---
-
-## 今日閱讀
 - **[Jeveration: System One Models Now Generate — 2026-11-22：把圖像生成改寫成「一次並聯的有類型決策」——凍結 Qwen3.5-4B（Gated DeltaNet 與 full attention 交錯）＋一組共用 rank-256 LoRA＋任務頭，用 128 個 decision token 在一次前向內直接決定 TA-TiTok 的 8,192-entry codebook code，512×512 端到端 77.8 ms、GenEval 0.74、對 Janus-Pro-7B 122.2× 加速；同一 checkpoint 兼做圖生圖與密集預測。核心是把「並聯決策為什麼難」寫成一行 KL 恆等式，並用一個共用隨機狀態 $\xi$ 去買下總相關性，再用 Di[M]O 式 token-level 條件匹配（Eq.6）逼模型真的使用 $\xi$；Yuhe Liu、Qi Li 等，NUS（Xinchao Wang 組），arXiv:2611.24738v1（預印本，未列正式 venue；HF Daily 112 讚、GitHub 127 星、權重與 Demo 已開放）](papers/2026/2026-11/Jeveration/AI_Daily_Jeveration.md)**
 本文逐段推導 Eq.(2) 的 $\min_{q_{\mathrm{ind}}}\mathrm{KL}(p\|q_{\mathrm{ind}})=\sum_i H(c_i\mid y)-H(c\mid y)$，並補完整條證明（逐位置最佳解恰好是邊際 $q_i^{\star}=p(c_i\mid y)$，殘值即 total correlation——獨立並聯的 KL 天花板一分都省不掉）；推 Eq.(3) 的 latent-variable 因式分解與其協調預算 $\mathrm{TC}_{q_\theta}\le H(\xi)$，並自己算了 $\rho=0.6$、$\sigma=0.1$、$N=128$ 下 $H_{\text{pos}}=h(\rho)+(1-\rho)\log_2|\mathcal{C}|\approx 6.17$ bits、$H(\xi)\approx 790$ bits，對比滿額 $1{,}664$ bits 約 47%：足以承擔「選哪一張圖」，不足於承擔全部局部相容性；再推 Eq.(6) 的 $\mathcal{L}_{\mathrm{DM}}=\mathbb{E}[\frac{1}{|M|}\sum_i\mathrm{sg}(p_{\psi,i}-p_{\phi,i})^{\top}\ell_{\theta,i}]$ 為何對 logits 線性、以及「被遮位置的條件取決於其他 code」怎樣把全局連貫壓成逐位置推力。同時標明兩處保留：$\xi$ 的語義尚未被消融完全排除（固定狀態只掉 0.03 GenEval，alphaXiv 亦持同一保留），以及 GenEval 0.74 仍低於 Janus-Pro-7B 0.80、DPG 78.24 略輸多數對手，本質是拿少量質量換兩個數量級延遲。延伸提出四條可驗證的思路：用 VAR 粗尺度取代 $\xi$ 的對照實驗、把 Eq.(6) 的輔助模型 $\psi$ 換成聯合連貫性能量（接上 EBR 的能量三讀數並刪掉 EMA 追蹤）、用 JEPA 特徵做「結構化的 $\xi$」、以及對 decision-token 塊做 training-free 的 $\gamma$ 溫度調製並量化其 TC 殘差曲線。
 ---
